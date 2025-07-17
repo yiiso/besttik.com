@@ -9,7 +9,9 @@
     <meta name="description" content="@yield('description', '专业的全球视频解析工具，支持多平台视频链接解析下载')">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="alternate icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.svg') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +22,28 @@
 
     <!-- Pass translations to JavaScript -->
     <script>
-
+        window.translations = {
+            parse_success: "{{ __('messages.parse_success') }}",
+            parse_failed: "{{ __('messages.parse_failed') }}",
+            download_video: "{{ __('messages.download_video') }}",
+            download_audio: "{{ __('messages.download_audio') }}",
+            copy_link: "{{ __('messages.copy_link') }}",
+            open_new_tab: "{{ __('messages.open_new_tab') }}",
+            download_options: "{{ __('messages.download_options') }}",
+            audio_download_options: "{{ __('messages.audio_download_options') }}",
+            download: "{{ __('messages.download') }}",
+            original_quality: "{{ __('messages.original_quality') }}",
+            unknown_size: "{{ __('messages.unknown_size') }}",
+            unknown_author: "{{ __('messages.unknown_author') }}",
+            audio_quality: "{{ __('messages.audio_quality') }}",
+            video_link_unavailable: "{{ __('messages.video_link_unavailable') }}",
+            link_copied: "{{ __('messages.link_copied') }}",
+            copy_failed: "{{ __('messages.copy_failed') }}",
+            loading_video: "{{ __('messages.loading_video') }}",
+            play_failed: "{{ __('messages.play_failed') }}",
+            browser_not_support: "{{ __('messages.browser_not_support') }}",
+            network_error: "{{ __('messages.network_error') }}"
+        };
     </script>
 </head>
 <body class="bg-white text-gray-900 font-elegant antialiased">
@@ -30,10 +53,28 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="/" class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 6a2 2 0 012-2h6l2 2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 10-3 3m0 0-3-3m3 3V4"/>
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#06B6D4" />
+                                        <stop offset="50%" stop-color="#3B82F6" />
+                                        <stop offset="100%" stop-color="#8B5CF6" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- 背景 - 不规则形状 -->
+                                <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
+                                <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#headerGradient)" />
+                                
+                                <!-- 中心图形 - 抽象播放图标 -->
+                                <path d="M13 10L22 16L13 22V10Z" fill="white" />
+                                <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                
+                                <!-- 装饰元素 - 点和线 -->
+                                <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
+                                <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
+                                <circle cx="16" cy="28" r="1" fill="white" opacity="0.8" />
+                                <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
                             </svg>
                         </div>
                         <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.pro</span>
@@ -64,10 +105,28 @@
             <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 6a2 2 0 012-2h6l2 2h6a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"/>
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 10-3 3m0 0-3-3m3 3V4"/>
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#06B6D4" />
+                                        <stop offset="50%" stop-color="#3B82F6" />
+                                        <stop offset="100%" stop-color="#8B5CF6" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- 背景 - 不规则形状 -->
+                                <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
+                                <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#footerGradient)" />
+                                
+                                <!-- 中心图形 - 抽象播放图标 -->
+                                <path d="M13 10L22 16L13 22V10Z" fill="white" />
+                                <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+                                
+                                <!-- 装饰元素 - 点和线 -->
+                                <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
+                                <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
+                                <circle cx="16" cy="28" r="1" fill="white" opacity="0.8" />
+                                <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
                             </svg>
                         </div>
                         <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.pro</span>

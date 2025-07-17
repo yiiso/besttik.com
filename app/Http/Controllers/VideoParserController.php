@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class VideoParserController extends Controller
 {
@@ -34,8 +35,8 @@ class VideoParserController extends Controller
             $platform = $this->detectPlatform($videoUrl);
 
             // 调用外部解析API
-//            $videInfo = $this->parseVideoFromAPI($videoUrl);
-            $videoInfo = $this->parseVideo($videoUrl,'douyin');
+            // $videoInfo = $this->parseVideoFromAPI($videoUrl);
+           $videoInfo = $this->parseVideo($videoUrl,'douyin');
 
             return response()->json([
                 'status' => 'success',
@@ -44,14 +45,14 @@ class VideoParserController extends Controller
             ]);
 
         } catch (\Exception $e) {
-            \Log::error('Video parsing failed: ' . $e->getMessage(), [
+            Log::error('Video parsing failed: ' . $e->getMessage(), [
                 'url' => $videoUrl,
                 'trace' => $e->getTraceAsString()
             ]);
 
             return response()->json([
                 'status' => 'error',
-                'message' => '解析失败：' . $e->getMessage()
+                'message' => __('messages.parse_failed') . ': ' . $e->getMessage()
             ], 500);
         }
     }
@@ -123,8 +124,8 @@ class VideoParserController extends Controller
         }
 
         // 记录原始响应用于调试
-        \Log::info('Raw API Response: ', ['raw_response' => $response]);
-        \Log::info('Parsed API Response: ', ['parsed_response' => $data]);
+        Log::info('Raw API Response: ', ['raw_response' => $response]);
+        Log::info('Parsed API Response: ', ['parsed_response' => $data]);
 
         // 检查API响应格式并处理
         if (!$data) {
@@ -138,7 +139,7 @@ class VideoParserController extends Controller
 
         // 如果API返回了成功状态，使用data字段
         if (isset($data['status']) && $data['status'] === 'success' && isset($data['data'])) {
-            return $this->formatApiResponse($data['data']);
+            return $this->formatApiResponse($data);
         }
 
         // 如果没有status字段，直接使用整个响应数据
@@ -155,10 +156,10 @@ class VideoParserController extends Controller
 
         // 根据API实际返回格式进行调整
         $formatted = [
-            'title' => $data['title'] ?? $data['desc'] ?? '未知标题',
+            'title' => $data['title'] ?? $data['desc'] ?? __('messages.unknown_title'),
             'thumbnail' => $data['cover_url'] ?? $data['cover'] ?? $data['thumbnail'] ?? '',
-            'duration' => $data['duration'] ?? '未知',
-            'author' => isset($data['author']) ? ($data['author']['name'] ?? $data['author']) : '未知作者',
+            'duration' => $data['duration'] ?? __('messages.unknown_duration'),
+            'author' => isset($data['author']) ? ($data['author']['name'] ?? $data['author']) : __('messages.unknown_author'),
             'quality_options' => [],
             'audio_options' => []
         ];
@@ -167,9 +168,9 @@ class VideoParserController extends Controller
         $videoUrl = $data['video_url'] ?? $data['download_url'] ?? $data['url'] ?? $data['play_url'] ?? null;
         if ($videoUrl) {
             $formatted['quality_options'][] = [
-                'quality' => '原画质',
+                'quality' => __('messages.original_quality'),
                 'format' => 'mp4',
-                'size' => $data['size'] ?? '未知大小',
+                'size' => $data['size'] ?? __('messages.unknown_size'),
                 'download_url' => $videoUrl
             ];
         }
@@ -177,7 +178,7 @@ class VideoParserController extends Controller
         // 处理音频下载链接
         if (isset($data['audio_url'])) {
             $formatted['audio_options'][] = [
-                'quality' => '原音质',
+                'quality' => __('messages.original_audio_quality'),
                 'format' => 'mp3',
                 'size' => $data['audio_size'] ?? '未知大小',
                 'download_url' => $data['audio_url']
@@ -199,16 +200,16 @@ class VideoParserController extends Controller
     {
         // 备用示例数据
         return [
-            'data' => [
-            'title' => '示例视频标题',
-            'thumbnail' => 'https://via.placeholder.com/480x360',
+
+            'title' => '经典港片百看不厌，东莞仔凭此片终于获得了影帝！ #任贤齐 #东莞仔 #推荐电影 #电影解说 #因为一个片段看了整部剧',
+            'thumbnail' => 'https://p3-sign.douyinpic.com/tos-cn-i-dy/589d1cbfbcae424a843b77c49fbd2d52~tplv-dy-resize-walign-adapt-aq:540:q75.webp?lk3s=138a59ce&x-expires=1753923600&x-signature=7Slyp8cfgLiX%2FFbsuV%2By%2B3u1u00%3D&from=327834062&s=PackSourceEnum_DOUYIN_REFLOW&se=false&sc=cover&biz_tag=aweme_video&l=20250717092534F461E36842E9B402CD32',
             'duration' => '03:45',
             'quality_options' => [
                 [
                     'quality' => '1080p',
                     'format' => 'mp4',
                     'size' => '25.6 MB',
-                    'download_url' => '#'
+                    'download_url' => 'https://v5.douyinvod.com/9791a824f55f7a90e5a166b25b9b02dd/6878dca6/video/tos/cn/tos-cn-ve-15/osAzAAIoCEOha9qI7EvfBFAdDDqus3Q95fomSg/?a=1128&br=1091&bt=1091&btag=80008e000b5201&cd=0%7C0%7C0%7C0&ch=0&cquery=100y&cr=0&cs=0&cv=1&dr=0&ds=3&dy_q=1752747330&dy_va_biz_cert=&feature_id=fea919893f650a8c49286568590446ef&ft=kTTK4VVywfURsm80mo~pK7pswAppx27UvrKmbThcdo0g3cI&l=2025071718153078955ED2EABC4840FD81&mime_type=video_mp4&qs=0&rc=NzlmNmRlOTQ7Nzo7NGlpM0BpM3ZnNXg5cm1xNDMzNGkzM0BfL2BeMGAvXl8xMF5eMzQ1YSNlNV5vMmRrcW9hLS1kLS9zcw%3D%3D'
                 ]
             ],
             'audio_options' => [
@@ -216,10 +217,9 @@ class VideoParserController extends Controller
                     'quality' => '320kbps',
                     'format' => 'mp3',
                     'size' => '5.2 MB',
-                    'download_url' => '#'
+                    'download_url' => 'https://v5.douyinvod.com/9791a824f55f7a90e5a166b25b9b02dd/6878dca6/video/tos/cn/tos-cn-ve-15/osAzAAIoCEOha9qI7EvfBFAdDDqus3Q95fomSg/?a=1128&br=1091&bt=1091&btag=80008e000b5201&cd=0%7C0%7C0%7C0&ch=0&cquery=100y&cr=0&cs=0&cv=1&dr=0&ds=3&dy_q=1752747330&dy_va_biz_cert=&feature_id=fea919893f650a8c49286568590446ef&ft=kTTK4VVywfURsm80mo~pK7pswAppx27UvrKmbThcdo0g3cI&l=2025071718153078955ED2EABC4840FD81&mime_type=video_mp4&qs=0&rc=NzlmNmRlOTQ7Nzo7NGlpM0BpM3ZnNXg5cm1xNDMzNGkzM0BfL2BeMGAvXl8xMF5eMzQ1YSNlNV5vMmRrcW9hLS1kLS9zcw%3D%3D'
                 ]
             ]
-        ]
             ];
     }
 }

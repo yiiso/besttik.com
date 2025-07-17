@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <clipPath id="clip">
+      <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2z" />
+    </clipPath>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect x="0" y="0" width="32" height="32" rx="16" fill="url(#gradient)" />
+  
+  <!-- 装饰线条 -->
+  <g clip-path="url(#clip)">
+    <path d="M-4 20L36 20" stroke="white" stroke-width="0.5" stroke-opacity="0.3" />
+    <path d="M-4 16L36 16" stroke="white" stroke-width="0.5" stroke-opacity="0.3" />
+    <path d="M-4 12L36 12" stroke="white" stroke-width="0.5" stroke-opacity="0.3" />
+    <path d="M16 -4L16 36" stroke="white" stroke-width="0.5" stroke-opacity="0.3" />
+  </g>
+  
+  <!-- 播放图标 - 现代风格 -->
+  <g transform="translate(10, 10)">
+    <!-- 播放三角形 - 不规则形状 -->
+    <path d="M2 1L12 6L2 11V1Z" fill="white" />
+    
+    <!-- 装饰元素 -->
+    <rect x="0" y="0" width="2" height="12" fill="white" opacity="0.8" />
+  </g>
+</svg>

@@ -67,7 +67,7 @@ return [
     'unknown_title' => 'Unknown Title',
     'unknown_author' => 'Unknown Author',
     'unknown_duration' => 'Unknown Duration',
-    'original_quality' => 'Original Quality',
+
     'unknown_size' => 'Unknown Size',
     'invalid_url' => 'Please enter a valid video link',
     'unsupported_platform' => 'This video platform is not supported yet',
@@ -76,7 +76,7 @@ return [
     'video_info_obtained' => 'Video information successfully obtained',
     'loading_video' => 'Loading video...',
     'browser_not_support' => 'Your browser does not support video playback',
-    
+
     // Footer translations
     'footer_description' => 'Professional global video parsing tool, providing users with fast, secure, and convenient video link parsing services.',
     'navigation' => 'Navigation',
@@ -91,4 +91,45 @@ return [
     'terms_of_service' => 'Terms of Service',
     'all_rights_reserved' => 'All rights reserved',
     'how_to_use' => 'How to Use',
+
+    // Login related translations
+    'login' => 'Login',
+    'login_with_google' => 'Login with Google',
+    'or' => 'or',
+    'email' => 'Email',
+    'password' => 'Password',
+    'enter_email' => 'Enter your email address',
+    'enter_password' => 'Enter your password',
+    'remember_me' => 'Remember me',
+    'forgot_password' => 'Forgot password?',
+    'no_account' => "Don't have an account?",
+    'register_now' => 'Register now',
+    'login_success' => 'Login successful',
+    'login_failed' => 'Login failed',
+    'invalid_credentials' => 'Invalid email or password',
+    'logout' => 'Logout',
+
+    // Form validation translations
+    'email_required' => 'Email is required',
+    'email_invalid' => 'Please enter a valid email address',
+    'email_exists' => 'This email is already registered',
+    'password_required' => 'Password is required',
+    'password_min_length' => 'Password must be at least 6 characters',
+    'password_confirmation_failed' => 'Password confirmation does not match',
+    'name_required' => 'Name is required',
+    'register_success' => 'Registration successful',
+    'logout_success' => 'Logout successful',
+
+    // Additional registration translations
+    'register' => 'Register',
+    'register_failed' => 'Registration failed',
+    'register_with_google' => 'Register with Google',
+    'login_now' => 'Login Now',
+    'already_have_account' => 'Already have an account?',
+    'back_to_login' => 'Back to Login',
+
+    // User menu related translations
+    'profile' => 'Profile',
+    'settings' => 'Settings',
+    'logout_confirm' => 'Are you sure you want to logout?',
 ];

@@ -4,6 +4,54 @@
 @section('description', '专业的全球视频解析工具，支持YouTube、TikTok、Instagram等多平台视频链接解析下载')
 
 @section('content')
+<!-- 消息提示 -->
+@if(session('success'))
+    <div class="fixed top-4 right-4 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg" id="flashMessage">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="fixed top-4 right-4 z-50 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg" id="flashMessage">
+        {{ session('error') }}
+    </div>
+@endif
+
+@if(session('info'))
+    <div class="fixed top-4 right-4 z-50 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg" id="flashMessage">
+        {{ session('info') }}
+    </div>
+@endif
+
+@if(session('success') || session('error') || session('info'))
+<script>
+    // 自动隐藏消息提示
+    document.addEventListener('DOMContentLoaded', function() {
+        const flashMessage = document.getElementById('flashMessage');
+        if (flashMessage) {
+            // 5秒后自动隐藏
+            setTimeout(() => {
+                flashMessage.style.transform = 'translateX(100%)';
+                flashMessage.style.opacity = '0';
+                setTimeout(() => {
+                    flashMessage.remove();
+                }, 300);
+            }, 5000);
+            
+            // 点击关闭
+            flashMessage.style.cursor = 'pointer';
+            flashMessage.addEventListener('click', function() {
+                this.style.transform = 'translateX(100%)';
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.remove();
+                }, 300);
+            });
+        }
+    });
+</script>
+@endif
+
 <!-- Hero Section -->
 <section class="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-start justify-center pt-40">
     <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>

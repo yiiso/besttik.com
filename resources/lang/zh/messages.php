@@ -67,7 +67,7 @@ return [
     'unknown_title' => '未知标题',
     'unknown_author' => '未知作者',
     'unknown_duration' => '未知时长',
-    'original_quality' => '原画质',
+
     'unknown_size' => '未知大小',
     'invalid_url' => '请输入有效的视频链接',
     'unsupported_platform' => '暂不支持该视频平台',
@@ -76,7 +76,7 @@ return [
     'video_info_obtained' => '视频信息已成功获取',
     'loading_video' => '正在加载视频...',
     'browser_not_support' => '您的浏览器不支持视频播放',
-    
+
     // Footer translations
     'footer_description' => '专业的全球视频解析工具，为用户提供快速、安全、便捷的视频链接解析服务。',
     'navigation' => '导航',
@@ -91,4 +91,46 @@ return [
     'terms_of_service' => '服务条款',
     'all_rights_reserved' => '版权所有',
     'how_to_use' => '使用方法',
+
+    // 登录相关翻译
+    'login' => '登录',
+    'login_with_google' => '使用 Google 登录',
+    'or' => '或',
+    'email' => '邮箱',
+    'password' => '密码',
+    'enter_email' => '请输入邮箱地址',
+    'enter_password' => '请输入密码',
+    'remember_me' => '记住我',
+    'forgot_password' => '忘记密码？',
+    'no_account' => '还没有账户？',
+    'register_now' => '立即注册',
+    'login_success' => '登录成功',
+    'login_failed' => '登录失败',
+    'invalid_credentials' => '邮箱或密码错误',
+    'logout' => '退出登录',
+    'email_required' => '请输入邮箱地址',
+    'email_invalid' => '邮箱格式不正确',
+    'password_required' => '请输入密码',
+    'password_min_length' => '密码至少需要6位字符',
+    'name_required' => '请输入姓名',
+    'email_exists' => '该邮箱已被注册',
+    'password_confirmation_failed' => '两次输入的密码不一致',
+    'register_success' => '注册成功',
+    'logout_success' => '退出登录成功',
+
+    // 注册相关翻译
+    'name' => '姓名',
+    'enter_name' => '请输入您的姓名',
+    'confirm_password' => '确认密码',
+    'register' => '注册',
+    'already_have_account' => '已有账户？',
+    'back_to_login' => '返回登录',
+    'register_failed' => '注册失败',
+    'register_with_google' => '使用 Google 注册',
+    'login_now' => '立即登录',
+
+    // 用户菜单相关翻译
+    'profile' => '个人资料',
+    'settings' => '设置',
+    'logout_confirm' => '确定要退出登录吗？',
 ];

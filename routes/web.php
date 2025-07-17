@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoParserController;
 
-// 默认路由（中文）
+// 默认路由（英文）
 Route::get('/', function () {
-    app()->setLocale('zh');
+    app()->setLocale('en');
     return view('home');
 });
 
@@ -22,3 +22,13 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function ()
 
 // API路由
 Route::post('/parse', [VideoParserController::class, 'parse'])->name('video.parse');
+
+// 认证路由
+use App\Http\Controllers\AuthController;
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Google OAuth 路由
+Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');

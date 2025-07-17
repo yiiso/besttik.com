@@ -57,7 +57,7 @@ return [
     'video_info_obtained' => '動画情報の取得に成功しました',
     'loading_video' => '動画を読み込み中...',
     'browser_not_support' => 'お使いのブラウザは動画再生をサポートしていません',
-    
+
     // Footer translations
     'footer_description' => 'プロフェッショナルなグローバル動画解析ツール、ユーザーに高速、安全、便利な動画リンク解析サービスを提供。',
     'navigation' => 'ナビゲーション',
@@ -72,4 +72,39 @@ return [
     'terms_of_service' => '利用規約',
     'all_rights_reserved' => '全著作権所有',
     'how_to_use' => '使用方法',
-];
+
+// Registration translations
+    'login' => 'ログイン',
+    'register' => '登録',
+    'email' => 'メールアドレス',
+    'password' => 'パスワード',
+    'confirm_password' => 'パスワード確認',
+    'login_with_google' => 'Googleでログイン',
+    'register_with_google' => 'Googleで登録',
+    'or' => 'または',
+    'enter_email' => 'メールアドレスを入力',
+    'enter_password' => 'パスワードを入力',
+    'no_account' => 'アカウントをお持ちでない方',
+    'register_now' => '今すぐ登録',
+    'already_have_account' => 'すでにアカウントをお持ちですか？',
+    'login_now' => 'ログイン',
+    'back_to_login' => 'ログインに戻る',
+    'remember_me' => 'ログイン状態を保持',
+    'forgot_password' => 'パスワードを忘れた方',
+    'login_success' => 'ログイン成功',
+    'login_failed' => 'ログイン失敗',
+    'register_success' => '登録成功',
+    'register_failed' => '登録失敗',
+    'email_required' => 'メールアドレスは必須です',
+    'email_invalid' => '有効なメールアドレスを入力してください',
+    'email_exists' => 'このメールアドレスは既に登録されています',
+    'password_required' => 'パスワードは必須です',
+    'password_min_length' => 'パスワードは6文字以上である必要があります',
+    'password_confirmation_failed' => 'パスワード確認が一致しません',
+    'network_error' => 'ネットワークエラー、再試行してください',
+    
+    // User menu translations
+    'profile' => 'プロフィール',
+    'settings' => '設定',
+    'logout_confirm' => 'ログアウトしてもよろしいですか？',
+]; 

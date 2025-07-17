@@ -52,6 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // 初始化用户菜单
+    initUserMenu();
+
+    // 初始化登录弹窗
+    initLoginModal();
+
     // 视频解析表单提交
     const videoParseForm = document.getElementById('videoParseForm');
     const parseResults = document.getElementById('parseResults');
@@ -340,3 +346,314 @@ function addEventListeners() {
         });
     });
 }
+
+// 用户菜单功能
+function initUserMenu() {
+    const userMenuBtn = document.getElementById('userMenuBtn');
+    const userDropdown = document.getElementById('userDropdown');
+    const logoutBtn = document.getElementById('logoutBtn');
+
+    // 切换用户下拉菜单
+    if (userMenuBtn && userDropdown) {
+        userMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            userDropdown.classList.toggle('hidden');
+        });
+
+        // 点击其他地方关闭下拉菜单
+        document.addEventListener('click', function(e) {
+            if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    }
+
+    // 退出登录功能
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 显示确认对话框
+            if (confirm(window.translations?.logout_confirm || '确定要退出登录吗？')) {
+                // 发送退出登录请求
+                fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        showToast(window.translations?.logout_success || '退出登录成功', 'success');
+                        // 刷新页面
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        showToast(data.message || '退出登录失败', 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Logout error:', error);
+                    showToast(window.translations?.network_error || '网络错误，请稍后重试', 'error');
+                });
+            }
+        });
+    }
+}
+
+// 登录弹窗功能
+function initLoginModal() {
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const loginModalContent = document.getElementById('loginModalContent');
+    const closeLoginModal = document.getElementById('closeLoginModal');
+    const googleLoginBtn = document.getElementById('googleLoginBtn');
+    const emailLoginForm = document.getElementById('emailLoginForm');
+
+    // 显示登录弹窗
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function () {
+            loginModal.classList.remove('hidden');
+            // 添加动画效果
+            setTimeout(() => {
+                loginModalContent.classList.remove('scale-95', 'opacity-0');
+                loginModalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        });
+    }
+
+    // 关闭登录弹窗
+    function closeModal() {
+        loginModalContent.classList.remove('scale-100', 'opacity-100');
+        loginModalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            loginModal.classList.add('hidden');
+        }, 300);
+    }
+
+    // 点击关闭按钮
+    if (closeLoginModal) {
+        closeLoginModal.addEventListener('click', closeModal);
+    }
+
+    // 点击背景关闭
+    if (loginModal) {
+        loginModal.addEventListener('click', function (e) {
+            if (e.target === loginModal) {
+                closeModal();
+            }
+        });
+    }
+
+    // ESC键关闭
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !loginModal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+
+    // Google登录
+    if (googleLoginBtn) {
+        googleLoginBtn.addEventListener('click', function () {
+            // 显示加载状态
+            this.disabled = true;
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<div class="animate-spin rounded-full h-5 w-5 border-2 border-gray-400 border-t-transparent mx-auto"></div>';
+            
+            // 直接跳转到Google OAuth，让后端处理配置检查
+            setTimeout(() => {
+                window.location.href = '/auth/google';
+            }, 500); // 短暂延迟显示加载状态
+        });
+    }
+
+    // 邮箱登录表单提交
+    if (emailLoginForm) {
+        emailLoginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(emailLoginForm);
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            // 基本验证
+            if (!email || !password) {
+                showToast('请填写完整的登录信息', 'error');
+                return;
+            }
+
+            // 发送登录请求
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        showToast(window.translations?.login_success || '登录成功', 'success');
+                        closeModal();
+                        // 刷新页面或更新UI
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    } else {
+                        showToast(data.message || (window.translations?.login_failed || '登录失败'), 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Login error:', error);
+                    showToast(window.translations?.network_error || '网络错误，请稍后重试', 'error');
+                });
+        });
+    }
+}
+
+// 扩展登录弹窗功能，添加注册逻辑
+document.addEventListener('DOMContentLoaded', function() {
+    const showRegisterForm = document.getElementById('showRegisterForm');
+    const showLoginForm = document.getElementById('showLoginForm');
+    const registerFormContainer = document.getElementById('registerFormContainer');
+    const emailLoginForm = document.getElementById('emailLoginForm');
+    const emailRegisterForm = document.getElementById('emailRegisterForm');
+    const googleLoginBtn = document.getElementById('googleLoginBtn');
+
+    // 显示登录表单
+    function showLoginFormView() {
+        if (emailLoginForm && emailLoginForm.parentElement) {
+            emailLoginForm.parentElement.classList.remove('hidden');
+        }
+        if (registerFormContainer) {
+            registerFormContainer.classList.add('hidden');
+        }
+        const modalTitle = document.querySelector('#loginModalContent h2');
+        if (modalTitle) {
+            modalTitle.textContent = window.translations?.login || '登录';
+        }
+    }
+
+    // 显示注册表单
+    function showRegisterFormView() {
+        if (emailLoginForm && emailLoginForm.parentElement) {
+            emailLoginForm.parentElement.classList.add('hidden');
+        }
+        if (registerFormContainer) {
+            registerFormContainer.classList.remove('hidden');
+        }
+        const modalTitle = document.querySelector('#loginModalContent h2');
+        if (modalTitle) {
+            modalTitle.textContent = window.translations?.register || '注册';
+        }
+    }
+
+    // 切换到注册表单
+    if (showRegisterForm) {
+        showRegisterForm.addEventListener('click', function(e) {
+            e.preventDefault();
+            showRegisterFormView();
+        });
+    }
+
+    // 切换到登录表单
+    if (showLoginForm) {
+        showLoginForm.addEventListener('click', function(e) {
+            e.preventDefault();
+            showLoginFormView();
+        });
+    }
+
+    // Google登录按钮功能已在initLoginModal中处理，这里不需要重复
+
+    // 邮箱注册表单提交
+    if (emailRegisterForm) {
+        emailRegisterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(emailRegisterForm);
+            const email = formData.get('email');
+            const password = formData.get('password');
+            const passwordConfirmation = formData.get('password_confirmation');
+            
+            // 基本验证
+            if (!email || !password || !passwordConfirmation) {
+                showToast(window.translations?.email_required || '请填写完整的注册信息', 'error');
+                return;
+            }
+            
+            if (password !== passwordConfirmation) {
+                showToast(window.translations?.password_confirmation_failed || '两次输入的密码不一致', 'error');
+                return;
+            }
+            
+            if (password.length < 6) {
+                showToast(window.translations?.password_min_length || '密码至少需要6位字符', 'error');
+                return;
+            }
+            
+            // 禁用提交按钮
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<div class="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mx-auto"></div>';
+            
+            // 发送注册请求
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password,
+                    password_confirmation: passwordConfirmation
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showToast(window.translations?.register_success || '注册成功', 'success');
+                    // 关闭弹窗
+                    const loginModal = document.getElementById('loginModal');
+                    const loginModalContent = document.getElementById('loginModalContent');
+                    if (loginModalContent && loginModal) {
+                        loginModalContent.classList.remove('scale-100', 'opacity-100');
+                        loginModalContent.classList.add('scale-95', 'opacity-0');
+                        setTimeout(() => {
+                            loginModal.classList.add('hidden');
+                            // 重置表单
+                            emailRegisterForm.reset();
+                        }, 300);
+                    }
+                    // 刷新页面或更新UI
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 1000);
+                } else {
+                    showToast(data.message || (window.translations?.register_failed || '注册失败'), 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Register error:', error);
+                showToast(window.translations?.network_error || '网络错误，请稍后重试', 'error');
+            })
+            .finally(() => {
+                // 恢复提交按钮
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            });
+        });
+    }
+});

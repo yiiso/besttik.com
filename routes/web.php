@@ -12,7 +12,7 @@ Route::get('/', function () {
 // 多语言路由组
 Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {
     Route::get('/', function ($locale) {
-        if (in_array($locale, ['zh', 'en', 'es'])) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
             app()->setLocale($locale);
             return view('home');
         }

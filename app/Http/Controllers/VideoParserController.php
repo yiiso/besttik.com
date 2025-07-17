@@ -16,8 +16,8 @@ class VideoParserController extends Controller
         $validator = Validator::make($request->all(), [
             'video_url' => 'required|string'
         ], [
-            'video_url.required' => '请输入视频链接',
-            'video_url.string' => '请输入有效的视频链接'
+            'video_url.required' => __('messages.invalid_url'),
+            'video_url.string' => __('messages.invalid_url')
         ]);
 
         if ($validator->fails()) {

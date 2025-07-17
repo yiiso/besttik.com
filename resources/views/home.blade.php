@@ -5,21 +5,10 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-center justify-center">
+<section class="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 min-h-screen flex items-start justify-center pt-40">
     <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div class="text-center transform -translate-y-16">
-            <!-- Main Heading -->
-            <h1 class="text-4xl lg:text-6xl font-light text-gray-900 mb-6 tracking-tight">
-                <span class="block">解析任何视频</span>
-                <span class="block text-3xl lg:text-4xl text-blue-600 font-normal mt-2">快速 · 安全 · 免费</span>
-            </h1>
-            
-            <!-- Subtitle -->
-            <p class="text-lg lg:text-xl text-gray-600 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                支持全球主流视频平台，一键解析下载，无需注册，完全免费
-            </p>
-            
+        <div class="text-center">
             <!-- Search Box - 主要操作区域 -->
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
@@ -29,28 +18,28 @@
                             type="url" 
                             id="videoUrl"
                             name="video_url"
-                            placeholder="粘贴视频链接到这里..."
-                            class="w-full px-8 py-6 text-xl bg-white border-2 border-gray-200 rounded-full focus:border-blue-500 focus:outline-none transition-all duration-300 shadow-xl hover:shadow-2xl pr-36"
+                            placeholder="{{ __('messages.paste_link') }}"
+                            class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 rounded-full focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl pr-28"
                             required
                         >
                         <button 
                             type="submit"
-                            class="absolute right-2 top-2 bottom-2 px-10 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+                            class="absolute right-2 top-2 bottom-2 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-all duration-200 flex items-center space-x-2 shadow-md hover:shadow-lg"
                         >
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                             </svg>
-                            <span class="hidden sm:inline text-lg">解析</span>
+                            <span class="hidden sm:inline">{{ __('messages.parse') }}</span>
                         </button>
                     </div>
                 </form>
                 
                 <!-- Quick Examples -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-500">试试这些:</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors font-medium" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=example'">YouTube</button>
+                    <span class="text-gray-500">{{ __('messages.try_these') }}</span>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors font-medium" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors font-medium" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@user/video/example'">TikTok</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors font-medium" onclick="document.getElementById('videoUrl').value='https://www.instagram.com/p/example'">Instagram</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors font-medium" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=example'">YouTube</button>
                 </div>
             </div>
 
@@ -61,7 +50,7 @@
                         <div class="animate-spin rounded-full h-10 w-10 border-3 border-blue-600 border-t-transparent"></div>
                         <div class="animate-pulse h-3 bg-blue-200 rounded w-40"></div>
                     </div>
-                    <p class="text-gray-600 font-medium text-lg">正在解析视频，请稍候...</p>
+                    <p class="text-gray-600 font-medium text-lg">{{ __('messages.parsing_video') }}</p>
                 </div>
             </div>
 
@@ -77,8 +66,8 @@
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-4">为什么选择我们</h2>
-            <p class="text-lg text-gray-600 font-light">专业、安全、便捷的视频解析服务</p>
+            <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-4">{{ __('messages.why_choose_us') }}</h2>
+            <p class="text-lg text-gray-600 font-light">{{ __('messages.why_choose_desc') }}</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -89,9 +78,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">极速解析</h3>
+                <h3 class="text-xl font-medium text-gray-900 mb-4">{{ __('messages.fast_parsing') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    采用先进的解析技术，秒级完成视频链接解析，支持多种清晰度选择
+                    {{ __('messages.fast_parsing_desc') }}
                 </p>
             </div>
 
@@ -102,9 +91,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">安全可靠</h3>
+                <h3 class="text-xl font-medium text-gray-900 mb-4">{{ __('messages.secure_reliable') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    无需注册登录，不存储用户数据，全程HTTPS加密，保护您的隐私安全
+                    {{ __('messages.secure_reliable_desc') }}
                 </p>
             </div>
 
@@ -115,9 +104,9 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-medium text-gray-900 mb-4">全球支持</h3>
+                <h3 class="text-xl font-medium text-gray-900 mb-4">{{ __('messages.global_support') }}</h3>
                 <p class="text-gray-600 leading-relaxed">
-                    支持全球主流视频平台，多语言界面，为全球用户提供优质服务
+                    {{ __('messages.global_support_desc') }}
                 </p>
             </div>
         </div>
@@ -128,8 +117,8 @@
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-4">支持的平台</h2>
-            <p class="text-lg text-gray-600 font-light">覆盖全球主流视频平台</p>
+            <h2 class="text-3xl lg:text-4xl font-light text-gray-900 mb-4">{{ __('messages.supported_platforms') }}</h2>
+            <p class="text-lg text-gray-600 font-light">{{ __('messages.supported_platforms_desc') }}</p>
         </div>
         
         <div class="grid grid-cols-3 md:grid-cols-6 gap-8 lg:gap-12">
@@ -190,7 +179,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
                     </svg>
                 </div>
-                <span class="text-gray-700 font-medium">更多平台</span>
+                <span class="text-gray-700 font-medium">{{ __('messages.more_platforms') }}</span>
             </div>
         </div>
     </div>
@@ -200,14 +189,14 @@
 <section class="py-20 bg-blue-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            开始使用 VideoParser.pro
+            {{ __('messages.start_using') }}
         </h2>
         <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            立即体验最专业的视频解析服务，让视频下载变得简单高效。
+            {{ __('messages.start_using_desc') }}
         </p>
         <a href="#" onclick="document.getElementById('videoUrl').focus()" 
            class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-50 transition-colors duration-200">
-            立即开始
+            {{ __('messages.start_now') }}
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>

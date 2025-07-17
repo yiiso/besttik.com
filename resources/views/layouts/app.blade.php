@@ -20,9 +20,9 @@
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
     <!-- Header -->
-    <header class="border-b border-gray-200">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
+    <header class="py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <a href="/" class="flex items-center space-x-2">
                         <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -35,22 +35,17 @@
                     </a>
                 </div>
                 
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#features" class="text-gray-600 hover:text-gray-900 transition-colors">功能特点</a>
-                    <a href="#supported" class="text-gray-600 hover:text-gray-900 transition-colors">支持平台</a>
-                    <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">关于我们</a>
-                </div>
-                
                 <div class="flex items-center space-x-4">
-                    <select class="text-sm border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
-                        <option value="zh">中文</option>
-                        <option value="en">English</option>
-                        <option value="ja">日本語</option>
-                        <option value="ko">한국어</option>
+                    <select id="languageSelect" class="text-sm border-0 bg-transparent text-gray-600 focus:ring-0 cursor-pointer">
+                        <option value="zh" {{ app()->getLocale() == 'zh' ? 'selected' : '' }}>中文</option>
+                        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
+                        <option value="es" {{ app()->getLocale() == 'es' ? 'selected' : '' }}>Español</option>
+                        <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }}>Français</option>
+                        <option value="ja" {{ app()->getLocale() == 'ja' ? 'selected' : '' }}>日本語</option>
                     </select>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -61,7 +56,7 @@
     <!-- Footer -->
     <footer class="bg-gray-50 border-t border-gray-200 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
                         <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
@@ -73,31 +68,41 @@
                         <span class="text-xl font-semibold text-gray-900">VideoParser.pro</span>
                     </div>
                     <p class="text-gray-600 max-w-md">
-                        专业的全球视频解析工具，为用户提供快速、安全、便捷的视频链接解析服务。
+                        {{ __('messages.footer_description') }}
                     </p>
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-4">产品</h3>
+                    <h3 class="font-semibold text-gray-900 mb-4">{{ __('messages.navigation') }}</h3>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">视频解析</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">批量下载</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">API服务</a></li>
+                        <li><a href="#features" class="hover:text-gray-900 transition-colors">{{ __('messages.why_choose_us') }}</a></li>
+                        <li><a href="#supported" class="hover:text-gray-900 transition-colors">{{ __('messages.supported_platforms') }}</a></li>
+                        <li><a href="#how-to-use" class="hover:text-gray-900 transition-colors">{{ __('messages.how_to_use') }}</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-gray-900 mb-4">支持</h3>
+                    <h3 class="font-semibold text-gray-900 mb-4">{{ __('messages.products') }}</h3>
                     <ul class="space-y-2 text-gray-600">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">使用帮助</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">联系我们</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.video_parser') }}</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.batch_download') }}</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.api_service') }}</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-4">{{ __('messages.support') }}</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.help_center') }}</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.contact_us') }}</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.privacy_policy') }}</a></li>
+                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.terms_of_service') }}</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-                <p>&copy; {{ date('Y') }} VideoParser.pro. All rights reserved.</p>
+                <p>&copy; {{ date('Y') }} VideoParser.pro. {{ __('messages.all_rights_reserved') }}</p>
             </div>
         </div>
     </footer>

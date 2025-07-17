@@ -4,50 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>@yield('title', 'VideoParser.pro - 全球视频解析工具')</title>
     <meta name="description" content="@yield('description', '专业的全球视频解析工具，支持多平台视频链接解析下载')">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
     <!-- Pass translations to JavaScript -->
     <script>
-        window.translations = @json([
-            'parse_success' => __('messages.parse_success'),
-            'parse_failed' => __('messages.parse_failed'),
-            'video_info' => __('messages.video_info'),
-            'duration' => __('messages.duration'),
-            'author' => __('messages.author'),
-            'platform' => __('messages.platform'),
-            'play_video' => __('messages.play_video'),
-            'copy_link' => __('messages.copy_link'),
-            'open_new_tab' => __('messages.open_new_tab'),
-            'download' => __('messages.download'),
-            'fullscreen' => __('messages.fullscreen'),
-            'quick_actions' => __('messages.quick_actions'),
-            'video_unavailable' => __('messages.video_unavailable'),
-            'video_error_desc' => __('messages.video_error_desc'),
-            'open_in_new_window' => __('messages.open_in_new_window'),
-            'copy_video_link' => __('messages.copy_video_link'),
-            'link_copied' => __('messages.link_copied'),
-            'copy_failed' => __('messages.copy_failed'),
-            'video_link_unavailable' => __('messages.video_link_unavailable'),
-            'play_failed' => __('messages.play_failed'),
-            'unknown_title' => __('messages.unknown_title'),
-            'unknown_author' => __('messages.unknown_author'),
-            'unknown_duration' => __('messages.unknown_duration'),
-            'network_error' => __('messages.network_error'),
-            'invalid_url' => __('messages.invalid_url'),
-            'unsupported_platform' => __('messages.unsupported_platform')
-        ]);
+
     </script>
 </head>
 <body class="bg-white text-gray-900 font-elegant antialiased">
@@ -66,7 +39,7 @@
                         <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.pro</span>
                     </a>
                 </div>
-                
+
                 <div class="flex items-center space-x-4">
                     <select id="languageSelect" class="text-sm border-0 bg-transparent text-gray-600 focus:ring-0 cursor-pointer">
                         <option value="zh" {{ app()->getLocale() == 'zh' ? 'selected' : '' }}>中文</option>
@@ -103,7 +76,7 @@
                         {{ __('messages.footer_description') }}
                     </p>
                 </div>
-                
+
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.navigation') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
@@ -112,7 +85,7 @@
                         <li><a href="#how-to-use" class="hover:text-gray-900 transition-colors">{{ __('messages.how_to_use') }}</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.products') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
@@ -121,7 +94,7 @@
                         <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.api_service') }}</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.support') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
@@ -132,7 +105,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
                 <p class="body-light">&copy; {{ date('Y') }} VideoParser.pro. {{ __('messages.all_rights_reserved') }}</p>
             </div>

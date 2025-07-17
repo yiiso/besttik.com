@@ -28,26 +28,27 @@ class VideoParserController extends Controller
         }
 
         $videoUrl = $request->input('video_url');
-        
+
         try {
             // 检测视频平台
             $platform = $this->detectPlatform($videoUrl);
-            
+
             // 调用外部解析API
-            $videoInfo = $this->parseVideoFromAPI($videoUrl);
-            
+//            $videInfo = $this->parseVideoFromAPI($videoUrl);
+            $videoInfo = $this->parseVideo($videoUrl,'douyin');
+
             return response()->json([
                 'status' => 'success',
                 'data' => $videoInfo,
                 'platform' => $platform ?? 'unknown'
             ]);
-            
+
         } catch (\Exception $e) {
             \Log::error('Video parsing failed: ' . $e->getMessage(), [
                 'url' => $videoUrl,
                 'trace' => $e->getTraceAsString()
             ]);
-            
+
             return response()->json([
                 'status' => 'error',
                 'message' => '解析失败：' . $e->getMessage()
@@ -87,12 +88,12 @@ class VideoParserController extends Controller
     private function parseVideoFromAPI(string $videoUrl): array
     {
         $apiUrl = 'https://douyindown.click/parser.php';
-        
+
         // 构建请求参数
         $params = [
             'url' => $videoUrl
         ];
-        
+
         // 初始化cURL
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $apiUrl . '?' . http_build_query($params));
@@ -101,49 +102,49 @@ class VideoParserController extends Controller
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
-        
+
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error = curl_error($ch);
         curl_close($ch);
-        
+
         if ($error) {
             throw new \Exception('网络请求失败: ' . $error);
         }
-        
+
         if ($httpCode !== 200) {
             throw new \Exception('API请求失败，状态码: ' . $httpCode);
         }
-        
+
         $data = json_decode($response, true);
-        
+
         if (json_last_error() !== JSON_ERROR_NONE) {
             throw new \Exception('API响应格式错误: ' . json_last_error_msg());
         }
-        
+
         // 记录原始响应用于调试
         \Log::info('Raw API Response: ', ['raw_response' => $response]);
         \Log::info('Parsed API Response: ', ['parsed_response' => $data]);
-        
+
         // 检查API响应格式并处理
         if (!$data) {
             throw new \Exception('API返回空数据');
         }
-        
+
         // 如果API返回了错误状态
         if (isset($data['status']) && $data['status'] === 'error') {
             throw new \Exception('API返回错误: ' . ($data['message'] ?? '未知错误'));
         }
-        
+
         // 如果API返回了成功状态，使用data字段
         if (isset($data['status']) && $data['status'] === 'success' && isset($data['data'])) {
             return $this->formatApiResponse($data['data']);
         }
-        
+
         // 如果没有status字段，直接使用整个响应数据
         return $this->formatApiResponse($data['data']);
     }
-    
+
     /**
      * 格式化API响应数据
      */
@@ -151,7 +152,7 @@ class VideoParserController extends Controller
     {
         // 记录数据结构用于调试
         \Log::info('Formatting API Response: ', ['data_keys' => array_keys($data)]);
-        
+
         // 根据API实际返回格式进行调整
         $formatted = [
             'title' => $data['title'] ?? $data['desc'] ?? '未知标题',
@@ -161,7 +162,7 @@ class VideoParserController extends Controller
             'quality_options' => [],
             'audio_options' => []
         ];
-        
+
         // 处理视频下载链接 - 尝试多种可能的字段名
         $videoUrl = $data['video_url'] ?? $data['download_url'] ?? $data['url'] ?? $data['play_url'] ?? null;
         if ($videoUrl) {
@@ -172,7 +173,7 @@ class VideoParserController extends Controller
                 'download_url' => $videoUrl
             ];
         }
-        
+
         // 处理音频下载链接
         if (isset($data['audio_url'])) {
             $formatted['audio_options'][] = [
@@ -182,12 +183,12 @@ class VideoParserController extends Controller
                 'download_url' => $data['audio_url']
             ];
         }
-        
+
         // 如果没有找到视频链接，记录所有可用的字段
         if (empty($formatted['quality_options'])) {
             \Log::warning('No video URL found in API response', ['available_fields' => array_keys($data)]);
         }
-        
+
         return $formatted;
     }
 
@@ -198,6 +199,7 @@ class VideoParserController extends Controller
     {
         // 备用示例数据
         return [
+            'data' => [
             'title' => '示例视频标题',
             'thumbnail' => 'https://via.placeholder.com/480x360',
             'duration' => '03:45',
@@ -217,6 +219,7 @@ class VideoParserController extends Controller
                     'download_url' => '#'
                 ]
             ]
-        ];
+        ]
+            ];
     }
 }

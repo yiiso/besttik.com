@@ -37,7 +37,7 @@
                     flashMessage.remove();
                 }, 300);
             }, 5000);
-            
+
             // 点击关闭
             flashMessage.style.cursor = 'pointer';
             flashMessage.addEventListener('click', function() {
@@ -62,15 +62,15 @@
                 <form id="videoParseForm" class="relative">
                     @csrf
                     <div class="relative group">
-                        <input 
-                            type="url" 
+                        <input
+                            type="text"
                             id="videoUrl"
                             name="video_url"
                             placeholder="{{ __('messages.paste_link') }}"
                             class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 rounded-full focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl pr-28 font-sleek"
                             required
                         >
-                        <button 
+                        <button
                             type="submit"
                             class="absolute right-2 top-2 bottom-2 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-200 flex items-center space-x-2 shadow-md hover:shadow-lg ui-text"
                         >
@@ -81,7 +81,7 @@
                         </button>
                     </div>
                 </form>
-                
+
                 <!-- Quick Examples -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
                     <span class="text-gray-500 font-elegant">{{ __('messages.try_these') }}</span>
@@ -117,7 +117,7 @@
             <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4 heading-elegant">{{ __('messages.why_choose_us') }}</h2>
             <p class="text-lg text-gray-600 body-light">{{ __('messages.why_choose_desc') }}</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <!-- Feature 1 -->
             <div class="text-center group">
@@ -168,7 +168,7 @@
             <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4 heading-elegant">{{ __('messages.supported_platforms') }}</h2>
             <p class="text-lg text-gray-600 body-light">{{ __('messages.supported_platforms_desc') }}</p>
         </div>
-        
+
         <div class="grid grid-cols-3 md:grid-cols-6 gap-8 lg:gap-12">
             <!-- YouTube -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
@@ -179,7 +179,7 @@
                 </div>
                 <span class="text-gray-700 ui-text">YouTube</span>
             </div>
-            
+
             <!-- TikTok -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
                 <div class="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-4 shadow-soft">
@@ -189,7 +189,7 @@
                 </div>
                 <span class="text-gray-700 ui-text">TikTok</span>
             </div>
-            
+
             <!-- Instagram -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
                 <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center mb-4 shadow-soft">
@@ -199,7 +199,7 @@
                 </div>
                 <span class="text-gray-700 ui-text">Instagram</span>
             </div>
-            
+
             <!-- Facebook -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
                 <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-4 shadow-soft">
@@ -209,7 +209,7 @@
                 </div>
                 <span class="text-gray-700 ui-text">Facebook</span>
             </div>
-            
+
             <!-- Twitter -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
                 <div class="w-16 h-16 bg-blue-400 rounded-2xl flex items-center justify-center mb-4 shadow-soft">
@@ -219,7 +219,7 @@
                 </div>
                 <span class="text-gray-700 ui-text">Twitter</span>
             </div>
-            
+
             <!-- More -->
             <div class="flex flex-col items-center group cursor-pointer platform-card">
                 <div class="w-16 h-16 bg-gray-400 rounded-2xl flex items-center justify-center mb-4 shadow-soft">
@@ -242,7 +242,7 @@
         <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto body-light">
             {{ __('messages.start_using_desc') }}
         </p>
-        <a href="#" onclick="document.getElementById('videoUrl').focus()" 
+        <a href="#" onclick="document.getElementById('videoUrl').focus()"
            class="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-50 transition-colors duration-200 ui-text">
             {{ __('messages.start_now') }}
             <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

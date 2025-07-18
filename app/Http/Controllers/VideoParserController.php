@@ -143,7 +143,7 @@ class VideoParserController extends Controller
         }
 
         // 如果没有status字段，直接使用整个响应数据
-        return $this->formatApiResponse($data['data']);
+        return $this->formatApiResponse($data);
     }
 
     /**

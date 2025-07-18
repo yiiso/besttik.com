@@ -47,41 +47,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (languageSelect) {
         languageSelect.addEventListener('change', function (e) {
             const selectedLang = e.target.value;
-            
-            // 设置用户手动选择语言的标记cookie（30天有效）
-            document.cookie = `user_language_selected=true; max-age=${60 * 60 * 24 * 30}; path=/`;
-            document.cookie = `preferred_language=${selectedLang}; max-age=${60 * 60 * 24 * 30}; path=/`;
-            
-            // 获取当前路径
-            const currentPath = window.location.pathname;
-            let newPath = '';
-            
-            // 检查当前路径是否已经包含语言前缀
-            const pathParts = currentPath.split('/').filter(part => part !== '');
-            const supportedLangs = ['zh', 'en', 'es', 'fr', 'ja'];
-            
-            // 如果当前路径以支持的语言开头，移除它
-            if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
-                pathParts.shift(); // 移除语言前缀
-            }
-            
-            // 构建新的路径
-            if (selectedLang === 'en') {
-                // 英文使用默认路由（不带语言前缀）
-                newPath = '/' + pathParts.join('/');
-            } else {
-                // 其他语言添加语言前缀
-                newPath = '/' + selectedLang + '/' + pathParts.join('/');
-            }
-            
-            // 确保路径格式正确
-            if (newPath === '/') {
-                newPath = selectedLang === 'en' ? '/' : `/${selectedLang}`;
-            }
-            
-            // 跳转到新路径
-            window.location.href = newPath;
+
+            // 通过 AJAX 请求设置 cookie，确保与 Laravel 后端兼容
+            fetch('/set-language-preference', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    language: selectedLang,
+                    user_selected: true
+                })
+            }).then(() => {
+                // Cookie 设置完成后再跳转
+                navigateToLanguage(selectedLang);
+            }).catch(error => {
+                console.error('设置语言偏好失败:', error);
+                // 即使设置失败也继续跳转
+                navigateToLanguage(selectedLang);
+            });
         });
+    }
+
+    // 语言跳转逻辑提取为独立函数
+    function navigateToLanguage(selectedLang) {
+        // 获取当前路径
+        const currentPath = window.location.pathname;
+        let newPath = '';
+
+        const searchParams = new URLSearchParams(window.location.search);
+
+        searchParams.set('language', selectedLang);
+
+        newPath = `${currentPath}?${searchParams.toString()}`;
+
+        // 跳转到新路径
+        window.location.href = newPath;
     }
 
     // 初始化用户菜单
@@ -170,11 +173,11 @@ function renderParseResults(videoData, platform) {
                     ${videoData.duration || ''}
                 </div>
             </div>
-            
+
             <!-- 右侧：视频信息和操作按钮 -->
             <div class="w-full md:w-1/2">
                 <h2 class="text-xl md:text-2xl font-semibold mb-4 line-clamp-2">${videoData.title}</h2>
-                
+
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
                         <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
@@ -186,7 +189,7 @@ function renderParseResults(videoData, platform) {
                         <div class="text-sm text-gray-500 capitalize">${platform || ''}</div>
                     </div>
                 </div>
-                
+
                 <div class="space-y-4">
                     <!-- 操作按钮 -->
                     <div class="flex flex-wrap gap-3">
@@ -196,14 +199,14 @@ function renderParseResults(videoData, platform) {
                             </svg>
                             <span>${window.translations?.download_video || '下载视频'}</span>
                         </button>
-                        
+
                         <button class="copy-link-btn flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors" data-url="${videoData.quality_options[0]?.download_url || ''}">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                             </svg>
                             <span>${window.translations?.copy_link || '复制链接'}</span>
                         </button>
-                        
+
                         <a href="${videoData.quality_options[0]?.download_url || '#'}" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -211,13 +214,13 @@ function renderParseResults(videoData, platform) {
                             <span>${window.translations?.open_new_tab || '新窗口打开'}</span>
                         </a>
                     </div>
-                    
+
                     <!-- 下载选项 -->
                     ${renderDownloadOptions(videoData)}
                 </div>
             </div>
         </div>
-        
+
         <!-- 视频播放器 (默认隐藏) -->
         <div id="videoPlayerContainer" class="hidden mt-6">
             <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
@@ -404,7 +407,7 @@ function initUserMenu() {
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             // 显示确认对话框
             if (confirm(window.translations?.logout_confirm || '确定要退出登录吗？')) {
                 // 发送退出登录请求
@@ -495,7 +498,7 @@ function initLoginModal() {
             this.disabled = true;
             const originalHTML = this.innerHTML;
             this.innerHTML = '<div class="animate-spin rounded-full h-5 w-5 border-2 border-gray-400 border-t-transparent mx-auto"></div>';
-            
+
             // 直接跳转到Google OAuth，让后端处理配置检查
             setTimeout(() => {
                 window.location.href = '/auth/google';
@@ -611,34 +614,34 @@ document.addEventListener('DOMContentLoaded', function() {
     if (emailRegisterForm) {
         emailRegisterForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(emailRegisterForm);
             const email = formData.get('email');
             const password = formData.get('password');
             const passwordConfirmation = formData.get('password_confirmation');
-            
+
             // 基本验证
             if (!email || !password || !passwordConfirmation) {
                 showToast(window.translations?.email_required || '请填写完整的注册信息', 'error');
                 return;
             }
-            
+
             if (password !== passwordConfirmation) {
                 showToast(window.translations?.password_confirmation_failed || '两次输入的密码不一致', 'error');
                 return;
             }
-            
+
             if (password.length < 6) {
                 showToast(window.translations?.password_min_length || '密码至少需要6位字符', 'error');
                 return;
             }
-            
+
             // 禁用提交按钮
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<div class="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mx-auto"></div>';
-            
+
             // 发送注册请求
             fetch('/register', {
                 method: 'POST',

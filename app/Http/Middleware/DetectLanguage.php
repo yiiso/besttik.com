@@ -15,50 +15,60 @@ class DetectLanguage
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // 支持的语言列表
-        $supportedLanguages = ['zh', 'en', 'es', 'fr', 'ja'];
-        
         // 获取当前路径
         $path = $request->path();
-        
+
+        // 支持的语言列表
+        $supportedLanguages = ['zh', 'en', 'es', 'fr', 'ja'];
+        $targetLang = $request->language ?? null;
+        if($targetLang && in_array($targetLang ,$supportedLanguages)){
+            $segments = explode('/',ltrim($path,'/'));
+            if (!empty($segments[0]) && in_array($segments[0],$supportedLanguages)) {
+                // 替换现有语言前缀
+                if ($targetLang == 'en') {
+                    unset($segments[0]);
+                }else{
+                    $segments[0] = $targetLang;
+                }
+            } else {
+                if ($targetLang !='en'){
+                    array_unshift($segments, $targetLang);
+                }
+            }
+            $target = implode('/',$segments);
+            $response = redirect("/{$target}");
+            $response->withCookie(cookie('user_language_selected', true, 60 * 24 * 30));
+            return $response;
+        }
+
+
         // 如果不是根路径，则不处理
         if ($path !== '/') {
             return $next($request);
         }
-        
+
         // 检查用户是否已经手动选择过语言（通过cookie标记）
         if ($request->hasCookie('user_language_selected')) {
             // 用户已经手动选择过语言，不再自动跳转
             // 但仍然根据用户之前的选择跳转到对应语言页面
-            if ($request->hasCookie('preferred_language')) {
-                $preferredLang = $request->cookie('preferred_language');
-                if (in_array($preferredLang, $supportedLanguages) && $preferredLang !== 'en') {
-                    return redirect("/{$preferredLang}");
-                }
-            }
+
             return $next($request);
         }
-        
+
         // 用户第一次访问，根据浏览器语言自动跳转
         $browserLanguages = $this->getBrowserLanguages($request);
-        
+
         // 匹配支持的语言
         foreach ($browserLanguages as $browserLang) {
             $detectedLang = $this->matchLanguage($browserLang, $supportedLanguages);
             if ($detectedLang && $detectedLang !== 'en') {
                 // 自动跳转到检测到的语言，但不设置"用户已选择"标记
-                $response = redirect("/{$detectedLang}");
-                $response->withCookie(cookie('auto_detected_language', $detectedLang, 60 * 24 * 30));
-                return $response;
+                return redirect("/{$detectedLang}");
             }
         }
-        
-        // 默认使用英文（浏览器语言为英文或无法检测）
-        $response = $next($request);
-        $response->withCookie(cookie('auto_detected_language', 'en', 60 * 24 * 30));
-        return $response;
+        return $next($request);
     }
-    
+
     /**
      * 获取浏览器语言偏好列表
      */
@@ -68,10 +78,10 @@ class DetectLanguage
         if (!$acceptLanguage) {
             return [];
         }
-        
+
         $languages = [];
         $parts = explode(',', $acceptLanguage);
-        
+
         foreach ($parts as $part) {
             $part = trim($part);
             if (strpos($part, ';') !== false) {
@@ -81,17 +91,17 @@ class DetectLanguage
                 $lang = $part;
                 $quality = 1.0;
             }
-            
+
             $lang = trim($lang);
             $languages[$lang] = $quality;
         }
-        
+
         // 按质量值排序
         arsort($languages);
-        
+
         return array_keys($languages);
     }
-    
+
     /**
      * 匹配语言代码
      */
@@ -101,13 +111,13 @@ class DetectLanguage
         if (in_array($browserLang, $supportedLanguages)) {
             return $browserLang;
         }
-        
+
         // 提取主语言代码（如 zh-CN -> zh）
         $primaryLang = strtolower(substr($browserLang, 0, 2));
         if (in_array($primaryLang, $supportedLanguages)) {
             return $primaryLang;
         }
-        
+
         // 特殊匹配规则
         $languageMap = [
             'zh-cn' => 'zh',
@@ -125,12 +135,12 @@ class DetectLanguage
             'fr-ca' => 'fr',
             'ja-jp' => 'ja',
         ];
-        
+
         $lowerBrowserLang = strtolower($browserLang);
         if (isset($languageMap[$lowerBrowserLang])) {
             return $languageMap[$lowerBrowserLang];
         }
-        
+
         return null;
     }
 }

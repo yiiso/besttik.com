@@ -7,7 +7,7 @@ use App\Http\Controllers\VideoParserController;
 Route::get('/', function () {
     app()->setLocale('en');
     return view('home');
-})->middleware('detect.language');
+});
 
 // 多语言路由组
 Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {
@@ -18,7 +18,7 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function ()
         }
         abort(404);
     });
-    
+
     // 多语言页面路由
     Route::get('/batch-download', function ($locale) {
         if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {

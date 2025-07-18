@@ -88,7 +88,7 @@ class VideoParserController extends Controller
      */
     private function parseVideoFromAPI(string $videoUrl): array
     {
-        $apiUrl = 'http://127.0.0.1:8080/video/share/url/parse?';
+        $apiUrl = 'http://127.0.0.1:3000/video/share/url/parse?';
 
         // 构建请求参数
         $params = [

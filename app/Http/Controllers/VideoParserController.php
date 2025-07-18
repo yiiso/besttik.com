@@ -88,34 +88,20 @@ class VideoParserController extends Controller
      */
     private function parseVideoFromAPI(string $videoUrl): array
     {
-        $apiUrl = 'http://127.0.0.1:3000/video/share/url/parse?';
-
-        // 构建请求参数
-        $params = [
-            'url' => $videoUrl
-        ];
-
-        // 初始化cURL
+        $realUrl = 'http://127.0.0.1:1004/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $apiUrl . '?' . http_build_query($params));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $realUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => [
+                'Accept: application/json',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+            ],
+            CURLOPT_TIMEOUT => 30,
+        ]);
 
         $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $error = curl_error($ch);
         curl_close($ch);
-
-        if ($error) {
-            throw new \Exception('网络请求失败: ' . $error);
-        }
-
-        if ($httpCode !== 200) {
-            throw new \Exception('API请求失败，状态码: ' . $httpCode);
-        }
 
         $data = json_decode($response, true);
 
@@ -127,10 +113,6 @@ class VideoParserController extends Controller
         Log::info('Raw API Response: ', ['raw_response' => $response]);
         Log::info('Parsed API Response: ', ['parsed_response' => $data]);
 
-        // 检查API响应格式并处理
-        if (!$data) {
-            throw new \Exception('API返回空数据');
-        }
 
         // 如果API返回了错误状态
         if (isset($data['status']) && $data['status'] === 'error') {

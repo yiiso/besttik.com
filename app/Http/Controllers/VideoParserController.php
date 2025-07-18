@@ -119,13 +119,8 @@ class VideoParserController extends Controller
             throw new \Exception('API返回错误: ' . ($data['message'] ?? '未知错误'));
         }
 
-        // 如果API返回了成功状态，使用data字段
-        if (isset($data['status']) && $data['status'] === 'success' && isset($data['data'])) {
-            return $this->formatApiResponse($data);
-        }
-
         // 如果没有status字段，直接使用整个响应数据
-        return $this->formatApiResponse($data);
+        return $this->formatApiResponse($data['data'] ?? []);
     }
 
     /**
@@ -133,8 +128,6 @@ class VideoParserController extends Controller
      */
     private function formatApiResponse(array $data): array
     {
-        // 记录数据结构用于调试
-        \Log::info('Formatting API Response: ', ['data_keys' => array_keys($data)]);
 
         // 根据API实际返回格式进行调整
         $formatted = [
@@ -152,24 +145,19 @@ class VideoParserController extends Controller
             $formatted['quality_options'][] = [
                 'quality' => __('messages.original_quality'),
                 'format' => 'mp4',
-                'size' => $data['size'] ?? __('messages.unknown_size'),
+                'size' => $data['size'] ?? 0,
                 'download_url' => $videoUrl
             ];
         }
 
         // 处理音频下载链接
-        if (isset($data['audio_url'])) {
+        if (isset($data['music_url'])) {
             $formatted['audio_options'][] = [
                 'quality' => __('messages.original_audio_quality'),
                 'format' => 'mp3',
-                'size' => $data['audio_size'] ?? '未知大小',
-                'download_url' => $data['audio_url']
+                'size' => $data['audio_size'] ?? 0,
+                'download_url' => $data['music_url']
             ];
-        }
-
-        // 如果没有找到视频链接，记录所有可用的字段
-        if (empty($formatted['quality_options'])) {
-            \Log::warning('No video URL found in API response', ['available_fields' => array_keys($data)]);
         }
 
         return $formatted;

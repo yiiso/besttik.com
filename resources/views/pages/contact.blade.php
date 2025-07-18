@@ -34,12 +34,12 @@
                         <input type="text" id="last_name" name="last_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
                     </div>
                 </div>
-                
+
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.email') }}</label>
                     <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
                 </div>
-                
+
                 <div>
                     <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.subject') }}</label>
                     <select id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
@@ -52,12 +52,12 @@
                         <option value="feature">{{ __('messages.feature_request') }}</option>
                     </select>
                 </div>
-                
+
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.message') }}</label>
                     <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none"></textarea>
                 </div>
-                
+
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ui-text">
                     {{ __('messages.send_message') }}
                 </button>
@@ -76,8 +76,8 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-1">{{ __('messages.email_us') }}</h3>
-                        <p class="text-gray-600 body-light">support@videoparser.top</p>
-                        <p class="text-gray-600 body-light">business@videoparser.top</p>
+                        <p class="text-gray-600 body-light">service@videoparser.top</p>
+                        <p class="text-gray-600 body-light">service@videoparser.top</p>
                     </div>
                 </div>
 

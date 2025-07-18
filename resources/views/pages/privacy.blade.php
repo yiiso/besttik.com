@@ -25,7 +25,7 @@
 
     <h2 class="text-2xl font-bold text-gray-900 mb-4 heading-modern">{{ __('messages.information_we_collect') }}</h2>
     <p class="text-gray-600 body-regular mb-6">{{ __('messages.information_we_collect_description') }}</p>
-    
+
     <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ __('messages.personal_information') }}</h3>
     <ul class="list-disc list-inside text-gray-600 body-light mb-6 space-y-2">
         <li>{{ __('messages.email_address_info') }}</li>
@@ -96,7 +96,7 @@
     <p class="text-gray-600 body-regular mb-4">{{ __('messages.privacy_contact_description') }}</p>
     <div class="bg-gray-50 rounded-2xl p-6">
         <p class="text-gray-800 font-medium mb-2">VideoParser.top Privacy Team</p>
-        <p class="text-gray-600">{{ __('messages.email') }}: privacy@videoparser.top</p>
+        <p class="text-gray-600">{{ __('messages.email') }}: service@videoparser.top</p>
         <p class="text-gray-600">{{ __('messages.address') }}: [{{ __('messages.company_address') }}]</p>
     </div>
 </div>

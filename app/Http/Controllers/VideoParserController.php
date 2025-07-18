@@ -37,6 +37,8 @@ class VideoParserController extends Controller
 
             if ($platform == 'tiktok'){
                 $videoInfo = $this->tikTokParseVideoFromAPI($videoUrl);
+            }elseif($platform == 'blibli'){
+                $videoInfo = $this->blibliParseVideoFromAPI($videoUrl);
             }else{
                 $videoInfo = $this->parseVideoFromAPI($videoUrl);
             }
@@ -89,6 +91,62 @@ class VideoParserController extends Controller
         return null;
     }
 
+
+
+    private function blibliParseVideoFromAPI($videoUrl)
+    {
+        $demo = 'https://www.bilibili.com/video/BV1EvuBzjEpt/?spm_id_from=333.1007.tianma.1-2-2.click';
+
+        $path = parse_url($videoUrl,PHP_URL_PATH);
+        $segments = explode('/',trim($path,'/'));
+
+        $videoKey = array_search('video', $segments);
+        if ($videoKey !== false && isset($segments[$videoKey + 1])) {
+            $videoId = $segments[$videoKey + 1];
+            $realUrl = 'http://127.0.0.1:3001/api/bilibili/web/fetch_one_video?bv_id='.$videoId;
+
+            $ch = curl_init();
+            curl_setopt_array($ch, [
+                CURLOPT_URL => $realUrl,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER => [
+                    'Accept: application/json',
+                    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+                ],
+                CURLOPT_TIMEOUT => 30,
+            ]);
+
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            $data = json_decode($response, true);
+            $cid = $data['data']['data']['cid'] ?? null;
+            if ($cid) {
+                $demo = 'http://31.97.122.212:3001/api/bilibili/web/fetch_video_playurl?bv_id=BV1EvuBzjEpt&cid=31032411661';
+                $api = "http://127.0.0.1:3001/api/bilibili/web/fetch_video_playurl?bv_id={$videoId}&cid={$cid}";
+
+                $ch = curl_init();
+                curl_setopt_array($ch, [
+                    CURLOPT_URL => $api,
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_HTTPHEADER => [
+                        'Accept: application/json',
+                        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+                    ],
+                    CURLOPT_TIMEOUT => 30,
+                ]);
+
+                $video = curl_exec($ch);
+                curl_close($ch);
+
+                return $this->blibliTiktokResponse($data['data']['data'] ?? [],$video['data']['data'] ?? []);
+            }
+
+
+        }
+        throw new \Exception('error: ' . ($data['message'] ?? 'unknown'));
+
+    }
     private function tiktokParseVideoFromAPI($videoUrl)
     {
         $demo = 'https://www.tiktok.com/@alejocroes/video/7525722589738650913?is_from_webapp=1&sender_device=pc';
@@ -163,6 +221,41 @@ class VideoParserController extends Controller
         return $this->formatApiResponse($data['data'] ?? []);
     }
 
+
+
+    private function blibliTiktokResponse(array $data,array $video): array
+    {
+        $formatted = [
+            'title' => $data['title'] ?? $data['desc'] ?? __('messages.unknown_title'),
+            'thumbnail' => $data['pic'] ?? '',
+            'duration' => $data['duration'] ?? __('messages.unknown_duration'),
+            'author' => isset($data['owner']) ? ($data['owner']['name'] ??  '') : __('messages.unknown_author'),
+            'quality_options' => [],
+            'audio_options' => []
+        ];
+
+        // 处理视频下载链接 - 尝试多种可能的字段名
+        $videoUrl = $data['dash']['video'][0]['baseUrl'] ??   null;
+        if ($videoUrl) {
+            $formatted['quality_options'][] = [
+                'quality' => __('messages.original_quality'),
+                'format' => 'mp4',
+                'size' =>    0,
+                'download_url' => $videoUrl
+            ];
+        }
+
+        // 处理音频下载链接
+        if (isset($data['dash']['audio'][0]['baseUrl'])) {
+            $formatted['audio_options'][] = [
+                'quality' => __('messages.original_audio_quality'),
+                'format' => 'mp3',
+                'size' => $data['audio_size'] ?? 0,
+                'download_url' => $data['dash']['audio'][0]['baseUrl']
+            ];
+        }
+        return $formatted;
+    }
     private function formatTiktokResponse(array $data): array
     {
         $formatted = [

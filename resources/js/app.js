@@ -207,7 +207,7 @@ function renderParseResults(videoData, platform) {
                             <span>${window.translations?.copy_link || '复制链接'}</span>
                         </button>
 
-                        <a href="${videoData.quality_options[0]?.download_url || '#'}" target="_blank" class="flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
+                        <a href="${videoData.quality_options[0]?.download_url || '#'}" target="_blank" rel="noreferrer" class="flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                             </svg>
@@ -375,6 +375,7 @@ function addEventListeners() {
             const a = document.createElement('a');
             a.href = url;
             a.download = 'video.mp4';
+            a.rel = 'noreferrer'; // 关键：阻止发送 Referer 头
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);

@@ -216,19 +216,19 @@
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.products') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.video_parser') }}</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.batch_download') }}</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.api_service') }}</a></li>
+                        <li><a href="{{ localized_url('/') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.video_parser') }}</a></li>
+                        <li><a href="{{ localized_url('/batch-download') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.batch_download') }}</a></li>
+                        <li><a href="{{ localized_url('/api') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.api_service') }}</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.support') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.help_center') }}</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.contact_us') }}</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.privacy_policy') }}</a></li>
-                        <li><a href="#" class="hover:text-gray-900 transition-colors">{{ __('messages.terms_of_service') }}</a></li>
+                        <li><a href="{{ localized_url('/help') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.help_center') }}</a></li>
+                        <li><a href="{{ localized_url('/contact') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.contact_us') }}</a></li>
+                        <li><a href="{{ localized_url('/privacy') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.privacy_policy') }}</a></li>
+                        <li><a href="{{ localized_url('/terms') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.terms_of_service') }}</a></li>
                     </ul>
                 </div>
             </div>

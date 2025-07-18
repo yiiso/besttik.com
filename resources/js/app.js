@@ -47,8 +47,36 @@ document.addEventListener('DOMContentLoaded', function () {
     if (languageSelect) {
         languageSelect.addEventListener('change', function (e) {
             const selectedLang = e.target.value;
-            // 切换语言
-            window.location.href = `/${selectedLang}`;
+            
+            // 获取当前路径
+            const currentPath = window.location.pathname;
+            let newPath = '';
+            
+            // 检查当前路径是否已经包含语言前缀
+            const pathParts = currentPath.split('/').filter(part => part !== '');
+            const supportedLangs = ['zh', 'en', 'es', 'fr', 'ja'];
+            
+            // 如果当前路径以支持的语言开头，移除它
+            if (pathParts.length > 0 && supportedLangs.includes(pathParts[0])) {
+                pathParts.shift(); // 移除语言前缀
+            }
+            
+            // 构建新的路径
+            if (selectedLang === 'en') {
+                // 英文使用默认路由（不带语言前缀）
+                newPath = '/' + pathParts.join('/');
+            } else {
+                // 其他语言添加语言前缀
+                newPath = '/' + selectedLang + '/' + pathParts.join('/');
+            }
+            
+            // 确保路径格式正确
+            if (newPath === '/') {
+                newPath = selectedLang === 'en' ? '/' : `/${selectedLang}`;
+            }
+            
+            // 跳转到新路径
+            window.location.href = newPath;
         });
     }
 

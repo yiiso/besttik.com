@@ -18,6 +18,55 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function ()
         }
         abort(404);
     });
+    
+    // 多语言页面路由
+    Route::get('/batch-download', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.batch-download');
+        }
+        abort(404);
+    })->name('batch-download.locale');
+
+    Route::get('/api', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.api');
+        }
+        abort(404);
+    })->name('api.locale');
+
+    Route::get('/help', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.help');
+        }
+        abort(404);
+    })->name('help.locale');
+
+    Route::get('/contact', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.contact');
+        }
+        abort(404);
+    })->name('contact.locale');
+
+    Route::get('/privacy', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.privacy');
+        }
+        abort(404);
+    })->name('privacy.locale');
+
+    Route::get('/terms', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.terms');
+        }
+        abort(404);
+    })->name('terms.locale');
 });
 
 // API路由
@@ -32,3 +81,28 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Google OAuth 路由
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');
+
+// 页面路由
+Route::get('/batch-download', function () {
+    return view('pages.batch-download');
+})->name('batch-download');
+
+Route::get('/api', function () {
+    return view('pages.api');
+})->name('api');
+
+Route::get('/help', function () {
+    return view('pages.help');
+})->name('help');
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('contact');
+
+Route::get('/privacy', function () {
+    return view('pages.privacy');
+})->name('privacy');
+
+Route::get('/terms', function () {
+    return view('pages.terms');
+})->name('terms');

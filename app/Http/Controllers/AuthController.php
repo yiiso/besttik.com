@@ -40,7 +40,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            
+
             return response()->json([
                 'status' => 'success',
                 'message' => __('messages.login_success'),
@@ -111,7 +111,7 @@ class AuthController extends Controller
     public function logout(Request $request): JsonResponse
     {
         Auth::logout();
-        
+
         return response()->json([
             'status' => 'success',
             'message' => __('messages.logout_success')
@@ -127,16 +127,32 @@ class AuthController extends Controller
             // 检查Google OAuth配置
             $clientId = env('GOOGLE_CLIENT_ID');
             $clientSecret = env('GOOGLE_CLIENT_SECRET');
-            
+
             if (!$clientId || !$clientSecret) {
                 // 如果没有配置OAuth，返回到首页并显示提示信息
                 return redirect('/')->with('error', 'Google登录功能需要配置。请在.env文件中设置GOOGLE_CLIENT_ID和GOOGLE_CLIENT_SECRET，并在Google Cloud Console中配置OAuth应用。详情请参考GOOGLE_OAUTH_SETUP.md文件。');
             }
-            
+
             // 生成状态参数用于安全验证
-            $state = Str::random(40);
-            session(['google_oauth_state' => $state]);
-            
+            // 获取登录前的当前页面 URL（原始地址）
+            $originalUrl = url()->current(); // 或 request()->fullUrl() 包含查询参数
+
+            // 生成随机字符串作为 CSRF 令牌（增强安全性）
+            $csrfToken = Str::random(32);
+
+            // 将原始 URL 和 CSRF 令牌存入 state（用 JSON 编码，便于解析）
+            $stateData = [
+                'csrf_token' => $csrfToken,
+                'original_url' => $originalUrl // 关键：保存登录前的地址
+            ];
+            $state = base64_encode(json_encode($stateData)); // 编码后作为 state 参数
+
+            // 存储 CSRF 令牌到 session，用于回调时验证
+            session(['google_login_csrf' => $csrfToken]);
+
+//            $state = Str::random(40);
+//            session(['google_oauth_state' => $state]);
+
             // 构建Google OAuth URL
             $params = [
                 'client_id' => $clientId,
@@ -147,13 +163,13 @@ class AuthController extends Controller
                 'access_type' => 'online',
                 'prompt' => 'select_account'
             ];
-            
+
             $googleAuthUrl = 'https://accounts.google.com/o/oauth2/v2/auth?' . http_build_query($params);
-            
+
             Log::info('Google OAuth redirect URL: ' . $googleAuthUrl);
-            
+
             return redirect($googleAuthUrl);
-            
+
         } catch (\Exception $e) {
             Log::error('Google OAuth redirect error: ' . $e->getMessage());
             return redirect('/')->with('error', 'Google登录初始化失败: ' . $e->getMessage());
@@ -169,54 +185,70 @@ class AuthController extends Controller
             $code = $request->get('code');
             $state = $request->get('state');
             $error = $request->get('error');
-            
+
             // 检查是否有错误
             if ($error) {
                 return redirect('/')->with('error', 'Google登录被取消或失败');
             }
-            
+
             if (!$code) {
                 return redirect('/')->with('error', 'Google登录失败：未获取到授权码');
             }
-            
-            // 验证state参数（CSRF保护）
-            $sessionState = session('google_oauth_state');
-            if (!$sessionState || $state !== $sessionState) {
-                return redirect('/')->with('error', '安全验证失败，请重新登录');
+
+            // 1. 获取 Google 返回的 state 参数
+            $state = $request->input('state');
+            if (!$state) {
+                return redirect('/')->with('error', '登录失败：缺少状态参数');
             }
-            
+
+            // 2. 解码并验证 state 数据
+            $stateData = json_decode(base64_decode($state), true);
+            if (!$stateData || !isset($stateData['csrf_token'], $stateData['original_url'])) {
+                return redirect('/')->with('error', '登录失败：状态参数无效');
+            }
+
+            // 3. 验证 CSRF 令牌（防伪造）
+            if ($stateData['csrf_token'] !== session('google_login_csrf')) {
+                return redirect('/')->with('error', '登录失败：安全验证失败');
+            }
+
+
+            // 5. 登录成功后，跳转回原始 URL
+            $originalUrl = $stateData['original_url'];
+
+
             // 清除session中的state
-            session()->forget('google_oauth_state');
-            
+            session()->forget('google_login_csrf');
+
             // 获取访问令牌
             $tokenResponse = $this->getGoogleAccessToken($code);
-            
+
             if (!$tokenResponse || !isset($tokenResponse['access_token'])) {
                 Log::error('Google token response: ', $tokenResponse ?? []);
-                return redirect('/')->with('error', 'Google登录失败：无法获取访问令牌');
+                return redirect($originalUrl)->with('error', 'Google登录失败：无法获取访问令牌');
             }
-            
+
             // 获取用户信息
             $userInfo = $this->getGoogleUserInfo($tokenResponse['access_token']);
-            
+
             if (!$userInfo || !isset($userInfo['email'])) {
                 Log::error('Google user info: ', $userInfo ?? []);
-                return redirect('/')->with('error', 'Google登录失败：无法获取用户信息');
+                return redirect($originalUrl)->with('error', 'Google登录失败：无法获取用户信息');
             }
-            
+
             // 查找或创建用户
             $user = $this->findOrCreateGoogleUser($userInfo);
-            
+
             Auth::login($user);
-            
-            return redirect('/')->with('success', '登录成功！');
-            
+
+            return redirect($originalUrl)->with('success', '登录成功！');
+
         } catch (\Exception $e) {
             Log::error('Google OAuth callback error: ' . $e->getMessage());
             return redirect('/')->with('error', 'Google登录失败: ' . $e->getMessage());
         }
     }
-    
+
     /**
      * 获取Google访问令牌
      */
@@ -225,7 +257,7 @@ class AuthController extends Controller
         $clientId = env('GOOGLE_CLIENT_ID');
         $clientSecret = env('GOOGLE_CLIENT_SECRET');
         $redirectUri = route('auth.google.callback');
-        
+
         $response = Http::post('https://oauth2.googleapis.com/token', [
             'client_id' => $clientId,
             'client_secret' => $clientSecret,
@@ -233,10 +265,10 @@ class AuthController extends Controller
             'grant_type' => 'authorization_code',
             'redirect_uri' => $redirectUri,
         ]);
-        
+
         return $response->json();
     }
-    
+
     /**
      * 获取Google用户信息
      */
@@ -245,10 +277,10 @@ class AuthController extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $accessToken,
         ])->get('https://www.googleapis.com/oauth2/v2/userinfo');
-        
+
         return $response->json();
     }
-    
+
     /**
      * 查找或创建Google用户
      */
@@ -256,7 +288,7 @@ class AuthController extends Controller
     {
         // 首先尝试通过邮箱查找现有用户
         $user = User::where('email', $googleUser['email'])->first();
-        
+
         if ($user) {
             // 如果用户存在但没有Google ID，则更新
             if (!$user->google_id) {
@@ -267,7 +299,7 @@ class AuthController extends Controller
             }
             return $user;
         }
-        
+
         // 创建新用户
         return User::create([
             'name' => $googleUser['name'],

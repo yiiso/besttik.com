@@ -224,7 +224,7 @@ function renderParseResults(videoData, platform) {
         <!-- 视频播放器 (默认隐藏) -->
         <div id="videoPlayerContainer" class="hidden mt-6">
             <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
-                <video id="videoPlayer" class="w-full h-full" controls>
+                <video id="videoPlayer" class="w-full h-full"  referrerPolicy="no-referrer" controls>
                     <source src="" type="video/mp4">
                     ${window.translations?.browser_not_support || '您的浏览器不支持视频播放'}
                 </video>

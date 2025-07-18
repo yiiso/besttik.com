@@ -35,8 +35,8 @@ class VideoParserController extends Controller
             $platform = $this->detectPlatform($videoUrl);
 
             // 调用外部解析API
-            // $videoInfo = $this->parseVideoFromAPI($videoUrl);
-           $videoInfo = $this->parseVideo($videoUrl,'douyin');
+             $videoInfo = $this->parseVideoFromAPI($videoUrl);
+//           $videoInfo = $this->parseVideo($videoUrl,'douyin');
 
             return response()->json([
                 'status' => 'success',
@@ -88,7 +88,7 @@ class VideoParserController extends Controller
      */
     private function parseVideoFromAPI(string $videoUrl): array
     {
-        $apiUrl = 'https://douyindown.click/parser.php';
+        $apiUrl = 'http://127.0.0.1:8080/video/share/url/parse?';
 
         // 构建请求参数
         $params = [

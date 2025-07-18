@@ -184,28 +184,28 @@ class AuthController extends Controller
 
             // 检查是否有错误
             if ($error) {
-                return redirect('/')->with('error', 'Google登录被取消或失败');
+                return redirect('/a')->with('error', 'Google登录被取消或失败');
             }
 
             if (!$code) {
-                return redirect('/')->with('error', 'Google登录失败：未获取到授权码');
+                return redirect('/b')->with('error', 'Google登录失败：未获取到授权码');
             }
 
             // 1. 获取 Google 返回的 state 参数
             $state = $request->input('state');
             if (!$state) {
-                return redirect('/')->with('error', '登录失败：缺少状态参数');
+                return redirect('/c')->with('error', '登录失败：缺少状态参数');
             }
 
             // 2. 解码并验证 state 数据
             $stateData = json_decode(base64_decode($state), true);
             if (!$stateData || !isset($stateData['csrf_token'], $stateData['original_url'])) {
-                return redirect('/')->with('error', '登录失败：状态参数无效');
+                return redirect('/d')->with('error', '登录失败：状态参数无效');
             }
 
             // 3. 验证 CSRF 令牌（防伪造）
             if ($stateData['csrf_token'] !== session('google_login_csrf')) {
-                return redirect('/')->with('error', '登录失败：安全验证失败');
+                return redirect('/e')->with('error', '登录失败：安全验证失败');
             }
 
 

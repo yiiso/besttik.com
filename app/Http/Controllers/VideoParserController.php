@@ -88,7 +88,7 @@ class VideoParserController extends Controller
      */
     private function parseVideoFromAPI(string $videoUrl): array
     {
-        $realUrl = 'http://127.0.0.1:1004/video/share/url/parse?url='.urlencode($videoUrl);
+        $realUrl = 'http://127.0.0.1:3000/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL => $realUrl,

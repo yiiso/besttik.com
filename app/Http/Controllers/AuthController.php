@@ -212,6 +212,7 @@ class AuthController extends Controller
             // 5. 登录成功后，跳转回原始 URL
             $originalUrl = $stateData['original_url'];
 
+            Log::info('original_url'.$originalUrl);
 
             // 清除session中的state
             session()->forget('google_login_csrf');

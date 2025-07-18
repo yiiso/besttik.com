@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="referrer" content="never">
     <title>@yield('title', 'VideoParser.top - 全球视频解析工具')</title>
     <meta name="description" content="@yield('description', '专业的全球视频解析工具，支持多平台视频链接解析下载')">
 
@@ -75,11 +75,11 @@
                                 <!-- 背景 - 不规则形状 -->
                                 <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
                                 <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#headerGradient)" />
-                                
+
                                 <!-- 中心图形 - 抽象播放图标 -->
                                 <path d="M13 10L22 16L13 22V10Z" fill="white" />
                                 <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                                
+
                                 <!-- 装饰元素 - 点和线 -->
                                 <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
                                 <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
@@ -99,7 +99,7 @@
                         <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }} class="ui-text">Français</option>
                         <option value="ja" {{ app()->getLocale() == 'ja' ? 'selected' : '' }} class="ui-text">日本語</option>
                     </select>
-                    
+
                     @auth
                         <!-- 用户已登录状态 -->
                         <div class="relative" id="userMenu">
@@ -116,7 +116,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            
+
                             <!-- 下拉菜单 -->
                             <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                                 <div class="py-2">
@@ -185,11 +185,11 @@
                                 <!-- 背景 - 不规则形状 -->
                                 <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
                                 <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#footerGradient)" />
-                                
+
                                 <!-- 中心图形 - 抽象播放图标 -->
                                 <path d="M13 10L22 16L13 22V10Z" fill="white" />
                                 <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-                                
+
                                 <!-- 装饰元素 - 点和线 -->
                                 <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
                                 <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
@@ -280,14 +280,14 @@
                     @csrf
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.email') }}</label>
-                        <input type="email" id="email" name="email" required 
+                        <input type="email" id="email" name="email" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                placeholder="{{ __('messages.enter_email') }}">
                     </div>
-                    
+
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.password') }}</label>
-                        <input type="password" id="password" name="password" required 
+                        <input type="password" id="password" name="password" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                placeholder="{{ __('messages.enter_password') }}">
                     </div>
@@ -317,24 +317,24 @@
                 <form id="emailRegisterForm" class="space-y-4">
                     @csrf
 
-                    
+
                     <div>
                         <label for="register_email" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.email') }}</label>
-                        <input type="email" id="register_email" name="email" required 
+                        <input type="email" id="register_email" name="email" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                placeholder="{{ __('messages.enter_email') }}">
                     </div>
-                    
+
                     <div>
                         <label for="register_password" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.password') }}</label>
-                        <input type="password" id="register_password" name="password" required 
+                        <input type="password" id="register_password" name="password" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                placeholder="{{ __('messages.enter_password') }}">
                     </div>
 
                     <div>
                         <label for="register_password_confirmation" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.confirm_password') }}</label>
-                        <input type="password" id="register_password_confirmation" name="password_confirmation" required 
+                        <input type="password" id="register_password_confirmation" name="password_confirmation" required
                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                                placeholder="{{ __('messages.confirm_password') }}">
                     </div>

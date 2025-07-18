@@ -499,9 +499,13 @@ function initLoginModal() {
             const originalHTML = this.innerHTML;
             this.innerHTML = '<div class="animate-spin rounded-full h-5 w-5 border-2 border-gray-400 border-t-transparent mx-auto"></div>';
 
+            const currentPath = window.location.pathname
+            const params = new URLSearchParams({
+                target:currentPath
+            })
             // 直接跳转到Google OAuth，让后端处理配置检查
             setTimeout(() => {
-                window.location.href = '/auth/google';
+                window.location.href = `/auth/google?${params}`;
             }, 500); // 短暂延迟显示加载状态
         });
     }

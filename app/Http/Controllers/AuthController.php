@@ -123,6 +123,7 @@ class AuthController extends Controller
      */
     public function redirectToGoogle()
     {
+        $originalUrl = request()->target ?? '/';
         try {
             // 检查Google OAuth配置
             $clientId = env('GOOGLE_CLIENT_ID');
@@ -133,9 +134,6 @@ class AuthController extends Controller
                 return redirect('/')->with('error', 'Google登录功能需要配置。请在.env文件中设置GOOGLE_CLIENT_ID和GOOGLE_CLIENT_SECRET，并在Google Cloud Console中配置OAuth应用。详情请参考GOOGLE_OAUTH_SETUP.md文件。');
             }
 
-            // 生成状态参数用于安全验证
-            // 获取登录前的当前页面 URL（原始地址）
-            $originalUrl = url()->current(); // 或 request()->fullUrl() 包含查询参数
 
             // 生成随机字符串作为 CSRF 令牌（增强安全性）
             $csrfToken = Str::random(32);
@@ -150,8 +148,6 @@ class AuthController extends Controller
             // 存储 CSRF 令牌到 session，用于回调时验证
             session(['google_login_csrf' => $csrfToken]);
 
-//            $state = Str::random(40);
-//            session(['google_oauth_state' => $state]);
 
             // 构建Google OAuth URL
             $params = [
@@ -172,7 +168,7 @@ class AuthController extends Controller
 
         } catch (\Exception $e) {
             Log::error('Google OAuth redirect error: ' . $e->getMessage());
-            return redirect('/')->with('error', 'Google登录初始化失败: ' . $e->getMessage());
+            return redirect($originalUrl)->with('error', 'Google登录初始化失败: ' . $e->getMessage());
         }
     }
 

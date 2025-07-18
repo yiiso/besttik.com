@@ -117,7 +117,7 @@ class VideoParserController extends Controller
 
             $data = json_decode($response, true);
 
-            return $this->formatApiResponse($data['data'] ?? []);
+            return $this->formatTiktokResponse($data['data'] ?? []);
         }
         throw new \Exception('error: ' . ($data['message'] ?? 'unknown'));
 

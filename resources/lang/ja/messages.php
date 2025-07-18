@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.pro - グローバル動画解析ツール',
+    'title' => 'VideoParser.top - グローバル動画解析ツール',
     'description' => '無料のオンライン動画解析・ダウンロードツール、YouTube、TikTok、Instagramなどの主要プラットフォームに対応',
     'paste_link' => '動画リンクをここに貼り付けてください...',
     'parse' => '解析',
@@ -18,7 +18,7 @@ return [
     'supported_platforms' => 'サポートプラットフォーム',
     'supported_platforms_desc' => '世界の主要動画プラットフォームをカバー',
     'more_platforms' => 'その他のプラットフォーム',
-    'start_using' => 'VideoParser.proを使い始める',
+    'start_using' => 'VideoParser.topを使い始める',
     'start_using_desc' => '最もプロフェッショナルな動画解析サービスをすぐに体験し、動画ダウンロードをシンプルで効率的にします。',
     'start_now' => '今すぐ開始',
     'parse_success' => '解析成功！',
@@ -95,12 +95,12 @@ return [
     'terms_of_service' => '利用規約',
     
     // Terms of Service
-    'terms_of_service_description' => 'VideoParser.proをご利用になる前に、利用規約をよくお読みください。',
+    'terms_of_service_description' => 'VideoParser.topをご利用になる前に、利用規約をよくお読みください。',
     'last_updated' => '最終更新',
     'acceptance_of_terms' => '規約の承諾',
-    'acceptance_of_terms_description' => 'VideoParser.proにアクセスし使用することにより、本契約の条項と規定に拘束されることに同意し承諾します。',
+    'acceptance_of_terms_description' => 'VideoParser.topにアクセスし使用することにより、本契約の条項と規定に拘束されることに同意し承諾します。',
     'description_of_service' => 'サービスの説明',
-    'description_of_service_content' => 'VideoParser.proは、さまざまなオンラインプラットフォーム向けの動画解析およびダウンロードサービスを提供します。当社のサービスには以下が含まれます：',
+    'description_of_service_content' => 'VideoParser.topは、さまざまなオンラインプラットフォーム向けの動画解析およびダウンロードサービスを提供します。当社のサービスには以下が含まれます：',
     'video_link_parsing' => '動画リンクの解析と分析',
     'multiple_format_support' => '複数のフォーマットと品質オプション',
     'batch_processing_service' => 'バッチ処理機能',
@@ -121,15 +121,15 @@ return [
     'unauthorized_access_attempt' => '当社システムへの不正アクセスの試み',
     'spam_activities' => 'スパムや迷惑通信への当社サービスの使用',
     'intellectual_property' => '知的財産',
-    'intellectual_property_description' => 'VideoParser.proとその独自のコンテンツ、機能、および機能性は当社が所有し、国際的な著作権、商標、特許、企業秘密、その他の知的財産法によって保護されています。',
+    'intellectual_property_description' => 'VideoParser.topとその独自のコンテンツ、機能、および機能性は当社が所有し、国際的な著作権、商標、特許、企業秘密、その他の知的財産法によって保護されています。',
     'user_content' => 'ユーザーコンテンツ',
     'user_content_description' => '当社サービスを通じて処理するコンテンツの所有権を保持します。ただし、当社サービスの提供の一環として、このコンテンツを処理および配信するための限定的なライセンスを当社に付与します。',
     'service_availability' => 'サービス可用性',
     'service_availability_description' => '高いサービス可用性の維持に努めますが、中断のないアクセスを保証するものではありません。予告の有無にかかわらず、サービスを変更、一時停止、または中止する権利を留保します。',
     'limitation_of_liability' => '責任の制限',
-    'limitation_of_liability_description' => 'VideoParser.proは、当社サービスの使用に起因する間接的、偶発的、特別、結果的、または懲罰的損害について責任を負いません。',
+    'limitation_of_liability_description' => 'VideoParser.topは、当社サービスの使用に起因する間接的、偶発的、特別、結果的、または懲罰的損害について責任を負いません。',
     'indemnification' => '補償',
-    'indemnification_description' => '当社サービスの使用またはこれらの規約の違反から生じるクレーム、損害、または費用からVideoParser.proを補償し、無害に保つことに同意します。',
+    'indemnification_description' => '当社サービスの使用またはこれらの規約の違反から生じるクレーム、損害、または費用からVideoParser.topを補償し、無害に保つことに同意します。',
     'termination' => '終了',
     'termination_description' => '事前通知なしに、これらの規約に違反する、または他のユーザー、当社、または第三者に有害であると当社が判断する行為、またはその他の理由により、当社サービスへのアクセスを即座に終了または一時停止する場合があります：',
     'terms_violation' => 'これらの利用規約の違反',
@@ -145,7 +145,7 @@ return [
     'severability' => '分離可能性',
     'severability_description' => 'これらの規約のいずれかの条項が執行不能と判断された場合、残りの条項は完全に有効であり続けます。',
     'entire_agreement' => '完全合意',
-    'entire_agreement_description' => 'これらの規約は、当社サービスの使用に関するあなたとVideoParser.proの間の完全な合意を構成します。',
+    'entire_agreement_description' => 'これらの規約は、当社サービスの使用に関するあなたとVideoParser.topの間の完全な合意を構成します。',
     'contact_information' => '連絡先情報',
     'terms_contact_description' => 'これらの規約についてご質問がある場合は、お問い合わせください：',
     'address' => '住所',
@@ -202,7 +202,7 @@ return [
     'privacy_contact_description' => 'このプライバシーポリシーについてご質問がある場合は、お問い合わせください：',
     
     // Contact Us
-    'contact_us_description' => 'ご質問やサポートが必要ですか？VideoParser.proを最大限に活用できるよう、お手伝いします。',
+    'contact_us_description' => 'ご質問やサポートが必要ですか？VideoParser.topを最大限に活用できるよう、お手伝いします。',
     'send_message' => 'メッセージを送信',
     'first_name' => '名',
     'last_name' => '姓',
@@ -231,9 +231,9 @@ return [
     'browse_help' => 'ヘルプセンターを参照',
     
     // Help Center
-    'help_center_description' => 'よくある質問の回答を見つけ、VideoParser.proを最大限に活用する方法を学びます。',
+    'help_center_description' => 'よくある質問の回答を見つけ、VideoParser.topを最大限に活用する方法を学びます。',
     'getting_started' => '始める',
-    'getting_started_description' => 'VideoParser.proの使用の基本を学ぶ',
+    'getting_started_description' => 'VideoParser.topの使用の基本を学ぶ',
     'download_issues' => 'ダウンロード問題',
     'download_issues_description' => '一般的なダウンロード問題のトラブルシューティング',
     'supported_platforms_help_description' => 'サポートしているプラットフォームを確認',

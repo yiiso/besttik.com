@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.pro - 全球视频解析工具',
+    'title' => 'VideoParser.top - 全球视频解析工具',
     'description' => '免费在线视频解析下载工具，支持YouTube、TikTok、Instagram等主流平台',
     'paste_link' => '粘贴视频链接到这里...',
     'parse' => '解析',
@@ -18,7 +18,7 @@ return [
     'supported_platforms' => '支持的平台',
     'supported_platforms_desc' => '覆盖全球主流视频平台',
     'more_platforms' => '更多平台',
-    'start_using' => '开始使用 VideoParser.pro',
+    'start_using' => '开始使用 VideoParser.top',
     'start_using_desc' => '立即体验最专业的视频解析服务，让视频下载变得简单高效。',
     'start_now' => '立即开始',
     'parse_success' => '解析成功！',
@@ -95,12 +95,12 @@ return [
     'terms_of_service' => '服务条款',
     
     // Terms of Service
-    'terms_of_service_description' => '在使用VideoParser.pro之前，请仔细阅读我们的服务条款。',
+    'terms_of_service_description' => '在使用VideoParser.top之前，请仔细阅读我们的服务条款。',
     'last_updated' => '最后更新',
     'acceptance_of_terms' => '条款接受',
-    'acceptance_of_terms_description' => '通过访问和使用VideoParser.pro，您接受并同意受本协议条款和规定的约束。',
+    'acceptance_of_terms_description' => '通过访问和使用VideoParser.top，您接受并同意受本协议条款和规定的约束。',
     'description_of_service' => '服务描述',
-    'description_of_service_content' => 'VideoParser.pro为各种在线平台提供视频解析和下载服务。我们的服务包括：',
+    'description_of_service_content' => 'VideoParser.top为各种在线平台提供视频解析和下载服务。我们的服务包括：',
     'video_link_parsing' => '视频链接解析和分析',
     'multiple_format_support' => '多种格式和质量选项',
     'batch_processing_service' => '批量处理功能',
@@ -121,15 +121,15 @@ return [
     'unauthorized_access_attempt' => '试图获得对我们系统的未授权访问',
     'spam_activities' => '将我们的服务用于垃圾邮件或未经请求的通信',
     'intellectual_property' => '知识产权',
-    'intellectual_property_description' => 'VideoParser.pro及其原创内容、功能和功能归我们所有，受国际版权、商标、专利、商业秘密和其他知识产权法保护。',
+    'intellectual_property_description' => 'VideoParser.top及其原创内容、功能和功能归我们所有，受国际版权、商标、专利、商业秘密和其他知识产权法保护。',
     'user_content' => '用户内容',
     'user_content_description' => '您保留通过我们服务处理的任何内容的所有权。但是，您授予我们有限的许可来处理和交付此内容，作为提供我们服务的一部分。',
     'service_availability' => '服务可用性',
     'service_availability_description' => '我们努力维持高服务可用性，但不保证不间断访问。我们保留在有或没有通知的情况下修改、暂停或停止服务的权利。',
     'limitation_of_liability' => '责任限制',
-    'limitation_of_liability_description' => 'VideoParser.pro不对因您使用我们的服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害承担责任。',
+    'limitation_of_liability_description' => 'VideoParser.top不对因您使用我们的服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害承担责任。',
     'indemnification' => '赔偿',
-    'indemnification_description' => '您同意赔偿并使VideoParser.pro免受因您使用我们的服务或违反这些条款而产生的任何索赔、损害或费用的损害。',
+    'indemnification_description' => '您同意赔偿并使VideoParser.top免受因您使用我们的服务或违反这些条款而产生的任何索赔、损害或费用的损害。',
     'termination' => '终止',
     'termination_description' => '我们可能立即终止或暂停您对我们服务的访问，无需事先通知，对于我们认为违反这些条款或对其他用户、我们或第三方有害的行为，或出于任何其他原因，包括：',
     'terms_violation' => '违反这些服务条款',
@@ -145,7 +145,7 @@ return [
     'severability' => '可分割性',
     'severability_description' => '如果这些条款的任何条款被认为不可执行，其余条款将保持完全有效。',
     'entire_agreement' => '完整协议',
-    'entire_agreement_description' => '这些条款构成您与VideoParser.pro之间关于使用我们服务的完整协议。',
+    'entire_agreement_description' => '这些条款构成您与VideoParser.top之间关于使用我们服务的完整协议。',
     'contact_information' => '联系信息',
     'terms_contact_description' => '如果您对这些条款有任何疑问，请联系我们：',
     'address' => '地址',
@@ -202,7 +202,7 @@ return [
     'privacy_contact_description' => '如果您对此隐私政策有任何疑问，请联系我们：',
     
     // Contact Us
-    'contact_us_description' => '有问题或需要支持？我们在这里帮助您充分利用VideoParser.pro。',
+    'contact_us_description' => '有问题或需要支持？我们在这里帮助您充分利用VideoParser.top。',
     'send_message' => '发送消息',
     'first_name' => '名',
     'last_name' => '姓',
@@ -231,9 +231,9 @@ return [
     'browse_help' => '浏览帮助中心',
     
     // Help Center
-    'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.pro。',
+    'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.top。',
     'getting_started' => '入门指南',
-    'getting_started_description' => '学习使用VideoParser.pro的基础知识',
+    'getting_started_description' => '学习使用VideoParser.top的基础知识',
     'download_issues' => '下载问题',
     'download_issues_description' => '解决常见的下载问题',
     'supported_platforms_help_description' => '查看我们支持的平台',

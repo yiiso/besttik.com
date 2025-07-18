@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.privacy_policy') . ' - VideoParser.pro')
-@section('description', 'Privacy Policy for VideoParser.pro. Learn how we collect, use, and protect your personal information.')
+@section('title', __('messages.privacy_policy') . ' - VideoParser.top')
+@section('description', 'Privacy Policy for VideoParser.top. Learn how we collect, use, and protect your personal information.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">
@@ -95,8 +95,8 @@
     <h2 class="text-2xl font-bold text-gray-900 mb-4 heading-modern">{{ __('messages.contact_information') }}</h2>
     <p class="text-gray-600 body-regular mb-4">{{ __('messages.privacy_contact_description') }}</p>
     <div class="bg-gray-50 rounded-2xl p-6">
-        <p class="text-gray-800 font-medium mb-2">VideoParser.pro Privacy Team</p>
-        <p class="text-gray-600">{{ __('messages.email') }}: privacy@videoparser.pro</p>
+        <p class="text-gray-800 font-medium mb-2">VideoParser.top Privacy Team</p>
+        <p class="text-gray-600">{{ __('messages.email') }}: privacy@videoparser.top</p>
         <p class="text-gray-600">{{ __('messages.address') }}: [{{ __('messages.company_address') }}]</p>
     </div>
 </div>

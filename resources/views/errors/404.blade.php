@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('messages.page_not_found') . ' - VideoParser.pro')
+@section('title', __('messages.page_not_found') . ' - VideoParser.top')
 @section('description', __('messages.page_not_found_description'))
 
 @section('content')

@@ -69,12 +69,12 @@
 
 ### 未登录状态
 ```
-[Logo] VideoParser.pro    [语言选择] [登录按钮]
+[Logo] VideoParser.top    [语言选择] [登录按钮]
 ```
 
 ### 已登录状态
 ```
-[Logo] VideoParser.pro    [语言选择] [头像 用户名 ▼]
+[Logo] VideoParser.top    [语言选择] [头像 用户名 ▼]
                                       └─ 下拉菜单
                                          ├─ 用户信息
                                          ├─ 个人资料

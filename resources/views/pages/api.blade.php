@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.api_service') . ' - VideoParser.pro')
-@section('description', 'Integrate VideoParser.pro API into your applications. Powerful video parsing API with comprehensive documentation and examples.')
+@section('title', __('messages.api_service') . ' - VideoParser.top')
+@section('description', 'Integrate VideoParser.top API into your applications. Powerful video parsing API with comprehensive documentation and examples.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">
@@ -62,7 +62,7 @@
     <div>
         <h2 class="text-2xl font-bold text-gray-900 mb-6 heading-modern">{{ __('messages.api_example') }}</h2>
         <div class="bg-gray-900 rounded-2xl p-6 overflow-x-auto">
-            <pre class="text-green-400 font-mono text-sm"><code>curl -X POST "https://api.videoparser.pro/v1/parse" \
+            <pre class="text-green-400 font-mono text-sm"><code>curl -X POST "https://api.videoparser.top/v1/parse" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

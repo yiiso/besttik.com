@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoParserController;
 
-// 默认路由（英文）
+// 默认路由（英文）- 应用语言检测中间件
 Route::get('/', function () {
     app()->setLocale('en');
     return view('home');
-});
+})->middleware('detect.language');
 
 // 多语言路由组
 Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {

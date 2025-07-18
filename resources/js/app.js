@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function () {
         languageSelect.addEventListener('change', function (e) {
             const selectedLang = e.target.value;
             
+            // 设置用户手动选择语言的标记cookie（30天有效）
+            document.cookie = `user_language_selected=true; max-age=${60 * 60 * 24 * 30}; path=/`;
+            document.cookie = `preferred_language=${selectedLang}; max-age=${60 * 60 * 24 * 30}; path=/`;
+            
             // 获取当前路径
             const currentPath = window.location.pathname;
             let newPath = '';

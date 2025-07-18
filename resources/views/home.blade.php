@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'VideoParser.pro - 全球视频解析工具')
+@section('title', 'VideoParser.top - 全球视频解析工具')
 @section('description', '专业的全球视频解析工具，支持YouTube、TikTok、Instagram等多平台视频链接解析下载')
 
 @section('content')

@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.help_center') . ' - VideoParser.pro')
-@section('description', 'Get help and support for VideoParser.pro. Find answers to common questions and learn how to use our video parsing service.')
+@section('title', __('messages.help_center') . ' - VideoParser.top')
+@section('description', 'Get help and support for VideoParser.top. Find answers to common questions and learn how to use our video parsing service.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">

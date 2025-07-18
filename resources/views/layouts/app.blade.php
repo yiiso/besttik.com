@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'VideoParser.pro - 全球视频解析工具')</title>
+    <title>@yield('title', 'VideoParser.top - 全球视频解析工具')</title>
     <meta name="description" content="@yield('description', '专业的全球视频解析工具，支持多平台视频链接解析下载')">
 
     <!-- Favicon -->
@@ -62,7 +62,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2">
+                    <a href="{{ localized_url('/') }}" class="flex items-center space-x-2">
                         <div class="w-10 h-10 flex items-center justify-center">
                             <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
@@ -87,17 +87,17 @@
                                 <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
                             </svg>
                         </div>
-                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.pro</span>
+                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>
                     </a>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <select id="languageSelect" class="text-sm border-0 bg-transparent text-gray-600 focus:ring-0 cursor-pointer">
-                        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
-                        <option value="zh" {{ app()->getLocale() == 'zh' ? 'selected' : '' }}>中文</option>
-                        <option value="es" {{ app()->getLocale() == 'es' ? 'selected' : '' }}>Español</option>
-                        <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }}>Français</option>
-                        <option value="ja" {{ app()->getLocale() == 'ja' ? 'selected' : '' }}>日本語</option>
+                    <select id="languageSelect" class="text-sm border-0 bg-transparent text-gray-600 focus:ring-0 cursor-pointer ui-text font-medium">
+                        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }} class="ui-text">English</option>
+                        <option value="zh" {{ app()->getLocale() == 'zh' ? 'selected' : '' }} class="ui-text">中文</option>
+                        <option value="es" {{ app()->getLocale() == 'es' ? 'selected' : '' }} class="ui-text">Español</option>
+                        <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }} class="ui-text">Français</option>
+                        <option value="ja" {{ app()->getLocale() == 'ja' ? 'selected' : '' }} class="ui-text">日本語</option>
                     </select>
                     
                     @auth
@@ -197,7 +197,7 @@
                                 <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
                             </svg>
                         </div>
-                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.pro</span>
+                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>
                     </div>
                     <p class="text-gray-600 max-w-md body-light">
                         {{ __('messages.footer_description') }}
@@ -234,7 +234,7 @@
             </div>
 
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-                <p class="body-light">&copy; {{ date('Y') }} VideoParser.pro. {{ __('messages.all_rights_reserved') }}</p>
+                <p class="body-light">&copy; {{ date('Y') }} VideoParser.top. {{ __('messages.all_rights_reserved') }}</p>
             </div>
         </div>
     </footer>

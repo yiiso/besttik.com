@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.pro - Outil Global d\'Analyse Vidéo',
+    'title' => 'VideoParser.top - Outil Global d\'Analyse Vidéo',
     'description' => 'Outil gratuit en ligne d\'analyse et de téléchargement vidéo, compatible avec YouTube, TikTok, Instagram et autres plateformes principales',
     'paste_link' => 'Collez le lien vidéo ici...',
     'parse' => 'Analyser',
@@ -18,7 +18,7 @@ return [
     'supported_platforms' => 'Plateformes Supportées',
     'supported_platforms_desc' => 'Couvrant les principales plateformes vidéo mondiales',
     'more_platforms' => 'Plus de Plateformes',
-    'start_using' => 'Commencer à Utiliser VideoParser.pro',
+    'start_using' => 'Commencer à Utiliser VideoParser.top',
     'start_using_desc' => 'Découvrez immédiatement le service d\'analyse vidéo le plus professionnel, rendant les téléchargements vidéo simples et efficaces.',
     'start_now' => 'Commencer Maintenant',
     'parse_success' => 'Analyse Réussie!',
@@ -95,12 +95,12 @@ return [
     'terms_of_service' => 'Conditions d\'Utilisation',
     
     // Terms of Service
-    'terms_of_service_description' => 'Veuillez lire attentivement nos conditions d\'utilisation avant d\'utiliser VideoParser.pro.',
+    'terms_of_service_description' => 'Veuillez lire attentivement nos conditions d\'utilisation avant d\'utiliser VideoParser.top.',
     'last_updated' => 'Dernière Mise à Jour',
     'acceptance_of_terms' => 'Acceptation des Conditions',
-    'acceptance_of_terms_description' => 'En accédant et en utilisant VideoParser.pro, vous acceptez et convenez d\'être lié par les termes et dispositions de cet accord.',
+    'acceptance_of_terms_description' => 'En accédant et en utilisant VideoParser.top, vous acceptez et convenez d\'être lié par les termes et dispositions de cet accord.',
     'description_of_service' => 'Description du Service',
-    'description_of_service_content' => 'VideoParser.pro fournit des services d\'analyse et de téléchargement vidéo pour diverses plateformes en ligne. Nos services incluent:',
+    'description_of_service_content' => 'VideoParser.top fournit des services d\'analyse et de téléchargement vidéo pour diverses plateformes en ligne. Nos services incluent:',
     'video_link_parsing' => 'Analyse et traitement des liens vidéo',
     'multiple_format_support' => 'Options de format et qualité multiples',
     'batch_processing_service' => 'Capacités de traitement par lot',
@@ -121,15 +121,15 @@ return [
     'unauthorized_access_attempt' => 'Tenter d\'obtenir un accès non autorisé à nos systèmes',
     'spam_activities' => 'Utiliser nos services pour du spam ou des communications non sollicitées',
     'intellectual_property' => 'Propriété Intellectuelle',
-    'intellectual_property_description' => 'VideoParser.pro et son contenu original, ses fonctionnalités et sa fonctionnalité nous appartiennent et sont protégés par les lois internationales sur le droit d\'auteur, les marques, les brevets, les secrets commerciaux et autres lois sur la propriété intellectuelle.',
+    'intellectual_property_description' => 'VideoParser.top et son contenu original, ses fonctionnalités et sa fonctionnalité nous appartiennent et sont protégés par les lois internationales sur le droit d\'auteur, les marques, les brevets, les secrets commerciaux et autres lois sur la propriété intellectuelle.',
     'user_content' => 'Contenu Utilisateur',
     'user_content_description' => 'Vous conservez la propriété de tout contenu que vous traitez via nos services. Cependant, vous nous accordez une licence limitée pour traiter et livrer ce contenu dans le cadre de la fourniture de nos services.',
     'service_availability' => 'Disponibilité du Service',
     'service_availability_description' => 'Nous nous efforçons de maintenir une haute disponibilité de service mais ne garantissons pas un accès ininterrompu. Nous nous réservons le droit de modifier, suspendre ou interrompre les services avec ou sans préavis.',
     'limitation_of_liability' => 'Limitation de Responsabilité',
-    'limitation_of_liability_description' => 'VideoParser.pro ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs résultant de votre utilisation de nos services.',
+    'limitation_of_liability_description' => 'VideoParser.top ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs résultant de votre utilisation de nos services.',
     'indemnification' => 'Indemnisation',
-    'indemnification_description' => 'Vous acceptez d\'indemniser et de dégager VideoParser.pro de toute réclamation, dommage ou dépense découlant de votre utilisation de nos services ou de la violation de ces conditions.',
+    'indemnification_description' => 'Vous acceptez d\'indemniser et de dégager VideoParser.top de toute réclamation, dommage ou dépense découlant de votre utilisation de nos services ou de la violation de ces conditions.',
     'termination' => 'Résiliation',
     'termination_description' => 'Nous pouvons résilier ou suspendre votre accès à nos services immédiatement, sans préavis, pour une conduite que nous croyons violer ces conditions ou être nuisible à d\'autres utilisateurs, à nous ou à des tiers, ou pour toute autre raison incluant:',
     'terms_violation' => 'Violation de ces conditions d\'utilisation',
@@ -145,7 +145,7 @@ return [
     'severability' => 'Divisibilité',
     'severability_description' => 'Si une disposition de ces conditions est jugée inapplicable, les dispositions restantes resteront pleinement en vigueur.',
     'entire_agreement' => 'Accord Complet',
-    'entire_agreement_description' => 'Ces conditions constituent l\'accord complet entre vous et VideoParser.pro concernant l\'utilisation de nos services.',
+    'entire_agreement_description' => 'Ces conditions constituent l\'accord complet entre vous et VideoParser.top concernant l\'utilisation de nos services.',
     'contact_information' => 'Informations de Contact',
     'terms_contact_description' => 'Si vous avez des questions sur ces conditions, veuillez nous contacter:',
     'address' => 'Adresse',
@@ -202,7 +202,7 @@ return [
     'privacy_contact_description' => 'Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter:',
     
     // Contact Us
-    'contact_us_description' => 'Vous avez des questions ou besoin d\'aide? Nous sommes là pour vous aider à tirer le meilleur parti de VideoParser.pro.',
+    'contact_us_description' => 'Vous avez des questions ou besoin d\'aide? Nous sommes là pour vous aider à tirer le meilleur parti de VideoParser.top.',
     'send_message' => 'Nous Envoyer un Message',
     'first_name' => 'Prénom',
     'last_name' => 'Nom',
@@ -231,9 +231,9 @@ return [
     'browse_help' => 'Parcourir le Centre d\'Aide',
     
     // Help Center
-    'help_center_description' => 'Trouvez des réponses aux questions courantes et apprenez à tirer le meilleur parti de VideoParser.pro.',
+    'help_center_description' => 'Trouvez des réponses aux questions courantes et apprenez à tirer le meilleur parti de VideoParser.top.',
     'getting_started' => 'Commencer',
-    'getting_started_description' => 'Apprenez les bases de l\'utilisation de VideoParser.pro',
+    'getting_started_description' => 'Apprenez les bases de l\'utilisation de VideoParser.top',
     'download_issues' => 'Problèmes de Téléchargement',
     'download_issues_description' => 'Résoudre les problèmes de téléchargement courants',
     'supported_platforms_help_description' => 'Voir quelles plateformes nous supportons',

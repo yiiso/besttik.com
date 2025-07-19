@@ -41,7 +41,7 @@ class VideoParserController extends Controller
             }elseif($platform == 'bilibili'){
                 $videoInfo = $this->blibliParseVideoFromAPI($videoUrl);
             }elseif($platform =='youtube'){
-                $cookiePath = '/root/youtube-cookies.txt';
+                $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
                 $format = 'bestvideo+bestaudio';
                 $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl,$format,$cookiePath);
             }else{

@@ -11,7 +11,7 @@ class YoutubeService
     {
         $command = [
             '/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp',
-            '-g', // 只返回 URL
+            '-g',
             '-f', $format,
         ];
 

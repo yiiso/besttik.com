@@ -9,7 +9,7 @@ class YoutubeService
 {
     public function getVideoUrl(string $youtubeUrl, string $format = 'bestvideo+bestaudio', string $cookiesPath = null): array
     {
- /*       $command = [
+        $command = [
             '/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp',
             '-g', // 只返回 URL
             '-f', $format,
@@ -31,13 +31,15 @@ class YoutubeService
 
         // 输出可能有两行（视频 + 音频）
         $res = array_filter(explode("\n", trim($process->getOutput())));
-        return $this->formatResponse($res);*/
+        return $this->formatResponse($res);
 
         $cookies = storage_path('youtube-cookies.txt');
 
         $cmd = "/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp -g -f {$format} --cookies {$cookies} {$youtubeUrl}";
         $res = array_filter(explode("\n", trim(shell_exec($cmd))));
-        Log::info("youtube:",$res);
+        Log::info("cookies:",$cookies);
+        Log::info("$cmd:",$cookies);
+        Log::info("cookies:",$cookies);
         return $res;
         return $this->formatResponse($res);
 

@@ -83,10 +83,13 @@ class VideoParserController extends Controller
                 $videoInfo = $this->tikTokParseVideoFromAPI($videoUrl);
             } elseif ($platform == 'bilibili') {
                 $videoInfo = $this->blibliParseVideoFromAPI($videoUrl);
-            } elseif ($platform == 'youtube' || 'twitter') {
+            } elseif ($platform == 'youtube') {
                 $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
                 $format = 'bestvideo+bestaudio';
                 $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format, $cookiePath);
+            }elseif ('twitter') {
+                $format = 'best+bestaudio';
+                $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format);
             } else {
                 $videoInfo = $this->parseVideoFromAPI($videoUrl);
             }

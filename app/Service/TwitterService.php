@@ -5,9 +5,9 @@ namespace App\Service;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
-class YoutubeService
+class TwitterService
 {
-    public function getVideoUrl(string $youtubeUrl, string $format = 'bestvideo+bestaudio', string $cookiesPath = null): array
+    public function getVideoUrl(string $youtubeUrl, string $format = 'best+bestaudio', string $cookiesPath = null): array
     {
         $command = [
             '/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp',

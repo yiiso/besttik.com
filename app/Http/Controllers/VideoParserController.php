@@ -87,7 +87,7 @@ class VideoParserController extends Controller
                 $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
                 $format = 'bestvideo+bestaudio';
                 $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format, $cookiePath);
-            }elseif ('twitter') {
+            }elseif ($platform == 'twitter') {
                 $format = 'best+bestaudio';
                 $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format);
             } else {

@@ -10,7 +10,7 @@ class YoutubeService
     public function getVideoUrl(string $youtubeUrl, string $format = 'bestvideo+bestaudio', string $cookiesPath = null): array
     {
         $command = [
-            'yt-dlp',
+            '/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp',
             '-g', // 只返回 URL
             '-f', $format,
         ];

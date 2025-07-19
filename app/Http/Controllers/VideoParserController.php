@@ -47,7 +47,7 @@ class VideoParserController extends Controller
                 $remainingCount = ParseLog::getRemainingCount($userId, $ipAddress);
                 $guestLimit = config('app.daily_parse_limit_guest', 3);
                 $userLimit = config('app.daily_parse_limit_user', 10);
-                
+
                 if ($userId) {
                     $message = __('messages.daily_limit_exceeded_user', ['limit' => $userLimit]);
                 } else {
@@ -83,7 +83,7 @@ class VideoParserController extends Controller
                 $videoInfo = $this->tikTokParseVideoFromAPI($videoUrl);
             } elseif ($platform == 'bilibili') {
                 $videoInfo = $this->blibliParseVideoFromAPI($videoUrl);
-            } elseif ($platform == 'youtube') {
+            } elseif ($platform == 'youtube' || 'twitter') {
                 $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
                 $format = 'bestvideo+bestaudio';
                 $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format, $cookiePath);
@@ -118,7 +118,7 @@ class VideoParserController extends Controller
 
         } catch (\Exception $e) {
             $errorMessage = $e->getMessage();
-            
+
             Log::error('Video parsing failed: ' . $errorMessage, [
                 'url' => $videoUrl,
                 'user_id' => $userId,
@@ -154,7 +154,7 @@ class VideoParserController extends Controller
     {
         $userId = Auth::id();
         $ipAddress = $request->ip();
-        
+
         $remainingCount = ParseLog::getRemainingCount($userId, $ipAddress);
         $dailyLimit = $userId ? config('app.daily_parse_limit_user', 10) : config('app.daily_parse_limit_guest', 3);
         $usedCount = $dailyLimit - $remainingCount;

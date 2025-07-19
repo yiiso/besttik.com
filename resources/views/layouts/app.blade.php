@@ -64,27 +64,44 @@
                 <div class="flex items-center">
                     <a href="{{ localized_url('/') }}" class="flex items-center space-x-2">
                         <div class="w-10 h-10 flex items-center justify-center">
-                            <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-10 h-10" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#06B6D4" />
-                                        <stop offset="50%" stop-color="#3B82F6" />
-                                        <stop offset="100%" stop-color="#8B5CF6" />
+                                        <stop offset="0%" stop-color="#F472B6" />
+                                        <stop offset="50%" stop-color="#8B5CF6" />
+                                        <stop offset="100%" stop-color="#3B82F6" />
                                     </linearGradient>
+                                    <filter id="headerNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="1" result="blur" />
+                                        <feFlood flood-color="#F472B6" flood-opacity="0.5" result="glowColor" />
+                                        <feComposite in="glowColor" in2="blur" operator="in" result="softGlow" />
+                                        <feComposite in="softGlow" in2="SourceGraphic" operator="over" />
+                                    </filter>
+                                    <clipPath id="headerHexClip">
+                                        <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" />
+                                    </clipPath>
                                 </defs>
-                                <!-- 背景 - 不规则形状 -->
-                                <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
-                                <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#headerGradient)" />
-
-                                <!-- 中心图形 - 抽象播放图标 -->
-                                <path d="M13 10L22 16L13 22V10Z" fill="white" />
-                                <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-
-                                <!-- 装饰元素 - 点和线 -->
-                                <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
-                                <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
-                                <circle cx="16" cy="28" r="1" fill="white" opacity="0.8" />
-                                <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
+                                
+                                <!-- 主背景 - 六边形 -->
+                                <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#headerGradient)" />
+                                
+                                <!-- 装饰图案 - 网格线 -->
+                                <g clip-path="url(#headerHexClip)" opacity="0.15">
+                                    <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
+                                    <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
+                                </g>
+                                
+                                <!-- 中心图形 - 现代播放图标 -->
+                                <g filter="url(#headerNeonGlow)">
+                                    <!-- 播放三角形 - 不规则形状 -->
+                                    <path d="M12 10L22 16L12 22V10Z" fill="white" />
+                                    
+                                    <!-- 装饰元素 - 垂直线 -->
+                                    <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </g>
+                                
+                                <!-- 边缘高光 -->
+                                <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
                         <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>
@@ -174,27 +191,44 @@
                 <div class="col-span-1 md:col-span-2">
                     <div class="flex items-center space-x-2 mb-4">
                         <div class="w-10 h-10 flex items-center justify-center">
-                            <svg class="w-10 h-10" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-10 h-10" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" stop-color="#06B6D4" />
-                                        <stop offset="50%" stop-color="#3B82F6" />
-                                        <stop offset="100%" stop-color="#8B5CF6" />
+                                        <stop offset="0%" stop-color="#F472B6" />
+                                        <stop offset="50%" stop-color="#8B5CF6" />
+                                        <stop offset="100%" stop-color="#3B82F6" />
                                     </linearGradient>
+                                    <filter id="footerNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="1" result="blur" />
+                                        <feFlood flood-color="#F472B6" flood-opacity="0.5" result="glowColor" />
+                                        <feComposite in="glowColor" in2="blur" operator="in" result="softGlow" />
+                                        <feComposite in="softGlow" in2="SourceGraphic" operator="over" />
+                                    </filter>
+                                    <clipPath id="footerHexClip">
+                                        <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" />
+                                    </clipPath>
                                 </defs>
-                                <!-- 背景 - 不规则形状 -->
-                                <path d="M2 8L16 2L30 8V24L16 30L2 24V8Z" fill="black" />
-                                <path d="M4 9L16 4L28 9V23L16 28L4 23V9Z" fill="url(#footerGradient)" />
-
-                                <!-- 中心图形 - 抽象播放图标 -->
-                                <path d="M13 10L22 16L13 22V10Z" fill="white" />
-                                <path d="M10 10L10 22" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-
-                                <!-- 装饰元素 - 点和线 -->
-                                <circle cx="16" cy="4" r="1" fill="white" opacity="0.8" />
-                                <circle cx="28" cy="16" r="1" fill="white" opacity="0.8" />
-                                <circle cx="16" cy="28" r="1" fill="white" opacity="0.8" />
-                                <circle cx="4" cy="16" r="1" fill="white" opacity="0.8" />
+                                
+                                <!-- 主背景 - 六边形 -->
+                                <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#footerGradient)" />
+                                
+                                <!-- 装饰图案 - 网格线 -->
+                                <g clip-path="url(#footerHexClip)" opacity="0.15">
+                                    <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
+                                    <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
+                                </g>
+                                
+                                <!-- 中心图形 - 现代播放图标 -->
+                                <g filter="url(#footerNeonGlow)">
+                                    <!-- 播放三角形 - 不规则形状 -->
+                                    <path d="M12 10L22 16L12 22V10Z" fill="white" />
+                                    
+                                    <!-- 装饰元素 - 垂直线 -->
+                                    <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </g>
+                                
+                                <!-- 边缘高光 -->
+                                <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
                         <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>

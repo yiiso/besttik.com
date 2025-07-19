@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Service\YoutubeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
@@ -37,8 +38,12 @@ class VideoParserController extends Controller
 
             if ($platform == 'tiktok'){
                 $videoInfo = $this->tikTokParseVideoFromAPI($videoUrl);
-            }elseif($platform == 'blibli'){
+            }elseif($platform == 'bilibili'){
                 $videoInfo = $this->blibliParseVideoFromAPI($videoUrl);
+            }elseif($platform =='youtube'){
+                $cookiePath = '/root/youtube-cookies.txt';
+                $format = 'bestvideo+bestaudio';
+                $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl,$format,$cookiePath);
             }else{
                 $videoInfo = $this->parseVideoFromAPI($videoUrl);
             }
@@ -103,7 +108,7 @@ class VideoParserController extends Controller
         $videoKey = array_search('video', $segments);
         if ($videoKey !== false && isset($segments[$videoKey + 1])) {
             $videoId = $segments[$videoKey + 1];
-            $realUrl = 'http://127.0.0.1:3001/api/bilibili/web/fetch_one_video?bv_id='.$videoId;
+            $realUrl = env('PARSER_BLIBLI_URL').'/api/bilibili/web/fetch_one_video?bv_id='.$videoId;
 
             $ch = curl_init();
             curl_setopt_array($ch, [
@@ -120,10 +125,11 @@ class VideoParserController extends Controller
             curl_close($ch);
 
             $data = json_decode($response, true);
+
             $cid = $data['data']['data']['cid'] ?? null;
             if ($cid) {
                 $demo = 'http://31.97.122.212:3001/api/bilibili/web/fetch_video_playurl?bv_id=BV1EvuBzjEpt&cid=31032411661';
-                $api = "http://127.0.0.1:3001/api/bilibili/web/fetch_video_playurl?bv_id={$videoId}&cid={$cid}";
+                $api = env('PARSER_BLIBLI_URL')."/api/bilibili/web/fetch_video_playurl?bv_id={$videoId}&cid={$cid}";
 
                 $ch = curl_init();
                 curl_setopt_array($ch, [
@@ -136,8 +142,9 @@ class VideoParserController extends Controller
                     CURLOPT_TIMEOUT => 30,
                 ]);
 
-                $video = curl_exec($ch);
+                $res = curl_exec($ch);
                 curl_close($ch);
+                $video = json_decode($res,true);
 
                 return $this->blibliTiktokResponse($data['data']['data'] ?? [],$video['data']['data'] ?? []);
             }
@@ -157,7 +164,7 @@ class VideoParserController extends Controller
         $videoKey = array_search('video', $segments);
         if ($videoKey !== false && isset($segments[$videoKey + 1])) {
             $videoId = $segments[$videoKey + 1];
-            $realUrl = 'http://127.0.0.1:3001/api/tiktok/app/fetch_one_video?aweme_id='.$videoId;
+            $realUrl = env('PARSER_TIKTOK').'/api/tiktok/app/fetch_one_video?aweme_id='.$videoId;
 
             $ch = curl_init();
             curl_setopt_array($ch, [
@@ -186,7 +193,7 @@ class VideoParserController extends Controller
      */
     private function parseVideoFromAPI(string $videoUrl): array
     {
-        $realUrl = 'http://127.0.0.1:3000/video/share/url/parse?url='.urlencode($videoUrl);
+        $realUrl = env('PARSER_DOUYIN_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
         curl_setopt_array($ch, [
             CURLOPT_URL => $realUrl,
@@ -234,8 +241,9 @@ class VideoParserController extends Controller
             'audio_options' => []
         ];
 
+        Log::info('VIDEO',$video);
         // 处理视频下载链接 - 尝试多种可能的字段名
-        $videoUrl = $data['dash']['video'][0]['baseUrl'] ??   null;
+        $videoUrl = $video['dash']['video'][0]['backupUrl'][0] ??   null;
         if ($videoUrl) {
             $formatted['quality_options'][] = [
                 'quality' => __('messages.original_quality'),
@@ -246,12 +254,12 @@ class VideoParserController extends Controller
         }
 
         // 处理音频下载链接
-        if (isset($data['dash']['audio'][0]['baseUrl'])) {
+        if (isset($video['dash']['audio'][0]['backupUrl'][0])) {
             $formatted['audio_options'][] = [
                 'quality' => __('messages.original_audio_quality'),
                 'format' => 'mp3',
-                'size' => $data['audio_size'] ?? 0,
-                'download_url' => $data['dash']['audio'][0]['baseUrl']
+                'size' => $video['audio_size'] ?? 0,
+                'download_url' => $video['dash']['audio'][0]['backupUrl'][0]
             ];
         }
         return $formatted;

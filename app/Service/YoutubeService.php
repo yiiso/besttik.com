@@ -37,6 +37,7 @@ class YoutubeService
 
         $cmd = "/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp -g -f {$format} --cookies {$cookies} {$youtubeUrl}";
         $res = array_filter(explode("\n", trim(shell_exec($cmd))));
+        Log::info("youtube:",$res);
         return $this->formatResponse($res);
 
     }

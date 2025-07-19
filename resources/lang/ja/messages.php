@@ -384,4 +384,41 @@ return [
     'profile' => 'プロフィール',
     'settings' => '設定',
     'logout_confirm' => 'ログアウトしてもよろしいですか？',
+    
+    // Parse limit messages
+    'daily_limit_exceeded_guest' => '1日の解析制限（:limit回）に達しました。より多くの解析機会を得るためにログインしてください。',
+    'daily_limit_exceeded_user' => '1日の解析制限（:limit回）に達しました。明日再度お試しください。',
+    'remaining_parses' => '本日の残り解析回数：:count',
+    'parse_limit_info' => '解析制限情報',
+    'guest_daily_limit' => 'ゲストユーザー：1日:limit回の解析',
+    'user_daily_limit' => '登録ユーザー：1日:limit回の解析',
+    'login_for_more' => 'より多くの解析のためにログイン',
+    'upgrade_limit_info' => '今すぐ登録して1日:limit回の解析機会を獲得しましょう！',
+    
+    // Additional UI translations
+    'close' => '閉じる',
+    'audio_preview' => 'オーディオプレビュー',
+    'video_not_supported' => 'お使いのブラウザは動画再生をサポートしていません',
+    'audio_not_supported' => 'お使いのブラウザは音声再生をサポートしていません',
+    'quality_options' => '画質オプション',
+    'audio_options' => 'オーディオオプション',
+    'recommended' => 'おすすめ',
+    'video_load_error' => '動画の読み込みに失敗しました',
+    'loading_video' => '動画を読み込み中...',
+    'video_link_unavailable' => '動画リンクが利用できません',
+    'link_copied' => 'リンクをクリップボードにコピーしました！',
+    'copy_failed' => 'コピーに失敗しました。手動でリンクをコピーしてください',
+    'unknown_size' => '不明なサイズ',
+    'unknown_author' => '不明な作者',
+    'unknown_title' => '不明なタイトル',
+    'unknown_duration' => '不明な長さ',
+    'original_audio_quality' => 'オリジナル音質',
+    
+    // Paste button related
+    'paste' => '貼り付け',
+    'paste_from_clipboard' => 'クリップボードから貼り付け',
+    'paste_success' => '貼り付けが成功しました！',
+    'paste_failed' => '貼り付けに失敗しました。手動で貼り付けてください',
+    'clipboard_empty' => 'クリップボードが空です',
+    'clipboard_not_supported' => 'お使いのブラウザはクリップボードアクセスをサポートしていません',
 ]; 

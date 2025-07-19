@@ -410,4 +410,41 @@ return [
     'profile' => '个人资料',
     'settings' => '设置',
     'logout_confirm' => '确定要退出登录吗？',
+    
+    // 解析限制相关消息
+    'daily_limit_exceeded_guest' => '您今日的解析次数已用完（:limit 次），请登录获取更多解析机会。',
+    'daily_limit_exceeded_user' => '您今日的解析次数已用完（:limit 次），请明天再试。',
+    'remaining_parses' => '今日剩余解析次数：:count',
+    'parse_limit_info' => '解析限制信息',
+    'guest_daily_limit' => '游客用户：每日 :limit 次解析',
+    'user_daily_limit' => '注册用户：每日 :limit 次解析',
+    'login_for_more' => '登录获取更多解析次数',
+    'upgrade_limit_info' => '立即注册，获得每日 :limit 次解析机会！',
+    
+    // 其他UI翻译
+    'close' => '关闭',
+    'audio_preview' => '音频预览',
+    'video_not_supported' => '您的浏览器不支持视频播放',
+    'audio_not_supported' => '您的浏览器不支持音频播放',
+    'quality_options' => '画质选项',
+    'audio_options' => '音频选项',
+    'recommended' => '推荐',
+    'video_load_error' => '视频加载失败',
+    'loading_video' => '正在加载视频...',
+    'video_link_unavailable' => '视频链接不可用',
+    'link_copied' => '链接已复制到剪贴板！',
+    'copy_failed' => '复制失败，请手动复制链接',
+    'unknown_size' => '未知大小',
+    'unknown_author' => '未知作者',
+    'unknown_title' => '未知标题',
+    'unknown_duration' => '未知时长',
+    'original_audio_quality' => '原始音质',
+    
+    // 粘贴按钮相关
+    'paste' => '粘贴',
+    'paste_from_clipboard' => '从剪贴板粘贴',
+    'paste_success' => '粘贴成功！',
+    'paste_failed' => '粘贴失败，请手动粘贴',
+    'clipboard_empty' => '剪贴板为空',
+    'clipboard_not_supported' => '您的浏览器不支持剪贴板访问',
 ];

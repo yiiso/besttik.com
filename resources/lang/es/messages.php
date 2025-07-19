@@ -384,4 +384,41 @@ return [
     'profile' => 'Perfil',
     'settings' => 'Configuración',
     'logout_confirm' => '¿Está seguro de que desea cerrar sesión?',
+    
+    // Parse limit messages
+    'daily_limit_exceeded_guest' => 'Has alcanzado el límite diario de análisis (:limit veces). Por favor inicia sesión para obtener más oportunidades de análisis.',
+    'daily_limit_exceeded_user' => 'Has alcanzado el límite diario de análisis (:limit veces). Por favor inténtalo de nuevo mañana.',
+    'remaining_parses' => 'Análisis restantes hoy: :count',
+    'parse_limit_info' => 'Información del Límite de Análisis',
+    'guest_daily_limit' => 'Usuarios invitados: :limit análisis por día',
+    'user_daily_limit' => 'Usuarios registrados: :limit análisis por día',
+    'login_for_more' => 'Iniciar Sesión para Más Análisis',
+    'upgrade_limit_info' => '¡Regístrate ahora para obtener :limit oportunidades de análisis por día!',
+    
+    // Additional UI translations
+    'close' => 'Cerrar',
+    'audio_preview' => 'Vista Previa de Audio',
+    'video_not_supported' => 'Su navegador no soporta la reproducción de video',
+    'audio_not_supported' => 'Su navegador no soporta la reproducción de audio',
+    'quality_options' => 'Opciones de Calidad',
+    'audio_options' => 'Opciones de Audio',
+    'recommended' => 'Recomendado',
+    'video_load_error' => 'Error al cargar el video',
+    'loading_video' => 'Cargando video...',
+    'video_link_unavailable' => 'Enlace de video no disponible',
+    'link_copied' => '¡Enlace copiado al portapapeles!',
+    'copy_failed' => 'Error al copiar, por favor copie el enlace manualmente',
+    'unknown_size' => 'Tamaño desconocido',
+    'unknown_author' => 'Autor desconocido',
+    'unknown_title' => 'Título desconocido',
+    'unknown_duration' => 'Duración desconocida',
+    'original_audio_quality' => 'Calidad de audio original',
+    
+    // Paste button related
+    'paste' => 'Pegar',
+    'paste_from_clipboard' => 'Pegar desde el portapapeles',
+    'paste_success' => '¡Pegado exitosamente!',
+    'paste_failed' => 'Error al pegar, por favor pegue manualmente',
+    'clipboard_empty' => 'El portapapeles está vacío',
+    'clipboard_not_supported' => 'Su navegador no soporta el acceso al portapapeles',
 ];

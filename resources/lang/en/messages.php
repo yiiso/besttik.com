@@ -628,4 +628,41 @@ return [
     'entire_agreement' => 'Entire Agreement',
     'entire_agreement_description' => 'These terms constitute the entire agreement between you and VideoParser.top regarding the use of the service.',
     'terms_contact_description' => 'If you have any questions about these terms, please contact us:',
+    
+    // Parse limit messages
+    'daily_limit_exceeded_guest' => 'You have reached the daily parsing limit (:limit times). Please log in to get more parsing opportunities.',
+    'daily_limit_exceeded_user' => 'You have reached the daily parsing limit (:limit times). Please try again tomorrow.',
+    'remaining_parses' => 'Remaining parses today: :count',
+    'parse_limit_info' => 'Parse Limit Information',
+    'guest_daily_limit' => 'Guest users: :limit parses per day',
+    'user_daily_limit' => 'Registered users: :limit parses per day',
+    'login_for_more' => 'Login for More Parses',
+    'upgrade_limit_info' => 'Register now to get :limit parsing opportunities per day!',
+    
+    // Additional UI translations
+    'close' => 'Close',
+    'audio_preview' => 'Audio Preview',
+    'video_not_supported' => 'Your browser does not support video playback',
+    'audio_not_supported' => 'Your browser does not support audio playback',
+    'quality_options' => 'Quality Options',
+    'audio_options' => 'Audio Options',
+    'recommended' => 'Recommended',
+    'video_load_error' => 'Video loading failed',
+    'loading_video' => 'Loading video...',
+    'video_link_unavailable' => 'Video link unavailable',
+    'link_copied' => 'Link copied to clipboard!',
+    'copy_failed' => 'Copy failed, please copy the link manually',
+    'unknown_size' => 'Unknown size',
+    'unknown_author' => 'Unknown author',
+    'unknown_title' => 'Unknown title',
+    'unknown_duration' => 'Unknown duration',
+    'original_audio_quality' => 'Original audio quality',
+    
+    // Paste button related
+    'paste' => 'Paste',
+    'paste_from_clipboard' => 'Paste from clipboard',
+    'paste_success' => 'Pasted successfully!',
+    'paste_failed' => 'Paste failed, please paste manually',
+    'clipboard_empty' => 'Clipboard is empty',
+    'clipboard_not_supported' => 'Your browser does not support clipboard access',
 ];

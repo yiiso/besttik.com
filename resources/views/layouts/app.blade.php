@@ -52,7 +52,33 @@
             password_confirmation_failed: "{{ __('messages.password_confirmation_failed') }}",
             password_min_length: "{{ __('messages.password_min_length') }}",
             logout_success: "{{ __('messages.logout_success') }}",
-            logout_confirm: "{{ __('messages.logout_confirm') }}"
+            logout_confirm: "{{ __('messages.logout_confirm') }}",
+            // Parse limit related translations
+            daily_limit_exceeded_guest: "{{ __('messages.daily_limit_exceeded_guest') }}",
+            daily_limit_exceeded_user: "{{ __('messages.daily_limit_exceeded_user') }}",
+            remaining_parses: "{{ __('messages.remaining_parses') }}",
+            parse_limit_info: "{{ __('messages.parse_limit_info') }}",
+            guest_daily_limit: "{{ __('messages.guest_daily_limit') }}",
+            user_daily_limit: "{{ __('messages.user_daily_limit') }}",
+            login_for_more: "{{ __('messages.login_for_more') }}",
+            upgrade_limit_info: "{{ __('messages.upgrade_limit_info') }}",
+            login: "{{ __('messages.login') }}",
+            close: "{{ __('messages.close') }}",
+            platform: "{{ __('messages.platform') }}",
+            audio_preview: "{{ __('messages.audio_preview') }}",
+            video_not_supported: "{{ __('messages.video_not_supported') }}",
+            audio_not_supported: "{{ __('messages.audio_not_supported') }}",
+            quality_options: "{{ __('messages.quality_options') }}",
+            audio_options: "{{ __('messages.audio_options') }}",
+            recommended: "{{ __('messages.recommended') }}",
+            video_load_error: "{{ __('messages.video_load_error') }}",
+            // Paste button related translations
+            paste: "{{ __('messages.paste') }}",
+            paste_from_clipboard: "{{ __('messages.paste_from_clipboard') }}",
+            paste_success: "{{ __('messages.paste_success') }}",
+            paste_failed: "{{ __('messages.paste_failed') }}",
+            clipboard_empty: "{{ __('messages.clipboard_empty') }}",
+            clipboard_not_supported: "{{ __('messages.clipboard_not_supported') }}"
         };
     </script>
 </head>

@@ -20,6 +20,10 @@ class DetectLanguage
 
         // 支持的语言列表
         $supportedLanguages = ['zh', 'en', 'es', 'fr', 'ja'];
+        
+        // 首先设置当前请求的locale
+        $this->setCurrentLocale($request, $supportedLanguages);
+        
         $targetLang = $request->language ?? null;
         if($targetLang && in_array($targetLang ,$supportedLanguages)){
             $segments = explode('/',ltrim($path,'/'));
@@ -41,8 +45,7 @@ class DetectLanguage
             return $response;
         }
 
-
-        // 如果不是根路径，则不处理
+        // 如果不是根路径，则不处理重定向逻辑
         if ($path !== '/') {
             return $next($request);
         }
@@ -50,8 +53,6 @@ class DetectLanguage
         // 检查用户是否已经手动选择过语言（通过cookie标记）
         if ($request->hasCookie('user_language_selected')) {
             // 用户已经手动选择过语言，不再自动跳转
-            // 但仍然根据用户之前的选择跳转到对应语言页面
-
             return $next($request);
         }
 
@@ -67,6 +68,41 @@ class DetectLanguage
             }
         }
         return $next($request);
+    }
+
+    /**
+     * 设置当前请求的locale
+     */
+    private function setCurrentLocale(Request $request, array $supportedLanguages): void
+    {
+        $path = $request->path();
+        $segments = explode('/', trim($path, '/'));
+        
+        // 检查URL中的语言前缀
+        if (!empty($segments[0]) && in_array($segments[0], $supportedLanguages)) {
+            app()->setLocale($segments[0]);
+            return;
+        }
+        
+        // 检查用户设置的语言偏好（cookie）
+        $preferredLocale = $request->cookie('language');
+        if ($preferredLocale && in_array($preferredLocale, $supportedLanguages)) {
+            app()->setLocale($preferredLocale);
+            return;
+        }
+        
+        // 根据浏览器语言设置默认语言
+        $browserLanguages = $this->getBrowserLanguages($request);
+        foreach ($browserLanguages as $browserLang) {
+            $detectedLang = $this->matchLanguage($browserLang, $supportedLanguages);
+            if ($detectedLang) {
+                app()->setLocale($detectedLang);
+                return;
+            }
+        }
+        
+        // 默认英文
+        app()->setLocale('en');
     }
 
     /**

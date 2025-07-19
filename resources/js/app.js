@@ -93,6 +93,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 初始化登录弹窗
     initLoginModal();
 
+    // 初始化解析状态显示
+    initParseStatus();
+
+    // 初始化粘贴按钮
+    initPasteButton();
+
     // 视频解析表单提交
     const videoParseForm = document.getElementById('videoParseForm');
     const parseResults = document.getElementById('parseResults');
@@ -126,18 +132,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(data => {
                     // 隐藏加载状态
                     loadingState.classList.add('hidden');
+                    
                     if (data.status === 'success') {
                         // 显示成功消息
                         showToast(window.translations?.parse_success || '解析成功！', 'success');
 
                         // 渲染解析结果
                         renderParseResults(data.data, data.platform);
+                        
+                        // 更新解析状态显示
+                        updateParseStatus(data.remaining_count, data.daily_limit);
                     } else {
-                        // 显示错误消息
-                        showToast(data.message || (window.translations?.parse_failed || '解析失败'), 'error');
+                        // 处理解析限制错误
+                        if (data.need_login) {
+                            // 显示登录提示
+                            showLimitExceededModal(data);
+                        } else {
+                            // 显示普通错误消息
+                            showToast(data.message || (window.translations?.parse_failed || '解析失败'), 'error');
+                        }
+                        
+                        // 更新解析状态显示
+                        if (data.remaining_count !== undefined) {
+                            updateParseStatus(data.remaining_count, data.daily_limit);
+                        }
                     }
-
-
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -728,3 +747,309 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// 初始化解析状态显示
+function initParseStatus() {
+    // 获取解析状态信息
+    fetch('/parse-status', {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            updateParseStatus(data.data.remaining_count, data.data.daily_limit, data.data.is_logged_in);
+        }
+    })
+    .catch(error => {
+        console.error('获取解析状态失败:', error);
+    });
+}
+
+// 更新解析状态显示
+function updateParseStatus(remainingCount, dailyLimit, isLoggedIn = null) {
+    // 更新页面上的解析状态显示
+    const statusElement = document.getElementById('parseStatus');
+    if (statusElement) {
+        const usedCount = dailyLimit - remainingCount;
+        const statusHtml = `
+            <div class="flex items-center justify-between text-sm text-gray-600 bg-gray-50 rounded-lg px-3 py-2">
+                <span>${window.translations?.remaining_parses?.replace(':count', remainingCount) || `今日剩余解析次数：${remainingCount}`}</span>
+                <span class="text-xs">${usedCount}/${dailyLimit}</span>
+            </div>
+        `;
+        statusElement.innerHTML = statusHtml;
+    }
+
+    // 如果解析次数用完，显示提示
+    if (remainingCount <= 0) {
+        showParseStatusWarning(isLoggedIn);
+    }
+}
+
+// 显示解析状态警告
+function showParseStatusWarning(isLoggedIn) {
+    const warningElement = document.getElementById('parseWarning');
+    if (warningElement) {
+        if (isLoggedIn === false) {
+            // 未登录用户
+            warningElement.innerHTML = `
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-yellow-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                        </svg>
+                        <span class="text-yellow-800 font-medium">${window.translations?.login_for_more || '登录获取更多解析次数'}</span>
+                    </div>
+                    <p class="text-yellow-700 text-sm mt-2">${window.translations?.upgrade_limit_info?.replace(':limit', '10') || '立即注册，获得每日10次解析机会！'}</p>
+                    <button id="loginPromptBtn" class="mt-3 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-sm rounded-lg transition-colors">
+                        ${window.translations?.login || '登录'}
+                    </button>
+                </div>
+            `;
+            
+            // 添加登录按钮事件
+            const loginPromptBtn = document.getElementById('loginPromptBtn');
+            if (loginPromptBtn) {
+                loginPromptBtn.addEventListener('click', function() {
+                    const loginBtn = document.getElementById('loginBtn');
+                    if (loginBtn) {
+                        loginBtn.click();
+                    }
+                });
+            }
+        } else {
+            // 已登录用户
+            warningElement.innerHTML = `
+                <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span class="text-red-800 font-medium">${window.translations?.daily_limit_exceeded_user?.replace(':limit', '10') || '您今日的解析次数已用完（10次），请明天再试。'}</span>
+                    </div>
+                </div>
+            `;
+        }
+        warningElement.classList.remove('hidden');
+    }
+}
+
+// 显示解析限制超出弹窗
+function showLimitExceededModal(data) {
+    // 创建弹窗HTML
+    const modalHtml = `
+        <div id="limitExceededModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div id="limitExceededModalContent" class="bg-white rounded-2xl p-6 max-w-md mx-4 transform scale-95 opacity-0 transition-all duration-300">
+                <div class="text-center">
+                    <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 mb-4">
+                        <svg class="h-6 w-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">${window.translations?.parse_limit_info || '解析限制信息'}</h3>
+                    <p class="text-gray-600 mb-4">${data.message}</p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 mb-4">
+                        <div class="text-sm text-gray-600 space-y-1">
+                            <div>${window.translations?.guest_daily_limit?.replace(':limit', data.daily_limit) || `游客用户：每日${data.daily_limit}次解析`}</div>
+                            <div>${window.translations?.user_daily_limit?.replace(':limit', '10') || '注册用户：每日10次解析'}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <button id="closeLimitModal" class="flex-1 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
+                            ${window.translations?.close || '关闭'}
+                        </button>
+                        <button id="loginFromLimit" class="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+                            ${window.translations?.login || '登录'}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 添加到页面
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+    const modal = document.getElementById('limitExceededModal');
+    const modalContent = document.getElementById('limitExceededModalContent');
+    const closeBtn = document.getElementById('closeLimitModal');
+    const loginBtn = document.getElementById('loginFromLimit');
+
+    // 显示动画
+    setTimeout(() => {
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    }, 10);
+
+    // 关闭弹窗
+    function closeLimitModal() {
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+
+    // 事件监听
+    closeBtn.addEventListener('click', closeLimitModal);
+    
+    loginBtn.addEventListener('click', function() {
+        closeLimitModal();
+        // 触发登录弹窗
+        const mainLoginBtn = document.getElementById('loginBtn');
+        if (mainLoginBtn) {
+            mainLoginBtn.click();
+        }
+    });
+
+    // 点击背景关闭
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeLimitModal();
+        }
+    });
+}
+// 
+初始化粘贴按钮功能
+function initPasteButton() {
+    const pasteBtn = document.getElementById('pasteBtn');
+    const videoUrlInput = document.getElementById('videoUrl');
+
+    if (pasteBtn && videoUrlInput) {
+        pasteBtn.addEventListener('click', async function() {
+            try {
+                // 检查浏览器是否支持剪贴板API
+                if (!navigator.clipboard || !navigator.clipboard.readText) {
+                    showToast(window.translations?.clipboard_not_supported || '您的浏览器不支持剪贴板访问', 'error');
+                    return;
+                }
+
+                // 显示加载状态
+                const originalHTML = this.innerHTML;
+                this.disabled = true;
+                this.innerHTML = `
+                    <svg class="w-4 h-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span class="hidden sm:inline text-sm">${window.translations?.paste || '粘贴'}</span>
+                `;
+
+                // 从剪贴板读取文本
+                const clipboardText = await navigator.clipboard.readText();
+                
+                // 恢复按钮状态
+                this.disabled = false;
+                this.innerHTML = originalHTML;
+
+                if (!clipboardText || clipboardText.trim() === '') {
+                    showToast(window.translations?.clipboard_empty || '剪贴板为空', 'error');
+                    return;
+                }
+
+                // 检查是否是有效的URL
+                const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+                const trimmedText = clipboardText.trim();
+                
+                if (!urlPattern.test(trimmedText)) {
+                    // 如果不是完整URL，但可能是视频链接，仍然粘贴
+                    if (trimmedText.includes('douyin.com') || 
+                        trimmedText.includes('tiktok.com') || 
+                        trimmedText.includes('youtube.com') || 
+                        trimmedText.includes('youtu.be') || 
+                        trimmedText.includes('bilibili.com') ||
+                        trimmedText.includes('instagram.com') ||
+                        trimmedText.includes('twitter.com') ||
+                        trimmedText.includes('x.com')) {
+                        // 看起来像视频链接，直接粘贴
+                        videoUrlInput.value = trimmedText;
+                        videoUrlInput.focus();
+                        showToast(window.translations?.paste_success || '粘贴成功！', 'success');
+                        
+                        // 添加输入框高亮效果
+                        videoUrlInput.classList.add('border-green-300', 'bg-green-50');
+                        setTimeout(() => {
+                            videoUrlInput.classList.remove('border-green-300', 'bg-green-50');
+                        }, 1000);
+                        return;
+                    }
+                }
+
+                // 粘贴文本到输入框
+                videoUrlInput.value = trimmedText;
+                videoUrlInput.focus();
+                
+                // 显示成功提示
+                showToast(window.translations?.paste_success || '粘贴成功！', 'success');
+                
+                // 添加输入框高亮效果
+                videoUrlInput.classList.add('border-green-300', 'bg-green-50');
+                setTimeout(() => {
+                    videoUrlInput.classList.remove('border-green-300', 'bg-green-50');
+                }, 1000);
+
+            } catch (error) {
+                console.error('粘贴失败:', error);
+                
+                // 恢复按钮状态
+                this.disabled = false;
+                this.innerHTML = originalHTML;
+                
+                // 显示错误提示
+                if (error.name === 'NotAllowedError') {
+                    showToast(window.translations?.clipboard_not_supported || '您的浏览器不支持剪贴板访问', 'error');
+                } else {
+                    showToast(window.translations?.paste_failed || '粘贴失败，请手动粘贴', 'error');
+                }
+            }
+        });
+
+        // 添加键盘快捷键支持 (Ctrl+V 或 Cmd+V)
+        videoUrlInput.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'v') {
+                // 让浏览器默认的粘贴行为执行
+                setTimeout(() => {
+                    if (this.value.trim()) {
+                        // 添加输入框高亮效果
+                        this.classList.add('border-blue-300', 'bg-blue-50');
+                        setTimeout(() => {
+                            this.classList.remove('border-blue-300', 'bg-blue-50');
+                        }, 1000);
+                    }
+                }, 10);
+            }
+        });
+
+        // 添加拖拽支持
+        videoUrlInput.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('border-blue-300', 'bg-blue-50');
+        });
+
+        videoUrlInput.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.classList.remove('border-blue-300', 'bg-blue-50');
+        });
+
+        videoUrlInput.addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.classList.remove('border-blue-300', 'bg-blue-50');
+            
+            const droppedText = e.dataTransfer.getData('text');
+            if (droppedText.trim()) {
+                this.value = droppedText.trim();
+                this.focus();
+                showToast(window.translations?.paste_success || '粘贴成功！', 'success');
+                
+                // 添加成功高亮效果
+                this.classList.add('border-green-300', 'bg-green-50');
+                setTimeout(() => {
+                    this.classList.remove('border-green-300', 'bg-green-50');
+                }, 1000);
+            }
+        });
+    }
+}

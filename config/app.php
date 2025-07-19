@@ -123,4 +123,17 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Daily Parse Limits
+    |--------------------------------------------------------------------------
+    |
+    | These values determine the daily parsing limits for guests and users.
+    | Guests are limited by IP address, while users are limited by user ID.
+    |
+    */
+
+    'daily_parse_limit_guest' => env('DAILY_PARSE_LIMIT_GUEST', 3),
+    'daily_parse_limit_user' => env('DAILY_PARSE_LIMIT_USER', 10),
+
 ];

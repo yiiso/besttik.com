@@ -384,5 +384,42 @@ return [
     'back_to_home' => 'Retour à l\'Accueil',
     'get_help' => 'Obtenir de l\'Aide',
     'popular_pages' => 'Pages Populaires',
+    
+    // Parse limit messages
+    'daily_limit_exceeded_guest' => 'Vous avez atteint la limite quotidienne d\'analyse (:limit fois). Veuillez vous connecter pour obtenir plus d\'opportunités d\'analyse.',
+    'daily_limit_exceeded_user' => 'Vous avez atteint la limite quotidienne d\'analyse (:limit fois). Veuillez réessayer demain.',
+    'remaining_parses' => 'Analyses restantes aujourd\'hui : :count',
+    'parse_limit_info' => 'Informations sur la Limite d\'Analyse',
+    'guest_daily_limit' => 'Utilisateurs invités : :limit analyses par jour',
+    'user_daily_limit' => 'Utilisateurs enregistrés : :limit analyses par jour',
+    'login_for_more' => 'Se Connecter pour Plus d\'Analyses',
+    'upgrade_limit_info' => 'Inscrivez-vous maintenant pour obtenir :limit opportunités d\'analyse par jour !',
+    
+    // Additional UI translations
+    'close' => 'Fermer',
+    'audio_preview' => 'Aperçu Audio',
+    'video_not_supported' => 'Votre navigateur ne prend pas en charge la lecture vidéo',
+    'audio_not_supported' => 'Votre navigateur ne prend pas en charge la lecture audio',
+    'quality_options' => 'Options de Qualité',
+    'audio_options' => 'Options Audio',
+    'recommended' => 'Recommandé',
+    'video_load_error' => 'Échec du chargement de la vidéo',
+    'loading_video' => 'Chargement de la vidéo...',
+    'video_link_unavailable' => 'Lien vidéo indisponible',
+    'link_copied' => 'Lien copié dans le presse-papiers !',
+    'copy_failed' => 'Échec de la copie, veuillez copier le lien manuellement',
+    'unknown_size' => 'Taille inconnue',
+    'unknown_author' => 'Auteur inconnu',
+    'unknown_title' => 'Titre inconnu',
+    'unknown_duration' => 'Durée inconnue',
+    'original_audio_quality' => 'Qualité audio originale',
+    
+    // Paste button related
+    'paste' => 'Coller',
+    'paste_from_clipboard' => 'Coller depuis le presse-papiers',
+    'paste_success' => 'Collé avec succès !',
+    'paste_failed' => 'Échec du collage, veuillez coller manuellement',
+    'clipboard_empty' => 'Le presse-papiers est vide',
+    'clipboard_not_supported' => 'Votre navigateur ne prend pas en charge l\'accès au presse-papiers',
 
 ];

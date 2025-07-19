@@ -71,9 +71,32 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function ()
 
 // API路由
 Route::post('/parse', [VideoParserController::class, 'parse'])->name('video.parse');
+Route::get('/parse-status', [VideoParserController::class, 'getParseStatus'])->name('video.parse.status');
+
+// 语言设置路由
+Route::post('/set-language-preference', function(\Illuminate\Http\Request $request) {
+    $language = $request->input('language');
+    $userSelected = $request->input('user_selected', false);
+
+    if (in_array($language, ['zh', 'en', 'es', 'fr', 'ja'])) {
+        // 设置cookie，有效期30天
+        cookie()->queue('language', $language, 60 * 24 * 30);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Language preference saved'
+        ]);
+    }
+
+    return response()->json([
+        'status' => 'error',
+        'message' => 'Invalid language'
+    ], 400);
+})->name('language.set');
 
 // 认证路由
 use App\Http\Controllers\AuthController;
+Route::get('/authTest', [AuthController::class, 'authTest'])->name('auth.test');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

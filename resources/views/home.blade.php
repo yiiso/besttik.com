@@ -67,12 +67,27 @@
                             id="videoUrl"
                             name="video_url"
                             placeholder="{{ __('messages.paste_link') }}"
-                            class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 rounded-full focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl pr-28 font-sleek"
+                            class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200  focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl pr-20 sm:pr-44 font-sleek"
                             required
                         >
+
+                        <!-- 粘贴按钮 -->
+                        <button
+                            type="button"
+                            id="pasteBtn"
+                            class="absolute right-16 sm:right-32 top-2 bottom-2 px-2 sm:px-4 bg-gray-100 text-xs hover:bg-gray-200 text-gray-700  transition-all duration-200 flex items-center space-x-1 shadow-md hover:shadow-lg ui-text"
+                            title="{{ __('messages.paste_from_clipboard') }}"
+                        >
+                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            <span class="hidden sm:inline text-sm">{{ __('messages.paste') }}</span>
+                        </button>
+
+                        <!-- 解析按钮 -->
                         <button
                             type="submit"
-                            class="absolute right-2 top-2 bottom-2 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all duration-200 flex items-center space-x-2 shadow-md hover:shadow-lg ui-text"
+                            class="absolute right-2 top-2 bottom-2 px-3 sm:px-6 bg-blue-600 hover:bg-blue-700 text-white  transition-all duration-200 flex items-center space-x-2 shadow-md hover:shadow-lg ui-text"
                         >
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -81,6 +96,16 @@
                         </button>
                     </div>
                 </form>
+
+                <!-- Parse Status Display -->
+                <div id="parseStatus" class="mt-4 max-w-md mx-auto">
+                    <!-- 解析状态将通过JavaScript动态更新 -->
+                </div>
+
+                <!-- Parse Warning -->
+                <div id="parseWarning" class="hidden mt-4 max-w-md mx-auto">
+                    <!-- 解析警告将通过JavaScript动态更新 -->
+                </div>
 
                 <!-- Quick Examples -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">

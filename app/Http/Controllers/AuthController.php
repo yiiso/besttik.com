@@ -14,6 +14,13 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+
+    public function authTest(Request $request)
+    {
+        $user = User::query()->first();
+        Auth::login($user);
+        return redirect('/');
+    }
     /**
      * 用户登录
      */

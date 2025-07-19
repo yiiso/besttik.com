@@ -15,6 +15,40 @@ class VideoParserController extends Controller
      */
     public function parse(Request $request): JsonResponse
     {
+
+        $demo = '{
+    "status": "success",
+    "data": {
+        "title": "Unknown Title",
+        "thumbnail": "",
+        "duration": "Unknown Duration",
+        "author": "Unknown Author",
+        "quality_options": [
+            {
+                "quality": "Original Quality",
+                "format": "mp4",
+                "size": 0,
+                "download_url": "https:\/\/rr2---sn-4g5ednkl.googlevideo.com\/videoplayback?expire=1752945684&ei=s397aJXTPJPt6dsPmp7k4QU&ip=2a02%3A4780%3A41%3Ae81f%3A%3A1&id=o-AOldkFUoBfz6-IB-5iznKh74wOd7PYlPUtFrVPBwBh4b&itag=401&aitags=133%2C134%2C135%2C136%2C160%2C242%2C243%2C244%2C247%2C278%2C298%2C299%2C302%2C303%2C308%2C315%2C394%2C395%2C396%2C397%2C398%2C399%2C400%2C401&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1752924084%2C&mh=2F&mm=31%2C29&mn=sn-4g5ednkl%2Csn-4g5lzned&ms=au%2Crdu&mv=m&mvi=2&pl=48&rms=au%2Cau&initcwndbps=298750&siu=1&bui=AY1jyLOeXQS0pbYR23vWmYgu4EQtsbVbC85k_a2HWbCR3giO1DslQzLIRyOvI8b9dPrOV5EVcw&vprv=1&svpuc=1&mime=video%2Fmp4&ns=JNY3WLGAYvF3cpjrljUV4b0Q&rqh=1&gir=yes&clen=8798267510&dur=8890.282&lmt=1750678624860429&mt=1752923602&fvip=2&keepalive=yes&lmw=1&fexp=51543008&c=TVHTML5&sefc=1&txp=4532534&n=KkAjbMNPnv64AA&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cxpc%2Csiu%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIhAOS8LnDtU4_Mq_qQlmmRqYRaNQ_mV4qEM-B-V9aqeKxCAiBjr1x5yTr0rJjHJd0SJHHLvlcqZPf0IVsMIggrEz5nCg%3D%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAKRLDcbCgf7D_zVo7O2FFrRaZ-n7TnTVSDhfL7A4xGmnAiBhxNjQgtqKyGDVb3nF0PBP1NyYmmAlZ1ZZjlXJ0Jkhdg%3D%3D"
+            }
+        ],
+        "audio_options": [
+            {
+                "quality": "messages.original_audio_quality",
+                "format": "mp3",
+                "size": 0,
+                "download_url": "https:\/\/rr2---sn-4g5ednkl.googlevideo.com\/videoplayback?expire=1752945684&ei=s397aJXTPJPt6dsPmp7k4QU&ip=2a02%3A4780%3A41%3Ae81f%3A%3A1&id=o-AOldkFUoBfz6-IB-5iznKh74wOd7PYlPUtFrVPBwBh4b&itag=251&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&met=1752924084%2C&mh=2F&mm=31%2C29&mn=sn-4g5ednkl%2Csn-4g5lzned&ms=au%2Crdu&mv=m&mvi=2&pl=48&rms=au%2Cau&initcwndbps=298750&siu=1&bui=AY1jyLOeXQS0pbYR23vWmYgu4EQtsbVbC85k_a2HWbCR3giO1DslQzLIRyOvI8b9dPrOV5EVcw&vprv=1&svpuc=1&mime=audio%2Fwebm&ns=JNY3WLGAYvF3cpjrljUV4b0Q&rqh=1&gir=yes&clen=146530005&dur=8890.321&lmt=1750508590044995&mt=1752923602&fvip=2&keepalive=yes&lmw=1&fexp=51543008&c=TVHTML5&sefc=1&txp=4532534&n=KkAjbMNPnv64AA&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Csiu%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&sig=AJfQdSswRQIgOLUD6dx9E7t2V6W-hVWeccaBhanJdh2hFFxE4aiB6bYCIQDbLldbNy47JtoY2DdAXMsIQsHXqx-6NiBAtaDmXmUO1g%3D%3D&lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&lsig=APaTxxMwRQIhAKRLDcbCgf7D_zVo7O2FFrRaZ-n7TnTVSDhfL7A4xGmnAiBhxNjQgtqKyGDVb3nF0PBP1NyYmmAlZ1ZZjlXJ0Jkhdg%3D%3D"
+            }
+        ]
+    },
+    "platform": "youtube"
+}';
+
+        return response()->json([
+            'status' => 'success',
+            'data' => json_decode($demo,true)['data'] ?? [],
+            'platform' => $platform ?? 'unknown'
+        ]);
+
         $validator = Validator::make($request->all(), [
             'video_url' => 'required|string'
         ], [

@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(data => {
                     // 隐藏加载状态
                     loadingState.classList.add('hidden');
-
                     if (data.status === 'success') {
                         // 显示成功消息
                         showToast(window.translations?.parse_success || '解析成功！', 'success');
@@ -137,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         // 显示错误消息
                         showToast(data.message || (window.translations?.parse_failed || '解析失败'), 'error');
                     }
+
+
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -147,94 +148,106 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// 渲染解析结果
+// 渲染解析结果 - 优化版本
 function renderParseResults(videoData, platform) {
     const parseResults = document.getElementById('parseResults');
     if (!parseResults) return;
 
     // 构建结果HTML
     let html = `
-    <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-xl mb-8">
-        <div class="flex flex-col md:flex-row gap-8">
-            <!-- 左侧：视频缩略图和播放按钮 -->
-            <div class="w-full md:w-1/2 relative group">
-                <div class="relative rounded-xl overflow-hidden aspect-video bg-gray-100">
-                    <img src="${videoData.thumbnail}" alt="${videoData.title}" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button class="play-video-btn bg-blue-600 hover:bg-blue-700 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transform transition-transform duration-300 hover:scale-110" data-video-url="${videoData.quality_options[0]?.download_url || ''}">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-3 py-1 rounded-full text-sm">
-                    ${videoData.duration || ''}
-                </div>
-            </div>
+    <div class="bg-white border border-gray-100 rounded-2xl shadow-xl mb-8 overflow-hidden fade-in">
+        <!-- 视频播放区域 -->
+        <div class="relative bg-black rounded-t-2xl">
+            <video
+                id="videoPlayer"
+                class="w-full aspect-video object-contain rounded-t-2xl"
+                referrerpolicy="no-referrer"
+                controls
+                preload="metadata"
+                poster=""
+            >
+                <source src="${videoData.quality_options[0]?.download_url || ''}" type="video/mp4">
+                <p class="text-white text-center py-8">${window.translations?.video_not_supported || '您的浏览器不支持视频播放'}</p>
+            </video>
 
-            <!-- 右侧：视频信息和操作按钮 -->
-            <div class="w-full md:w-1/2">
-                <h2 class="text-xl md:text-2xl font-semibold mb-4 line-clamp-2">${videoData.title}</h2>
-
-                <div class="flex items-center mb-6">
-                    <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-3">
-                        <svg class="w-6 h-6 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div class="font-medium">${videoData.author || window.translations?.unknown_author || '未知作者'}</div>
-                        <div class="text-sm text-gray-500 capitalize">${platform || ''}</div>
-                    </div>
-                </div>
-
-                <div class="space-y-4">
-                    <!-- 操作按钮 -->
-                    <div class="flex flex-wrap gap-3">
-                        <button class="download-video-btn flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors" data-url="${videoData.quality_options[0]?.download_url || ''}">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                            </svg>
-                            <span>${window.translations?.download_video || '下载视频'}</span>
-                        </button>
-
-                        <button class="copy-link-btn flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors" data-url="${videoData.quality_options[0]?.download_url || ''}">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                            </svg>
-                            <span>${window.translations?.copy_link || '复制链接'}</span>
-                        </button>
-
-                        <a href="${videoData.quality_options[0]?.download_url || '#'}" target="_blank" rel="noreferrer" class="flex items-center space-x-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            <span>${window.translations?.open_new_tab || '新窗口打开'}</span>
-                        </a>
-                    </div>
-
-                    <!-- 下载选项 -->
-                    ${renderDownloadOptions(videoData)}
+            <!-- 视频加载状态 -->
+            <div id="videoLoadingState" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="text-white text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-2 border-white border-t-transparent mx-auto mb-4"></div>
+                    <p>${window.translations?.loading_video || '正在加载视频...'}</p>
                 </div>
             </div>
         </div>
 
-        <!-- 视频播放器 (默认隐藏) -->
-        <div id="videoPlayerContainer" class="hidden mt-6">
-            <div class="relative aspect-video bg-black rounded-xl overflow-hidden">
-                <video id="videoPlayer" class="w-full h-full"  referrerPolicy="no-referrer" controls>
-                    <source src="" type="video/mp4">
-                    ${window.translations?.browser_not_support || '您的浏览器不支持视频播放'}
-                </video>
-                <div id="videoPlayerPlaceholder" class="absolute inset-0 flex items-center justify-center bg-gray-900">
-                    <div class="text-white text-center">
-                        <div class="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent mx-auto mb-4"></div>
-                        <p>${window.translations?.loading_video || '正在加载视频...'}</p>
-                    </div>
-                </div>
+        <!-- 内容区域 -->
+        <div class="p-6 space-y-6">
+            <!-- 音频播放器 -->
+            ${videoData.audio_options && videoData.audio_options[0] ? `
+            <div class="bg-gray-50 rounded-xl p-4">
+                <h3 class="text-sm font-medium text-gray-700 mb-3 flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z" />
+                    </svg>
+                    ${window.translations?.audio_preview || '音频预览'}
+                </h3>
+                <audio
+                    controls
+                    class="w-full h-10"
+                    preload="metadata"
+                    style="filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%);"
+                >
+                    <source src="${videoData.audio_options[0].download_url}" type="audio/webm">
+                    <source src="${videoData.audio_options[0].download_url}" type="audio/mp3">
+                    <p class="text-gray-500 text-sm">${window.translations?.audio_not_supported || '您的浏览器不支持音频播放'}</p>
+                </audio>
             </div>
+            ` : ''}
+
+            <!-- 操作按钮区域 -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-gray-800 border-b border-gray-200 pb-2">
+                    ${window.translations?.download_options || '下载选项'}
+                </h3>
+
+                <!-- 主要操作按钮 -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <button class="download-video-btn btn-primary flex items-center justify-center space-x-2 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5" data-url="${videoData.quality_options[0]?.download_url || ''}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        <span class="font-medium">${window.translations?.download_video || '下载视频'}</span>
+                    </button>
+
+                    <button class="copy-link-btn flex items-center justify-center space-x-2 px-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5" data-url="${videoData.quality_options[0]?.download_url || ''}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                        <span class="font-medium">${window.translations?.copy_link || '复制链接'}</span>
+                    </button>
+
+                    <a href="${videoData.quality_options[0]?.download_url || '#'}" target="_blank" rel="noreferrer" class="flex items-center justify-center space-x-2 px-4 py-3 bg-purple-100 hover:bg-purple-200 text-purple-700 rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        <span class="font-medium">${window.translations?.open_new_tab || '新窗口打开'}</span>
+                    </a>
+
+                    ${videoData.audio_options && videoData.audio_options[0] ? `
+                    <a href="${videoData.audio_options[0].download_url}" download class="flex items-center justify-center space-x-2 px-4 py-3 bg-green-100 hover:bg-green-200 text-green-700 rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z" />
+                        </svg>
+                        <span class="font-medium">${window.translations?.download_audio || '下载音频'}</span>
+                    </a>
+                    ` : ''}
+                </div>
+
+                <!-- 详细下载选项 -->
+
+            </div>
+
+            <!-- 平台信息 -->
+
         </div>
     </div>
     `;
@@ -245,29 +258,49 @@ function renderParseResults(videoData, platform) {
 
     // 添加事件监听器
     addEventListeners();
+
+    // 初始化视频播放器事件
+    initVideoPlayer();
 }
 
-// 渲染下载选项
+// 渲染下载选项 - 优化版本
 function renderDownloadOptions(videoData) {
     if (!videoData.quality_options || videoData.quality_options.length === 0) {
         return '';
     }
 
     let html = `
-    <div class="mt-6 border-t border-gray-100 pt-4">
-        <h3 class="font-medium mb-3">${window.translations?.download_options || '下载选项'}</h3>
-        <div class="space-y-2">
+    <div class="mt-6 border-t border-gray-100 pt-6">
+        <h4 class="text-md font-medium text-gray-700 mb-4 flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
+            </svg>
+            ${window.translations?.quality_options || '画质选项'}
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
     `;
 
     // 视频选项
-    videoData.quality_options.forEach(option => {
+    videoData.quality_options.forEach((option, index) => {
+        const isRecommended = index === 0;
         html += `
-        <div class="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
-            <div>
-                <span class="font-medium">${option.quality || window.translations?.original_quality || '原画质'}</span>
-                <span class="text-sm text-gray-500 ml-2">${option.format || 'mp4'} · ${option.size || window.translations?.unknown_size || '未知大小'}</span>
+        <div class="relative flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl border transition-all duration-200 ${isRecommended ? 'border-blue-200 bg-blue-50' : 'border-gray-200'}">
+            ${isRecommended ? `
+            <div class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+                ${window.translations?.recommended || '推荐'}
             </div>
-            <a href="${option.download_url}" download class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors">
+            ` : ''}
+            <div class="flex-1">
+                <div class="flex items-center space-x-2">
+                    <span class="font-medium text-gray-800">${option.quality || window.translations?.original_quality || '原画质'}</span>
+                    ${isRecommended ? '<span class="text-blue-600 text-sm">★</span>' : ''}
+                </div>
+                <div class="text-sm text-gray-500 mt-1">
+                    <span>${option.format || 'mp4'}</span>
+                    ${option.size ? ` · ${option.size}` : ''}
+                </div>
+            </div>
+            <a href="${option.download_url}" download class="ml-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors font-medium">
                 ${window.translations?.download || '下载'}
             </a>
         </div>
@@ -276,16 +309,28 @@ function renderDownloadOptions(videoData) {
 
     // 音频选项
     if (videoData.audio_options && videoData.audio_options.length > 0) {
-        html += `<h3 class="font-medium mt-4 mb-3">${window.translations?.audio_download_options || '音频下载选项'}</h3>`;
+        html += `
+        </div>
+        <h4 class="text-md font-medium text-gray-700 mb-4 mt-6 flex items-center">
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z" />
+            </svg>
+            ${window.translations?.audio_options || '音频选项'}
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        `;
 
-        videoData.audio_options.forEach(option => {
+        videoData.audio_options.forEach((option, index) => {
             html += `
-            <div class="flex items-center justify-between py-2 px-3 bg-gray-50 rounded-lg">
-                <div>
-                    <span class="font-medium">${option.quality || window.translations?.audio_quality || '音质'}</span>
-                    <span class="text-sm text-gray-500 ml-2">${option.format || 'mp3'} · ${option.size || window.translations?.unknown_size || '未知大小'}</span>
+            <div class="flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 rounded-xl border border-green-200 transition-all duration-200">
+                <div class="flex-1">
+                    <div class="font-medium text-gray-800">${option.quality || window.translations?.audio_quality || '音质'}</div>
+                    <div class="text-sm text-gray-500 mt-1">
+                        <span>${option.format || 'mp3'}</span>
+                        ${option.size ? ` · ${option.size}` : ''}
+                    </div>
                 </div>
-                <a href="${option.download_url}" download class="px-3 py-1 bg-green-600 hover:bg-green-700 text-white text-sm rounded transition-colors">
+                <a href="${option.download_url}" download class="ml-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors font-medium">
                     ${window.translations?.download_audio || '下载音频'}
                 </a>
             </div>
@@ -301,44 +346,32 @@ function renderDownloadOptions(videoData) {
     return html;
 }
 
+// 初始化视频播放器事件
+function initVideoPlayer() {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const loadingState = document.getElementById('videoLoadingState');
+
+    if (videoPlayer && loadingState) {
+        // 显示加载状态
+        videoPlayer.addEventListener('loadstart', function() {
+            loadingState.classList.remove('hidden');
+        });
+
+        // 隐藏加载状态
+        videoPlayer.addEventListener('loadeddata', function() {
+            loadingState.classList.add('hidden');
+        });
+
+        // 错误处理
+        videoPlayer.addEventListener('error', function() {
+            loadingState.classList.add('hidden');
+            showToast(window.translations?.video_load_error || '视频加载失败', 'error');
+        });
+    }
+}
+
 // 添加事件监听器
 function addEventListeners() {
-    // 播放视频按钮
-    const playButtons = document.querySelectorAll('.play-video-btn');
-    playButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const videoUrl = this.getAttribute('data-video-url');
-            if (!videoUrl) {
-                showToast(window.translations?.video_link_unavailable || '视频链接不可用', 'error');
-                return;
-            }
-
-            const videoPlayerContainer = document.getElementById('videoPlayerContainer');
-            const videoPlayer = document.getElementById('videoPlayer');
-            const videoSource = videoPlayer.querySelector('source');
-            const placeholder = document.getElementById('videoPlayerPlaceholder');
-
-            // 设置视频源
-            videoSource.src = videoUrl;
-            videoPlayer.load();
-
-            // 显示视频播放器
-            videoPlayerContainer.classList.remove('hidden');
-
-            // 滚动到视频播放器
-            videoPlayerContainer.scrollIntoView({ behavior: 'smooth' });
-
-            // 视频加载完成后隐藏占位符
-            videoPlayer.addEventListener('canplay', function () {
-                placeholder.classList.add('hidden');
-                videoPlayer.play().catch(err => {
-                    console.error('自动播放失败:', err);
-                    showToast(window.translations?.play_failed || '自动播放失败，请点击播放按钮', 'info');
-                });
-            });
-        });
-    });
-
     // 复制链接按钮
     const copyButtons = document.querySelectorAll('.copy-link-btn');
     copyButtons.forEach(button => {
@@ -612,8 +645,6 @@ document.addEventListener('DOMContentLoaded', function() {
             showLoginFormView();
         });
     }
-
-    // Google登录按钮功能已在initLoginModal中处理，这里不需要重复
 
     // 邮箱注册表单提交
     if (emailRegisterForm) {

@@ -66,14 +66,14 @@ return [
     'low_quality' => 'Low Quality',
     'audio_quality' => 'Audio Quality',
     'copy_success' => 'Copy Success',
-    
+
     // Footer
     'footer_description' => 'Professional global video parsing tool, supporting multiple platforms for video link parsing and downloading.',
     'navigation' => 'Navigation',
     'products' => 'Products',
     'support' => 'Support',
     'all_rights_reserved' => 'All rights reserved.',
-    
+
     // User Authentication
     'login' => 'Login',
     'logout' => 'Logout',
@@ -102,7 +102,7 @@ return [
     'email_required' => 'Email is required',
     'password_confirmation_failed' => 'Password confirmation does not match',
     'password_min_length' => 'Password must be at least 8 characters',
-    
+
     // Pages
     'video_parser' => 'Video Parser',
     'batch_download' => 'Batch Download',
@@ -111,7 +111,7 @@ return [
     'contact_us' => 'Contact Us',
     'privacy_policy' => 'Privacy Policy',
     'terms_of_service' => 'Terms of Service',
-    
+
     // Terms of Service
     'terms_of_service_description' => 'Please read our terms of service carefully before using VideoParser.top.',
     'last_updated' => 'Last Updated',
@@ -168,7 +168,7 @@ return [
     'terms_contact_description' => 'If you have any questions about these terms, please contact us:',
     'address' => 'Address',
     'company_address' => 'Company Address',
-    
+
     // Privacy Policy
     'privacy_policy_description' => 'Your privacy is important to us. This policy explains how we collect, use, and protect your information.',
     'information_we_collect' => 'Information We Collect',
@@ -218,7 +218,7 @@ return [
     'policy_changes' => 'Changes to This Policy',
     'policy_changes_description' => 'We may update this privacy policy from time to time. We will notify you of any material changes by posting the new policy on our website.',
     'privacy_contact_description' => 'If you have any questions about this privacy policy, please contact us:',
-    
+
     // Contact Us
     'contact_us_description' => 'Have questions or need support? We\'re here to help you get the most out of VideoParser.top.',
     'send_message' => 'Send us a Message',
@@ -248,7 +248,7 @@ return [
     'search_help' => 'Search Help Articles',
     'search_help_description' => 'Find answers to common questions',
     'browse_help' => 'Browse Help Center',
-    
+
     // Help Center
     'help_center_description' => 'Find answers to common questions and learn how to get the most out of VideoParser.top.',
     'getting_started' => 'Getting Started',
@@ -274,7 +274,7 @@ return [
     'still_need_help' => 'Still Need Help?',
     'contact_support_description' => 'Our support team is ready to assist you',
     'contact_support' => 'Contact Support',
-    
+
     // API Service
     'api_service_description' => 'Integrate powerful video parsing capabilities into your applications with our comprehensive API.',
     'powerful_api' => 'Powerful Video Parsing API',
@@ -307,7 +307,7 @@ return [
     'ready_to_integrate' => 'Ready to Integrate?',
     'api_cta_description' => 'Start building with our powerful API today',
     'get_api_key' => 'Get API Key',
-    
+
     // Batch Download
     'batch_download_description' => 'Download multiple videos at once with our powerful batch processing feature.',
     'powerful_batch_processing' => 'Powerful Batch Processing',
@@ -330,13 +330,13 @@ return [
     'ready_to_start' => 'Ready to Start Batch Processing?',
     'batch_download_cta' => 'Try our batch download feature and save hours of time',
     'try_batch_download' => 'Try Batch Download',
-    
+
     // Additional common terms
     'unknown_size' => 'Unknown Size',
     'loading_video' => 'Loading video...',
     'browser_not_support' => 'Your browser does not support video playback',
     'network_error' => 'Network error, please try again',
-    
+
     // Error Pages
     'page_not_found' => 'Page Not Found',
     'page_not_found_description' => 'The page you are looking for could not be found.',
@@ -428,7 +428,7 @@ return [
     'profile' => 'Profile',
     'settings' => 'Settings',
     'logout_confirm' => 'Are you sure you want to logout?',
-    
+
     // Page content translations
     'batch_download_description' => 'Download multiple videos at once with our powerful batch processing feature. Save time and effort.',
     'powerful_batch_processing' => 'Powerful Batch Processing',
@@ -451,7 +451,7 @@ return [
     'ready_to_start' => 'Ready to Start Batch Processing?',
     'batch_download_cta' => 'Experience the power of batch video downloading with VideoParser.top.',
     'try_batch_download' => 'Try Batch Download',
-    
+
     // API page translations
     'api_service_description' => 'Integrate powerful video parsing capabilities into your applications with our comprehensive API.',
     'powerful_api' => 'Powerful Developer API',
@@ -484,7 +484,7 @@ return [
     'ready_to_integrate' => 'Ready to Integrate?',
     'api_cta_description' => 'Get started with our API and integrate video parsing into your applications today.',
     'get_api_key' => 'Get API Key',
-    
+
     // Help page translations
     'help_center_description' => 'Find answers to common questions and get support for using VideoParser.top.',
     'search_help' => 'Search for help...',
@@ -511,7 +511,7 @@ return [
     'still_need_help' => 'Still Need Help?',
     'contact_support_description' => 'Our support team is here to help you with any questions or issues.',
     'contact_support' => 'Contact Support',
-    
+
     // Contact page translations
     'contact_us_description' => 'Get in touch with our team. We are here to help you with any questions or support needs.',
     'send_message' => 'Send Message',
@@ -539,7 +539,7 @@ return [
     'service_status' => 'Service Status',
     'search_help_description' => 'Many questions can be answered quickly by searching our help center.',
     'browse_help' => 'Browse Help Center',
-    
+
     // Privacy policy translations
     'privacy_policy_description' => 'Learn how we collect, use, and protect your personal information when using VideoParser.top.',
     'last_updated' => 'Last Updated',
@@ -593,7 +593,7 @@ return [
     'privacy_contact_description' => 'If you have questions about this privacy policy, please contact us:',
     'address' => 'Address',
     'company_address' => 'Company Address',
-    
+
     // Terms of service translations
     'terms_of_service_description' => 'Please read these terms carefully before using VideoParser.top services.',
     'acceptance_of_terms' => 'Acceptance of Terms',
@@ -646,7 +646,7 @@ return [
     'entire_agreement' => 'Entire Agreement',
     'entire_agreement_description' => 'These terms constitute the entire agreement between you and VideoParser.top regarding the use of the service.',
     'terms_contact_description' => 'If you have any questions about these terms, please contact us:',
-    
+
     // Parse limit messages
     'daily_limit_exceeded_guest' => 'You have reached the daily parsing limit (:limit times). Please log in to get more parsing opportunities.',
     'daily_limit_exceeded_user' => 'You have reached the daily parsing limit (:limit times). Please try again tomorrow.',
@@ -656,7 +656,7 @@ return [
     'user_daily_limit' => 'Registered users: :limit parses per day',
     'login_for_more' => 'Login for More Parses',
     'upgrade_limit_info' => 'Register now to get :limit parsing opportunities per day!',
-    
+
     // Additional UI translations
     'close' => 'Close',
     'audio_preview' => 'Audio Preview',
@@ -675,7 +675,7 @@ return [
     'unknown_title' => 'Unknown title',
     'unknown_duration' => 'Unknown duration',
     'original_audio_quality' => 'Original audio quality',
-    
+
     // Paste button related
     'paste' => 'Paste',
     'paste_from_clipboard' => 'Paste from clipboard',
@@ -686,9 +686,9 @@ return [
     'home' => 'Home',
     // Contact form
     'contact_success' => 'Thank you for your message! We will get back to you soon.',
-    
+
     // Dashboard
-    'dashboard_title' => 'User Dashboard',
+    'dashboard_title' => 'Dashboard',
     'dashboard_description' => 'Manage your account and view your usage statistics',
     'dashboard_subtitle' => 'Welcome to your personal dashboard',
     'loading' => 'Loading...',

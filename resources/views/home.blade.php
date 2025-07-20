@@ -111,9 +111,10 @@
                 <!-- Quick Examples -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
                     <span class="text-gray-500 font-elegant">{{ __('messages.try_these') }}</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@user/video/example'">TikTok</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=example'">YouTube</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.xiaohongshu.com/'">小红书</button>
                 </div>
             </div>
 

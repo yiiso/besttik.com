@@ -66,14 +66,14 @@ return [
     'unknown_title' => 'Titre Inconnu',
     'unknown_author' => 'Auteur Inconnu',
     'unknown_duration' => 'Durée Inconnue',
-    
+
     // Footer
     'footer_description' => 'Outil professionnel global d\'analyse vidéo, supporte l\'analyse et le téléchargement de liens vidéo multi-plateformes.',
     'navigation' => 'Navigation',
     'products' => 'Produits',
     'support' => 'Support',
     'all_rights_reserved' => 'Tous droits réservés.',
-    
+
     // User Authentication
     'login' => 'Se Connecter',
     'logout' => 'Se Déconnecter',
@@ -102,7 +102,7 @@ return [
     'email_required' => 'L\'email est requis',
     'password_confirmation_failed' => 'La confirmation du mot de passe ne correspond pas',
     'password_min_length' => 'Le mot de passe doit contenir au moins 8 caractères',
-    
+
     // Pages
     'video_parser' => 'Analyseur Vidéo',
     'batch_download' => 'Téléchargement par Lots',
@@ -111,7 +111,7 @@ return [
     'contact_us' => 'Nous Contacter',
     'privacy_policy' => 'Politique de Confidentialité',
     'terms_of_service' => 'Conditions d\'Utilisation',
-    
+
     // Terms of Service
     'terms_of_service_description' => 'Veuillez lire attentivement nos conditions d\'utilisation avant d\'utiliser VideoParser.top.',
     'last_updated' => 'Dernière Mise à Jour',
@@ -168,7 +168,7 @@ return [
     'terms_contact_description' => 'Si vous avez des questions sur ces conditions, veuillez nous contacter:',
     'address' => 'Adresse',
     'company_address' => 'Adresse de l\'Entreprise',
-    
+
     // Privacy Policy
     'privacy_policy_description' => 'Votre vie privée est importante pour nous. Cette politique explique comment nous collectons, utilisons et protégeons vos informations.',
     'information_we_collect' => 'Informations que Nous Collectons',
@@ -218,7 +218,7 @@ return [
     'policy_changes' => 'Modifications de Cette Politique',
     'policy_changes_description' => 'Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous vous informerons de tout changement important en publiant la nouvelle politique sur notre site web.',
     'privacy_contact_description' => 'Si vous avez des questions sur cette politique de confidentialité, veuillez nous contacter:',
-    
+
     // Contact Us
     'contact_us_description' => 'Vous avez des questions ou besoin d\'aide? Nous sommes là pour vous aider à tirer le meilleur parti de VideoParser.top.',
     'send_message' => 'Nous Envoyer un Message',
@@ -247,7 +247,7 @@ return [
     'search_help' => 'Rechercher des Articles d\'Aide',
     'search_help_description' => 'Trouvez des réponses aux questions courantes',
     'browse_help' => 'Parcourir le Centre d\'Aide',
-    
+
     // Help Center
     'help_center_description' => 'Trouvez des réponses aux questions courantes et apprenez à tirer le meilleur parti de VideoParser.top.',
     'getting_started' => 'Commencer',
@@ -273,7 +273,7 @@ return [
     'still_need_help' => 'Besoin d\'Aide?',
     'contact_support_description' => 'Notre équipe de support est prête à vous aider',
     'contact_support' => 'Contacter le Support',
-    
+
     // API Service
     'api_service_description' => 'Intégrez de puissantes capacités d\'analyse vidéo dans vos applications avec notre API complète.',
     'powerful_api' => 'API d\'Analyse Vidéo Puissante',
@@ -306,7 +306,7 @@ return [
     'ready_to_integrate' => 'Prêt à Intégrer?',
     'api_cta_description' => 'Commencez à construire avec notre API puissante dès aujourd\'hui',
     'get_api_key' => 'Obtenir une Clé API',
-    
+
     // Batch Download
     'batch_download_description' => 'Téléchargez plusieurs vidéos à la fois avec notre puissante fonctionnalité de traitement par lot.',
     'powerful_batch_processing' => 'Traitement par Lot Puissant',
@@ -329,7 +329,7 @@ return [
     'ready_to_start' => 'Prêt à Commencer le Traitement par Lot?',
     'batch_download_cta' => 'Essayez notre fonctionnalité de téléchargement par lot et économisez des heures',
     'try_batch_download' => 'Essayer le Téléchargement par Lot',
-    
+
     // Additional common terms
     'unknown_size' => 'Taille Inconnue',
     'loading_video' => 'Chargement de la vidéo...',
@@ -344,7 +344,7 @@ return [
     'video_info_obtained' => 'Informations vidéo obtenues avec succès',
     'loading_video' => 'Chargement de la vidéo...',
     'browser_not_support' => 'Votre navigateur ne supporte pas la lecture vidéo',
-    
+
     // Footer translations
     'footer_description' => 'Outil professionnel global d\'analyse vidéo, fournissant aux utilisateurs des services d\'analyse de liens vidéo rapides, sécurisés et pratiques.',
     'navigation' => 'Navigation',
@@ -359,7 +359,7 @@ return [
     'terms_of_service' => 'Conditions de Service',
     'all_rights_reserved' => 'Tous droits réservés',
     'how_to_use' => 'Comment Utiliser',
-    
+
     // Registration translations
     'login' => 'Se Connecter',
     'register' => "S'inscrire",
@@ -389,12 +389,12 @@ return [
     'password_min_length' => 'Le mot de passe doit contenir au moins 6 caractères',
     'password_confirmation_failed' => 'La confirmation du mot de passe ne correspond pas',
     'network_error' => 'Erreur réseau, veuillez réessayer',
-    
+
     // User menu translations
     'profile' => 'Profil',
     'settings' => 'Paramètres',
     'logout_confirm' => 'Êtes-vous sûr de vouloir vous déconnecter?',
-    
+
     // Error Pages
     'page_not_found' => 'Page Non Trouvée',
     'page_not_found_description' => 'La page que vous recherchez n\'a pas pu être trouvée.',
@@ -402,7 +402,7 @@ return [
     'back_to_home' => 'Retour à l\'Accueil',
     'get_help' => 'Obtenir de l\'Aide',
     'popular_pages' => 'Pages Populaires',
-    
+
     // Parse limit messages
     'daily_limit_exceeded_guest' => 'Vous avez atteint la limite quotidienne d\'analyse (:limit fois). Veuillez vous connecter pour obtenir plus d\'opportunités d\'analyse.',
     'daily_limit_exceeded_user' => 'Vous avez atteint la limite quotidienne d\'analyse (:limit fois). Veuillez réessayer demain.',
@@ -412,7 +412,7 @@ return [
     'user_daily_limit' => 'Utilisateurs enregistrés : :limit analyses par jour',
     'login_for_more' => 'Se Connecter pour Plus d\'Analyses',
     'upgrade_limit_info' => 'Inscrivez-vous maintenant pour obtenir :limit opportunités d\'analyse par jour !',
-    
+
     // Additional UI translations
     'close' => 'Fermer',
     'audio_preview' => 'Aperçu Audio',
@@ -431,7 +431,7 @@ return [
     'unknown_title' => 'Titre inconnu',
     'unknown_duration' => 'Durée inconnue',
     'original_audio_quality' => 'Qualité audio originale',
-    
+
     // Paste button related
     'paste' => 'Coller',
     'paste_from_clipboard' => 'Coller depuis le presse-papiers',
@@ -442,9 +442,9 @@ return [
 
   // Formulaire de contact
     'contact_success' => 'Merci pour votre message ! Nous vous répondrons bientôt.',
-    
+
     // Tableau de bord utilisateur
-    'dashboard_title' => 'Tableau de Bord',
+    'dashboard_title' => 'Tableau',
     'dashboard_description' => 'Gérez votre compte et consultez vos statistiques d\'utilisation',
     'dashboard_subtitle' => 'Bienvenue dans votre tableau de bord personnel',
     'loading' => 'Chargement...',
@@ -464,7 +464,7 @@ return [
     'link_copied' => 'Lien copié dans le presse-papiers !',
     'share_title' => 'Téléchargeur de Vidéos Gratuit',
     'share_text' => 'Découvrez cet incroyable outil de téléchargement de vidéos !',
-   
+
  // Vérification d'email
     'register_success_verify_email' => 'Inscription réussie ! Veuillez vérifier votre email et cliquer sur le lien de vérification pour terminer votre inscription.',
     'email_verification_invalid' => 'Lien de vérification invalide.',

@@ -76,19 +76,19 @@
                         <button
                             type="button"
                             id="pasteBtn"
-                            class="absolute right-16 sm:right-32 top-2 bottom-2 px-2 sm:px-4 bg-gray-100 text-xs hover:bg-gray-200 text-gray-700  transition-all duration-200 flex items-center space-x-1 shadow-md hover:shadow-lg ui-text"
+                            class="absolute right-16 sm:right-32 top-1/2 transform -translate-y-1/2 p-1 sm:p-2 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer hover:scale-110"
                             title="{{ __('messages.paste_from_clipboard') }}"
                         >
-                            <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            <!-- 更形象的粘贴图标 -->
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                             </svg>
-                            <span class="hidden sm:inline text-sm">{{ __('messages.paste') }}</span>
                         </button>
 
                         <!-- 解析按钮 -->
                         <button
                             type="submit"
-                            class="absolute right-2 top-2 bottom-2 px-3 sm:px-6 bg-blue-600 hover:bg-blue-700 text-white  transition-all duration-200 flex items-center space-x-2 shadow-md hover:shadow-lg ui-text"
+                            class="absolute right-2 top-2 bottom-2 px-3 sm:px-6 bg-blue-600 hover:bg-blue-700 text-white  transition-all duration-200 flex items-center space-x-2 cursor-pointer shadow-md hover:shadow-lg ui-text"
                         >
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>

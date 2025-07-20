@@ -46,6 +46,8 @@ class VideoParserController extends Controller
         $isSuccess = false;
         $errorMessage = null;
 
+        $videoUrl = $this->parseUrl($videoUrl);
+
         try {
             // 检查每日解析限制
             if (ParseLog::isExceedDailyLimit($userId, $ipAddress)) {
@@ -222,6 +224,16 @@ class VideoParserController extends Controller
         return null;
     }
 
+
+    private function parseUrl($text)
+    {
+        $pattern = '/https?:\/\/[^\s]+/';
+
+        preg_match($pattern, $text, $matches);
+
+        return $matches[0] ?? '';
+
+    }
 
     /**
      * 解析视频信息 (备用方法)

@@ -49,13 +49,26 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
+            // 检查邮箱是否已验证
+            if (!$user->hasVerifiedEmail()) {
+                Auth::logout(); // 立即退出登录
+                
+                return response()->json([
+                    'status' => 'error',
+                    'message' => __('messages.verification_required'),
+                    'requires_verification' => true,
+                    'user_email' => $user->email
+                ], 403);
+            }
+
             return response()->json([
                 'status' => 'success',
                 'message' => __('messages.login_success'),
                 'user' => [
                     'id' => $user->id,
                     'name' => $user->name,
-                    'email' => $user->email
+                    'email' => $user->email,
+                    'email_verified' => true
                 ]
             ]);
         }
@@ -94,30 +107,110 @@ class AuthController extends Controller
         $emailParts = explode('@', $request->email);
         $username = $emailParts[0];
 
+        // 获取推荐码（从session、请求参数或URL参数）
+        $referralCode = session('referral_code') ?? $request->get('referral_code') ?? $request->get('ref');
+        
         $user = User::create([
             'name' => $username,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'pending_referral_code' => $referralCode, // 直接存储到数据库
         ]);
 
-        // 处理推荐码
-        $referralCode = session('referral_code') ?? request()->get('ref');
-        if ($referralCode) {
-            $referralController = new ReferralController();
-            $referralController->processReferral($referralCode, $user);
-        }
+        // 清除session中的推荐码（如果有的话）
+        session()->forget('referral_code');
 
-        Auth::login($user);
+        // 发送邮箱验证邮件
+        $user->sendEmailVerificationNotification();
 
         return response()->json([
             'status' => 'success',
-            'message' => __('messages.register_success'),
+            'message' => __('messages.register_success_verify_email'),
             'user' => [
                 'id' => $user->id,
                 'name' => $user->name,
-                'email' => $user->email
-            ]
+                'email' => $user->email,
+                'email_verified' => false
+            ],
+            'requires_verification' => true
         ]);
+    }
+
+    /**
+     * 邮箱验证
+     */
+    public function verifyEmail(Request $request, $id, $hash)
+    {
+        $user = User::findOrFail($id);
+
+        // 验证hash是否正确
+        if (!hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+            return redirect('/')->with('error', __('messages.email_verification_invalid'));
+        }
+
+        // 检查邮箱是否已经验证过
+        if ($user->hasVerifiedEmail()) {
+            return redirect('/')->with('info', __('messages.email_already_verified'));
+        }
+
+        // 标记邮箱为已验证
+        if ($user->markEmailAsVerified()) {
+            // 处理待处理的推荐码
+            $this->processPendingReferral($user);
+            
+            // 自动登录用户
+            Auth::login($user);
+            
+            return redirect('/')->with('success', __('messages.email_verified_success'));
+        }
+
+        return redirect('/')->with('error', __('messages.email_verification_failed'));
+    }
+
+    /**
+     * 重新发送验证邮件
+     */
+    public function resendVerificationEmail(Request $request): JsonResponse
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|exists:users,email'
+        ], [
+            'email.required' => __('messages.email_required'),
+            'email.email' => __('messages.email_invalid'),
+            'email.exists' => __('messages.email_not_found')
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validator->errors()->first()
+            ], 422);
+        }
+
+        $user = User::where('email', $request->email)->first();
+
+        if ($user->hasVerifiedEmail()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => __('messages.email_already_verified')
+            ], 400);
+        }
+
+        $user->sendEmailVerificationNotification();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => __('messages.verification_email_sent')
+        ]);
+    }
+
+    /**
+     * 处理待处理的推荐码
+     */
+    private function processPendingReferral(User $user)
+    {
+        // 使用User模型的方法处理待处理的推荐码
+        $user->processPendingReferral();
     }
 
     /**
@@ -312,6 +405,9 @@ class AuthController extends Controller
             return $user;
         }
 
+        // 获取推荐码（从session或URL参数获取）
+        $referralCode = session('referral_code') ?? request()->get('ref');
+        
         // 创建新用户
         $user = User::create([
             'name' => $googleUser['name'],
@@ -322,8 +418,7 @@ class AuthController extends Controller
             'password' => Hash::make(Str::random(32)), // 随机密码
         ]);
 
-        // 处理推荐码（从session或URL参数获取）
-        $referralCode = session('referral_code') ?? request()->get('ref');
+        // Google用户邮箱已验证，直接处理推荐码
         if ($referralCode) {
             $referralController = new ReferralController();
             $referralController->processReferral($referralCode, $user);

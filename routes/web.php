@@ -105,11 +105,21 @@ Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// 邮箱验证路由
+Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])
+    ->middleware(['signed'])
+    ->name('verification.verify');
+Route::post('/email/resend', [AuthController::class, 'resendVerificationEmail'])
+    ->name('verification.resend');
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->name('verification.notice');
+
 // Contact API
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// 需要登录的路由
-Route::middleware('auth')->group(function () {
+// 需要登录和邮箱验证的路由
+Route::middleware(['auth', 'verified'])->group(function () {
     // 用户仪表板
     Route::get('/api/dashboard', [UserDashboardController::class, 'getDashboardData'])->name('dashboard.data');
     
@@ -121,7 +131,7 @@ Route::middleware('auth')->group(function () {
 // 用户中心页面
 Route::get('/dashboard', function () {
     return view('pages.dashboard');
-})->middleware('auth')->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {
     Route::get('/dashboard', function ($locale) {
@@ -130,7 +140,7 @@ Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function ()
             return view('pages.dashboard');
         }
         abort(404);
-    })->middleware('auth')->name('dashboard.locale');
+    })->middleware(['auth', 'verified'])->name('dashboard.locale');
 });
 
 // Google OAuth 路由

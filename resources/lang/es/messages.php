@@ -470,4 +470,25 @@ return [
     'link_copied' => '¡Enlace copiado al portapapeles!',
     'share_title' => 'Descargador de Videos Gratis',
     'share_text' => '¡Prueba esta increíble herramienta de descarga de videos!',
-];
+    // Verificación de email
+    'register_success_verify_email' => '¡Registro exitoso! Por favor revisa tu email y haz clic en el enlace de verificación para completar tu registro.',
+    'email_verification_invalid' => 'Enlace de verificación inválido.',
+    'email_already_verified' => 'Tu email ya está verificado.',
+    'email_verified_success' => '¡Email verificado exitosamente! ¡Bienvenido a VideoParser.top!',
+    'email_verification_failed' => 'La verificación del email falló. Por favor intenta de nuevo.',
+    'email_not_found' => 'Dirección de email no encontrada.',
+    'verification_email_sent' => '¡Email de verificación enviado! Por favor revisa tu bandeja de entrada.',
+    'verify_email_title' => 'Verifica Tu Email',
+    'verify_email_description' => 'Enviamos un enlace de verificación a tu dirección de email. Por favor haz clic en el enlace para completar tu registro.',
+    'resend_verification' => 'Reenviar Email de Verificación',
+    'verification_required' => 'Por favor verifica tu dirección de email para continuar.',
+    'check_email' => 'Revisa tu email para el enlace de verificación.',
+    //Contenido del email de verificación
+    'verify_email_subject' => 'Verifica Tu Dirección de Email - :app',
+    'verify_email_greeting' => '¡Hola :name!',
+    'verify_email_line1' => 'Por favor haz clic en el botón de abajo para verificar tu dirección de email.',
+    'verify_email_action' => 'Verificar Dirección de Email',
+    'verify_email_line2' => 'Si no creaste una cuenta, no se requiere ninguna acción adicional.',
+    'verify_email_line3' => 'Este enlace de verificación expirará en 60 minutos.',
+    'email_signature' => 'Saludos, Equipo de :app',
+    ];

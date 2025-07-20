@@ -490,4 +490,25 @@ return [
     'link_copied' => '链接已复制到剪贴板！',
     'share_title' => '免费视频下载器',
     'share_text' => '快来试试这个超棒的视频下载工具！',
-];
+    //邮箱验证
+    'register_success_verify_email' => '注册成功！请检查您的邮箱并点击验证链接以完成注册。',
+    'email_verification_invalid' => '无效的验证链接。',
+    'email_already_verified' => '您的邮箱已经验证过了。',
+    'email_verified_success' => '邮箱验证成功！欢迎使用VideoParser.top！',
+    'email_verification_failed' => '邮箱验证失败，请重试。',
+    'email_not_found' => '未找到该邮箱地址。',
+    'verification_email_sent' => '验证邮件已发送！请检查您的收件箱。',
+    'verify_email_title' => '验证您的邮箱',
+    'verify_email_description' => '我们已向您的邮箱发送了验证链接，请点击链接完成注册。',
+    'resend_verification' => '重新发送验证邮件',
+    'verification_required' => '请验证您的邮箱地址以继续。',
+    'check_email' => '请检查您的邮箱以获取验证链接。', 
+   // 邮箱验证邮件内容
+    'verify_email_subject' => '验证您的邮箱地址 - :app',
+    'verify_email_greeting' => '您好 :name！',
+    'verify_email_line1' => '请点击下面的按钮来验证您的邮箱地址。',
+    'verify_email_action' => '验证邮箱地址',
+    'verify_email_line2' => '如果您没有创建账户，无需进行任何操作。',
+    'verify_email_line3' => '此验证链接将在60分钟后过期。',
+    'email_signature' => '此致，:app 团队',
+    ];

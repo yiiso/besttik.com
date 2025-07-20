@@ -480,4 +480,26 @@ return [
     'link_copied' => 'リンクがクリップボードにコピーされました！',
     'share_title' => '無料動画ダウンローダー',
     'share_text' => 'この素晴らしい動画ダウンロードツールをチェックしてください！',
-];
+  
+  // メール認証
+    'register_success_verify_email' => '登録成功！メールを確認し、認証リンクをクリックして登録を完了してください。',
+    'email_verification_invalid' => '無効な認証リンクです。',
+    'email_already_verified' => 'あなたのメールは既に認証済みです。',
+    'email_verified_success' => 'メール認証成功！VideoParser.topへようこそ！',
+    'email_verification_failed' => 'メール認証に失敗しました。再試行してください。',
+    'email_not_found' => 'メールアドレスが見つかりません。',
+    'verification_email_sent' => '認証メールを送信しました！受信箱を確認してください。',
+    'verify_email_title' => 'メールを認証',
+    'verify_email_description' => 'あなたのメールアドレスに認証リンクを送信しました。リンクをクリックして登録を完了してください。',
+    'resend_verification' => '認証メールを再送信',
+    'verification_required' => '続行するにはメールアドレスを認証してください。',
+    'check_email' => '認証リンクについてメールを確認してください。',    
+// メール認証メールの内容
+    'verify_email_subject' => 'メールアドレスを認証してください - :app',
+    'verify_email_greeting' => 'こんにちは :name さん！',
+    'verify_email_line1' => '下のボタンをクリックしてメールアドレスを認証してください。',
+    'verify_email_action' => 'メールアドレスを認証',
+    'verify_email_line2' => 'アカウントを作成していない場合は、何もする必要はありません。',
+    'verify_email_line3' => 'この認証リンクは60分後に期限切れになります。',
+    'email_signature' => '敬具、:app チーム',
+    ];

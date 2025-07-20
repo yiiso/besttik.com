@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\CustomVerifyEmail;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'referral_code',
+        'pending_referral_code',
         'bonus_parse_count',
         'total_referrals',
         'google_id',
@@ -119,5 +121,48 @@ class User extends Authenticatable
     {
         $baseLimit = (int) config('app.daily_parse_limit_user', 10);
         return $baseLimit + $this->bonus_parse_count;
+    }
+
+    /**
+     * 发送邮箱验证通知
+     */
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new CustomVerifyEmail);
+    }
+
+    /**
+     * 处理待处理的推荐码
+     */
+    public function processPendingReferral(): bool
+    {
+        if (!$this->pending_referral_code) {
+            return false;
+        }
+
+        // 查找推荐人
+        $referrer = User::where('referral_code', $this->pending_referral_code)->first();
+        
+        if ($referrer && $referrer->id !== $this->id) {
+            // 创建推荐记录
+            Referral::create([
+                'referrer_id' => $referrer->id,
+                'referred_user_id' => $this->id,
+                'referral_code' => $this->pending_referral_code,
+                'bonus_awarded' => true,
+            ]);
+
+            // 给推荐人增加20次解析机会
+            $referrer->addBonusParseCount(20);
+
+            // 清除待处理的推荐码
+            $this->update(['pending_referral_code' => null]);
+
+            return true;
+        }
+
+        // 如果推荐码无效，也清除它
+        $this->update(['pending_referral_code' => null]);
+        return false;
     }
 }

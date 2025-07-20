@@ -601,7 +601,21 @@ function initLoginModal() {
                             window.location.reload();
                         }, 1000);
                     } else {
-                        showToast(data.message || (window.translations?.login_failed || '登录失败'), 'error');
+                        if (data.requires_verification) {
+                            // 需要邮箱验证
+                            showToast(data.message, 'error');
+                            closeModal();
+                            
+                            // 存储邮箱地址
+                            localStorage.setItem('pending_verification_email', data.user_email);
+                            
+                            // 跳转到邮箱验证页面
+                            setTimeout(() => {
+                                window.location.href = '/email/verify';
+                            }, 1500);
+                        } else {
+                            showToast(data.message || (window.translations?.login_failed || '登录失败'), 'error');
+                        }
                     }
                 })
                 .catch(error => {
@@ -714,7 +728,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.status === 'success') {
-                    showToast(window.translations?.register_success || '注册成功', 'success');
+                    showToast(data.message || (window.translations?.register_success || '注册成功'), 'success');
+                    
                     // 关闭弹窗
                     const loginModal = document.getElementById('loginModal');
                     const loginModalContent = document.getElementById('loginModalContent');
@@ -723,14 +738,24 @@ document.addEventListener('DOMContentLoaded', function() {
                         loginModalContent.classList.add('scale-95', 'opacity-0');
                         setTimeout(() => {
                             loginModal.classList.add('hidden');
-                            // 重置表单
                             emailRegisterForm.reset();
                         }, 300);
                     }
-                    // 刷新页面或更新UI
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 1000);
+                    
+                    if (data.requires_verification) {
+                        // 需要邮箱验证
+                        localStorage.setItem('pending_verification_email', data.user.email);
+                        
+                        // 跳转到邮箱验证页面
+                        setTimeout(() => {
+                            window.location.href = '/email/verify';
+                        }, 1500);
+                    } else {
+                        // 直接登录成功，刷新页面
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1000);
+                    }
                 } else {
                     showToast(data.message || (window.translations?.register_failed || '注册失败'), 'error');
                 }

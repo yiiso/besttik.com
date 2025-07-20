@@ -464,4 +464,26 @@ return [
     'link_copied' => 'Lien copié dans le presse-papiers !',
     'share_title' => 'Téléchargeur de Vidéos Gratuit',
     'share_text' => 'Découvrez cet incroyable outil de téléchargement de vidéos !',
-];
+   
+ // Vérification d'email
+    'register_success_verify_email' => 'Inscription réussie ! Veuillez vérifier votre email et cliquer sur le lien de vérification pour terminer votre inscription.',
+    'email_verification_invalid' => 'Lien de vérification invalide.',
+    'email_already_verified' => 'Votre email est déjà vérifié.',
+    'email_verified_success' => 'Email vérifié avec succès ! Bienvenue sur VideoParser.top !',
+    'email_verification_failed' => 'La vérification de l\'email a échoué. Veuillez réessayer.',
+    'email_not_found' => 'Adresse email non trouvée.',
+    'verification_email_sent' => 'Email de vérification envoyé ! Veuillez vérifier votre boîte de réception.',
+    'verify_email_title' => 'Vérifiez Votre Email',
+    'verify_email_description' => 'Nous avons envoyé un lien de vérification à votre adresse email. Veuillez cliquer sur le lien pour terminer votre inscription.',
+    'resend_verification' => 'Renvoyer l\'Email de Vérification',
+    'verification_required' => 'Veuillez vérifier votre adresse email pour continuer.',
+    'check_email' => 'Vérifiez votre email pour le lien de vérification.',
+    // Contenu de l'email de vérification
+    'verify_email_subject' => 'Vérifiez Votre Adresse Email - :app',
+    'verify_email_greeting' => 'Bonjour :name !',
+    'verify_email_line1' => 'Veuillez cliquer sur le bouton ci-dessous pour vérifier votre adresse email.',
+    'verify_email_action' => 'Vérifier l\'Adresse Email',
+    'verify_email_line2' => 'Si vous n\'avez pas créé de compte, aucune action supplémentaire n\'est requise.',
+    'verify_email_line3' => 'Ce lien de vérification expirera dans 60 minutes.',
+    'email_signature' => 'Cordialement, Équipe :app',
+    ];

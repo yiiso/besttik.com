@@ -708,4 +708,25 @@ return [
     'link_copied' => 'Link copied to clipboard!',
     'share_title' => 'Free Video Downloader',
     'share_text' => 'Check out this amazing video downloader tool!',
-];
+    //Email verification
+    'register_success_verify_email' => 'Registration successful! Please check your email and click the verification link to complete your registration.',
+    'email_verification_invalid' => 'Invalid verification link.',
+    'email_already_verified' => 'Your email is already verified.',
+    'email_verified_success' => 'Email verified successfully! Welcome to VideoParser.top!',
+    'email_verification_failed' => 'Email verification failed. Please try again.',
+    'email_not_found' => 'Email address not found.',
+    'verification_email_sent' => 'Verification email sent! Please check your inbox.',
+    'verify_email_title' => 'Verify Your Email',
+    'verify_email_description' => 'We sent a verification link to your email address. Please click the link to complete your registration.',
+    'resend_verification' => 'Resend Verification Email',
+    'verification_required' => 'Please verify your email address to continue.',
+    'check_email' => 'Check your email for the verification link.',
+    //Email verification email content
+    'verify_email_subject' => 'Verify Your Email Address - :app',
+    'verify_email_greeting' => 'Hello :name!',
+    'verify_email_line1' => 'Please click the button below to verify your email address.',
+    'verify_email_action' => 'Verify Email Address',
+    'verify_email_line2' => 'If you did not create an account, no further action is required.',
+    'verify_email_line3' => 'This verification link will expire in 60 minutes.',
+    'email_signature' => 'Regards, :app Team',
+    ];

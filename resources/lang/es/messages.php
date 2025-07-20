@@ -446,4 +446,28 @@ return [
     'paste_failed' => 'Pegado fallido, por favor pega manualmente',
     'clipboard_empty' => 'Portapapeles vacío',
     'clipboard_not_supported' => 'Tu navegador no soporta acceso al portapapeles',
+
+    'contact_success' => '¡Gracias por tu mensaje! Te responderemos pronto.',
+    
+    // Panel de usuario
+    'dashboard_title' => 'Panel de Usuario',
+    'dashboard_description' => 'Gestiona tu cuenta y ve tus estadísticas de uso',
+    'dashboard_subtitle' => 'Bienvenido a tu panel personal',
+    'loading' => 'Cargando...',
+    'load_error' => 'Error al cargar datos. Por favor, actualiza la página.',
+    'today_used' => 'Usado Hoy',
+    'remaining_today' => 'Restante Hoy',
+    'bonus_count' => 'Conteo Bonus',
+    'total_limit' => 'Límite Total',
+    'total_referrals' => 'Referencias Totales',
+    'share_and_earn' => 'Compartir y Ganar',
+    'share_description' => 'Comparte tu enlace de referencia con amigos. ¡Cuando se registren y usen nuestro servicio, ganarás 20 intentos de análisis adicionales!',
+    'copy_link' => 'Copiar Enlace',
+    'share' => 'Compartir',
+    'referral_code' => 'Código de Referencia',
+    'bonus_earned' => 'Bonus Ganado',
+    'weekly_stats' => 'Estadísticas Semanales',
+    'link_copied' => '¡Enlace copiado al portapapeles!',
+    'share_title' => 'Descargador de Videos Gratis',
+    'share_text' => '¡Prueba esta increíble herramienta de descarga de videos!',
 ];

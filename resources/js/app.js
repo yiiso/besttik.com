@@ -132,14 +132,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(data => {
                     // 隐藏加载状态
                     loadingState.classList.add('hidden');
-                    
+
                     if (data.status === 'success') {
                         // 显示成功消息
                         showToast(window.translations?.parse_success || '解析成功！', 'success');
 
                         // 渲染解析结果
                         renderParseResults(data.data, data.platform);
-                        
+
                         // 更新解析状态显示
                         updateParseStatus(data.remaining_count, data.daily_limit);
                     } else {
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             // 显示普通错误消息
                             showToast(data.message || (window.translations?.parse_failed || '解析失败'), 'error');
                         }
-                        
+
                         // 更新解析状态显示
                         if (data.remaining_count !== undefined) {
                             updateParseStatus(data.remaining_count, data.daily_limit);
@@ -808,7 +808,7 @@ function showParseStatusWarning(isLoggedIn) {
                     </button>
                 </div>
             `;
-            
+
             // 添加登录按钮事件
             const loginPromptBtn = document.getElementById('loginPromptBtn');
             if (loginPromptBtn) {
@@ -850,14 +850,14 @@ function showLimitExceededModal(data) {
                     </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2">${window.translations?.parse_limit_info || '解析限制信息'}</h3>
                     <p class="text-gray-600 mb-4">${data.message}</p>
-                    
+
                     <div class="bg-gray-50 rounded-lg p-4 mb-4">
                         <div class="text-sm text-gray-600 space-y-1">
                             <div>${window.translations?.guest_daily_limit?.replace(':limit', data.daily_limit) || `游客用户：每日${data.daily_limit}次解析`}</div>
                             <div>${window.translations?.user_daily_limit?.replace(':limit', '10') || '注册用户：每日10次解析'}</div>
                         </div>
                     </div>
-                    
+
                     <div class="flex space-x-3">
                         <button id="closeLimitModal" class="flex-1 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors">
                             ${window.translations?.close || '关闭'}
@@ -896,7 +896,7 @@ function showLimitExceededModal(data) {
 
     // 事件监听
     closeBtn.addEventListener('click', closeLimitModal);
-    
+
     loginBtn.addEventListener('click', function() {
         closeLimitModal();
         // 触发登录弹窗
@@ -913,8 +913,7 @@ function showLimitExceededModal(data) {
         }
     });
 }
-// 
-初始化粘贴按钮功能
+//初始化粘贴按钮功能
 function initPasteButton() {
     const pasteBtn = document.getElementById('pasteBtn');
     const videoUrlInput = document.getElementById('videoUrl');
@@ -940,7 +939,7 @@ function initPasteButton() {
 
                 // 从剪贴板读取文本
                 const clipboardText = await navigator.clipboard.readText();
-                
+
                 // 恢复按钮状态
                 this.disabled = false;
                 this.innerHTML = originalHTML;
@@ -953,13 +952,13 @@ function initPasteButton() {
                 // 检查是否是有效的URL
                 const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
                 const trimmedText = clipboardText.trim();
-                
+
                 if (!urlPattern.test(trimmedText)) {
                     // 如果不是完整URL，但可能是视频链接，仍然粘贴
-                    if (trimmedText.includes('douyin.com') || 
-                        trimmedText.includes('tiktok.com') || 
-                        trimmedText.includes('youtube.com') || 
-                        trimmedText.includes('youtu.be') || 
+                    if (trimmedText.includes('douyin.com') ||
+                        trimmedText.includes('tiktok.com') ||
+                        trimmedText.includes('youtube.com') ||
+                        trimmedText.includes('youtu.be') ||
                         trimmedText.includes('bilibili.com') ||
                         trimmedText.includes('instagram.com') ||
                         trimmedText.includes('twitter.com') ||
@@ -968,7 +967,7 @@ function initPasteButton() {
                         videoUrlInput.value = trimmedText;
                         videoUrlInput.focus();
                         showToast(window.translations?.paste_success || '粘贴成功！', 'success');
-                        
+
                         // 添加输入框高亮效果
                         videoUrlInput.classList.add('border-green-300', 'bg-green-50');
                         setTimeout(() => {
@@ -981,10 +980,10 @@ function initPasteButton() {
                 // 粘贴文本到输入框
                 videoUrlInput.value = trimmedText;
                 videoUrlInput.focus();
-                
+
                 // 显示成功提示
                 showToast(window.translations?.paste_success || '粘贴成功！', 'success');
-                
+
                 // 添加输入框高亮效果
                 videoUrlInput.classList.add('border-green-300', 'bg-green-50');
                 setTimeout(() => {
@@ -993,11 +992,11 @@ function initPasteButton() {
 
             } catch (error) {
                 console.error('粘贴失败:', error);
-                
+
                 // 恢复按钮状态
                 this.disabled = false;
                 this.innerHTML = originalHTML;
-                
+
                 // 显示错误提示
                 if (error.name === 'NotAllowedError') {
                     showToast(window.translations?.clipboard_not_supported || '您的浏览器不支持剪贴板访问', 'error');
@@ -1037,13 +1036,13 @@ function initPasteButton() {
         videoUrlInput.addEventListener('drop', function(e) {
             e.preventDefault();
             this.classList.remove('border-blue-300', 'bg-blue-50');
-            
+
             const droppedText = e.dataTransfer.getData('text');
             if (droppedText.trim()) {
                 this.value = droppedText.trim();
                 this.focus();
                 showToast(window.translations?.paste_success || '粘贴成功！', 'success');
-                
+
                 // 添加成功高亮效果
                 this.classList.add('border-green-300', 'bg-green-50');
                 setTimeout(() => {
@@ -1053,3 +1052,109 @@ function initPasteButton() {
         });
     }
 }
+// Contact form functionality
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/contact', {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+                        'Accept': 'application/json'
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showToast(data.message, 'success');
+                    contactForm.reset();
+                } else {
+                    showToast(data.message || 'Failed to send message', 'error');
+                }
+            } catch (error) {
+                console.error('Contact form error:', error);
+                showToast('Network error. Please try again.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    }
+}
+
+// Referral functionality
+function initReferralFeatures() {
+    // Handle referral code from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('ref');
+
+    if (referralCode) {
+        // Store referral code for registration
+        sessionStorage.setItem('referral_code', referralCode);
+
+        // Show referral notification
+        showToast('You were referred by a friend! Register to get started.', 'info');
+    }
+
+    // Add referral code to registration form
+    const registerForm = document.getElementById('registerForm');
+    if (registerForm && sessionStorage.getItem('referral_code')) {
+        const referralInput = document.createElement('input');
+        referralInput.type = 'hidden';
+        referralInput.name = 'referral_code';
+        referralInput.value = sessionStorage.getItem('referral_code');
+        registerForm.appendChild(referralInput);
+    }
+}
+
+// Copy referral link functionality
+function copyReferralLink() {
+    const linkInput = document.getElementById('referral-link');
+    if (linkInput) {
+        linkInput.select();
+        document.execCommand('copy');
+        showToast('Referral link copied to clipboard!', 'success');
+    }
+}
+
+// Share referral link functionality
+function shareReferralLink() {
+    const link = document.getElementById('referral-link')?.value;
+
+    if (navigator.share && link) {
+        navigator.share({
+            title: 'Free Video Downloader',
+            text: 'Check out this amazing video downloader tool!',
+            url: link
+        }).catch(err => {
+            console.log('Error sharing:', err);
+            copyReferralLink(); // Fallback to copy
+        });
+    } else {
+        copyReferralLink(); // Fallback to copy
+    }
+}
+
+// Initialize all new features
+document.addEventListener('DOMContentLoaded', function() {
+    initContactForm();
+    initReferralFeatures();
+});
+
+// Make functions globally available
+window.copyReferralLink = copyReferralLink;
+window.shareReferralLink = shareReferralLink;

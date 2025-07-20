@@ -88,12 +88,14 @@ class ParseLog extends Model
     public static function isExceedDailyLimit(?int $userId, string $ip): bool
     {
         $guestLimit = (int) config('app.daily_parse_limit_guest', 3);
-        $userLimit = (int) config('app.daily_parse_limit_user', 10);
+        $baseUserLimit = (int) config('app.daily_parse_limit_user', 10);
 
         if ($userId) {
-            // 登录用户检查
+            // 登录用户检查（包括奖励次数）
+            $user = User::find($userId);
+            $totalLimit = $user ? $user->getTotalDailyLimit() : $baseUserLimit;
             $todayCount = static::getTodaySuccessCountByUser($userId);
-            return $todayCount >= $userLimit;
+            return $todayCount >= $totalLimit;
         } else {
             // 未登录用户检查
             $todayCount = static::getTodaySuccessCountByIp($ip);
@@ -107,11 +109,13 @@ class ParseLog extends Model
     public static function getRemainingCount(?int $userId, string $ip): int
     {
         $guestLimit = (int) config('app.daily_parse_limit_guest', 3);
-        $userLimit = (int) config('app.daily_parse_limit_user', 10);
+        $baseUserLimit = (int) config('app.daily_parse_limit_user', 10);
 
         if ($userId) {
+            $user = User::find($userId);
+            $totalLimit = $user ? $user->getTotalDailyLimit() : $baseUserLimit;
             $todayCount = static::getTodaySuccessCountByUser($userId);
-            return max(0, $userLimit - $todayCount);
+            return max(0, $totalLimit - $todayCount);
         } else {
             $todayCount = static::getTodaySuccessCountByIp($ip);
             return max(0, $guestLimit - $todayCount);

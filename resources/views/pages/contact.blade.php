@@ -23,16 +23,11 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
             <h2 class="text-2xl font-bold text-gray-900 mb-6 heading-modern">{{ __('messages.send_message') }}</h2>
-            <form class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="first_name" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.first_name') }}</label>
-                        <input type="text" id="first_name" name="first_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
-                    </div>
-                    <div>
-                        <label for="last_name" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.last_name') }}</label>
-                        <input type="text" id="last_name" name="last_name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
-                    </div>
+            <form id="contactForm" class="space-y-6">
+                @csrf
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">{{ __('messages.name') ?? 'Name' }}</label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors">
                 </div>
 
                 <div>

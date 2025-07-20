@@ -439,4 +439,29 @@ return [
     'paste_failed' => 'Collage échoué, veuillez coller manuellement',
     'clipboard_empty' => 'Presse-papiers vide',
     'clipboard_not_supported' => 'Votre navigateur ne supporte pas l\'accès au presse-papiers',
+
+  // Formulaire de contact
+    'contact_success' => 'Merci pour votre message ! Nous vous répondrons bientôt.',
+    
+    // Tableau de bord utilisateur
+    'dashboard_title' => 'Tableau de Bord',
+    'dashboard_description' => 'Gérez votre compte et consultez vos statistiques d\'utilisation',
+    'dashboard_subtitle' => 'Bienvenue dans votre tableau de bord personnel',
+    'loading' => 'Chargement...',
+    'load_error' => 'Échec du chargement des données. Veuillez actualiser la page.',
+    'today_used' => 'Utilisé Aujourd\'hui',
+    'remaining_today' => 'Restant Aujourd\'hui',
+    'bonus_count' => 'Compte Bonus',
+    'total_limit' => 'Limite Totale',
+    'total_referrals' => 'Parrainages Totaux',
+    'share_and_earn' => 'Partager et Gagner',
+    'share_description' => 'Partagez votre lien de parrainage avec des amis. Quand ils s\'inscrivent et utilisent notre service, vous gagnerez 20 tentatives d\'analyse supplémentaires !',
+    'copy_link' => 'Copier le Lien',
+    'share' => 'Partager',
+    'referral_code' => 'Code de Parrainage',
+    'bonus_earned' => 'Bonus Gagné',
+    'weekly_stats' => 'Statistiques Hebdomadaires',
+    'link_copied' => 'Lien copié dans le presse-papiers !',
+    'share_title' => 'Téléchargeur de Vidéos Gratuit',
+    'share_text' => 'Découvrez cet incroyable outil de téléchargement de vidéos !',
 ];

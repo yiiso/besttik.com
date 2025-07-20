@@ -684,4 +684,28 @@ return [
     'clipboard_empty' => 'Clipboard is empty',
     'clipboard_not_supported' => 'Your browser does not support clipboard access',
     'home' => 'Home',
+    // Contact form
+    'contact_success' => 'Thank you for your message! We will get back to you soon.',
+    
+    // Dashboard
+    'dashboard_title' => 'User Dashboard',
+    'dashboard_description' => 'Manage your account and view your usage statistics',
+    'dashboard_subtitle' => 'Welcome to your personal dashboard',
+    'loading' => 'Loading...',
+    'load_error' => 'Failed to load data. Please refresh the page.',
+    'today_used' => 'Used Today',
+    'remaining_today' => 'Remaining Today',
+    'bonus_count' => 'Bonus Count',
+    'total_limit' => 'Total Limit',
+    'total_referrals' => 'Total Referrals',
+    'share_and_earn' => 'Share & Earn',
+    'share_description' => 'Share your referral link with friends. When they register and use our service, you\'ll earn 20 additional parsing attempts!',
+    'copy_link' => 'Copy Link',
+    'share' => 'Share',
+    'referral_code' => 'Referral Code',
+    'bonus_earned' => 'Bonus Earned',
+    'weekly_stats' => 'Weekly Statistics',
+    'link_copied' => 'Link copied to clipboard!',
+    'share_title' => 'Free Video Downloader',
+    'share_text' => 'Check out this amazing video downloader tool!',
 ];

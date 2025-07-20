@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use App\Models\User;
+use App\Http\Controllers\ReferralController;
 
 class AuthController extends Controller
 {
@@ -98,6 +99,13 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
+
+        // 处理推荐码
+        $referralCode = session('referral_code') ?? request()->get('ref');
+        if ($referralCode) {
+            $referralController = new ReferralController();
+            $referralController->processReferral($referralCode, $user);
+        }
 
         Auth::login($user);
 
@@ -305,7 +313,7 @@ class AuthController extends Controller
         }
 
         // 创建新用户
-        return User::create([
+        $user = User::create([
             'name' => $googleUser['name'],
             'email' => $googleUser['email'],
             'google_id' => $googleUser['id'],
@@ -313,5 +321,15 @@ class AuthController extends Controller
             'email_verified_at' => now(), // Google用户邮箱已验证
             'password' => Hash::make(Str::random(32)), // 随机密码
         ]);
+
+        // 处理推荐码（从session或URL参数获取）
+        $referralCode = session('referral_code') ?? request()->get('ref');
+        if ($referralCode) {
+            $referralController = new ReferralController();
+            $referralController->processReferral($referralCode, $user);
+            session()->forget('referral_code');
+        }
+
+        return $user;
     }
 }

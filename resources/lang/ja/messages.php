@@ -455,4 +455,29 @@ return [
     'paste_failed' => '貼り付け失敗、手動で貼り付けてください',
     'clipboard_empty' => 'クリップボードが空です',
     'clipboard_not_supported' => 'お使いのブラウザはクリップボードアクセスをサポートしていません',
+
+	//お問い合わせフォーム
+    'contact_success' => 'メッセージをありがとうございます！すぐに返信いたします。',
+    
+    // ユーザーダッシュボード
+    'dashboard_title' => 'ユーザーダッシュボード',
+    'dashboard_description' => 'アカウントを管理し、使用統計を表示',
+    'dashboard_subtitle' => 'パーソナルダッシュボードへようこそ',
+    'loading' => '読み込み中...',
+    'load_error' => 'データの読み込みに失敗しました。ページを更新してください。',
+    'today_used' => '今日の使用',
+    'remaining_today' => '今日の残り',
+    'bonus_count' => 'ボーナス回数',
+    'total_limit' => '総制限',
+    'total_referrals' => '総紹介数',
+    'share_and_earn' => 'シェアして稼ぐ',
+    'share_description' => '友達に紹介リンクをシェアしてください。彼らが登録してサービスを使用すると、20回の追加解析機会を獲得できます！',
+    'copy_link' => 'リンクをコピー',
+    'share' => 'シェア',
+    'referral_code' => '紹介コード',
+    'bonus_earned' => '獲得ボーナス',
+    'weekly_stats' => '週間統計',
+    'link_copied' => 'リンクがクリップボードにコピーされました！',
+    'share_title' => '無料動画ダウンローダー',
+    'share_text' => 'この素晴らしい動画ダウンロードツールをチェックしてください！',
 ];

@@ -118,6 +118,18 @@ class VideoParserController extends Controller
             }
             $isSuccess = true;
 
+            // 如果是登录用户，优先使用奖励次数
+            if ($userId) {
+                $user = Auth::user();
+                $baseLimit = config('app.daily_parse_limit_user', 10);
+                $todayUsed = ParseLog::getTodaySuccessCountByUser($userId);
+                
+                // 如果超过基础限制，使用奖励次数
+                if ($todayUsed >= $baseLimit && $user->bonus_parse_count > 0) {
+                    $user->useBonusParseCount(1);
+                }
+            }
+
             // 记录成功的解析
             ParseLog::logParse(
                 $userId,
@@ -132,13 +144,15 @@ class VideoParserController extends Controller
 
             // 获取剩余次数
             $remainingCount = ParseLog::getRemainingCount($userId, $ipAddress);
+            $dailyLimit = $userId ? Auth::user()->getTotalDailyLimit() : config('app.daily_parse_limit_guest', 3);
 
             return response()->json([
                 'status' => 'success',
                 'data' => $videoInfo,
                 'platform' => $platform ?? 'unknown',
                 'remaining_count' => $remainingCount,
-                'daily_limit' => $userId ? config('app.daily_parse_limit_user', 10) : config('app.daily_parse_limit_guest', 3)
+                'daily_limit' => $dailyLimit,
+                'bonus_count' => $userId ? Auth::user()->bonus_parse_count : 0
             ]);
 
         } catch (\Exception $e) {

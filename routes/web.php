@@ -96,10 +96,42 @@ Route::post('/set-language-preference', function(\Illuminate\Http\Request $reque
 
 // 认证路由
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\UserDashboardController;
+
 Route::get('/authTest', [AuthController::class, 'authTest'])->name('auth.test');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Contact API
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+// 需要登录的路由
+Route::middleware('auth')->group(function () {
+    // 用户仪表板
+    Route::get('/api/dashboard', [UserDashboardController::class, 'getDashboardData'])->name('dashboard.data');
+    
+    // 推荐功能
+    Route::get('/api/referral/link', [ReferralController::class, 'getReferralLink'])->name('referral.link');
+    Route::get('/api/referral/stats', [ReferralController::class, 'getReferralStats'])->name('referral.stats');
+});
+
+// 用户中心页面
+Route::get('/dashboard', function () {
+    return view('pages.dashboard');
+})->middleware('auth')->name('dashboard');
+
+Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {
+    Route::get('/dashboard', function ($locale) {
+        if (in_array($locale, ['zh', 'en', 'es','fr','ja'])) {
+            app()->setLocale($locale);
+            return view('pages.dashboard');
+        }
+        abort(404);
+    })->middleware('auth')->name('dashboard.locale');
+});
 
 // Google OAuth 路由
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');

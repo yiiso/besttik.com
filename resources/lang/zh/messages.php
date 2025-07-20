@@ -465,4 +465,29 @@ return [
     'paste_failed' => '粘贴失败，请手动粘贴',
     'clipboard_empty' => '剪贴板为空',
     'clipboard_not_supported' => '您的浏览器不支持剪贴板访问',
+
+    // 联系表单
+    'contact_success' => '感谢您的留言！我们会尽快回复您。',
+    
+    // 用户仪表板
+    'dashboard_title' => '用户中心',
+    'dashboard_description' => '管理您的账户并查看使用统计',
+    'dashboard_subtitle' => '欢迎来到您的个人中心',
+    'loading' => '加载中...',
+    'load_error' => '数据加载失败，请刷新页面。',
+    'today_used' => '今日已用',
+    'remaining_today' => '今日剩余',
+    'bonus_count' => '奖励次数',
+    'total_limit' => '总限制',
+    'total_referrals' => '推荐总数',
+    'share_and_earn' => '分享赚取',
+    'share_description' => '分享您的推荐链接给朋友。当他们注册并使用我们的服务时，您将获得20次额外的解析机会！',
+    'copy_link' => '复制链接',
+    'share' => '分享',
+    'referral_code' => '推荐码',
+    'bonus_earned' => '已获奖励',
+    'weekly_stats' => '本周统计',
+    'link_copied' => '链接已复制到剪贴板！',
+    'share_title' => '免费视频下载器',
+    'share_text' => '快来试试这个超棒的视频下载工具！',
 ];

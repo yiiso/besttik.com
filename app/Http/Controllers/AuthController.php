@@ -52,7 +52,7 @@ class AuthController extends Controller
             // 检查邮箱是否已验证
             if (!$user->hasVerifiedEmail()) {
                 Auth::logout(); // 立即退出登录
-                
+
                 return response()->json([
                     'status' => 'error',
                     'message' => __('messages.verification_required'),
@@ -109,7 +109,7 @@ class AuthController extends Controller
 
         // 获取推荐码（从session、请求参数或URL参数）
         $referralCode = session('referral_code') ?? $request->get('referral_code') ?? $request->get('ref');
-        
+
         $user = User::create([
             'name' => $username,
             'email' => $request->email,
@@ -121,7 +121,7 @@ class AuthController extends Controller
         session()->forget('referral_code');
 
         // 发送邮箱验证邮件
-        $user->sendEmailVerificationNotification();
+        //$user->sendEmailVerificationNotification();
 
         return response()->json([
             'status' => 'success',
@@ -157,10 +157,10 @@ class AuthController extends Controller
         if ($user->markEmailAsVerified()) {
             // 处理待处理的推荐码
             $this->processPendingReferral($user);
-            
+
             // 自动登录用户
             Auth::login($user);
-            
+
             return redirect('/')->with('success', __('messages.email_verified_success'));
         }
 
@@ -407,7 +407,7 @@ class AuthController extends Controller
 
         // 获取推荐码（从session或URL参数获取）
         $referralCode = session('referral_code') ?? request()->get('ref');
-        
+
         // 创建新用户
         $user = User::create([
             'name' => $googleUser['name'],

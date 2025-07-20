@@ -71,8 +71,8 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-semibold text-gray-900 mb-1">{{ __('messages.email_us') }}</h3>
-                        <p class="text-gray-600 body-light">service@videoparser.top</p>
-                        <p class="text-gray-600 body-light">service@videoparser.top</p>
+                        <p class="text-gray-600 body-light">videoparser.top@gmail.com</p>
+                        <p class="text-gray-600 body-light">videoparser.top@gmail.com</p>
                     </div>
                 </div>
 

@@ -100,7 +100,7 @@
     <p class="text-gray-600 body-regular mb-4">{{ __('messages.terms_contact_description') }}</p>
     <div class="bg-gray-50 rounded-2xl p-6">
         <p class="text-gray-800 font-medium mb-2">VideoParser.top Legal Team</p>
-        <p class="text-gray-600">{{ __('messages.email') }}: service@videoparser.top</p>
+        <p class="text-gray-600">{{ __('messages.email') }}: videoparser.top@gmail.com</p>
         <p class="text-gray-600">{{ __('messages.address') }}: [{{ __('messages.company_address') }}]</p>
     </div>
 </div>

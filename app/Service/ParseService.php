@@ -5,66 +5,47 @@ namespace App\Service;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
-class BlibliService
+class ParseService
 {
     public function parseVideoFromAPI($videoUrl)
     {
-        $demo = 'https://www.bilibili.com/video/BV1EvuBzjEpt/?spm_id_from=333.1007.tianma.1-2-2.click';
+        $realUrl = env('PARSER_TIKTOK_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
+        $ch = curl_init();
+        curl_setopt_array($ch, [
+            CURLOPT_URL => $realUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_HTTPHEADER => [
+                'Accept: application/json',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
+            ],
+            CURLOPT_TIMEOUT => 30,
+        ]);
 
-        $path = parse_url($videoUrl,PHP_URL_PATH);
-        $segments = explode('/',trim($path,'/'));
+        $response = curl_exec($ch);
+        curl_close($ch);
 
-        $videoKey = array_search('video', $segments);
-        if ($videoKey !== false && isset($segments[$videoKey + 1])) {
-            $videoId = $segments[$videoKey + 1];
-            $realUrl = env('PARSER_BLIBLI_URL').'/api/bilibili/web/fetch_one_video?bv_id='.$videoId;
+        $data = json_decode($response, true);
 
-            $ch = curl_init();
-            curl_setopt_array($ch, [
-                CURLOPT_URL => $realUrl,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_HTTPHEADER => [
-                    'Accept: application/json',
-                    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-                ],
-                CURLOPT_TIMEOUT => 30,
-            ]);
-
-            $response = curl_exec($ch);
-            curl_close($ch);
-
-            $data = json_decode($response, true);
-
-            $cid = $data['data']['data']['cid'] ?? null;
-            if ($cid) {
-                $demo = 'http://31.97.122.212:3001/api/bilibili/web/fetch_video_playurl?bv_id=BV1EvuBzjEpt&cid=31032411661';
-                $api = env('PARSER_BLIBLI_URL')."/api/bilibili/web/fetch_video_playurl?bv_id={$videoId}&cid={$cid}";
-
-                $ch = curl_init();
-                curl_setopt_array($ch, [
-                    CURLOPT_URL => $api,
-                    CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_HTTPHEADER => [
-                        'Accept: application/json',
-                        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-                    ],
-                    CURLOPT_TIMEOUT => 30,
-                ]);
-
-                $res = curl_exec($ch);
-                curl_close($ch);
-                $video = json_decode($res,true);
-
-                return $this->formatResponse($data['data']['data'] ?? [],$video['data']['data'] ?? []);
-            }
-
-
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new \Exception('API响应格式错误: ' . json_last_error_msg());
         }
-        throw new \Exception('error: ' . ($data['message'] ?? 'unknown'));
+
+        // 记录原始响应用于调试
+        Log::info('Raw API Response: ', ['raw_response' => $response]);
+        Log::info('Parsed API Response: ', ['parsed_response' => $data]);
+
+
+        // 如果API返回了错误状态
+        if (isset($data['status']) && $data['status'] === 'error') {
+            throw new \Exception('API返回错误: ' . ($data['message'] ?? '未知错误'));
+        }
+
+        // 如果没有status字段，直接使用整个响应数据
+        return $this->formatResponse($data['data'] ?? []);
 
     }
 
-    private function formatResponse(array $data,array $video): array
+    private function formatResponse(array $data): array
     {
         $formatted = [
             'title' => $data['title'] ?? $data['desc'] ?? __('messages.unknown_title'),
@@ -75,9 +56,9 @@ class BlibliService
             'audio_options' => []
         ];
 
-        Log::info('VIDEO',$video);
+        Log::info('VIDEO',$data);
         // 处理视频下载链接 - 尝试多种可能的字段名
-        $videoUrl = $video['dash']['video'][0]['backupUrl'][0] ??   null;
+        $videoUrl = $data['dash']['video'][0]['backupUrl'][0] ??   null;
         if ($videoUrl) {
             $formatted['quality_options'][] = [
                 'quality' => __('messages.original_quality'),
@@ -88,12 +69,12 @@ class BlibliService
         }
 
         // 处理音频下载链接
-        if (isset($video['dash']['audio'][0]['backupUrl'][0])) {
+        if (isset($data['dash']['audio'][0]['backupUrl'][0])) {
             $formatted['audio_options'][] = [
                 'quality' => __('messages.original_audio_quality'),
                 'format' => 'mp3',
                 'size' => $video['audio_size'] ?? 0,
-                'download_url' => $video['dash']['audio'][0]['backupUrl'][0]
+                'download_url' => $data['dash']['audio'][0]['backupUrl'][0]
             ];
         }
         return $formatted;

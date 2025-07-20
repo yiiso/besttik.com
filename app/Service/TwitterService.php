@@ -33,16 +33,6 @@ class TwitterService
         $res = array_filter(explode("\n", trim($process->getOutput())));
         return $this->formatResponse($res);
 
-        $cookies = storage_path('youtube-cookies.txt');
-
-        $cmd = "/www/server/pyporject_evn/versions/3.13.3/bin/yt-dlp -g -f {$format} --cookies {$cookies} {$youtubeUrl}";
-        $res = array_filter(explode("\n", trim(shell_exec($cmd))));
-        Log::info("cookies:",$cookies);
-        Log::info("$cmd:",$cookies);
-        Log::info("cookies:",$cookies);
-        return $res;
-        return $this->formatResponse($res);
-
     }
 
     public function formatResponse(array $data)

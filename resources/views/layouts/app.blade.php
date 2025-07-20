@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="referrer" content="never">
-
+    <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">

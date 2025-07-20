@@ -160,6 +160,15 @@
             clipboard_not_supported: "{{ __('messages.clipboard_not_supported') }}"
         };
     </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LCL71L7BH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-8LCL71L7BH');
+    </script>
 </head>
 <body class="bg-white text-gray-900 font-elegant antialiased">
     <!-- Header -->

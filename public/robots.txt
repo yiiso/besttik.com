@@ -1,2 +1,21 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# 
+Allow: /en/
+Allow: /zh/
+Allow: /es/
+Allow: /fr/
+Allow: /ja/
+
+# 
+Disallow: /api/
+Disallow: /auth/
+Disallow: /parse
+Disallow: /set-language-preference
+Disallow: /login
+Disallow: /register
+Disallow: /logout
+
+# 
+Sitemap: https://videoparser.top/sitemap.xml

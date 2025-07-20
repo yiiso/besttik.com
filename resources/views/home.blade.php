@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'VideoParser.top - 全球视频解析工具')
-@section('description', '专业的全球视频解析工具，支持YouTube、TikTok、Instagram等多平台视频链接解析下载')
+@section('title', __('messages.title'))
+@section('description', __('messages.description'))
+@section('keywords', __('messages.keywords'))
 
 @section('content')
 <!-- 消息提示 -->
@@ -135,6 +136,54 @@
     </div>
 </section>
 
+<!-- How to Use Section - SEO优化 -->
+<section id="how-to-use" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4 heading-elegant">{{ __('messages.how_to_use') }}</h2>
+            <p class="text-lg text-gray-600 body-light">{{ __('messages.how_to_use_desc') }}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-blue-600">1</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ __('messages.step_1_title') }}</h3>
+                <p class="text-gray-600 text-sm">{{ __('messages.step_1_desc') }}</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-green-600">2</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ __('messages.step_2_title') }}</h3>
+                <p class="text-gray-600 text-sm">{{ __('messages.step_2_desc') }}</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-purple-600">3</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ __('messages.step_3_title') }}</h3>
+                <p class="text-gray-600 text-sm">{{ __('messages.step_3_desc') }}</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="text-center">
+                <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-2xl font-bold text-orange-600">4</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ __('messages.step_4_title') }}</h3>
+                <p class="text-gray-600 text-sm">{{ __('messages.step_4_desc') }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Features Section -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -257,6 +306,9 @@
         </div>
     </div>
 </section>
+
+<!-- FAQ Section -->
+@include('components.faq-section')
 
 <!-- CTA Section -->
 <section class="py-20 bg-blue-600">

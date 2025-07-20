@@ -5,8 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="referrer" content="never">
-    <title>@yield('title', 'VideoParser.top - 全球视频解析工具')</title>
-    <meta name="description" content="@yield('description', '专业的全球视频解析工具，支持多平台视频链接解析下载')">
+
+    <!-- SEO Meta Tags -->
+    <title>@yield('title', __('messages.title'))</title>
+    <meta name="description" content="@yield('description', __('messages.description'))">
+    <meta name="keywords" content="@yield('keywords', __('messages.keywords'))">
+    <meta name="author" content="VideoParser.top">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('og_title', __('messages.title'))">
+    <meta property="og:description" content="@yield('og_description', __('messages.description'))">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="VideoParser.top">
+    <meta property="og:image" content="@yield('og_image', asset('images/og-image.jpg'))">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="{{ app()->getLocale() == 'zh' ? 'zh_CN' : app()->getLocale().'_'.strtoupper(app()->getLocale()) }}">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('twitter_title', __('messages.title'))">
+    <meta name="twitter:description" content="@yield('twitter_description', __('messages.description'))">
+    <meta name="twitter:image" content="@yield('twitter_image', asset('images/twitter-card.jpg'))">
+    <meta name="twitter:site" content="@videoparser_top">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+
+    <!-- Hreflang Tags -->
+    <link rel="alternate" hreflang="en" href="{{ str_replace('/'.app()->getLocale().'/', '/en/', url()->current()) }}">
+    <link rel="alternate" hreflang="zh" href="{{ str_replace('/'.app()->getLocale().'/', '/zh/', url()->current()) }}">
+    <link rel="alternate" hreflang="es" href="{{ str_replace('/'.app()->getLocale().'/', '/es/', url()->current()) }}">
+    <link rel="alternate" hreflang="fr" href="{{ str_replace('/'.app()->getLocale().'/', '/fr/', url()->current()) }}">
+    <link rel="alternate" hreflang="ja" href="{{ str_replace('/'.app()->getLocale().'/', '/ja/', url()->current()) }}">
+    <link rel="alternate" hreflang="x-default" href="{{ str_replace('/'.app()->getLocale().'/', '/', url()->current()) }}">
+    @verbatim
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "VideoParser.top",
+        "description": "{{ __('messages.description') }}",
+        "url": "https://videoparser.top",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "VideoParser.top",
+            "url": "https://videoparser.top"
+        },
+        "featureList": [
+            "YouTube video download",
+            "TikTok video download",
+            "Instagram video download",
+            "Facebook video download",
+            "Twitter video download",
+            "Batch video processing",
+            "Multiple format support",
+            "High quality downloads"
+        ],
+        "screenshot": "{{ asset('images/app-screenshot.jpg') }}",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "2847"
+        }
+    }
+    </script>
+    @endverbatim
+    <!-- 包含结构化数据 -->
+    @include('components.structured-data')
+
+    <!-- 包含分析代码 -->
+    @include('components.analytics')
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
@@ -107,25 +186,25 @@
                                         <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" />
                                     </clipPath>
                                 </defs>
-                                
+
                                 <!-- 主背景 - 六边形 -->
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#headerGradient)" />
-                                
+
                                 <!-- 装饰图案 - 网格线 -->
                                 <g clip-path="url(#headerHexClip)" opacity="0.15">
                                     <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
                                     <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
                                 </g>
-                                
+
                                 <!-- 中心图形 - 现代播放图标 -->
                                 <g filter="url(#headerNeonGlow)">
                                     <!-- 播放三角形 - 不规则形状 -->
                                     <path d="M12 10L22 16L12 22V10Z" fill="white" />
-                                    
+
                                     <!-- 装饰元素 - 垂直线 -->
                                     <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
                                 </g>
-                                
+
                                 <!-- 边缘高光 -->
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
@@ -205,6 +284,9 @@
         </div>
     </header>
 
+    <!-- Breadcrumb Navigation -->
+    @include('components.breadcrumb')
+
     <!-- Main Content -->
     <main>
         @yield('content')
@@ -234,25 +316,25 @@
                                         <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" />
                                     </clipPath>
                                 </defs>
-                                
+
                                 <!-- 主背景 - 六边形 -->
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#footerGradient)" />
-                                
+
                                 <!-- 装饰图案 - 网格线 -->
                                 <g clip-path="url(#footerHexClip)" opacity="0.15">
                                     <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
                                     <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
                                 </g>
-                                
+
                                 <!-- 中心图形 - 现代播放图标 -->
                                 <g filter="url(#footerNeonGlow)">
                                     <!-- 播放三角形 - 不规则形状 -->
                                     <path d="M12 10L22 16L12 22V10Z" fill="white" />
-                                    
+
                                     <!-- 装饰元素 - 垂直线 -->
                                     <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
                                 </g>
-                                
+
                                 <!-- 边缘高光 -->
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>

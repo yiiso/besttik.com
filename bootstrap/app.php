@@ -12,14 +12,15 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->append([
-            'detect.language' => \App\Http\Middleware\DetectLanguage::class,
-            'handle.referral' => \App\Http\Middleware\HandleReferralCode::class,
-            'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+
         ]);
-        
+
         // 将推荐码中间件应用到web路由组
         $middleware->web(append: [
+            'detect.language' => \App\Http\Middleware\DetectLanguage::class,
+            'set.locale' => \App\Http\Middleware\SetLocale::class,
             \App\Http\Middleware\HandleReferralCode::class,
+            'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - Descargador de Videos Online Gratuito',
-    'description' => 'Herramienta gratuita de descarga y análisis de videos en línea. Descarga videos de YouTube, TikTok, Instagram, Facebook, Twitter y otras plataformas. Rápido, seguro, sin registro requerido.',
-    'keywords' => 'descargador de videos, analizador de videos online, descargador YouTube, descargador TikTok, descarga videos Instagram, descargador Facebook, descarga videos Twitter, descargador gratuito, conversor de videos, descarga por lotes',
+    'title' => 'VideoParser.top - Analizador de Videos Online Removedor de Marca de Agua TikTok Descarga de Videos',
+    'description' => 'Analizador y descargador de videos online gratuito. Removedor de marca de agua TikTok, analizador de videos YouTube, analizador TikTok, Instagram, Facebook, Twitter y otras plataformas de análisis de videos.',
+    'keywords' => 'analizador de videos, removedor de marca de agua de videos, removedor de marca de agua TikTok, analizador TikTok, descarga gratuita de videos YouTube, descarga TikTok, descarga Bilibili',
     'hero_title' => 'Descargador de Videos Online Gratuito',
     'hero_subtitle' => 'Descarga videos de YouTube, TikTok, Instagram, Facebook, Twitter y más. Rápido, seguro y completamente gratuito.',
     'how_to_use_desc' => 'Proceso simple de 4 pasos para descargar cualquier video',
@@ -22,10 +22,10 @@ return [
     'why_choose_us' => '¿Por qué elegirnos?',
     'why_choose_desc' => 'Servicio profesional, seguro y conveniente de análisis de videos',
     'fast_parsing' => 'Análisis Rápido',
-    'fast_parsing_desc' => 'Tecnología de análisis avanzada, completa el análisis de enlaces de video en segundos, soporta múltiples opciones de calidad',
+    'fast_parsing_desc' => 'Utilizando la tecnología de análisis de algoritmos de IA más avanzada, completa el análisis de enlaces de video en segundos, analizando los videos más claros',
     'secure_reliable' => 'Seguro y Confiable',
-    'secure_reliable_desc' => 'Sin registro requerido, no almacenamos datos de usuario, encriptación HTTPS completa para proteger tu privacidad',
-    'global_support' => 'Soporte Global',
+    'secure_reliable_desc' => 'No requiere registro para usar, no almacena datos de usuario, encriptación HTTPS completa para proteger tu privacidad y seguridad',
+    'global_support' => 'Soporte de Plataforma Completa',
     'global_support_desc' => 'Soporta plataformas de video principales globalmente, interfaz multiidioma, brindando servicio de calidad para usuarios globales',
     'supported_platforms' => 'Plataformas Soportadas',
     'supported_platforms_desc' => 'Cubriendo las principales plataformas de video globales',

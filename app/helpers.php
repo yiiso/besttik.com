@@ -10,16 +10,45 @@ if (!function_exists('localized_url')) {
      */
     function localized_url($path = '', $locale = null)
     {
+        $defaultLocale = config('app.default_locale');
         $locale = $locale ?: app()->getLocale();
-        
-        // 如果是英文，使用默认路由（不带语言前缀）
-        if ($locale === 'en') {
+
+        if ($locale === $defaultLocale) {
             return url($path);
         }
-        
-        // 其他语言使用带语言前缀的路由
-        $path = ltrim($path, '/');
-        return url("/{$locale}" . ($path ? "/{$path}" : ''));
+
+        return url("/{$locale}{$path}");
+    }
+}
+
+
+if (!function_exists('locale_url')) {
+    /**
+     * 生成带语言前缀的URL
+     * @param string $locale 语言代码
+     * @param string $path 路径（默认当前路径）
+     * @return string
+     */
+    function locale_url($locale, $path = null)
+    {
+        $defaultLocale = config('app.default_locale');
+        $path = $path ?? request()->getPathInfo(); // 当前路径（不含域名）
+
+        // 移除路径中可能存在的旧语言前缀（避免重复）
+        $supportedLocales = array_keys(config('app.locales'));
+        foreach ($supportedLocales as $lang) {
+            if ($lang !== $defaultLocale && str_starts_with($path, "/{$lang}")) {
+                $path = substr($path, strlen("/{$lang}"));
+                break;
+            }
+        }
+
+        // 生成URL
+        if ($locale === $defaultLocale) {
+            return url($path ?: '/'); // 默认语言无前缀
+        } else {
+            return url("/{$locale}{$path}"); // 其他语言加前缀
+        }
     }
 }
 
@@ -34,11 +63,11 @@ if (!function_exists('get_alternate_urls')) {
     {
         $languages = ['en', 'zh', 'es', 'fr', 'ja'];
         $alternates = [];
-        
+
         foreach ($languages as $lang) {
             $alternates[$lang] = localized_url($path, $lang);
         }
-        
+
         return $alternates;
     }
 }
@@ -52,19 +81,19 @@ if (!function_exists('get_canonical_url')) {
     function get_canonical_url()
     {
         $currentUrl = url()->current();
-        
+
         // Remove query parameters for canonical URL
         $parsedUrl = parse_url($currentUrl);
         $canonicalUrl = $parsedUrl['scheme'] . '://' . $parsedUrl['host'];
-        
+
         if (isset($parsedUrl['port'])) {
             $canonicalUrl .= ':' . $parsedUrl['port'];
         }
-        
+
         if (isset($parsedUrl['path'])) {
             $canonicalUrl .= $parsedUrl['path'];
         }
-        
+
         return $canonicalUrl;
     }
 }
@@ -82,11 +111,11 @@ if (!function_exists('generate_meta_description')) {
         $content = strip_tags($content);
         $content = preg_replace('/\s+/', ' ', $content);
         $content = trim($content);
-        
+
         if (strlen($content) <= $length) {
             return $content;
         }
-        
+
         return substr($content, 0, $length - 3) . '...';
     }
 }

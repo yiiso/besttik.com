@@ -400,6 +400,7 @@ class AuthController extends Controller
                 $user->update([
                     'google_id' => $googleUser['id'],
                     'avatar' => $googleUser['picture'] ?? null,
+                    'email_verified_at' => now(),
                 ]);
             }
             return $user;

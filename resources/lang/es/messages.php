@@ -491,4 +491,26 @@ return [
     'verify_email_line2' => 'Si no creaste una cuenta, no se requiere ninguna acción adicional.',
     'verify_email_line3' => 'Este enlace de verificación expirará en 60 minutos.',
     'email_signature' => 'Saludos, Equipo de :app',
+
+    // Google OAuth translations
+    'google_login_cancelled' => 'El inicio de sesión con Google fue cancelado o falló',
+    'google_login_no_code' => 'Error en el inicio de sesión con Google: No se recibió código de autorización',
+    'google_login_init_failed' => 'Error al inicializar el inicio de sesión con Google: :error',
+    'google_oauth_not_configured' => 'La función de inicio de sesión con Google requiere configuración. Configure GOOGLE_CLIENT_ID y GOOGLE_CLIENT_SECRET en su archivo .env y configure la aplicación OAuth en Google Cloud Console. Consulte GOOGLE_OAUTH_SETUP.md para más detalles.',
+    'google_login_failed' => 'Error en el inicio de sesión con Google: :error',
+    'google_login_token_failed' => 'Error en el inicio de sesión con Google: No se pudo obtener el token de acceso',
+    'google_login_userinfo_failed' => 'Error en el inicio de sesión con Google: No se pudo obtener la información del usuario',
+    'login_missing_state' => 'Error de inicio de sesión: Falta el parámetro de estado',
+    'login_invalid_state' => 'Error de inicio de sesión: Parámetro de estado inválido',
+    'login_csrf_failed' => 'Error de inicio de sesión: Falló la verificación de seguridad',
+
+    // Email verification translations
+    'verification_required' => 'Se requiere verificación de correo electrónico. Revise su correo y haga clic en el enlace de verificación.',
+    'register_success_verify_email' => '¡Registro exitoso! Revise su correo electrónico y haga clic en el enlace de verificación para activar su cuenta.',
+    'email_verification_invalid' => 'Enlace de verificación de correo electrónico inválido',
+    'email_already_verified' => 'El correo electrónico ya ha sido verificado',
+    'email_verified_success' => '¡Verificación de correo electrónico exitosa! Ahora ha iniciado sesión.',
+    'email_verification_failed' => 'Error en la verificación del correo electrónico',
+    'email_not_found' => 'Dirección de correo electrónico no encontrada',
+    'verification_email_sent' => 'Se ha enviado el correo de verificación',
     ];

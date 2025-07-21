@@ -728,5 +728,26 @@ return [
     'verify_email_action' => 'Verify Email Address',
     'verify_email_line2' => 'If you did not create an account, no further action is required.',
     'verify_email_line3' => 'This verification link will expire in 60 minutes.',
-    'email_signature' => 'Regards, :app Team',
-    ];
+    'email_signature' => 'Regards, :app Team',   
+    // Google OAuth translations
+    'google_login_cancelled' => 'Google login was cancelled or failed',
+    'google_login_no_code' => 'Google login failed: No authorization code received',
+    'google_login_init_failed' => 'Google login initialization failed: :error',
+    'google_oauth_not_configured' => 'Google login feature requires configuration. Please set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in your .env file and configure OAuth application in Google Cloud Console. See GOOGLE_OAUTH_SETUP.md for details.',
+    'google_login_failed' => 'Google login failed: :error',
+    'google_login_token_failed' => 'Google login failed: Unable to get access token',
+    'google_login_userinfo_failed' => 'Google login failed: Unable to get user information',
+    'login_missing_state' => 'Login failed: Missing state parameter',
+    'login_invalid_state' => 'Login failed: Invalid state parameter',
+    'login_csrf_failed' => 'Login failed: Security verification failed',
+
+    // Email verification translations
+    'verification_required' => 'Email verification required. Please check your email and click the verification link.',
+    'register_success_verify_email' => 'Registration successful! Please check your email and click the verification link to activate your account.',
+    'email_verification_invalid' => 'Invalid email verification link',
+    'email_already_verified' => 'Email has already been verified',
+    'email_verified_success' => 'Email verification successful! You are now logged in.',
+    'email_verification_failed' => 'Email verification failed',
+    'email_not_found' => 'Email address not found',
+    'verification_email_sent' => 'Verification email has been sent',
+	];

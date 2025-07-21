@@ -486,4 +486,26 @@ return [
     'verify_email_line2' => 'Si vous n\'avez pas créé de compte, aucune action supplémentaire n\'est requise.',
     'verify_email_line3' => 'Ce lien de vérification expirera dans 60 minutes.',
     'email_signature' => 'Cordialement, Équipe :app',
+
+    // Google OAuth translations
+    'google_login_cancelled' => 'La connexion Google a été annulée ou a échoué',
+    'google_login_no_code' => 'Échec de la connexion Google : Aucun code d\'autorisation reçu',
+    'google_login_init_failed' => 'Échec de l\'initialisation de la connexion Google : :error',
+    'google_oauth_not_configured' => 'La fonction de connexion Google nécessite une configuration. Veuillez définir GOOGLE_CLIENT_ID et GOOGLE_CLIENT_SECRET dans votre fichier .env et configurer l\'application OAuth dans Google Cloud Console. Voir GOOGLE_OAUTH_SETUP.md pour plus de détails.',
+    'google_login_failed' => 'Échec de la connexion Google : :error',
+    'google_login_token_failed' => 'Échec de la connexion Google : Impossible d\'obtenir le jeton d\'accès',
+    'google_login_userinfo_failed' => 'Échec de la connexion Google : Impossible d\'obtenir les informations utilisateur',
+    'login_missing_state' => 'Échec de la connexion : Paramètre d\'état manquant',
+    'login_invalid_state' => 'Échec de la connexion : Paramètre d\'état invalide',
+    'login_csrf_failed' => 'Échec de la connexion : Échec de la vérification de sécurité',
+
+    // Email verification translations
+    'verification_required' => 'Vérification d\'email requise. Veuillez vérifier votre email et cliquer sur le lien de vérification.',
+    'register_success_verify_email' => 'Inscription réussie ! Veuillez vérifier votre email et cliquer sur le lien de vérification pour activer votre compte.',
+    'email_verification_invalid' => 'Lien de vérification d\'email invalide',
+    'email_already_verified' => 'L\'email a déjà été vérifié',
+    'email_verified_success' => 'Vérification d\'email réussie ! Vous êtes maintenant connecté.',
+    'email_verification_failed' => 'Échec de la vérification d\'email',
+    'email_not_found' => 'Adresse email non trouvée',
+    'verification_email_sent' => 'Email de vérification envoyé',
     ];

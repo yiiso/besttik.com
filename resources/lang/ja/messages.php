@@ -502,4 +502,26 @@ return [
     'verify_email_line2' => 'アカウントを作成していない場合は、何もする必要はありません。',
     'verify_email_line3' => 'この認証リンクは60分後に期限切れになります。',
     'email_signature' => '敬具、:app チーム',
+
+    // Google OAuth translations
+    'google_login_cancelled' => 'Googleログインがキャンセルされたか失敗しました',
+    'google_login_no_code' => 'Googleログインに失敗しました：認証コードが受信されませんでした',
+    'google_login_init_failed' => 'Googleログインの初期化に失敗しました：:error',
+    'google_oauth_not_configured' => 'Googleログイン機能には設定が必要です。.envファイルでGOOGLE_CLIENT_IDとGOOGLE_CLIENT_SECRETを設定し、Google Cloud ConsoleでOAuthアプリケーションを設定してください。詳細はGOOGLE_OAUTH_SETUP.mdファイルを参照してください。',
+    'google_login_failed' => 'Googleログインに失敗しました：:error',
+    'google_login_token_failed' => 'Googleログインに失敗しました：アクセストークンを取得できませんでした',
+    'google_login_userinfo_failed' => 'Googleログインに失敗しました：ユーザー情報を取得できませんでした',
+    'login_missing_state' => 'ログインに失敗しました：状態パラメータが不足しています',
+    'login_invalid_state' => 'ログインに失敗しました：無効な状態パラメータです',
+    'login_csrf_failed' => 'ログインに失敗しました：セキュリティ検証に失敗しました',
+
+    // Email verification translations
+    'verification_required' => 'メール認証が必要です。メールを確認して認証リンクをクリックしてください。',
+    'register_success_verify_email' => '登録が成功しました！メールを確認して認証リンクをクリックしてアカウントを有効化してください。',
+    'email_verification_invalid' => '無効なメール認証リンクです',
+    'email_already_verified' => 'メールは既に認証済みです',
+    'email_verified_success' => 'メール認証が成功しました！ログインしました。',
+    'email_verification_failed' => 'メール認証に失敗しました',
+    'email_not_found' => 'メールアドレスが見つかりません',
+    'verification_email_sent' => '認証メールが送信されました',
     ];

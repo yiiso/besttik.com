@@ -511,4 +511,26 @@ return [
     'verify_email_line2' => '如果您没有创建账户，无需进行任何操作。',
     'verify_email_line3' => '此验证链接将在60分钟后过期。',
     'email_signature' => '此致，:app 团队',
+
+    // Google OAuth translations
+    'google_login_cancelled' => 'Google登录被取消或失败',
+    'google_login_no_code' => 'Google登录失败：未获取到授权码',
+    'google_login_init_failed' => 'Google登录初始化失败：:error',
+    'google_oauth_not_configured' => 'Google登录功能需要配置。请在.env文件中设置GOOGLE_CLIENT_ID和GOOGLE_CLIENT_SECRET，并在Google Cloud Console中配置OAuth应用。详情请参考GOOGLE_OAUTH_SETUP.md文件。',
+    'google_login_failed' => 'Google登录失败：:error',
+    'google_login_token_failed' => 'Google登录失败：无法获取访问令牌',
+    'google_login_userinfo_failed' => 'Google登录失败：无法获取用户信息',
+    'login_missing_state' => '登录失败：缺少状态参数',
+    'login_invalid_state' => '登录失败：状态参数无效',
+    'login_csrf_failed' => '登录失败：安全验证失败',
+
+    // Email verification translations
+    'verification_required' => '需要邮箱验证。请检查您的邮箱并点击验证链接。',
+    'register_success_verify_email' => '注册成功！请检查您的邮箱并点击验证链接来激活您的账户。',
+    'email_verification_invalid' => '无效的邮箱验证链接',
+    'email_already_verified' => '邮箱已经验证过了',
+    'email_verified_success' => '邮箱验证成功！您现在已登录。',
+    'email_verification_failed' => '邮箱验证失败',
+    'email_not_found' => '未找到该邮箱地址',
+    'verification_email_sent' => '验证邮件已发送',
     ];

@@ -25,4 +25,9 @@ Route::prefix('v1')->group(function () {
             ]
         ]);
     })->name('api.supported-platforms');
+});// 管理
+员API路由
+Route::prefix('admin')->middleware('admin.auth')->group(function () {
+    Route::get('/stats/today', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayData']);
+    Route::get('/stats/weekly', [App\Http\Controllers\Admin\DashboardController::class, 'getWeeklyData']);
 });

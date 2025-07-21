@@ -120,3 +120,39 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
+
+// 管理员路由
+Route::prefix('admin')->name('admin.')->group(function () {
+    // 登录路由（不需要认证）
+    Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login']);
+    
+    // 密码重置路由（不需要认证）
+    Route::get('/forgot-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'showForgotForm'])->name('password.request');
+    Route::post('/forgot-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'sendResetLink'])->name('password.email');
+    Route::get('/reset-password/{token}', [App\Http\Controllers\Admin\PasswordResetController::class, 'showResetForm'])->name('password.reset');
+    Route::post('/reset-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'resetPassword'])->name('password.update');
+    
+    // 需要管理员认证的路由
+    Route::middleware('admin.auth')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/parse-logs', [App\Http\Controllers\Admin\DashboardController::class, 'parseLogs'])->name('parse-logs');
+        Route::get('/parse-logs/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'parseLogDetail'])->name('parse-log-detail');
+        Route::get('/security', function () { return view('admin.security'); })->name('security');
+        Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile');
+        Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'updateProfile'])->name('profile.update');
+        Route::put('/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('password.update');
+        Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
+        
+        // 安全相关接口
+        Route::post('/unlock', [App\Http\Controllers\Admin\AuthController::class, 'unlock'])->name('unlock');
+        Route::get('/login-stats', [App\Http\Controllers\Admin\AuthController::class, 'getLoginStats'])->name('login-stats');
+        
+        // API接口
+        Route::get('/api/today', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayData'])->name('api.today');
+        Route::get('/api/today-hourly', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayHourlyData'])->name('api.today-hourly');
+        Route::get('/api/weekly', [App\Http\Controllers\Admin\DashboardController::class, 'getWeeklyData'])->name('api.weekly');
+        Route::get('/api/stats', [App\Http\Controllers\Admin\DashboardController::class, 'getStatsDataApi'])->name('api.stats');
+        Route::get('/api/parse-logs', [App\Http\Controllers\Admin\DashboardController::class, 'getParseLogsData'])->name('api.parse-logs');
+    });
+});

@@ -174,3 +174,37 @@ if (!function_exists('get_supported_platforms')) {
         ];
     }
 }
+if (!function_exists('beijing_time')) {
+    /**
+     * 获取北京时间
+     *
+     * @param string|null $format 时间格式
+     * @return string|\Carbon\Carbon
+     */
+    function beijing_time($format = null)
+    {
+        $beijingTime = \Carbon\Carbon::now('Asia/Shanghai');
+        
+        return $format ? $beijingTime->format($format) : $beijingTime;
+    }
+}
+
+if (!function_exists('format_beijing_time')) {
+    /**
+     * 格式化为北京时间显示
+     *
+     * @param mixed $time
+     * @param string $format
+     * @return string
+     */
+    function format_beijing_time($time, $format = 'Y-m-d H:i:s')
+    {
+        if (!$time) {
+            return '';
+        }
+        
+        $carbon = $time instanceof \Carbon\Carbon ? $time : \Carbon\Carbon::parse($time);
+        
+        return $carbon->setTimezone('Asia/Shanghai')->format($format);
+    }
+}

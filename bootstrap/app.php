@@ -15,6 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'detect.language' => \App\Http\Middleware\DetectLanguage::class,
             'set.locale' => \App\Http\Middleware\SetLocale::class,
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
+            'admin.auth' => \App\Http\Middleware\AdminAuth::class,
+            'set.timezone' => \App\Http\Middleware\SetTimezone::class,
         ]);
 
         // 将推荐码中间件应用到web路由组
@@ -22,7 +24,6 @@ return Application::configure(basePath: dirname(__DIR__))
 
 
             \App\Http\Middleware\HandleReferralCode::class,
-
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

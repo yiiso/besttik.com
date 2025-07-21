@@ -59,6 +59,10 @@ class DouyinService
 
         // 处理视频下载链接 - 尝试多种可能的字段名
         $videoUrl = $data['video_url'] ?? $data['download_url'] ?? $data['url'] ?? $data['play_url'] ?? null;
+
+        if (strpos($videoUrl,'f.video.weibocdn.com')){
+            $videoUrl = str_replace('f.video.weibocdn.com','weibo.videoparser.top',$videoUrl);
+        }
         if ($videoUrl) {
             $formatted['quality_options'][] = [
                 'quality' => __('messages.original_quality'),

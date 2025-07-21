@@ -10,13 +10,48 @@ use App\Http\Controllers\UserDashboardController;
 
 
 // 默认路由（英文）- 应用语言检测中间件
-Route::get('/', function () {
-    return view('home');
+
+Route::middleware(['detect.language','set.locale'])->group(function (){
+    Route::get('/', function () {
+        return view('home');
+    });
+    // 用户中心页面
+    Route::get('/dashboard', function () {
+        return view('pages.dashboard');
+    })->middleware(['auth', 'verified'])->name('dashboard');
+
+    // 页面路由
+    Route::get('/batch-download', function () {
+        return view('pages.batch-download');
+    })->name('batch-download');
+
+    Route::get('/api', function () {
+        return view('pages.api');
+    })->name('api');
+
+    Route::get('/help', function () {
+        return view('pages.help');
+    })->name('help');
+
+    Route::get('/contact', function () {
+        return view('pages.contact');
+    })->name('contact');
+
+    Route::get('/privacy', function () {
+        return view('pages.privacy');
+    })->name('privacy');
+
+    Route::get('/terms', function () {
+        return view('pages.terms');
+    })->name('terms');
+
 });
+
 
 // 多语言路由组
 Route::prefix('{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
+    ->middleware(['detect.language','set.locale'])
     ->group(function () {
         Route::get('/', function ($locale) {
             return view('home');
@@ -45,14 +80,15 @@ Route::prefix('{locale}')
         Route::get('/terms', function ($locale) {
             return view('pages.terms');
         })->name('terms.locale');
+
+        Route::get('/dashboard', function ($locale) {
+            return view('pages.dashboard');
+        })->middleware(['auth', 'verified'])->name('dashboard.locale');
 });
 
 // API路由
 Route::post('/parse', [VideoParserController::class, 'parse'])->name('video.parse');
 Route::get('/parse-status', [VideoParserController::class, 'getParseStatus'])->name('video.parse.status');
-
-
-
 Route::get('/authTest', [AuthController::class, 'authTest'])->name('auth.test');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
@@ -79,42 +115,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/api/referral/stats', [ReferralController::class, 'getReferralStats'])->name('referral.stats');
 });
 
-// 用户中心页面
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::prefix('{locale}')->where(['locale' => '[a-zA-Z]{2}'])->group(function () {
-    Route::get('/dashboard', function ($locale) {
-        return view('pages.dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard.locale');
-});
 
 // Google OAuth 路由
 Route::get('/auth/google', [AuthController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('/auth/google/callback', [AuthController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
-// 页面路由
-Route::get('/batch-download', function () {
-    return view('pages.batch-download');
-})->name('batch-download');
-
-Route::get('/api', function () {
-    return view('pages.api');
-})->name('api');
-
-Route::get('/help', function () {
-    return view('pages.help');
-})->name('help');
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
-
-Route::get('/privacy', function () {
-    return view('pages.privacy');
-})->name('privacy');
-
-Route::get('/terms', function () {
-    return view('pages.terms');
-})->name('terms');

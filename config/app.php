@@ -80,6 +80,14 @@ return [
 
     'locale' => env('APP_LOCALE', 'en'),
 
+    'locales' => [
+        'en' => 'English',
+        'zh' => '中文',
+        'ja' => '日本語',
+        'es' => 'Español',
+        'fr' => 'Français',
+    ],
+    'default_locale' => 'en', // 自定义默认语言配置
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),

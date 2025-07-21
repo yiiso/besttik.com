@@ -11,15 +11,18 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->append([
+        $middleware->alias([
             'detect.language' => \App\Http\Middleware\DetectLanguage::class,
-            'handle.referral' => \App\Http\Middleware\HandleReferralCode::class,
+            'set.locale' => \App\Http\Middleware\SetLocale::class,
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         ]);
-        
+
         // 将推荐码中间件应用到web路由组
         $middleware->web(append: [
+
+
             \App\Http\Middleware\HandleReferralCode::class,
+
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

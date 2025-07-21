@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - 免费在线视频下载器和解析工具',
-    'description' => '免费在线视频下载器和解析工具。支持YouTube、TikTok、Instagram、Facebook、Twitter等平台视频下载。快速、安全、无需注册。',
-    'keywords' => '视频下载器,在线视频解析,YouTube下载,TikTok下载,Instagram视频下载,Facebook视频下载,Twitter视频下载,免费视频下载,视频转换器,批量视频下载,抖音下载,B站下载',
+    'title' => 'VideoParser.top - 在线视频解析 抖音去水印 抖音视频解析下载',
+    'description' => '免费在线视频解析下载。抖音去水印， YouTube视频解析、TikTok解析、Instagram、Facebook、Twitter等平台视频解析 ',
+    'keywords' => '视频解析,视频去水印,抖音去水印,TikTok解析, youtube免费视频下载, 抖音下载,B站下载',
     'hero_title' => '免费在线视频下载器',
     'hero_subtitle' => '支持YouTube、TikTok、Instagram、Facebook、Twitter等平台视频下载。快速、安全、完全免费。',
     'how_to_use_desc' => '简单4步下载任何视频',
@@ -20,7 +20,7 @@ return [
     'supported_platforms_question' => '支持哪些平台？',
     'supported_platforms_answer' => '我们支持YouTube、TikTok、Instagram、Facebook、Twitter、B站、抖音等众多热门视频平台。新平台会定期添加。',
     'video_quality_question' => '有哪些视频质量选项？',
-    'video_quality_answer' => '我们提供多种质量选项，包括4K、1080p、720p、480p和360p，具体取决于源视频。您还可以下载各种比特率的纯音频版本。',
+    'video_quality_answer' => '提供最高质量的视频解析下载。同时提供最高音质的纯音频版本（依赖平台是否提供）。',
     'paste_link' => '粘贴视频链接到这里...',
     'parse' => '解析',
     'try_these' => '试试这些:',
@@ -28,10 +28,10 @@ return [
     'why_choose_us' => '为什么选择我们',
     'why_choose_desc' => '专业、安全、便捷的视频解析服务',
     'fast_parsing' => '极速解析',
-    'fast_parsing_desc' => '采用先进的解析技术，秒级完成视频链接解析，支持多种清晰度选择',
+    'fast_parsing_desc' => '采用最先进的AI算法解析技术，秒级完成视频链接解析，解析最清晰的视频',
     'secure_reliable' => '安全可靠',
-    'secure_reliable_desc' => '无需注册登录，不存储用户数据，全程HTTPS加密，保护您的隐私安全',
-    'global_support' => '全球支持',
+    'secure_reliable_desc' => '无需注册即可使用，不存储用户数据，全程HTTPS加密，保护您的隐私安全',
+    'global_support' => '全平台支持',
     'global_support_desc' => '支持全球主流视频平台，多语言界面，为全球用户提供优质服务',
     'supported_platforms' => '支持的平台',
     'supported_platforms_desc' => '覆盖全球主流视频平台',
@@ -66,14 +66,14 @@ return [
     'low_quality' => '流畅',
     'audio_quality' => '音质',
     'copy_success' => '复制成功',
-    
+
     // Footer
     'footer_description' => '专业的全球视频解析工具，支持多平台视频链接解析下载。',
     'navigation' => '导航',
     'products' => '产品',
     'support' => '支持',
     'all_rights_reserved' => '版权所有。',
-    
+
     // User Authentication
     'login' => '登录',
     'logout' => '退出',
@@ -102,7 +102,7 @@ return [
     'email_required' => '邮箱为必填项',
     'password_confirmation_failed' => '密码确认不匹配',
     'password_min_length' => '密码至少需要8个字符',
-    
+
     // Pages
     'video_parser' => '视频解析器',
     'batch_download' => '批量下载',
@@ -111,7 +111,7 @@ return [
     'contact_us' => '联系我们',
     'privacy_policy' => '隐私政策',
     'terms_of_service' => '服务条款',
-    
+
     // Terms of Service
     'terms_of_service_description' => '在使用VideoParser.top之前，请仔细阅读我们的服务条款。',
     'last_updated' => '最后更新',
@@ -168,7 +168,7 @@ return [
     'terms_contact_description' => '如果您对这些条款有任何疑问，请联系我们：',
     'address' => '地址',
     'company_address' => '公司地址',
-    
+
     // Privacy Policy
     'privacy_policy_description' => '您的隐私对我们很重要。本政策解释了我们如何收集、使用和保护您的信息。',
     'information_we_collect' => '我们收集的信息',
@@ -218,7 +218,7 @@ return [
     'policy_changes' => '政策变更',
     'policy_changes_description' => '我们可能会不时更新此隐私政策。我们将通过在我们的网站上发布新政策来通知您任何重大变更。',
     'privacy_contact_description' => '如果您对此隐私政策有任何疑问，请联系我们：',
-    
+
     // Contact Us
     'contact_us_description' => '有问题或需要支持？我们在这里帮助您充分利用VideoParser.top。',
     'send_message' => '发送消息',
@@ -247,7 +247,7 @@ return [
     'search_help' => '搜索帮助文章',
     'search_help_description' => '查找常见问题的答案',
     'browse_help' => '浏览帮助中心',
-    
+
     // Help Center
     'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.top。',
     'getting_started' => '入门指南',
@@ -273,7 +273,7 @@ return [
     'still_need_help' => '仍需要帮助？',
     'contact_support_description' => '我们的支持团队随时准备为您提供帮助',
     'contact_support' => '联系支持',
-    
+
     // API Service
     'api_service_description' => '通过我们全面的API将强大的视频解析功能集成到您的应用程序中。',
     'powerful_api' => '强大的视频解析API',
@@ -306,7 +306,7 @@ return [
     'ready_to_integrate' => '准备集成？',
     'api_cta_description' => '立即开始使用我们强大的API构建',
     'get_api_key' => '获取API密钥',
-    
+
     // Batch Download
     'batch_download_description' => '使用我们强大的批量处理功能一次下载多个视频。',
     'powerful_batch_processing' => '强大的批量处理',
@@ -329,13 +329,13 @@ return [
     'ready_to_start' => '准备开始批量处理？',
     'batch_download_cta' => '尝试我们的批量下载功能，节省数小时时间',
     'try_batch_download' => '尝试批量下载',
-    
+
     // Additional common terms
     'unknown_size' => '未知大小',
     'loading_video' => '正在加载视频...',
     'browser_not_support' => '您的浏览器不支持视频播放',
     'network_error' => '网络错误，请重试',
-    
+
     // Error Pages
     'page_not_found' => '页面未找到',
     'page_not_found_description' => '您要查找的页面无法找到。',
@@ -428,7 +428,7 @@ return [
     'profile' => '个人资料',
     'settings' => '设置',
     'logout_confirm' => '确定要退出登录吗？',
-    
+
     // 解析限制相关消息
     'daily_limit_exceeded_guest' => '您今日的解析次数已用完（:limit 次），请登录获取更多解析机会。',
     'daily_limit_exceeded_user' => '您今日的解析次数已用完（:limit 次），请明天再试。',
@@ -438,7 +438,7 @@ return [
     'user_daily_limit' => '注册用户：每日 :limit 次解析',
     'login_for_more' => '登录获取更多解析次数',
     'upgrade_limit_info' => '立即注册，获得每日 :limit 次解析机会！',
-    
+
     // 其他UI翻译
     'close' => '关闭',
     'audio_preview' => '音频预览',
@@ -457,7 +457,7 @@ return [
     'unknown_title' => '未知标题',
     'unknown_duration' => '未知时长',
     'original_audio_quality' => '原始音质',
-    
+
     // 粘贴按钮相关
     'paste' => '粘贴',
     'paste_from_clipboard' => '从剪贴板粘贴',
@@ -468,7 +468,7 @@ return [
 
     // 联系表单
     'contact_success' => '感谢您的留言！我们会尽快回复您。',
-    
+
     // 用户仪表板
     'dashboard_title' => '用户中心',
     'dashboard_description' => '管理您的账户并查看使用统计',
@@ -502,7 +502,7 @@ return [
     'verify_email_description' => '我们已向您的邮箱发送了验证链接，请点击链接完成注册。',
     'resend_verification' => '重新发送验证邮件',
     'verification_required' => '请验证您的邮箱地址以继续。',
-    'check_email' => '请检查您的邮箱以获取验证链接。', 
+    'check_email' => '请检查您的邮箱以获取验证链接。',
    // 邮箱验证邮件内容
     'verify_email_subject' => '验证您的邮箱地址 - :app',
     'verify_email_greeting' => '您好 :name！',

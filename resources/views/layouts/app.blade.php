@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="referrer" content="never">
+    <meta name="referrer" content="same-origin">
     <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
@@ -223,13 +223,10 @@
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <select id="languageSelect" class="text-sm border-0 bg-transparent text-gray-600 focus:ring-0 cursor-pointer ui-text font-medium">
-                        <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }} class="ui-text">English</option>
-                        <option value="zh" {{ app()->getLocale() == 'zh' ? 'selected' : '' }} class="ui-text">中文</option>
-                        <option value="es" {{ app()->getLocale() == 'es' ? 'selected' : '' }} class="ui-text">Español</option>
-                        <option value="fr" {{ app()->getLocale() == 'fr' ? 'selected' : '' }} class="ui-text">Français</option>
-                        <option value="ja" {{ app()->getLocale() == 'ja' ? 'selected' : '' }} class="ui-text">日本語</option>
-                    </select>
+                    @foreach(config('app.locales') as $localeCode => $localeName)
+                        <a href="{{ locale_url($localeCode) }}">{{ $localeName }}</a>
+                    @endforeach
+
 
                     @auth
                         <!-- 用户已登录状态 -->

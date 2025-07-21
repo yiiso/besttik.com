@@ -111,9 +111,7 @@ Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])
     ->name('verification.verify');
 Route::post('/email/resend', [AuthController::class, 'resendVerificationEmail'])
     ->name('verification.resend');
-Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->name('verification.notice');
+Route::get('/email/verify',[AuthController::class,'emailVerify'])->name('verification.notice');
 
 // Contact API
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
@@ -122,7 +120,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::middleware(['auth', 'verified'])->group(function () {
     // 用户仪表板
     Route::get('/api/dashboard', [UserDashboardController::class, 'getDashboardData'])->name('dashboard.data');
-    
+
     // 推荐功能
     Route::get('/api/referral/link', [ReferralController::class, 'getReferralLink'])->name('referral.link');
     Route::get('/api/referral/stats', [ReferralController::class, 'getReferralStats'])->name('referral.stats');

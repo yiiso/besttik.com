@@ -167,6 +167,15 @@ class AuthController extends Controller
         return redirect('/')->with('error', __('messages.email_verification_failed'));
     }
 
+    public function emailVerify()
+    {
+        if (Auth::check() && Auth::user()->hasVerifiedEmail()){
+            redirect('/')->with('success',__('messages.email_verified_success'));
+        }
+        return view('auth.verify-email');
+
+    }
+
     /**
      * 重新发送验证邮件
      */

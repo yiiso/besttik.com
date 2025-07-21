@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
 
         // 将推荐码中间件应用到web路由组
         $middleware->web(append: [
+
             'detect.language' => \App\Http\Middleware\DetectLanguage::class,
             'set.locale' => \App\Http\Middleware\SetLocale::class,
             \App\Http\Middleware\HandleReferralCode::class,

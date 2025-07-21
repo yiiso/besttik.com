@@ -10,7 +10,7 @@ class DetectLanguage
     public function handle(Request $request, Closure $next)
     {
         // 如果用户已有会话或手动选择了语言，不进行自动检测
-        if ($request->session()->has('locale') || $request->segment(1)) {
+        if ($request->cookie('locale') || $request->segment(1)) {
             return $next($request);
         }
 
@@ -20,7 +20,7 @@ class DetectLanguage
         // 从浏览器请求头获取语言
         $browserLocale = $request->server('HTTP_ACCEPT_LANGUAGE');
 
-        if ($browserLocale) {
+        if ($browserLocale &&  !$request->headers->get('referer') ) {
             // 解析浏览器语言（格式如：zh-CN,zh;q=0.9,en;q=0.8）
             $locales = explode(',', $browserLocale);
             foreach ($locales as $locale) {

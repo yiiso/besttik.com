@@ -20,6 +20,9 @@ class SetLocale
 
         // 1. 从URL获取语言段（如果有）
         $locale = $request->segment(1);
+        if ($locale == app()->getLocale()) {
+           return $next($request);
+        }
 
         // 2. 检查URL语言段是否有效
         if (in_array($locale, $supportedLocales) && $locale !== $defaultLocale) {
@@ -31,7 +34,7 @@ class SetLocale
             app()->setLocale($defaultLocale);
         }
 
-        return $next($request);
+        return $next($request)->cookie('locale',$locale,60*24*365);
     }
 }
 

@@ -5,6 +5,73 @@
 @section('keywords', __('messages.keywords'))
 
 @section('content')
+<style>
+    /* 优化解析按钮和粘贴按钮的布局 - 使用flexbox布局 */
+    .input-container #videoUrl {
+        padding-right: 120px; /* 为按钮容器留出空间 */
+    }
+    
+    .parse-button {
+        white-space: nowrap;
+        min-width: fit-content;
+        max-width: 120px;
+    }
+    
+    /* 移动设备 - 只显示图标 */
+    @media (max-width: 640px) {
+        .input-container #videoUrl {
+            padding-right: 100px;
+        }
+        .parse-button span {
+            display: none !important;
+        }
+        .parse-button {
+            min-width: 40px;
+            max-width: 50px;
+        }
+    }
+    
+    /* 平板设备 */
+    @media (min-width: 641px) and (max-width: 1024px) {
+        .input-container #videoUrl {
+            padding-right: 140px;
+        }
+        .parse-button {
+            max-width: 100px;
+        }
+        .parse-button span {
+            font-size: 0.75rem;
+        }
+    }
+    
+    /* 桌面设备 */
+    @media (min-width: 1025px) {
+        .input-container #videoUrl {
+            padding-right: 160px;
+        }
+        .parse-button {
+            max-width: 140px;
+        }
+    }
+    
+    /* 特殊处理长文本语言（如法语、西班牙语） */
+    html[lang="fr"] .parse-button span,
+    html[lang="es"] .parse-button span {
+        font-size: 0.7rem !important;
+    }
+    
+    @media (min-width: 641px) {
+        html[lang="fr"] .input-container #videoUrl,
+        html[lang="es"] .input-container #videoUrl {
+            padding-right: 180px;
+        }
+        html[lang="fr"] .parse-button,
+        html[lang="es"] .parse-button {
+            max-width: 160px;
+        }
+    }
+</style>
+
 <!-- 消息提示 -->
 @if(session('success'))
     <div class="fixed top-4 right-4 z-50 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg" id="flashMessage">
@@ -62,39 +129,42 @@
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
                     @csrf
-                    <div class="relative group">
+                    <div class="relative group input-container">
                         <input
                             type="text"
                             id="videoUrl"
                             name="video_url"
                             placeholder="{{ __('messages.paste_link') }}"
-                            class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200  focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl pr-20 sm:pr-44 font-sleek"
+                            class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl font-sleek"
                             required
                         >
 
-                        <!-- 粘贴按钮 -->
-                        <button
-                            type="button"
-                            id="pasteBtn"
-                            class="absolute right-16 sm:right-32 top-1/2 transform -translate-y-1/2 p-1 sm:p-2 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer hover:scale-110"
-                            title="{{ __('messages.paste_from_clipboard') }}"
-                        >
-                            <!-- 更形象的粘贴图标 -->
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
-                            </svg>
-                        </button>
+                        <!-- 按钮容器 -->
+                        <div class="absolute right-2 top-2 bottom-2 flex items-center gap-2">
+                            <!-- 粘贴按钮 -->
+                            <button
+                                type="button"
+                                id="pasteBtn"
+                                class="p-2 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0"
+                                title="{{ __('messages.paste_from_clipboard') }}"
+                            >
+                                <!-- 更形象的粘贴图标 -->
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                                </svg>
+                            </button>
 
-                        <!-- 解析按钮 -->
-                        <button
-                            type="submit"
-                            class="absolute right-2 top-2 bottom-2 px-3 sm:px-6 bg-blue-600 hover:bg-blue-700 text-white  transition-all duration-200 flex items-center space-x-2 cursor-pointer shadow-md hover:shadow-lg ui-text"
-                        >
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                            </svg>
-                            <span class="hidden sm:inline">{{ __('messages.parse') }}</span>
-                        </button>
+                            <!-- 解析按钮 -->
+                            <button
+                                type="submit"
+                                class="parse-button bg-blue-600 hover:bg-blue-700 text-white transition-all duration-200 flex items-center justify-center cursor-pointer shadow-md hover:shadow-lg ui-text rounded-md px-3 py-2 flex-shrink-0"
+                            >
+                                <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">{{ __('messages.parse') }}</span>
+                            </button>
+                        </div>
                     </div>
                 </form>
 
@@ -332,3 +402,27 @@
     </div>
 </section>
 @endsection
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded with language:', document.documentElement.lang);
+    
+    // 粘贴功能
+    const pasteBtn = document.getElementById('pasteBtn');
+    const videoInput = document.getElementById('videoUrl');
+    
+    if (pasteBtn && videoInput) {
+        pasteBtn.addEventListener('click', async function() {
+            try {
+                const text = await navigator.clipboard.readText();
+                videoInput.value = text;
+                videoInput.focus();
+                console.log('Pasted text:', text);
+            } catch (err) {
+                console.log('Failed to read clipboard:', err);
+                // 如果剪贴板API不可用，可以显示提示
+            }
+        });
+    }
+});
+</script>

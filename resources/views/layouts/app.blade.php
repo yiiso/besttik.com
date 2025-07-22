@@ -41,24 +41,24 @@
     <link rel="alternate" hreflang="fr" href="{{ str_replace('/'.app()->getLocale().'/', '/fr/', url()->current()) }}">
     <link rel="alternate" hreflang="ja" href="{{ str_replace('/'.app()->getLocale().'/', '/ja/', url()->current()) }}">
     <link rel="alternate" hreflang="x-default" href="{{ str_replace('/'.app()->getLocale().'/', '/', url()->current()) }}">
-    @verbatim
+
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
+        "@@context": "https://schema.org",
+        "@@type": "WebApplication",
         "name": "VideoParser.top",
         "description": "{{ __('messages.description') }}",
         "url": "https://videoparser.top",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web Browser",
         "offers": {
-            "@type": "Offer",
+            "@@type": "Offer",
             "price": "0",
             "priceCurrency": "USD"
         },
         "creator": {
-            "@type": "Organization",
+            "@@type": "Organization",
             "name": "VideoParser.top",
             "url": "https://videoparser.top"
         },
@@ -74,13 +74,13 @@
         ],
         "screenshot": "{{ asset('images/app-screenshot.jpg') }}",
         "aggregateRating": {
-            "@type": "AggregateRating",
+            "@@type": "AggregateRating",
             "ratingValue": "4.8",
             "reviewCount": "2847"
         }
     }
     </script>
-    @endverbatim
+
     <!-- 包含结构化数据 -->
     @include('components.structured-data')
 
@@ -98,6 +98,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <style>
+        /* 确保移动端语言选择器正确显示 */
+        @media (max-width: 768px) {
+            #languageSelector {
+                position: relative;
+                z-index: 50;
+            }
+            
+            #languageDropdown {
+                min-width: 140px;
+                right: 0;
+                top: 100%;
+                margin-top: 0.5rem;
+            }
+            
+            /* 防止语言选项重叠 */
+            .header-right {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                flex-wrap: nowrap;
+            }
+        }
+        
+        /* 桌面端确保语言选项不会换行 */
+        @media (min-width: 769px) {
+            .desktop-languages {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                white-space: nowrap;
+            }
+        }
+    </style>
 
     <!-- Pass translations to JavaScript -->
     <script>
@@ -174,7 +209,7 @@
     <!-- Header -->
     <header class="py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center min-h-[60px]">
                 <div class="flex items-center">
                     <a href="{{ localized_url('/') }}" class="flex items-center space-x-2">
                         <div class="w-10 h-10 flex items-center justify-center">
@@ -222,10 +257,39 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-4">
-                    @foreach(config('app.locales') as $localeCode => $localeName)
-                        <a href="{{ locale_url($localeCode) }}">{{ $localeName }}</a>
-                    @endforeach
+                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 header-right">
+                    <!-- 语言选择器 - 移动端优化 -->
+                    <div class="relative" id="languageSelector">
+                        <!-- 移动端：显示当前语言 + 下拉 -->
+                        <button id="languageBtn" class="md:hidden flex items-center space-x-1 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg border border-gray-200 transition-colors">
+                            <span class="font-medium">{{ config('app.locales')[app()->getLocale()] ?? 'EN' }}</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <!-- 移动端下拉菜单 -->
+                        <div id="languageDropdown" class="hidden md:hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
+                            <div class="py-1">
+                                @foreach(config('app.locales') as $localeCode => $localeName)
+                                    <a href="{{ locale_url($localeCode) }}"
+                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors {{ app()->getLocale() === $localeCode ? 'bg-blue-50 text-blue-600 font-medium' : '' }}">
+                                        {{ $localeName }}
+                                    </a>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <!-- 桌面端：水平显示所有语言 -->
+                        <div class="hidden md:flex items-center space-x-2 lg:space-x-3 desktop-languages">
+                            @foreach(config('app.locales') as $localeCode => $localeName)
+                                <a href="{{ locale_url($localeCode) }}"
+                                   class="text-xs lg:text-sm text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap {{ app()->getLocale() === $localeCode ? 'text-blue-600 font-medium' : '' }}">
+                                    {{ $localeName }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
 
 
                     @auth
@@ -493,5 +557,104 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 语言选择器功能
+            const languageBtn = document.getElementById('languageBtn');
+            const languageDropdown = document.getElementById('languageDropdown');
+            
+            if (languageBtn && languageDropdown) {
+                languageBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    languageDropdown.classList.toggle('hidden');
+                });
+
+                // 点击外部关闭下拉菜单
+                document.addEventListener('click', function(e) {
+                    if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                        languageDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // 用户菜单功能
+            const userMenuBtn = document.getElementById('userMenuBtn');
+            const userDropdown = document.getElementById('userDropdown');
+            
+            if (userMenuBtn && userDropdown) {
+                userMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    userDropdown.classList.toggle('hidden');
+                });
+
+                // 点击外部关闭下拉菜单
+                document.addEventListener('click', function(e) {
+                    if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
+                        userDropdown.classList.add('hidden');
+                    }
+                });
+            }
+
+            // 登录弹窗功能
+            const loginModal = document.getElementById('loginModal');
+            const loginModalContent = document.getElementById('loginModalContent');
+            const closeLoginModal = document.getElementById('closeLoginModal');
+            const showRegisterForm = document.getElementById('showRegisterForm');
+            const showLoginForm = document.getElementById('showLoginForm');
+            const registerFormContainer = document.getElementById('registerFormContainer');
+            const emailLoginForm = document.getElementById('emailLoginForm');
+
+            // 显示登录弹窗的函数
+            window.showLoginModal = function() {
+                loginModal.classList.remove('hidden');
+                setTimeout(() => {
+                    loginModalContent.classList.remove('scale-95', 'opacity-0');
+                    loginModalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            };
+
+            // 隐藏登录弹窗的函数
+            function hideLoginModal() {
+                loginModalContent.classList.remove('scale-100', 'opacity-100');
+                loginModalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    loginModal.classList.add('hidden');
+                }, 300);
+            }
+
+            // 关闭按钮事件
+            if (closeLoginModal) {
+                closeLoginModal.addEventListener('click', hideLoginModal);
+            }
+
+            // 点击背景关闭弹窗
+            if (loginModal) {
+                loginModal.addEventListener('click', function(e) {
+                    if (e.target === loginModal) {
+                        hideLoginModal();
+                    }
+                });
+            }
+
+            // 切换到注册表单
+            if (showRegisterForm) {
+                showRegisterForm.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    emailLoginForm.parentElement.classList.add('hidden');
+                    registerFormContainer.classList.remove('hidden');
+                });
+            }
+
+            // 切换回登录表单
+            if (showLoginForm) {
+                showLoginForm.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    registerFormContainer.classList.add('hidden');
+                    emailLoginForm.parentElement.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

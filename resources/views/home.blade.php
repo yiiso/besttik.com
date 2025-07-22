@@ -10,13 +10,13 @@
     .input-container #videoUrl {
         padding-right: 120px; /* 为按钮容器留出空间 */
     }
-    
+
     .parse-button {
         white-space: nowrap;
         min-width: fit-content;
         max-width: 120px;
     }
-    
+
     /* 移动设备 - 只显示图标 */
     @media (max-width: 640px) {
         .input-container #videoUrl {
@@ -30,7 +30,7 @@
             max-width: 50px;
         }
     }
-    
+
     /* 平板设备 */
     @media (min-width: 641px) and (max-width: 1024px) {
         .input-container #videoUrl {
@@ -43,7 +43,7 @@
             font-size: 0.75rem;
         }
     }
-    
+
     /* 桌面设备 */
     @media (min-width: 1025px) {
         .input-container #videoUrl {
@@ -53,13 +53,13 @@
             max-width: 140px;
         }
     }
-    
+
     /* 特殊处理长文本语言（如法语、西班牙语） */
     html[lang="fr"] .parse-button span,
     html[lang="es"] .parse-button span {
         font-size: 0.7rem !important;
     }
-    
+
     @media (min-width: 641px) {
         html[lang="fr"] .input-container #videoUrl,
         html[lang="es"] .input-container #videoUrl {
@@ -181,9 +181,9 @@
                 <!-- Quick Examples -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
                     <span class="text-gray-500 font-elegant">{{ __('messages.try_these') }}</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@user/video/example'">TikTok</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=example'">YouTube</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://x.com/yanbojack/status/exmaple_id'">twitter</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@lilyhoney224/video/7518392825021484310?is_from_webapp=1&sender_device=pc'">TikTok</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=EwPJJy_YkHk'">YouTube</button>
+                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://x.com/SilenceGvq/status/1947531208210190512'">twitter</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.facebook.com/watch/?v=1230685661697677'">facebook</button>
                     <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.xiaohongshu.com/'">小红书</button>...
@@ -406,11 +406,11 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded with language:', document.documentElement.lang);
-    
+
     // 粘贴功能
     const pasteBtn = document.getElementById('pasteBtn');
     const videoInput = document.getElementById('videoUrl');
-    
+
     if (pasteBtn && videoInput) {
         pasteBtn.addEventListener('click', async function() {
             try {

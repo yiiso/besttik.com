@@ -98,7 +98,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    
+
     <style>
         /* 确保移动端语言选择器正确显示 */
         @media (max-width: 768px) {
@@ -106,14 +106,14 @@
                 position: relative;
                 z-index: 50;
             }
-            
+
             #languageDropdown {
                 min-width: 140px;
                 right: 0;
                 top: 100%;
                 margin-top: 0.5rem;
             }
-            
+
             /* 防止语言选项重叠 */
             .header-right {
                 display: flex;
@@ -122,7 +122,7 @@
                 flex-wrap: nowrap;
             }
         }
-        
+
         /* 桌面端确保语言选项不会换行 */
         @media (min-width: 769px) {
             .desktop-languages {
@@ -204,6 +204,8 @@
 
         gtag('config', 'G-8LCL71L7BH');
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9659370170474441"
+            crossorigin="anonymous"></script>
 </head>
 <body class="bg-white text-gray-900 font-elegant antialiased">
     <!-- Header -->
@@ -563,7 +565,7 @@
             // 语言选择器功能
             const languageBtn = document.getElementById('languageBtn');
             const languageDropdown = document.getElementById('languageDropdown');
-            
+
             if (languageBtn && languageDropdown) {
                 languageBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
@@ -581,7 +583,7 @@
             // 用户菜单功能
             const userMenuBtn = document.getElementById('userMenuBtn');
             const userDropdown = document.getElementById('userDropdown');
-            
+
             if (userMenuBtn && userDropdown) {
                 userMenuBtn.addEventListener('click', function(e) {
                     e.stopPropagation();

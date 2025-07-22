@@ -1,47 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-    <url>
-        <loc>https://videoparser.top/</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/batch-download</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/api</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/help</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/contact</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/privacy</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
-    <url>
-        <loc>https://videoparser.top/terms</loc>
-        <lastmod>2025-07-20T10:34:32+00:00</lastmod>
-        <priority>0.80</priority>
-    </url>
+<url>
+  <loc>https://videoparser.top/</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/batch-download</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/api</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/help</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/contact</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/privacy</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/terms</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/batch-download</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/api</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/help</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/contact</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/privacy</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/zh/terms</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/batch-download</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/api</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/help</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/contact</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/privacy</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/ja/terms</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/batch-download</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/api</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/help</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/contact</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/privacy</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/es/terms</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/batch-download</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/api</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/help</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/contact</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/privacy</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://videoparser.top/fr/terms</loc>
+  <lastmod>2025-07-22T23:20:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
 
 
 </urlset>

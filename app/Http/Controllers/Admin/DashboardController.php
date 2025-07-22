@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\ParseLog;
+use App\Services\IpLocationService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -352,5 +354,116 @@ class DashboardController extends Controller
         $logs = $query->paginate(20);
 
         return response()->json($logs);
+    }
+
+    /**
+     * 显示新用户详细列表
+     */
+    public function newUsers(Request $request)
+    {
+        $query = User::orderBy('created_at', 'desc');
+
+        // 日期筛选
+        if ($request->filled('date')) {
+            $query->whereDate('created_at', $request->date);
+        } else {
+            // 默认显示今日新用户
+            $query->whereDate('created_at', Carbon::today());
+        }
+
+        // 搜索筛选
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('email', 'like', "%{$search}%");
+            });
+        }
+
+        $users = $query->paginate(20);
+
+        return view('admin.new-users', compact('users'));
+    }
+
+    /**
+     * 获取解析记录IP统计
+     */
+    public function getIpStats(Request $request)
+    {
+        $dateRange = $request->get('range', 'today');
+        $startDate = $request->get('start_date');
+        $endDate = $request->get('end_date');
+
+        $query = ParseLog::select('ip_address', DB::raw('COUNT(*) as count'))
+            ->groupBy('ip_address')
+            ->orderBy('count', 'desc');
+
+        // 应用日期筛选
+        switch ($dateRange) {
+            case 'today':
+                $query->whereDate('parse_date', Carbon::today());
+                break;
+            case '7days':
+                $query->where('parse_date', '>=', Carbon::today()->subDays(6));
+                break;
+            case '30days':
+                $query->where('parse_date', '>=', Carbon::today()->subDays(29));
+                break;
+            case 'custom':
+                if ($startDate && $endDate) {
+                    $query->whereBetween('parse_date', [$startDate, $endDate]);
+                }
+                break;
+        }
+
+        $ipStats = $query->limit(100)->get();
+
+        // 获取IP位置信息
+        $ipLocationService = new IpLocationService();
+        $ips = $ipStats->pluck('ip_address')->toArray();
+        $locations = $ipLocationService->getBatchLocations($ips);
+
+        // 合并位置信息
+        $ipStats = $ipStats->map(function ($item) use ($locations) {
+            $location = $locations[$item->ip_address] ?? [];
+            $item->location = $location;
+            $item->location_text = app(IpLocationService::class)->formatLocation($location);
+            return $item;
+        });
+
+        return response()->json([
+            'ip_stats' => $ipStats,
+            'total_unique_ips' => $ipStats->count(),
+            'total_requests' => $ipStats->sum('count'),
+            'date_range' => $dateRange,
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+        ]);
+    }
+
+    /**
+     * 批量获取IP位置信息
+     */
+    public function batchIpLocation(Request $request)
+    {
+        $request->validate([
+            'ips' => 'required|array',
+            'ips.*' => 'ip'
+        ]);
+
+        $ips = $request->ips;
+        $ipLocationService = new IpLocationService();
+        $locations = $ipLocationService->getBatchLocations($ips);
+
+        // 格式化位置信息
+        $result = [];
+        foreach ($locations as $ip => $location) {
+            $result[$ip] = [
+                'location' => $location,
+                'location_text' => $ipLocationService->formatLocation($location)
+            ];
+        }
+
+        return response()->json($result);
     }
 }

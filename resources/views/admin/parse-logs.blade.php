@@ -34,7 +34,12 @@
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <!-- 页面标题和筛选 -->
         <div class="mb-6">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">解析记录</h2>
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-900">解析记录</h2>
+                <button onclick="showIpStats()" class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500">
+                    查看IP统计
+                </button>
+            </div>
             
             <!-- 筛选表单 -->
             <div class="bg-white p-4 rounded-lg shadow mb-6">
@@ -116,7 +121,10 @@
                                 @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                {{ $log->ip_address }}
+                                <div>{{ $log->ip_address }}</div>
+                                <div class="text-xs text-gray-500" id="location-{{ $log->id }}">
+                                    加载位置信息...
+                                </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                 @if($log->platform)
@@ -191,5 +199,146 @@
             @endif
         </div>
     </div>
+
+    <!-- IP统计模态框 -->
+    <div id="ipStatsModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+        <div class="relative top-20 mx-auto p-5 border w-11/12 max-w-4xl shadow-lg rounded-md bg-white">
+            <div class="mt-3">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-medium text-gray-900">IP地址统计</h3>
+                    <button onclick="hideIpStats()" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- 时间范围选择 -->
+                <div class="mb-4">
+                    <div class="flex space-x-2">
+                        <button onclick="loadIpStats('today')" class="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200">今天</button>
+                        <button onclick="loadIpStats('7days')" class="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200">最近7天</button>
+                        <button onclick="loadIpStats('30days')" class="px-3 py-1 text-sm bg-blue-100 text-blue-700 rounded hover:bg-blue-200">最近30天</button>
+                    </div>
+                </div>
+
+                <!-- 统计信息 -->
+                <div class="grid grid-cols-3 gap-4 mb-4">
+                    <div class="bg-gray-50 p-3 rounded">
+                        <div class="text-sm text-gray-500">独立IP数量</div>
+                        <div class="text-xl font-bold" id="uniqueIpCount">-</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <div class="text-sm text-gray-500">总请求数</div>
+                        <div class="text-xl font-bold" id="totalRequests">-</div>
+                    </div>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <div class="text-sm text-gray-500">平均请求/IP</div>
+                        <div class="text-xl font-bold" id="avgRequests">-</div>
+                    </div>
+                </div>
+
+                <!-- IP列表 -->
+                <div class="max-h-96 overflow-y-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">IP地址</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">位置</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">请求次数</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ipStatsTableBody" class="bg-white divide-y divide-gray-200">
+                            <!-- 动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 显示IP统计
+        function showIpStats() {
+            document.getElementById('ipStatsModal').classList.remove('hidden');
+            loadIpStats('today');
+        }
+
+        // 隐藏IP统计
+        function hideIpStats() {
+            document.getElementById('ipStatsModal').classList.add('hidden');
+        }
+
+        // 加载IP统计数据
+        async function loadIpStats(range) {
+            try {
+                const response = await fetch(`{{ route('admin.ip-stats') }}?range=${range}`);
+                const data = await response.json();
+                
+                // 更新统计数字
+                document.getElementById('uniqueIpCount').textContent = data.total_unique_ips;
+                document.getElementById('totalRequests').textContent = data.total_requests;
+                document.getElementById('avgRequests').textContent = data.total_unique_ips > 0 ? 
+                    Math.round(data.total_requests / data.total_unique_ips * 10) / 10 : 0;
+                
+                // 更新表格
+                const tbody = document.getElementById('ipStatsTableBody');
+                tbody.innerHTML = '';
+                
+                data.ip_stats.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-mono text-gray-900">${item.ip_address}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.location_text}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.count}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('加载IP统计失败:', error);
+            }
+        }
+
+        // 页面加载时获取IP位置信息
+        document.addEventListener('DOMContentLoaded', function() {
+            const ipElements = document.querySelectorAll('[id^="location-"]');
+            const ips = Array.from(ipElements).map(el => {
+                const logId = el.id.replace('location-', '');
+                const ipAddress = el.closest('tr').querySelector('td:nth-child(3) div:first-child').textContent;
+                return { element: el, ip: ipAddress };
+            });
+
+            // 批量获取IP位置信息
+            if (ips.length > 0) {
+                fetch('{{ route("admin.batch-ip-location") }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({
+                        ips: ips.map(item => item.ip)
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    ips.forEach(item => {
+                        const location = data[item.ip];
+                        if (location) {
+                            item.element.textContent = location.location_text || '未知位置';
+                        } else {
+                            item.element.textContent = '未知位置';
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('获取IP位置信息失败:', error);
+                    ips.forEach(item => {
+                        item.element.textContent = '获取失败';
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

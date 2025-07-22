@@ -43,7 +43,7 @@
                 </button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow cursor-pointer" onclick="window.location.href='{{ route('admin.new-users') }}'">
                     <div class="p-5">
                         <div class="flex items-center">
                             <div class="flex-shrink-0">
@@ -57,6 +57,7 @@
                                 <dl>
                                     <dt class="text-sm font-medium text-gray-500 truncate">新增用户</dt>
                                     <dd class="text-lg font-medium text-gray-900">{{ $todayData['new_users'] }}</dd>
+                                    <dd class="text-xs text-blue-600">点击查看详细列表</dd>
                                 </dl>
                             </div>
                         </div>

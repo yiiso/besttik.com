@@ -132,6 +132,57 @@
             </div>
         </div>
 
+        <!-- 异常IP和邮箱列表 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- 异常IP列表 -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">异常IP列表</h3>
+                        <button onclick="loadAbnormalIps()" class="text-blue-600 hover:text-blue-800 text-sm">刷新</button>
+                    </div>
+                    <div class="max-h-64 overflow-y-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">IP地址</th>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">位置</th>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">尝试次数</th>
+                                </tr>
+                            </thead>
+                            <tbody id="abnormalIpsTable" class="divide-y divide-gray-200">
+                                <!-- 动态加载 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 异常邮箱列表 -->
+            <div class="bg-white shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg leading-6 font-medium text-gray-900">异常邮箱列表</h3>
+                        <button onclick="loadAbnormalEmails()" class="text-blue-600 hover:text-blue-800 text-sm">刷新</button>
+                    </div>
+                    <div class="max-h-64 overflow-y-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">邮箱</th>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">IP数量</th>
+                                    <th class="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase">尝试次数</th>
+                                </tr>
+                            </thead>
+                            <tbody id="abnormalEmailsTable" class="divide-y divide-gray-200">
+                                <!-- 动态加载 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 紧急解锁工具 -->
         <div class="bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
@@ -280,12 +331,74 @@
             }
         });
         
+        // 加载异常IP列表
+        async function loadAbnormalIps() {
+            try {
+                const response = await fetch('{{ route("admin.abnormal-ips") }}?range=today&min_attempts=3');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('abnormalIpsTable');
+                tbody.innerHTML = '';
+                
+                if (data.abnormal_ips.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="3" class="px-3 py-2 text-center text-gray-500 text-sm">暂无异常IP</td></tr>';
+                    return;
+                }
+                
+                data.abnormal_ips.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-3 py-2 text-sm font-mono text-gray-900">${item.ip}</td>
+                        <td class="px-3 py-2 text-sm text-gray-600">${item.location_text}</td>
+                        <td class="px-3 py-2 text-sm text-red-600 font-medium">${item.attempts}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('加载异常IP列表失败:', error);
+            }
+        }
+        
+        // 加载异常邮箱列表
+        async function loadAbnormalEmails() {
+            try {
+                const response = await fetch('{{ route("admin.abnormal-emails") }}?range=today&min_attempts=3');
+                const data = await response.json();
+                
+                const tbody = document.getElementById('abnormalEmailsTable');
+                tbody.innerHTML = '';
+                
+                if (data.abnormal_emails.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="3" class="px-3 py-2 text-center text-gray-500 text-sm">暂无异常邮箱</td></tr>';
+                    return;
+                }
+                
+                data.abnormal_emails.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="px-3 py-2 text-sm text-gray-900">${item.email}</td>
+                        <td class="px-3 py-2 text-sm text-gray-600">${item.ips.length}</td>
+                        <td class="px-3 py-2 text-sm text-red-600 font-medium">${item.attempts}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('加载异常邮箱列表失败:', error);
+            }
+        }
+
         // 页面加载时获取数据
         document.addEventListener('DOMContentLoaded', function() {
             loadStats();
+            loadAbnormalIps();
+            loadAbnormalEmails();
             
             // 每30秒刷新一次数据
-            setInterval(loadStats, 30000);
+            setInterval(() => {
+                loadStats();
+                loadAbnormalIps();
+                loadAbnormalEmails();
+            }, 30000);
         });
     </script>
 </body>

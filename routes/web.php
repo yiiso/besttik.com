@@ -138,15 +138,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::get('/parse-logs', [App\Http\Controllers\Admin\DashboardController::class, 'parseLogs'])->name('parse-logs');
         Route::get('/parse-logs/{id}', [App\Http\Controllers\Admin\DashboardController::class, 'parseLogDetail'])->name('parse-log-detail');
-        Route::get('/security', function () { return view('admin.security'); })->name('security');
+        Route::get('/security', [App\Http\Controllers\Admin\SecurityController::class, 'index'])->name('security');
+        Route::get('/new-users', [App\Http\Controllers\Admin\DashboardController::class, 'newUsers'])->name('new-users');
         Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile');
         Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'updateProfile'])->name('profile.update');
         Route::put('/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('password.update');
         Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
         
         // 安全相关接口
-        Route::post('/unlock', [App\Http\Controllers\Admin\AuthController::class, 'unlock'])->name('unlock');
-        Route::get('/login-stats', [App\Http\Controllers\Admin\AuthController::class, 'getLoginStats'])->name('login-stats');
+        Route::post('/unlock', [App\Http\Controllers\Admin\SecurityController::class, 'unlock'])->name('unlock');
+        Route::get('/login-stats', [App\Http\Controllers\Admin\SecurityController::class, 'getLoginStats'])->name('login-stats');
+        Route::get('/abnormal-ips', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalIps'])->name('abnormal-ips');
+        Route::get('/abnormal-emails', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalEmails'])->name('abnormal-emails');
         
         // API接口
         Route::get('/api/today', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayData'])->name('api.today');
@@ -154,5 +157,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/api/weekly', [App\Http\Controllers\Admin\DashboardController::class, 'getWeeklyData'])->name('api.weekly');
         Route::get('/api/stats', [App\Http\Controllers\Admin\DashboardController::class, 'getStatsDataApi'])->name('api.stats');
         Route::get('/api/parse-logs', [App\Http\Controllers\Admin\DashboardController::class, 'getParseLogsData'])->name('api.parse-logs');
+        Route::get('/ip-stats', [App\Http\Controllers\Admin\DashboardController::class, 'getIpStats'])->name('ip-stats');
+        Route::post('/batch-ip-location', [App\Http\Controllers\Admin\DashboardController::class, 'batchIpLocation'])->name('batch-ip-location');
     });
 });

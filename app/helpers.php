@@ -184,7 +184,7 @@ if (!function_exists('beijing_time')) {
     function beijing_time($format = null)
     {
         $beijingTime = \Carbon\Carbon::now('Asia/Shanghai');
-        
+
         return $format ? $beijingTime->format($format) : $beijingTime;
     }
 }
@@ -202,9 +202,33 @@ if (!function_exists('format_beijing_time')) {
         if (!$time) {
             return '';
         }
-        
+
         $carbon = $time instanceof \Carbon\Carbon ? $time : \Carbon\Carbon::parse($time);
-        
+
         return $carbon->setTimezone('Asia/Shanghai')->format($format);
+    }
+}
+if (!function_exists('get_client_ip')) {
+    /**
+     * 获取客户端真实IP地址
+     */
+    function get_client_ip()
+    {
+        $ipKeys = ['HTTP_X_FORWARDED_FOR', 'HTTP_X_REAL_IP', 'HTTP_CLIENT_IP', 'REMOTE_ADDR'];
+
+        foreach ($ipKeys as $key) {
+            if (array_key_exists($key, $_SERVER) === true) {
+                $ip = $_SERVER[$key];
+                if (strpos($ip, ',') !== false) {
+                    $ip = explode(',', $ip)[0];
+                }
+                $ip = trim($ip);
+                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+                    return $ip;
+                }
+            }
+        }
+
+        return $_SERVER['REMOTE_ADDR'] ?? '127.0.0.1';
     }
 }

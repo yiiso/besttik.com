@@ -372,6 +372,8 @@ return [
     'video_info_obtained' => 'Video information successfully obtained',
     'loading_video' => 'Loading video...',
     'browser_not_support' => 'Your browser does not support video playback',
+    'parsing' => 'Parsing...',
+    'video_url_required' => 'Please enter a video URL',
 
     // Footer translations
     'footer_description' => 'Professional global video parsing tool, providing users with fast, secure, and convenient video link parsing services.',
@@ -683,6 +685,8 @@ return [
     'paste_failed' => 'Paste failed, please paste manually',
     'clipboard_empty' => 'Clipboard is empty',
     'clipboard_not_supported' => 'Your browser does not support clipboard access',
+    'request_timeout' => 'Request timeout, please try again',
+    'parsing_in_progress' => 'Parsing in progress...',
     'home' => 'Home',
     // Contact form
     'contact_success' => 'Thank you for your message! We will get back to you soon.',

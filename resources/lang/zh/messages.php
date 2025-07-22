@@ -463,6 +463,8 @@ return [
     'paste_from_clipboard' => '从剪贴板粘贴',
     'paste_success' => '粘贴成功！',
     'paste_failed' => '粘贴失败，请手动粘贴',
+    'request_timeout' => '请求超时，请重试',
+    'parsing_in_progress' => '解析中...',
     'clipboard_empty' => '剪贴板为空',
     'clipboard_not_supported' => '您的浏览器不支持剪贴板访问',
 

@@ -108,13 +108,42 @@ document.addEventListener('DOMContentLoaded', function () {
         videoParseForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // 显示加载状态
-            loadingState.classList.remove('hidden');
-            parseResults.classList.add('hidden');
+            // 获取提交按钮
+            const submitBtn = videoParseForm.querySelector('button[type="submit"]');
+            const videoUrlInput = videoParseForm.querySelector('input[name="video_url"]');
+            
+            // 检查是否已在处理中
+            if (submitBtn.disabled) {
+                return;
+            }
 
             // 获取表单数据
             const formData = new FormData(videoParseForm);
             const videoUrl = formData.get('video_url');
+
+            // 基本验证
+            if (!videoUrl || videoUrl.trim() === '') {
+                showToast(window.translations?.video_url_required || '请输入视频链接', 'error');
+                return;
+            }
+
+            // 禁用提交按钮和输入框，防止重复提交
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
+                    <span>${window.translations?.parsing || '解析中...'}</span>
+                </div>
+            `;
+            
+            if (videoUrlInput) {
+                videoUrlInput.disabled = true;
+            }
+
+            // 显示加载状态
+            loadingState.classList.remove('hidden');
+            parseResults.classList.add('hidden');
 
             // 发送AJAX请求
             fetch('/parse', {
@@ -130,9 +159,6 @@ document.addEventListener('DOMContentLoaded', function () {
             })
                 .then(response => response.json())
                 .then(data => {
-                    // 隐藏加载状态
-                    loadingState.classList.add('hidden');
-
                     if (data.status === 'success') {
                         // 显示成功消息
                         showToast(window.translations?.parse_success || '解析成功！', 'success');
@@ -160,8 +186,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    loadingState.classList.add('hidden');
                     showToast(window.translations?.network_error || '网络错误，请稍后重试', 'error');
+                })
+                .finally(() => {
+                    // 恢复按钮和输入框状态
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                    
+                    if (videoUrlInput) {
+                        videoUrlInput.disabled = false;
+                    }
+
+                    // 隐藏加载状态
+                    loadingState.classList.add('hidden');
                 });
         });
     }

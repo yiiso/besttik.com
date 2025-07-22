@@ -329,6 +329,8 @@ return [
     'loading_video' => 'Cargando video...',
     'browser_not_support' => 'Tu navegador no soporta reproducción de video',
     'network_error' => 'Error de red, inténtalo de nuevo',
+    'parsing' => 'Analizando...',
+    'video_url_required' => 'Por favor ingresa una URL de video',
 
     // Error Pages
     'page_not_found' => 'Página No Encontrada',
@@ -444,6 +446,8 @@ return [
     'paste_from_clipboard' => 'Pegar desde portapapeles',
     'paste_success' => '¡Pegado exitoso!',
     'paste_failed' => 'Pegado fallido, por favor pega manualmente',
+    'request_timeout' => 'Tiempo de espera agotado, por favor inténtalo de nuevo',
+    'parsing_in_progress' => 'Análisis en progreso...',
     'clipboard_empty' => 'Portapapeles vacío',
     'clipboard_not_supported' => 'Tu navegador no soporta acceso al portapapeles',
 

@@ -437,6 +437,8 @@ return [
     'paste_from_clipboard' => 'Coller depuis le presse-papiers',
     'paste_success' => 'Collage réussi!',
     'paste_failed' => 'Collage échoué, veuillez coller manuellement',
+    'request_timeout' => 'Délai d\'attente de la requête, veuillez réessayer',
+    'parsing_in_progress' => 'Analyse en cours...',
     'clipboard_empty' => 'Presse-papiers vide',
     'clipboard_not_supported' => 'Votre navigateur ne supporte pas l\'accès au presse-papiers',
 

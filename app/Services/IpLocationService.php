@@ -73,14 +73,14 @@ class IpLocationService
 
             if ($record) {
                 return [
-                    'country' => $record['0'] ?: '未知',
-                    'region' => $record['2'] ?: '未知',
-                    'city' => $record['3'] ?: '未知',
-                    'country_code' => $record['countryCode'] ?: 'UNKNOWN',
-                    'latitude' => $record['latitude'] ?: null,
-                    'longitude' => $record['longitude'] ?: null,
-                    'timezone' => $record['timeZone'] ?: null,
-                    'isp' => $record['4'] ?: '未知'
+                    'country' => $record[0] ?? '未知',
+                    'region' => $record[2] ?? '未知',
+                    'city' => $record[3] ?? '未知',
+                    'country_code' => $record['countryCode'] ?? 'UNKNOWN',
+                    'latitude' => $record['latitude'] ?? null,
+                    'longitude' => $record['longitude'] ?? null,
+                    'timezone' => $record['timeZone'] ?? null,
+                    'isp' => $record[4] ?? '未知'
                 ];
             }
 

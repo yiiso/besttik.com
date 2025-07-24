@@ -65,23 +65,22 @@ class IpLocationService
         ];
 
         try {
-            if (!$this->database) {
-                // 如果没有本地数据库，尝试使用在线API
-                return $this->queryOnlineApi($ip);
-            }
 
-            $record = $this->database->lookup($ip, Database::ALL);
+            $ip2region = new \Ip2Region();
+            $addressInfo = $ip2region->memorySearch($ip);
+
+            $record = explode('|',$addressInfo['region'] ?? '');
 
             if ($record) {
                 return [
-                    'country' => $record['countryName'] ?: '未知',
-                    'region' => $record['regionName'] ?: '未知',
-                    'city' => $record['cityName'] ?: '未知',
+                    'country' => $record['0'] ?: '未知',
+                    'region' => $record['2'] ?: '未知',
+                    'city' => $record['3'] ?: '未知',
                     'country_code' => $record['countryCode'] ?: 'UNKNOWN',
                     'latitude' => $record['latitude'] ?: null,
                     'longitude' => $record['longitude'] ?: null,
                     'timezone' => $record['timeZone'] ?: null,
-                    'isp' => $record['isp'] ?: '未知'
+                    'isp' => $record['4'] ?: '未知'
                 ];
             }
 

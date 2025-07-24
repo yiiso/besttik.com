@@ -1,48 +1,23 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>运营管理后台</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
-<body class="bg-gray-100">
-    <!-- 导航栏 -->
-    <nav class="bg-white shadow-sm border-b">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center space-x-8">
-                    <h1 class="text-xl font-semibold text-gray-900">运营管理后台</h1>
-                    <nav class="flex space-x-4">
-                        <a href="{{ route('admin.dashboard') }}" class="bg-blue-100 text-blue-700 px-3 py-2 rounded-md text-sm font-medium">仪表板</a>
-                        <a href="{{ route('admin.parse-logs') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">解析记录</a>
-                        <a href="{{ route('admin.security') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">安全监控</a>
-                        <a href="{{ route('admin.profile') }}" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">个人资料</a>
-                    </nav>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-gray-700">欢迎，{{ Auth::guard('admin')->user()->name }}</span>
-                    <form method="POST" action="{{ route('admin.logout') }}" class="inline">
-                        @csrf
-                        <button type="submit" class="text-red-600 hover:text-red-800">退出登录</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </nav>
+@extends('layouts.admin')
 
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <!-- 今日数据概览 -->
+@section('title', '运营管理后台')
+@section('mobile-title', '运营后台')
+
+@push('head-scripts')
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+@endpush
+
+@section('content')
+<!-- 今日数据概览 -->
         <div class="mb-8">
-            <div class="flex justify-between items-center mb-4">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-3">
                 <h2 class="text-lg font-medium text-gray-900">今日数据概览</h2>
                 <button onclick="showTodayHourlyData()" 
-                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                     查看今日小时趋势
                 </button>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div class="bg-white overflow-hidden shadow rounded-lg hover:shadow-md transition-shadow cursor-pointer" onclick="window.location.href='{{ route('admin.new-users') }}'">
                     <div class="p-5">
                         <div class="flex items-center">
@@ -132,47 +107,67 @@
         <!-- 数据趋势图 -->
         <div class="bg-white shadow rounded-lg">
             <div class="px-4 py-5 sm:p-6">
-                <div class="flex justify-between items-center mb-4">
+                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-4 gap-4">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">数据趋势</h3>
                     
-                    <!-- 快速选择按钮 -->
-                    <div class="flex items-center space-x-2 mr-4">
+                    <!-- 移动端快速选择按钮 -->
+                    <div class="flex flex-wrap gap-2 lg:hidden">
                         <button type="button" onclick="quickSelect('yesterday')" 
-                                class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors">
+                                class="px-3 py-2 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors flex-1 min-w-0">
                             昨天
                         </button>
                         <button type="button" onclick="quickSelect('today')" 
-                                class="px-3 py-1 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors">
+                                class="px-3 py-2 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors flex-1 min-w-0">
                             今天
                         </button>
                         <button type="button" onclick="quickSelect('7days')" 
-                                class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
-                            最近7天
+                                class="px-3 py-2 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors flex-1 min-w-0">
+                            7天
                         </button>
                         <button type="button" onclick="quickSelect('30days')" 
-                                class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
-                            最近30天
+                                class="px-3 py-2 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors flex-1 min-w-0">
+                            30天
                         </button>
                     </div>
                     
-                    <!-- 简化的时间范围选择器 -->
-                    <div class="flex items-center space-x-4">
-                        <form method="GET" action="{{ route('admin.dashboard') }}" id="rangeForm" class="flex items-center space-x-2">
+                    <div class="flex flex-col lg:flex-row lg:items-center gap-4">
+                        <!-- 桌面端快速选择按钮 -->
+                        <div class="hidden lg:flex items-center space-x-2">
+                            <button type="button" onclick="quickSelect('yesterday')" 
+                                    class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors">
+                                昨天
+                            </button>
+                            <button type="button" onclick="quickSelect('today')" 
+                                    class="px-3 py-1 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors">
+                                今天
+                            </button>
+                            <button type="button" onclick="quickSelect('7days')" 
+                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
+                                最近7天
+                            </button>
+                            <button type="button" onclick="quickSelect('30days')" 
+                                    class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
+                                最近30天
+                            </button>
+                        </div>
+                        
+                        <!-- 时间范围选择器 -->
+                        <form method="GET" action="{{ route('admin.dashboard') }}" id="rangeForm" class="flex flex-col sm:flex-row sm:items-center gap-2">
                             <select name="range" id="rangeSelect" onchange="handleRangeChange()" 
-                                    class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                                    class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                                 <option value="7days" {{ $dateRange === '7days' ? 'selected' : '' }}>最近7天</option>
                                 <option value="30days" {{ $dateRange === '30days' ? 'selected' : '' }}>最近30天</option>
                                 <option value="custom" {{ $dateRange === 'custom' ? 'selected' : '' }}>自定义范围</option>
                             </select>
                             
                             <!-- 自定义日期范围 -->
-                            <div id="customDateRange" class="flex items-center space-x-2" style="display: {{ $dateRange === 'custom' ? 'flex' : 'none' }}">
+                            <div id="customDateRange" class="flex flex-col sm:flex-row sm:items-center gap-2" style="display: {{ $dateRange === 'custom' ? 'flex' : 'none' }}">
                                 <input type="date" name="start_date" value="{{ $startDate }}" 
-                                       class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                                <span class="text-gray-500">至</span>
+                                       class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
+                                <span class="text-gray-500 text-center sm:text-left">至</span>
                                 <input type="date" name="end_date" value="{{ $endDate }}" 
-                                       class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm">
+                                       class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
+                                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm w-full sm:w-auto">
                                     查询
                                 </button>
                             </div>
@@ -181,16 +176,19 @@
                 </div>
                 
                 <!-- 图表容器 -->
-                <div class="mb-6">
-                    <canvas id="statsChart" width="400" height="200"></canvas>
+                <div class="mb-6 overflow-x-auto">
+                    <div class="min-w-0" style="min-height: 300px;">
+                        <canvas id="statsChart" width="400" height="200"></canvas>
+                    </div>
                 </div>
 
                 <!-- 数据表格 -->
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
+                <div class="overflow-x-auto -mx-4 sm:mx-0">
+                    <div class="inline-block min-w-full align-middle">
+                        <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50" id="statsTableHead">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" id="dateHeader">
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider" id="dateHeader">
                                     @php
                                         $isSingleDay = false;
                                         if ($dateRange === 'custom' && $startDate && $endDate) {
@@ -199,28 +197,29 @@
                                     @endphp
                                     {{ $isSingleDay ? '时间' : '日期' }}
                                 </th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">新增用户</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析总量</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析成功</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析失败</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">成功率</th>
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">新增用户</th>
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析总量</th>
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析成功</th>
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">解析失败</th>
+                                <th class="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">成功率</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200" id="statsTableBody">
                             @foreach($chartData as $item)
                             <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                     @if(isset($item['hour']))
-                                        {{ $item['date'] }} {{ $item['date_display'] }}
+                                        <div class="sm:hidden">{{ $item['date_display'] }}</div>
+                                        <div class="hidden sm:block">{{ $item['date'] }} {{ $item['date_display'] }}</div>
                                     @else
                                         {{ $item['date'] }}
                                     @endif
                                 </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $item['new_users'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $item['total_parses'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600">{{ $item['success_parses'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">{{ $item['failed_parses'] }}</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $item['new_users'] }}</td>
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $item['total_parses'] }}</td>
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-green-600">{{ $item['success_parses'] }}</td>
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-red-600">{{ $item['failed_parses'] }}</td>
+                                <td class="px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                     @if($item['total_parses'] > 0)
                                         {{ number_format(($item['success_parses'] / $item['total_parses']) * 100, 1) }}%
                                     @else
@@ -231,12 +230,17 @@
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
 
-    <script>
+@push('scripts')
+<script>
+
+
         // 北京时间辅助函数
         function getBeijingDate() {
             const now = new Date();
@@ -525,9 +529,10 @@
             url.searchParams.set('end_date', endDate);
             window.history.pushState({}, '', url);
         }
-    </script>
+</script>
+@endpush
 
-    <!-- 高级时间范围选择器 -->
-    @include('admin.components.date-range-picker')
-</body>
-</html>
+@section('footer')
+<!-- 高级时间范围选择器 -->
+@include('admin.components.date-range-picker')
+@endsection

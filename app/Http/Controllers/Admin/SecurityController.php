@@ -34,28 +34,25 @@ class SecurityController extends Controller
     public function getLoginStats()
     {
         $today = Carbon::today();
-        
+
         // 获取今日失败尝试
         $failedAttempts = $this->throttleService->getTodayFailedAttempts();
-        
+
         // 统计独立IP数量
         $uniqueIps = collect($failedAttempts)->pluck('ip')->unique()->count();
-        
+
         // 统计涉及邮箱数量
         $uniqueEmails = collect($failedAttempts)->pluck('email')->unique()->count();
-        
+
         // 按小时统计失败尝试
         $attemptsByHour = array_fill(0, 24, 0);
-        foreach ($failedAttempts as $attempt) {
-            $hour = Carbon::parse($attempt['time'])->hour;
-            $attemptsByHour[$hour]++;
-        }
+
 
         return response()->json([
             'total_attempts' => count($failedAttempts),
             'unique_ips' => $uniqueIps,
             'unique_emails' => $uniqueEmails,
-            'attempts_by_hour' => $attemptsByHour,
+            'attempts_by_hour' => $failedAttempts['attempts_by_hour'],
             'last_update' => now()->format('Y-m-d H:i:s')
         ]);
     }
@@ -67,9 +64,9 @@ class SecurityController extends Controller
     {
         $dateRange = $request->get('range', 'today');
         $minAttempts = $request->get('min_attempts', 3); // 最少失败次数才算异常
-        
-        $failedAttempts = $this->throttleService->getFailedAttempts($dateRange);
-        
+
+        $failedAttempts = $this->throttleService->getRangeDayFailedAttempts($dateRange);
+
         // 按IP分组统计
         $ipStats = collect($failedAttempts)
             ->groupBy('ip')
@@ -116,9 +113,9 @@ class SecurityController extends Controller
     {
         $dateRange = $request->get('range', 'today');
         $minAttempts = $request->get('min_attempts', 3);
-        
-        $failedAttempts = $this->throttleService->getFailedAttempts($dateRange);
-        
+
+        $failedAttempts = $this->throttleService->getRangeDayFailedAttempts($dateRange);
+
         // 按邮箱分组统计
         $emailStats = collect($failedAttempts)
             ->groupBy('email')
@@ -142,7 +139,7 @@ class SecurityController extends Controller
         $allIps = $emailStats->flatMap(function ($stat) {
             return $stat['ips'];
         })->unique()->toArray();
-        
+
         $locations = $this->ipLocationService->getBatchLocations($allIps);
 
         // 为每个邮箱添加IP位置信息
@@ -181,7 +178,7 @@ class SecurityController extends Controller
         try {
             // 解锁邮箱
             $this->throttleService->clearEmailThrottle($email);
-            
+
             // 解锁IP
             $this->throttleService->clearIpThrottle($ip);
 
@@ -218,21 +215,21 @@ class SecurityController extends Controller
     public function getSecurityStatus()
     {
         $cacheKey = 'admin_security_status';
-        
+
         return Cache::remember($cacheKey, 60, function () {
             $failedAttempts = $this->throttleService->getTodayFailedAttempts();
-            
+
             // 计算风险等级
             $totalAttempts = count($failedAttempts);
             $uniqueIps = collect($failedAttempts)->pluck('ip')->unique()->count();
-            
+
             $riskLevel = 'low';
             if ($totalAttempts > 50 || $uniqueIps > 20) {
                 $riskLevel = 'high';
             } elseif ($totalAttempts > 20 || $uniqueIps > 10) {
                 $riskLevel = 'medium';
             }
-            
+
             // 最近的攻击
             $recentAttacks = collect($failedAttempts)
                 ->sortByDesc('time')

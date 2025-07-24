@@ -24,10 +24,10 @@ class IpLocationService
     /**
      * 获取IP地址的位置信息
      */
-    public function getLocation(string $ip): array
+    public function getLocation(string|null $ip): array
     {
         // 检查是否为本地IP
-        if ($this->isLocalIp($ip)) {
+        if ($this->isLocalIp($ip) || $ip == null) {
             return [
                 'country' => '本地',
                 'region' => '本地',

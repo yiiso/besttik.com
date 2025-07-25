@@ -11,13 +11,10 @@ class TiktokService
     {
         $demo = 'https://www.tiktok.com/@alejocroes/video/7525722589738650913?is_from_webapp=1&sender_device=pc';
 
-        $path = parse_url($videoUrl,PHP_URL_PATH);
-        $segments = explode('/',trim($path,'/'));
 
-        $videoKey = array_search('video', $segments);
-        if ($videoKey !== false && isset($segments[$videoKey + 1])) {
-            $videoId = $segments[$videoKey + 1];
-            $realUrl = env('PARSER_TIKTOK').'/api/tiktok/app/fetch_one_video?aweme_id='.$videoId;
+        if ( $videoUrl) {
+
+            $realUrl = env('PARSER_TIKTOK_URL').'/api/hybrid/video_data?url='.urlencode($videoUrl);
 
             $ch = curl_init();
             curl_setopt_array($ch, [
@@ -32,9 +29,7 @@ class TiktokService
 
             $response = curl_exec($ch);
             curl_close($ch);
-
             $data = json_decode($response, true);
-
             return $this->formatResponse($data['data'] ?? []);
         }
         throw new \Exception('error: ' . ($data['message'] ?? 'unknown'));

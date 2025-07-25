@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - 在线视频解析 抖音去水印 抖音视频解析下载',
-    'description' => '免费在线视频解析下载。抖音去水印， YouTube视频解析、TikTok解析、Instagram、Facebook、Twitter等平台视频解析 ',
-    'keywords' => '视频解析,视频去水印,抖音去水印,TikTok解析, youtube免费视频下载, 抖音下载,B站下载',
+    'title' => 'VideoParser.top - 最顶级的视频解析 抖音去水印 抖音视频解析下载',
+    'description' => '最牛的视频解析下载。抖音去水印， YouTube视频解析、TikTok解析、Instagram、Facebook、Twitter等平台视频解析 ',
+    'keywords' => '视频解析,视频去水印,抖音去水印,TikTok解析, youtube下载, 抖音下载,B站下载',
     'hero_title' => '免费在线视频下载器',
     'hero_subtitle' => '支持YouTube、TikTok、Instagram、Facebook、Twitter等平台视频下载。快速、安全、完全免费。',
     'how_to_use_desc' => '简单4步下载任何视频',
@@ -61,56 +61,14 @@ return [
     'format' => '格式',
     'size' => '大小',
     'original_quality' => '原画质',
-    'high_quality' => '高清',
     'medium_quality' => '标清',
     'low_quality' => '流畅',
     'audio_quality' => '音质',
     'copy_success' => '复制成功',
 
-    // Footer
-    'footer_description' => '专业的全球视频解析工具，支持多平台视频链接解析下载。',
-    'navigation' => '导航',
-    'products' => '产品',
-    'support' => '支持',
-    'all_rights_reserved' => '版权所有。',
 
     // User Authentication
-    'login' => '登录',
-    'logout' => '退出',
-    'register' => '注册',
-    'profile' => '个人资料',
-    'settings' => '设置',
-    'login_with_google' => '使用Google登录',
-    'or' => '或',
-    'email' => '邮箱',
-    'password' => '密码',
-    'enter_email' => '请输入邮箱',
-    'enter_password' => '请输入密码',
-    'remember_me' => '记住我',
-    'forgot_password' => '忘记密码？',
-    'no_account' => '还没有账户？',
-    'register_now' => '立即注册',
-    'confirm_password' => '确认密码',
-    'already_have_account' => '已有账户？',
-    'back_to_login' => '返回登录',
-    'login_success' => '登录成功！',
-    'login_failed' => '登录失败，请检查您的凭据',
-    'register_success' => '注册成功！',
-    'register_failed' => '注册失败，请重试',
-    'logout_success' => '退出成功！',
-    'logout_confirm' => '确定要退出吗？',
-    'email_required' => '邮箱为必填项',
-    'password_confirmation_failed' => '密码确认不匹配',
-    'password_min_length' => '密码至少需要8个字符',
 
-    // Pages
-    'video_parser' => '视频解析器',
-    'batch_download' => '批量下载',
-    'api_service' => 'API服务',
-    'help_center' => '帮助中心',
-    'contact_us' => '联系我们',
-    'privacy_policy' => '隐私政策',
-    'terms_of_service' => '服务条款',
 
     // Terms of Service
     'terms_of_service_description' => '在使用VideoParser.top之前，请仔细阅读我们的服务条款。',
@@ -330,11 +288,6 @@ return [
     'batch_download_cta' => '尝试我们的批量下载功能，节省数小时时间',
     'try_batch_download' => '尝试批量下载',
 
-    // Additional common terms
-    'unknown_size' => '未知大小',
-    'loading_video' => '正在加载视频...',
-    'browser_not_support' => '您的浏览器不支持视频播放',
-    'network_error' => '网络错误，请重试',
 
     // Error Pages
     'page_not_found' => '页面未找到',
@@ -448,14 +401,6 @@ return [
     'audio_options' => '音频选项',
     'recommended' => '推荐',
     'video_load_error' => '视频加载失败',
-    'loading_video' => '正在加载视频...',
-    'video_link_unavailable' => '视频链接不可用',
-    'link_copied' => '链接已复制到剪贴板！',
-    'copy_failed' => '复制失败，请手动复制链接',
-    'unknown_size' => '未知大小',
-    'unknown_author' => '未知作者',
-    'unknown_title' => '未知标题',
-    'unknown_duration' => '未知时长',
     'original_audio_quality' => '原始音质',
 
     // 粘贴按钮相关
@@ -484,26 +429,16 @@ return [
     'total_referrals' => '推荐总数',
     'share_and_earn' => '分享赚取',
     'share_description' => '分享您的推荐链接给朋友。当他们注册并使用我们的服务时，您将获得20次额外的解析机会！',
-    'copy_link' => '复制链接',
-    'share' => '分享',
     'referral_code' => '推荐码',
     'bonus_earned' => '已获奖励',
     'weekly_stats' => '本周统计',
-    'link_copied' => '链接已复制到剪贴板！',
+
     'share_title' => '免费视频下载器',
     'share_text' => '快来试试这个超棒的视频下载工具！',
     //邮箱验证
-    'register_success_verify_email' => '注册成功！请检查您的邮箱并点击验证链接以完成注册。',
-    'email_verification_invalid' => '无效的验证链接。',
-    'email_already_verified' => '您的邮箱已经验证过了。',
-    'email_verified_success' => '邮箱验证成功！欢迎使用VideoParser.top！',
-    'email_verification_failed' => '邮箱验证失败，请重试。',
-    'email_not_found' => '未找到该邮箱地址。',
-    'verification_email_sent' => '验证邮件已发送！请检查您的收件箱。',
     'verify_email_title' => '验证您的邮箱',
     'verify_email_description' => '我们已向您的邮箱发送了验证链接，请点击链接完成注册。',
     'resend_verification' => '重新发送验证邮件',
-    'verification_required' => '请验证您的邮箱地址以继续。',
     'check_email' => '请检查您的邮箱以获取验证链接。',
    // 邮箱验证邮件内容
     'verify_email_subject' => '验证您的邮箱地址 - :app',

@@ -49,69 +49,15 @@ return [
     'author' => '作者',
     'platform' => 'プラットフォーム',
     'play_video' => '動画再生',
-    'copy_link' => 'リンクコピー',
     'open_new_tab' => '新しいタブで開く',
     'download_video' => '動画ダウンロード',
     'fullscreen' => 'フルスクリーン',
     'video_info' => '動画情報',
     'quick_actions' => 'クイックアクション',
-    'video_unavailable' => '動画が利用できません',
-    'video_error_desc' => 'これは直リンク保護によるものかもしれません。以下のオプションをお試しください：',
-    'open_in_new_window' => '新しいウィンドウで開く',
-    'copy_video_link' => '動画リンクをコピー',
-    'link_copied' => 'リンクがクリップボードにコピーされました！',
-    'copy_failed' => 'コピーに失敗しました、手動でリンクをコピーしてください',
-    'video_link_unavailable' => '動画リンクが利用できません',
-    'play_failed' => '自動再生に失敗しました、再生ボタンをクリックしてください',
-    'unknown_title' => '不明なタイトル',
-    'unknown_author' => '不明な作者',
-    'unknown_duration' => '不明な再生時間',
-    
-    // Footer
-    'footer_description' => 'プロフェッショナルなグローバル動画解析ツール、マルチプラットフォーム動画リンク解析とダウンロードをサポート。',
-    'navigation' => 'ナビゲーション',
-    'products' => '製品',
-    'support' => 'サポート',
-    'all_rights_reserved' => '全著作権所有。',
-    
-    // User Authentication
-    'login' => 'ログイン',
     'logout' => 'ログアウト',
-    'register' => '登録',
-    'profile' => 'プロフィール',
-    'settings' => '設定',
-    'login_with_google' => 'Googleでログイン',
-    'or' => 'または',
-    'email' => 'メール',
-    'password' => 'パスワード',
-    'enter_email' => 'メールアドレスを入力',
-    'enter_password' => 'パスワードを入力',
-    'remember_me' => 'ログイン状態を保持',
-    'forgot_password' => 'パスワードを忘れましたか？',
-    'no_account' => 'アカウントをお持ちでない方',
-    'register_now' => '今すぐ登録',
-    'confirm_password' => 'パスワード確認',
-    'already_have_account' => 'すでにアカウントをお持ちですか？',
-    'back_to_login' => 'ログインに戻る',
-    'login_success' => 'ログイン成功！',
-    'login_failed' => 'ログイン失敗、認証情報を確認してください',
-    'register_success' => '登録成功！',
-    'register_failed' => '登録失敗、再試行してください',
     'logout_success' => 'ログアウト成功！',
-    'logout_confirm' => 'ログアウトしてもよろしいですか？',
-    'email_required' => 'メールアドレスが必要です',
-    'password_confirmation_failed' => 'パスワード確認が一致しません',
-    'password_min_length' => 'パスワードは8文字以上である必要があります',
-    
-    // Pages
-    'video_parser' => '動画解析',
-    'batch_download' => '一括ダウンロード',
-    'api_service' => 'APIサービス',
-    'help_center' => 'ヘルプセンター',
-    'contact_us' => 'お問い合わせ',
-    'privacy_policy' => 'プライバシーポリシー',
-    'terms_of_service' => '利用規約',
-    
+
+
     // Terms of Service
     'terms_of_service_description' => 'VideoParser.topをご利用になる前に、利用規約をよくお読みください。',
     'last_updated' => '最終更新',
@@ -168,7 +114,7 @@ return [
     'terms_contact_description' => 'これらの規約についてご質問がある場合は、お問い合わせください：',
     'address' => '住所',
     'company_address' => '会社住所',
-    
+
     // Privacy Policy
     'privacy_policy_description' => 'あなたのプライバシーは当社にとって重要です。このポリシーでは、当社が情報をどのように収集、使用、保護するかを説明します。',
     'information_we_collect' => '収集する情報',
@@ -218,7 +164,7 @@ return [
     'policy_changes' => 'このポリシーの変更',
     'policy_changes_description' => 'このプライバシーポリシーを随時更新する場合があります。当社ウェブサイトに新しいポリシーを掲載することにより、重要な変更をお知らせします。',
     'privacy_contact_description' => 'このプライバシーポリシーについてご質問がある場合は、お問い合わせください：',
-    
+
     // Contact Us
     'contact_us_description' => 'ご質問やサポートが必要ですか？VideoParser.topを最大限に活用できるよう、お手伝いします。',
     'send_message' => 'メッセージを送信',
@@ -247,7 +193,7 @@ return [
     'search_help' => 'ヘルプ記事を検索',
     'search_help_description' => 'よくある質問の回答を見つける',
     'browse_help' => 'ヘルプセンターを参照',
-    
+
     // Help Center
     'help_center_description' => 'よくある質問の回答を見つけ、VideoParser.topを最大限に活用する方法を学びます。',
     'getting_started' => '始める',
@@ -273,7 +219,7 @@ return [
     'still_need_help' => 'まだヘルプが必要ですか？',
     'contact_support_description' => 'サポートチームがお手伝いする準備ができています',
     'contact_support' => 'サポートに連絡',
-    
+
     // API Service
     'api_service_description' => '包括的なAPIで強力な動画解析機能をアプリケーションに統合します。',
     'powerful_api' => '強力な動画解析API',
@@ -306,7 +252,7 @@ return [
     'ready_to_integrate' => '統合の準備はできましたか？',
     'api_cta_description' => '今日から強力なAPIで構築を開始',
     'get_api_key' => 'APIキーを取得',
-    
+
     // Batch Download
     'batch_download_description' => '強力なバッチ処理機能で複数の動画を一度にダウンロードします。',
     'powerful_batch_processing' => '強力なバッチ処理',
@@ -329,13 +275,8 @@ return [
     'ready_to_start' => 'バッチ処理を開始する準備はできましたか？',
     'batch_download_cta' => 'バッチダウンロード機能を試して数時間を節約',
     'try_batch_download' => 'バッチダウンロードを試す',
-    
-    // Additional common terms
-    'unknown_size' => '不明なサイズ',
-    'loading_video' => '動画読み込み中...',
-    'browser_not_support' => 'お使いのブラウザは動画再生をサポートしていません',
-    'network_error' => 'ネットワークエラー、再試行してください',
-    
+
+
     // Error Pages
     'page_not_found' => 'ページが見つかりません',
     'page_not_found_description' => 'お探しのページが見つかりませんでした。',
@@ -352,21 +293,12 @@ return [
     'video_error_desc' => 'これはホットリンク保護が原因の可能性があります。以下のオプションをお試しください：',
     'open_in_new_window' => '新しいウィンドウで開く',
     'copy_video_link' => '動画リンクをコピー',
-    'link_copied' => 'リンクがクリップボードにコピーされました！',
-    'copy_failed' => 'コピー失敗、手動でリンクをコピーしてください',
-    'video_link_unavailable' => '動画リンクが利用できません',
+
     'play_failed' => '自動再生に失敗しました、再生ボタンをクリックしてください',
-    'unknown_title' => '不明なタイトル',
-    'unknown_author' => '不明な作者',
-    'unknown_duration' => '不明な再生時間',
     'original_quality' => 'オリジナル品質',
-    'unknown_size' => '不明なサイズ',
     'invalid_url' => '有効な動画リンクを入力してください',
     'unsupported_platform' => 'この動画プラットフォームはまだサポートされていません',
-    'network_error' => 'ネットワークエラー、後でもう一度お試しください',
-    'share' => '共有',
     'video_info_obtained' => '動画情報の取得に成功しました',
-    'loading_video' => '動画を読み込み中...',
     'browser_not_support' => 'お使いのブラウザは動画再生をサポートしていません',
 
     // Footer translations
@@ -413,12 +345,12 @@ return [
     'password_min_length' => 'パスワードは6文字以上である必要があります',
     'password_confirmation_failed' => 'パスワード確認が一致しません',
     'network_error' => 'ネットワークエラー、再試行してください',
-    
+
     // User menu translations
     'profile' => 'プロフィール',
     'settings' => '設定',
     'logout_confirm' => 'ログアウトしてもよろしいですか？',
-    
+
     // Parse limit messages
     'daily_limit_exceeded_guest' => '1日の解析制限（:limit回）に達しました。より多くの解析機会を得るためにログインしてください。',
     'daily_limit_exceeded_user' => '1日の解析制限（:limit回）に達しました。明日再度お試しください。',
@@ -428,7 +360,7 @@ return [
     'user_daily_limit' => '登録ユーザー：1日:limit回の解析',
     'login_for_more' => 'より多くの解析のためにログイン',
     'upgrade_limit_info' => '今すぐ登録して1日:limit回の解析機会を獲得しましょう！',
-    
+
     // Additional UI translations
     'close' => '閉じる',
     'audio_preview' => 'オーディオプレビュー',
@@ -440,14 +372,13 @@ return [
     'video_load_error' => '動画の読み込みに失敗しました',
     'loading_video' => '動画を読み込み中...',
     'video_link_unavailable' => '動画リンクが利用できません',
-    'link_copied' => 'リンクをクリップボードにコピーしました！',
     'copy_failed' => 'コピーに失敗しました。手動でリンクをコピーしてください',
     'unknown_size' => '不明なサイズ',
     'unknown_author' => '不明な作者',
     'unknown_title' => '不明なタイトル',
     'unknown_duration' => '不明な長さ',
     'original_audio_quality' => 'オリジナル音質',
-    
+
     // Paste button related
     'paste' => '貼り付け',
     'paste_from_clipboard' => 'クリップボードから貼り付け',
@@ -458,7 +389,7 @@ return [
 
 	//お問い合わせフォーム
     'contact_success' => 'メッセージをありがとうございます！すぐに返信いたします。',
-    
+
     // ユーザーダッシュボード
     'dashboard_title' => 'ユーザーダッシュボード',
     'dashboard_description' => 'アカウントを管理し、使用統計を表示',
@@ -480,20 +411,13 @@ return [
     'link_copied' => 'リンクがクリップボードにコピーされました！',
     'share_title' => '無料動画ダウンローダー',
     'share_text' => 'この素晴らしい動画ダウンロードツールをチェックしてください！',
-  
+
   // メール認証
-    'register_success_verify_email' => '登録成功！メールを確認し、認証リンクをクリックして登録を完了してください。',
-    'email_verification_invalid' => '無効な認証リンクです。',
-    'email_already_verified' => 'あなたのメールは既に認証済みです。',
-    'email_verified_success' => 'メール認証成功！VideoParser.topへようこそ！',
-    'email_verification_failed' => 'メール認証に失敗しました。再試行してください。',
-    'email_not_found' => 'メールアドレスが見つかりません。',
-    'verification_email_sent' => '認証メールを送信しました！受信箱を確認してください。',
+
     'verify_email_title' => 'メールを認証',
     'verify_email_description' => 'あなたのメールアドレスに認証リンクを送信しました。リンクをクリックして登録を完了してください。',
     'resend_verification' => '認証メールを再送信',
-    'verification_required' => '続行するにはメールアドレスを認証してください。',
-    'check_email' => '認証リンクについてメールを確認してください。',    
+    'check_email' => '認証リンクについてメールを確認してください。',
 // メール認証メールの内容
     'verify_email_subject' => 'メールアドレスを認証してください - :app',
     'verify_email_greeting' => 'こんにちは :name さん！',

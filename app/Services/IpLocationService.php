@@ -27,7 +27,7 @@ class IpLocationService
     public function getLocation(string|null $ip): array
     {
         // 检查是否为本地IP
-        if ($this->isLocalIp($ip) || $ip == null) {
+        if ($ip == null || $this->isLocalIp($ip) ) {
             return [
                 'country' => '本地',
                 'region' => '本地',

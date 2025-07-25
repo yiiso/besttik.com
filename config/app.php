@@ -86,6 +86,13 @@ return [
         'ja' => '日本語',
         'es' => 'Español',
         'fr' => 'Français',
+        'de' => 'Deutsch',
+        'pt' => 'Português',
+        'ru' => 'Русский',
+        'ar' => 'العربية',
+        'hi' => 'हिन्दी',
+        'ko' => '한국어',
+        'th' => 'ไทย',
     ],
     'default_locale' => 'en', // 自定义默认语言配置
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),

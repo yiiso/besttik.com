@@ -49,7 +49,7 @@ return [
     'author' => 'Auteur',
     'platform' => 'Plateforme',
     'play_video' => 'Lire Vidéo',
-    'copy_link' => 'Copier Lien',
+
     'open_new_tab' => 'Ouvrir dans Nouvel Onglet',
     'download_video' => 'Télécharger Vidéo',
     'fullscreen' => 'Plein Écran',
@@ -59,58 +59,22 @@ return [
     'video_error_desc' => 'Cela peut être dû à la protection anti-hotlinking. Veuillez essayer les options suivantes:',
     'open_in_new_window' => 'Ouvrir dans Nouvelle Fenêtre',
     'copy_video_link' => 'Copier Lien Vidéo',
-    'link_copied' => 'Lien copié dans le presse-papiers!',
-    'copy_failed' => 'Copie échouée, veuillez copier le lien manuellement',
-    'video_link_unavailable' => 'Lien vidéo indisponible',
+
     'play_failed' => 'Lecture automatique échouée, veuillez cliquer sur le bouton de lecture',
-    'unknown_title' => 'Titre Inconnu',
-    'unknown_author' => 'Auteur Inconnu',
-    'unknown_duration' => 'Durée Inconnue',
+
 
     // Footer
-    'footer_description' => 'Outil professionnel global d\'analyse vidéo, supporte l\'analyse et le téléchargement de liens vidéo multi-plateformes.',
-    'navigation' => 'Navigation',
-    'products' => 'Produits',
-    'support' => 'Support',
-    'all_rights_reserved' => 'Tous droits réservés.',
+
 
     // User Authentication
-    'login' => 'Se Connecter',
+
     'logout' => 'Se Déconnecter',
-    'register' => 'S\'inscrire',
-    'profile' => 'Profil',
-    'settings' => 'Paramètres',
-    'login_with_google' => 'Se connecter avec Google',
-    'or' => 'ou',
-    'email' => 'Email',
-    'password' => 'Mot de passe',
-    'enter_email' => 'Entrez votre email',
-    'enter_password' => 'Entrez votre mot de passe',
-    'remember_me' => 'Se souvenir de moi',
-    'forgot_password' => 'Mot de passe oublié?',
-    'no_account' => 'Pas de compte?',
-    'register_now' => 'S\'inscrire maintenant',
-    'confirm_password' => 'Confirmer Mot de Passe',
-    'already_have_account' => 'Déjà un compte?',
-    'back_to_login' => 'Retour à la connexion',
-    'login_success' => 'Connexion réussie!',
-    'login_failed' => 'Connexion échouée, vérifiez vos identifiants',
-    'register_success' => 'Inscription réussie!',
-    'register_failed' => 'Inscription échouée, réessayez',
+
     'logout_success' => 'Déconnexion réussie!',
-    'logout_confirm' => 'Êtes-vous sûr de vouloir vous déconnecter?',
-    'email_required' => 'L\'email est requis',
-    'password_confirmation_failed' => 'La confirmation du mot de passe ne correspond pas',
-    'password_min_length' => 'Le mot de passe doit contenir au moins 8 caractères',
+
 
     // Pages
-    'video_parser' => 'Analyseur Vidéo',
-    'batch_download' => 'Téléchargement par Lots',
-    'api_service' => 'Service API',
-    'help_center' => 'Centre d\'Aide',
-    'contact_us' => 'Nous Contacter',
-    'privacy_policy' => 'Politique de Confidentialité',
-    'terms_of_service' => 'Conditions d\'Utilisation',
+
 
     // Terms of Service
     'terms_of_service_description' => 'Veuillez lire attentivement nos conditions d\'utilisation avant d\'utiliser VideoParser.top.',
@@ -331,18 +295,14 @@ return [
     'try_batch_download' => 'Essayer le Téléchargement par Lot',
 
     // Additional common terms
-    'unknown_size' => 'Taille Inconnue',
-    'loading_video' => 'Chargement de la vidéo...',
-    'browser_not_support' => 'Votre navigateur ne supporte pas la lecture vidéo',
-    'network_error' => 'Erreur réseau, veuillez réessayer',
+
     'original_quality' => 'Qualité Originale',
-    'unknown_size' => 'Taille Inconnue',
+
     'invalid_url' => 'Veuillez entrer un lien vidéo valide',
     'unsupported_platform' => 'Cette plateforme vidéo n\'est pas encore supportée',
-    'network_error' => 'Erreur réseau, veuillez réessayer plus tard',
-    'share' => 'Partager',
+
     'video_info_obtained' => 'Informations vidéo obtenues avec succès',
-    'loading_video' => 'Chargement de la vidéo...',
+
     'browser_not_support' => 'Votre navigateur ne supporte pas la lecture vidéo',
 
     // Footer translations
@@ -424,7 +384,7 @@ return [
     'video_load_error' => 'Échec du chargement de la vidéo',
     'loading_video' => 'Chargement de la vidéo...',
     'video_link_unavailable' => 'Lien vidéo indisponible',
-    'link_copied' => 'Lien copié dans le presse-papiers !',
+
     'copy_failed' => 'Échec de la copie, veuillez copier le lien manuellement',
     'unknown_size' => 'Taille inconnue',
     'unknown_author' => 'Auteur inconnu',
@@ -468,17 +428,11 @@ return [
     'share_text' => 'Découvrez cet incroyable outil de téléchargement de vidéos !',
 
  // Vérification d'email
-    'register_success_verify_email' => 'Inscription réussie ! Veuillez vérifier votre email et cliquer sur le lien de vérification pour terminer votre inscription.',
-    'email_verification_invalid' => 'Lien de vérification invalide.',
-    'email_already_verified' => 'Votre email est déjà vérifié.',
-    'email_verified_success' => 'Email vérifié avec succès ! Bienvenue sur VideoParser.top !',
-    'email_verification_failed' => 'La vérification de l\'email a échoué. Veuillez réessayer.',
-    'email_not_found' => 'Adresse email non trouvée.',
-    'verification_email_sent' => 'Email de vérification envoyé ! Veuillez vérifier votre boîte de réception.',
+
     'verify_email_title' => 'Vérifiez Votre Email',
     'verify_email_description' => 'Nous avons envoyé un lien de vérification à votre adresse email. Veuillez cliquer sur le lien pour terminer votre inscription.',
     'resend_verification' => 'Renvoyer l\'Email de Vérification',
-    'verification_required' => 'Veuillez vérifier votre adresse email pour continuer.',
+
     'check_email' => 'Vérifiez votre email pour le lien de vérification.',
     // Contenu de l'email de vérification
     'verify_email_subject' => 'Vérifiez Votre Adresse Email - :app',

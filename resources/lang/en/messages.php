@@ -471,4 +471,275 @@ return [
     'email_verification_failed' => 'Email verification failed',
     'email_not_found' => 'Email address not found',
     'verification_email_sent' => 'Verification email has been sent',
-	];
+
+    // New layout related translations
+    'welcome_to_help_center' => 'Welcome to Help Center',
+    'help_center_welcome_desc' => 'Please select the topic you need to learn about from the left side, or use the search function above to quickly find answers.',
+    'loading' => 'Loading...',
+    'article_not_found' => 'Article not found',
+    'loading_error' => 'Loading failed, please try again',
+    'search_help_hint' => 'Enter keywords to quickly find the answers you need',
+
+    // Help center article content
+    // Quick start guide
+    'quick_start_welcome' => 'Welcome to VideoParser.top! This is a powerful online video parsing and downloading tool that supports multiple mainstream video platforms.',
+    'quick_start_steps_title' => 'Quick Start Steps:',
+    'quick_start_step_1' => 'Visit VideoParser.top homepage',
+    'quick_start_step_2' => 'Copy the video link you want to download',
+    'quick_start_step_3' => 'Paste the link into the input box',
+    'quick_start_step_4' => 'Click the "Parse" button',
+    'quick_start_step_5' => 'Select appropriate quality and format',
+    'quick_start_step_6' => 'Click the "Download" button to start downloading',
+    'quick_start_tip' => 'Tip: Register an account to get more daily parsing attempts!',
+
+    // Basic usage
+    'basic_usage_intro' => 'Basic usage of VideoParser.top is very simple, just a few steps to complete video downloading.',
+    'basic_usage_platforms_title' => 'Supported Platforms',
+    'basic_usage_platforms_content' => 'We support the following mainstream video platforms: YouTube, TikTok, Instagram, Facebook, Twitter, Bilibili, Douyin and over 100 video platforms.',
+    'basic_usage_limits_title' => 'Usage Limits',
+    'basic_usage_limits_content' => 'Guest users have a certain daily parsing limit, registered users can get more attempts. Please check the account settings page for specific limits.',
+
+    // Platform overview
+    'platforms_overview_intro' => 'VideoParser.top supports multiple mainstream video platforms, providing you with comprehensive video parsing services.',
+    'platforms_main_title' => 'Main Supported Platforms',
+    'platforms_main_content' => '• YouTube - World\'s largest video sharing platform\n• TikTok - Short video social platform\n• Instagram - Photo and video sharing platform\n• Facebook - Social network platform\n• Twitter - Microblogging social platform\n• Bilibili - China\'s leading video bullet screen website\n• Douyin - Chinese short video platform',
+    'platforms_tip' => 'We will continue to add support for new platforms. If you need support for a specific platform, please contact us.',
+
+    // First-time user tips
+    'first_time_tips_intro' => 'As a new user, these tips will help you better use VideoParser.top.',
+    'first_time_tips_title' => 'First-time User Tips:',
+    'first_time_tip_1' => 'Register an account to get more parsing attempts',
+    'first_time_tip_2' => 'Bookmark frequently used video links',
+    'first_time_tip_3' => 'Choose appropriate video quality to save bandwidth',
+    'first_time_tip_4' => 'Use batch download feature to improve efficiency',
+    'first_time_tip_5' => 'Follow our updates to get new features',
+    'first_time_tips_advice' => 'It is recommended to start with simple single video downloads, and try batch downloads and other advanced features after becoming familiar with the process.',
+
+    // Download failed
+    'download_failed_intro' => 'Download failure is one of the common problems users encounter. Here are some common causes and solutions.',
+    'download_failed_reasons_title' => 'Common Causes',
+    'download_failed_reasons_content' => '• Unstable network connection\n• Video link has expired\n• Platform restrictions or regional restrictions\n• Browser compatibility issues\n• Video does not allow cross-domain requests',
+    'download_failed_solutions_title' => 'Solution Steps:',
+    'download_failed_solution_1' => 'Check if network connection is normal',
+    'download_failed_solution_2' => 'Confirm if video link is valid',
+    'download_failed_solution_3' => 'Try refreshing the page and re-parsing',
+    'download_failed_solution_4' => 'Use cross-domain plugin <a href="https://chromewebstore.google.com/search/CORS%20Control?utm_source=ext_sidebar" class="text-blue-600">CORS Control</a>',
+    'download_failed_solution_5' => 'Try other platforms',
+
+    // Slow download speed
+    'slow_speed_intro' => 'Slow download speed may be caused by various factors. Here are some optimization suggestions.',
+    'slow_speed_factors_title' => 'Influencing Factors',
+    'slow_speed_factors_content' => '• Network bandwidth limitations\n• Server load\n• Video file size\n• Geographic distance\n• Number of simultaneous downloads',
+    'slow_speed_optimization_title' => 'Optimization Methods:',
+    'slow_speed_optimization_1' => 'Choose lower video quality',
+    'slow_speed_optimization_2' => 'Avoid downloading multiple videos simultaneously',
+    'slow_speed_optimization_3' => 'Download during periods with better network',
+    'slow_speed_optimization_4' => 'Close other bandwidth-consuming applications',
+    'slow_speed_optimization_5' => 'Consider upgrading network plan',
+
+    // Video quality issues
+    'quality_issues_intro' => 'Video quality issues are usually related to original video quality and platform limitations.',
+    'quality_options_title' => 'Quality Options Description',
+    'quality_options_content' => '• Original Quality: Maintain original video quality\n• HD: 1080p high definition\n• SD: 720p standard definition\n• Smooth: 480p or lower quality',
+    'quality_limitation_tip' => 'Download quality will not exceed the original video quality. If the original video is 720p, you cannot download a 1080p version.',
+    // Browser compatibility
+    'browser_compatibility_intro' => 'For the best experience, it is recommended to use modern browsers to access our services.\n\nSome browsers may need to install extensions to solve cross-domain issues.',
+    'browser_recommended_title' => 'Recommended Browsers',
+    'browser_recommended_content' => '• Chrome 80+ (Recommended)\n• Firefox 75+\n• Safari 13+\n• Edge 80+\n• Opera 67+',
+    'browser_extensions_title' => 'Recommended Extensions',
+    'browser_extensions_content' => 'If you encounter cross-domain issues, it is recommended to install the following extensions:\n\n**Chrome Browser:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox Browser:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'browser_common_issues_title' => 'Common Issues',
+    'browser_common_issues_content' => 'If you encounter compatibility issues, please try:\n• Update browser to the latest version\n• Clear browser cache and cookies\n• Disable ad blockers\n• Enable JavaScript\n• Install the above recommended CORS extensions',
+    'browser_security_tip' => 'Note: When installing extensions, please ensure you download from official stores to avoid installing malicious software. You can disable extensions after use to ensure security.',
+
+    // Platform-specific help content
+    // YouTube
+    'youtube_help_intro' => 'YouTube is one of the main platforms we support, offering multiple quality options.',
+    'youtube_steps_title' => 'YouTube Video Download Steps:',
+    'youtube_step_1' => 'Find the video you want to download on YouTube',
+    'youtube_step_2' => 'Copy the video page URL',
+    'youtube_step_3' => 'Paste it into our parsing box',
+    'youtube_step_4' => 'Select appropriate quality and format',
+    'youtube_step_5' => 'Click the download button',
+    'youtube_tip' => 'YouTube supports multiple quality options, including 4K, 1080p, 720p, etc. Please choose the appropriate quality according to your needs.',
+
+    // TikTok
+    'tiktok_help_intro' => 'TikTok short video download supports watermark removal, giving you cleaner videos.',
+    'tiktok_features_title' => 'Special Features',
+    'tiktok_features_content' => '• Automatically remove TikTok watermarks\n• Support separate audio download\n• Maintain original quality\n• Fast parsing processing',
+    'tiktok_tip' => 'TikTok videos are usually in portrait format, providing the best viewing experience on mobile devices after download.',
+
+    // Instagram
+    'instagram_help_intro' => 'Instagram supports downloading of photos, videos, and stories.',
+    'instagram_content_types_title' => 'Supported Content Types',
+    'instagram_content_types_content' => '• Regular post videos\n• Instagram Stories\n• IGTV videos\n• Reels short videos',
+    'instagram_tip' => 'Please ensure you have the right to download relevant content and comply with Instagram\'s terms of use.',
+
+    // Facebook
+    'facebook_help_intro' => 'Facebook video download supports public videos and personally shared videos.',
+    'facebook_notes_title' => 'Notes',
+    'facebook_notes_content' => '• Only supports public videos\n• Requires valid video links\n• Some videos may have regional restrictions\n• Respect original author\'s copyright',
+
+    // Bilibili
+    'bilibili_help_intro' => 'Bilibili is China\'s leading video bullet screen website, and we provide complete download support.',
+    'bilibili_features_title' => 'Supported Features',
+    'bilibili_features_content' => '• Multi-part video download\n• Bullet screen file download\n• Multiple resolution options\n• Separate audio extraction',
+    'bilibili_tip' => 'Please comply with relevant laws and regulations when downloading Bilibili videos, for personal learning and research purposes only.',
+
+    // Douyin
+    'douyin_help_intro' => 'Douyin video download supports watermark removal and high-quality download.',
+    'douyin_features_title' => 'Featured Functions',
+    'douyin_features_content' => '• Automatically remove Douyin watermarks\n• Maintain original audio quality\n• Support batch download\n• Fast parsing processing',
+
+    // Account related
+    // Login registration
+    'login_registration_intro' => 'Registering an account can get more features and higher usage limits.',
+    'login_registration_steps_title' => 'Registration Steps:',
+    'login_registration_step_1' => 'Click the "Register" button in the upper right corner of the page',
+    'login_registration_step_2' => 'Fill in email address and password',
+    'login_registration_step_3' => 'Click "Register" to complete account creation',
+    'login_registration_step_4' => 'Check your email for verification email',
+    'login_registration_step_5' => 'Click the verification link to activate your account',
+    'login_registration_benefits_title' => 'Registration Benefits',
+    'login_registration_benefits_content' => '• More daily parsing attempts\n• Support batch download\n• Download history records\n• Priority customer support',
+
+    // Password reset
+    'password_reset_intro' => 'If you forget your password, you can reset it through email.',
+    'password_reset_steps_title' => 'Password Reset Steps:',
+    'password_reset_step_1' => 'Click the "Forgot Password" link on the login page',
+    'password_reset_step_2' => 'Enter the email address used for registration',
+    'password_reset_step_3' => 'Click "Send Reset Email"',
+    'password_reset_step_4' => 'Check your email for the reset email',
+    'password_reset_step_5' => 'Click the reset link in the email',
+    'password_reset_step_6' => 'Set a new password and confirm',
+
+    // Email verification
+    'email_verification_intro' => 'Email verification is an important step for account security, ensuring you can use all features normally.',
+    'email_verification_importance_title' => 'Importance of Verification',
+    'email_verification_importance_content' => '• Ensure account security\n• Receive important notifications\n• Password reset functionality\n• Complete feature access',
+    'email_verification_tip' => 'If you don\'t receive the verification email, please check your spam folder, or click to resend the verification email.',
+   // Usage limits
+    'usage_limits_intro' => 'To ensure service quality, we have set corresponding usage limits for different user types.',
+    'usage_limits_explanation_title' => 'Limit Explanation',
+    'usage_limits_explanation_content' => '• Guest users: 6 parses per day\n• Registered users: 10 parses per day\n• Referral rewards: 20 additional parses for each successful referral\n• API users: Different limits according to different plans',
+    'usage_limits_tip' => 'Limits reset daily at midnight. If you need higher limits, please consider using our API service.',
+
+    // Referral system
+    'referral_system_intro' => 'The referral system allows you to earn additional parsing attempts through sharing.',
+    'referral_system_steps_title' => 'How to Use the Referral System:',
+    'referral_system_step_1' => 'Log in to your account',
+    'referral_system_step_2' => 'Go to user center',
+    'referral_system_step_3' => 'Find the referral link',
+    'referral_system_step_4' => 'Share with friends or social media',
+    'referral_system_step_5' => 'Get rewards after friends register',
+    'referral_system_rules_title' => 'Reward Rules',
+    'referral_system_rules_content' => '• Get 20 parsing rewards for each successful referral\n• Referred users need to complete email verification\n• Reward attempts are permanently valid\n• No limit on number of referrals',
+
+    // Troubleshooting
+    // Common errors
+    'common_errors_intro' => 'Here are errors that users frequently encounter and their solutions.\n\nIf you encounter CORS-related errors, it is recommended to install browser extensions to solve them.',
+    'common_errors_types_title' => 'Common Error Types',
+    'common_errors_types_content' => '• "Parse Failed" - Invalid video link or platform restrictions\n• "Network Timeout" - Network connection issues\n• "Format Not Supported" - Video format restrictions\n• "Download Interrupted" - Network instability\n• "Insufficient Permissions" - Account restrictions\n• "CORS Error" - Cross-domain access blocked',
+    'common_errors_cors_title' => 'CORS Error Solutions',
+    'common_errors_cors_content' => 'If you encounter cross-domain access errors, please install the following extensions:\n\n**Chrome Browser:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox Browser:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'common_errors_tip' => 'If you encounter errors not listed, please contact customer service and provide detailed error information.\n\nAfter installing extensions, remember to disable them after use to ensure browser security.',
+
+    // Network issues
+    'network_issues_intro' => 'Network issues may affect normal video parsing and downloading.',
+    'network_issues_symptoms_title' => 'Common Symptoms',
+    'network_issues_symptoms_content' => '• Parse timeout\n• Download interruption\n• Connection failure\n• Abnormally slow speed',
+    'network_issues_solutions_title' => 'Solutions:',
+    'network_issues_solution_1' => 'Check network connection status',
+    'network_issues_solution_2' => 'Try refreshing the page',
+    'network_issues_solution_3' => 'Change network environment',
+    'network_issues_solution_4' => 'Use VPN or proxy',
+    'network_issues_solution_5' => 'Contact network service provider',
+
+    // Browser issues
+    'browser_issues_intro' => 'Different browsers may have compatibility differences. Here are solutions to common problems.',
+    'browser_issues_common_title' => 'Common Browser Issues',
+    'browser_issues_common_content' => '• JavaScript disabled\n• Cookies blocked\n• Ad blocker interference\n• Browser version too old\n• Extension conflicts',
+    'browser_issues_solutions_title' => 'Solution Suggestions:',
+    'browser_issues_solution_1' => 'Enable JavaScript and cookies',
+    'browser_issues_solution_2' => 'Temporarily disable ad blockers',
+    'browser_issues_solution_3' => 'Update browser to latest version',
+    'browser_issues_solution_4' => 'Try incognito/private mode',
+    'browser_issues_solution_5' => 'Clear browser cache and data',
+
+    // Mobile issues
+    'mobile_issues_intro' => 'Special problems and solutions that may be encountered when using mobile devices.',
+    'mobile_issues_common_title' => 'Common Mobile Issues',
+    'mobile_issues_common_content' => '• Touch operations not responding\n• Abnormal page display\n• Limited download functionality\n• Player incompatibility',
+    'mobile_issues_solutions_title' => 'Mobile Optimization Suggestions:',
+    'mobile_issues_solution_1' => 'Use recommended mobile browsers',
+    'mobile_issues_solution_2' => 'Ensure stable network connection',
+    'mobile_issues_solution_3' => 'Turn off power saving mode',
+    'mobile_issues_solution_4' => 'Clean device storage space',
+    'mobile_issues_solution_5' => 'Restart browser application',
+
+    // API documentation related
+    'api_getting_started_intro' => 'Welcome to VideoParser.top API! This guide will help you quickly start integrating our video parsing services.',
+    'api_getting_started_requirements_title' => 'Prerequisites',
+    'api_getting_started_requirements_content' => '• Register VideoParser.top account\n• Get API key\n• Understand basic HTTP requests\n• Prepare development environment',
+    'api_getting_started_first_request_title' => 'First API Request',
+    'api_getting_started_first_request_content' => 'Use your API key to send a simple video parsing request to verify successful integration.',
+    'api_authentication_intro' => 'API authentication ensures that only authorized users can access our services.',
+    'api_authentication_methods_title' => 'Authentication Methods',
+    'api_authentication_methods_content' => '• API Key authentication (recommended)\n• OAuth 2.0 authentication\n• JWT Token authentication',
+    'api_authentication_security_title' => 'Security Recommendations',
+    'api_authentication_security_content' => '• Keep API keys secure\n• Regularly rotate keys\n• Use HTTPS requests\n• Implement request limiting',
+
+    'api_endpoints_intro' => 'We provide multiple API endpoints to meet different usage needs.',
+    'api_endpoints_main_title' => 'Main Endpoints',
+    'api_endpoints_main_content' => '• /api/parse - Parse video links\n• /api/download - Get download links\n• /api/info - Get video information\n• /api/batch - Batch processing',
+    'api_endpoints_parameters_title' => 'Request Parameters',
+    'api_endpoints_parameters_content' => 'Each endpoint has specific required and optional parameters. Please refer to detailed documentation for specific requirements.',
+
+    'api_examples_intro' => 'Here are some common API call examples to help you quickly understand how to use our services.',
+    'api_examples_basic_title' => 'Basic Examples',
+    'api_examples_basic_content' => 'Shows how to send basic video parsing requests and handle response data.',
+    'api_examples_advanced_title' => 'Advanced Examples',
+    'api_examples_advanced_content' => 'Includes advanced usage examples such as batch processing, error handling, asynchronous requests, etc.',
+
+    'api_rate_limits_intro' => 'To ensure service quality and fair usage, we implement rate limits on API requests.',
+    'api_rate_limits_tiers_title' => 'Limit Tiers',
+    'api_rate_limits_tiers_content' => '• Free users: 10 requests per minute\n• Paid users: 100 requests per minute\n• Enterprise users: Custom limits',
+    'api_rate_limits_headers_title' => 'Limit Headers',
+    'api_rate_limits_headers_content' => 'API responses include header information about current limit status to help you manage request frequency.',
+
+    // Network issues (duplicate section - using different approach)
+    'network_issues_diagnosis_title' => 'Network Diagnosis',
+    'network_issues_diagnosis_content' => '• Check network connection status\n• Test network speed\n• Confirm DNS settings\n• Check firewall settings\n• Try changing network environment',
+
+    // Browser issues (additional content)
+    'browser_issues_common_content' => '• JavaScript disabled\n• Cookies blocked\n• Cache expired\n• Extension conflicts\n• Version too old',
+
+    // Mobile issues (additional content)
+    'mobile_issues_common_content' => '• Touch operations not responding\n• Abnormal page display\n• Limited download functionality\n• Network switching issues\n• Insufficient storage space',
+    'mobile_issues_tip' => 'It is recommended to use in WiFi environment for better experience and to avoid data consumption.',
+
+    // API quick start
+    'api_getting_started_steps_title' => 'API Quick Start:',
+    'api_getting_started_step_1' => 'Register developer account',
+    'api_getting_started_step_2' => 'Get API key',
+    'api_getting_started_step_3' => 'Read API documentation',
+    'api_getting_started_step_4' => 'Make test calls',
+    'api_getting_started_step_5' => 'Integrate into your application',
+    'api_getting_started_advantages_title' => 'API Advantages',
+    'api_getting_started_advantages_content' => '• High-speed parsing\n• Stable and reliable\n• Multi-format support\n• Detailed documentation\n• Technical support',
+
+    // API authentication
+    'api_authentication_method_title' => 'Authentication Method',
+    'api_authentication_method_content' => 'We use API key authentication. Please include in request headers:\nAuthorization: Bearer YOUR_API_KEY',
+    'api_authentication_tip' => 'Please keep your API key secure and do not expose it in client-side code.',
+
+    // API endpoints
+    'api_endpoints_list_title' => 'Main Endpoints',
+    'api_endpoints_list_content' => '• /api/parse - Parse video links\n• /api/info - Get video information\n• /api/download - Get download links\n• /api/batch - Batch processing',
+    'api_endpoints_usage_title' => 'Usage Instructions',
+    'api_endpoints_usage_content' => 'Each endpoint has detailed parameter descriptions and example code. Please refer to the complete API documentation.',
+
+    // API rate limits
+    'api_rate_limits_management_title' => 'Limit Management',
+    'api_rate_limits_management_content' => 'API responses include header information about current limit status to help you manage request frequency.',
+];

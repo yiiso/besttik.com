@@ -448,4 +448,269 @@ return [
     'email_verification_failed' => 'メール認証に失敗しました',
     'email_not_found' => 'メールアドレスが見つかりません',
     'verification_email_sent' => '認証メールが送信されました',
-    ];
+    // 新しいレイアウト関連の翻訳
+    'welcome_to_help_center' => 'ヘルプセンターへようこそ',
+    'help_center_welcome_desc' => '左側から学習したいトピックを選択するか、上部の検索機能を使用して素早く回答を見つけてください。',
+    'loading' => '読み込み中...',
+    'article_not_found' => '記事が見つかりません',
+    'loading_error' => '読み込みに失敗しました。再試行してください',
+    'search_help_hint' => 'キーワードを入力して必要な回答を素早く見つける',
+
+    // ヘルプセンター記事内容
+    // クイックスタートガイド
+    'quick_start_welcome' => 'VideoParser.topへようこそ！これは複数の主流動画プラットフォームをサポートする強力なオンライン動画解析ダウンロードツールです。',
+    'quick_start_steps_title' => 'クイックスタート手順：',
+    'quick_start_step_1' => 'VideoParser.topホームページにアクセス',
+    'quick_start_step_2' => 'ダウンロードしたい動画リンクをコピー',
+    'quick_start_step_3' => 'リンクを入力ボックスに貼り付け',
+    'quick_start_step_4' => '「解析」ボタンをクリック',
+    'quick_start_step_5' => '適切な画質と形式を選択',
+    'quick_start_step_6' => '「ダウンロード」ボタンをクリックしてダウンロード開始',
+    'quick_start_tip' => 'ヒント：アカウント登録でより多くの日次解析回数を取得できます！',
+
+    // 基本的な使用方法
+    'basic_usage_intro' => 'VideoParser.topの基本的な使用は非常に簡単で、数ステップで動画ダウンロードを完了できます。',
+    'basic_usage_platforms_title' => 'サポートプラットフォーム',
+    'basic_usage_platforms_content' => '以下の主流動画プラットフォームをサポートしています：YouTube、TikTok、Instagram、Facebook、Twitter、Bilibili、Douyinなど100以上の動画プラットフォーム。',
+    'basic_usage_limits_title' => '使用制限',
+    'basic_usage_limits_content' => 'ゲストユーザーは日次解析回数に一定の制限があり、登録ユーザーはより多くの回数を取得できます。具体的な制限についてはアカウント設定ページをご確認ください。',
+
+    // プラットフォーム概要
+    'platforms_overview_intro' => 'VideoParser.topは複数の主流動画プラットフォームをサポートし、包括的な動画解析サービスを提供します。',
+    'platforms_main_title' => '主要サポートプラットフォーム',
+    'platforms_main_content' => '• YouTube - 世界最大の動画共有プラットフォーム\n• TikTok - ショート動画ソーシャルプラットフォーム\n• Instagram - 写真・動画共有プラットフォーム\n• Facebook - ソーシャルネットワークプラットフォーム\n• Twitter - マイクロブログソーシャルプラットフォーム\n• Bilibili - 中国をリードする動画弾幕サイト\n• Douyin - 中国のショート動画プラットフォーム',
+    'platforms_tip' => '新しいプラットフォームのサポートを継続的に追加しています。特定のプラットフォームのサポートが必要な場合は、お問い合わせください。',
+
+    // 初回ユーザーのヒント
+    'first_time_tips_intro' => '新規ユーザーとして、これらのヒントがVideoParser.topをより良く使用するのに役立ちます。',
+    'first_time_tips_title' => '初回ユーザーのヒント：',
+    'first_time_tip_1' => 'アカウント登録でより多くの解析回数を取得',
+    'first_time_tip_2' => 'よく使用する動画リンクをブックマーク',
+    'first_time_tip_3' => '適切な動画品質を選択して通信量を節約',
+    'first_time_tip_4' => 'バッチダウンロード機能で効率を向上',
+    'first_time_tip_5' => 'アップデートをフォローして新機能を取得',
+    'first_time_tips_advice' => 'シンプルな単一動画ダウンロードから始めて、プロセスに慣れてからバッチダウンロードなどの高度な機能を試すことをお勧めします。',
+
+    // ダウンロード失敗
+    'download_failed_intro' => 'ダウンロード失敗はユーザーが遭遇する一般的な問題の一つです。以下は一般的な原因と解決方法です。',
+    'download_failed_reasons_title' => '一般的な原因',
+    'download_failed_reasons_content' => '• ネットワーク接続が不安定\n• 動画リンクが期限切れ\n• プラットフォーム制限または地域制限\n• ブラウザ互換性の問題\n• 動画がクロスドメインリクエストを許可しない',
+    'download_failed_solutions_title' => '解決手順：',
+    'download_failed_solution_1' => 'ネットワーク接続が正常かどうかを確認',
+    'download_failed_solution_2' => '動画リンクが有効かどうかを確認',
+    'download_failed_solution_3' => 'ページを更新して再解析を試行',
+    'download_failed_solution_4' => 'クロスドメインプラグイン<a href="https://chromewebstore.google.com/search/CORS%20Control?utm_source=ext_sidebar" class="text-blue-600">CORS Control</a>を使用',
+    'download_failed_solution_5' => '他のプラットフォームを試行',
+
+    // ダウンロード速度が遅い
+    'slow_speed_intro' => 'ダウンロード速度が遅いのは様々な要因によるものです。以下は最適化の提案です。',
+    'slow_speed_factors_title' => '影響要因',
+    'slow_speed_factors_content' => '• ネットワーク帯域幅の制限\n• サーバー負荷\n• 動画ファイルサイズ\n• 地理的距離\n• 同時ダウンロード数',
+    'slow_speed_optimization_title' => '最適化方法：',
+    'slow_speed_optimization_1' => 'より低い動画品質を選択',
+    'slow_speed_optimization_2' => '複数の動画を同時にダウンロードしない',
+    'slow_speed_optimization_3' => 'ネットワークが良好な時間帯にダウンロード',
+    'slow_speed_optimization_4' => '他の帯域幅を消費するアプリケーションを閉じる',
+    'slow_speed_optimization_5' => 'ネットワークプランのアップグレードを検討',
+
+    // 動画品質の問題
+    'quality_issues_intro' => '動画品質の問題は通常、元の動画品質とプラットフォームの制限に関連しています。',
+    'quality_options_title' => '品質オプションの説明',
+    'quality_options_content' => '• オリジナル品質：元の動画品質を維持\n• HD：1080p高解像度\n• SD：720p標準解像度\n• スムーズ：480p以下の品質',
+    'quality_limitation_tip' => 'ダウンロード品質は元の動画品質を超えません。元の動画が720pの場合、1080pバージョンをダウンロードできません。',
+
+    // ブラウザ互換性
+    'browser_compatibility_intro' => '最高の体験を得るために、モダンブラウザを使用してサービスにアクセスすることをお勧めします。\n\n一部のブラウザでは、クロスドメイン問題を解決するために拡張機能のインストールが必要な場合があります。',
+    'browser_recommended_title' => '推奨ブラウザ',
+    'browser_recommended_content' => '• Chrome 80+（推奨）\n• Firefox 75+\n• Safari 13+\n• Edge 80+\n• Opera 67+',
+    'browser_extensions_title' => '推奨拡張機能',
+    'browser_extensions_content' => 'クロスドメイン問題が発生した場合、以下の拡張機能をインストールすることをお勧めします：\n\n**Chromeブラウザ：**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefoxブラウザ：**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'browser_common_issues_title' => '一般的な問題',
+    'browser_common_issues_content' => '互換性の問題が発生した場合は、以下を試してください：\n• ブラウザを最新バージョンに更新\n• ブラウザキャッシュとCookieをクリア\n• 広告ブロッカーを無効化\n• JavaScriptを有効化\n• 上記推奨のCORS拡張機能をインストール',
+    'browser_security_tip' => '注意：拡張機能をインストールする際は、公式ストアからダウンロードして悪意のあるソフトウェアのインストールを避けてください。使用後は拡張機能を無効にしてセキュリティを確保できます。',
+
+    // プラットフォーム固有のヘルプ内容
+    // YouTube
+    'youtube_help_intro' => 'YouTubeは私たちがサポートする主要プラットフォームの一つで、複数の品質オプションを提供しています。',
+    'youtube_steps_title' => 'YouTube動画ダウンロード手順：',
+    'youtube_step_1' => 'YouTubeでダウンロードしたい動画を見つける',
+    'youtube_step_2' => '動画ページのURLをコピー',
+    'youtube_step_3' => '解析ボックスに貼り付け',
+    'youtube_step_4' => '適切な品質と形式を選択',
+    'youtube_step_5' => 'ダウンロードボタンをクリック',
+    'youtube_tip' => 'YouTubeは4K、1080p、720pなど複数の品質オプションをサポートしています。必要に応じて適切な品質を選択してください。',
+
+    // TikTok
+    'tiktok_help_intro' => 'TikTokショート動画ダウンロードはウォーターマーク除去機能をサポートし、よりクリーンな動画を取得できます。',
+    'tiktok_features_title' => '特別機能',
+    'tiktok_features_content' => '• TikTokウォーターマークを自動除去\n• 音声単独ダウンロードをサポート\n• オリジナル品質を維持\n• 高速解析処理',
+    'tiktok_tip' => 'TikTok動画は通常縦画面形式で、ダウンロード後はモバイルデバイスで最高の視聴体験を得られます。',
+
+    // Instagram
+    'instagram_help_intro' => 'Instagramは写真、動画、ストーリーのダウンロードをサポートしています。',
+    'instagram_content_types_title' => 'サポートコンテンツタイプ',
+    'instagram_content_types_content' => '• 通常投稿動画\n• Instagram Stories\n• IGTV動画\n• Reelsショート動画',
+    'instagram_tip' => '関連コンテンツをダウンロードする権利があることを確認し、Instagramの利用規約を遵守してください。',
+
+    // Facebook
+    'facebook_help_intro' => 'Facebook動画ダウンロードは公開動画と個人共有動画をサポートしています。',
+    'facebook_notes_title' => '注意事項',
+    'facebook_notes_content' => '• 公開動画のみサポート\n• 有効な動画リンクが必要\n• 一部の動画には地域制限がある場合があります\n• 原作者の著作権を尊重',
+
+    // Bilibili
+    'bilibili_help_intro' => 'Bilibili（ビリビリ）は中国をリードする動画弾幕サイトで、完全なダウンロードサポートを提供しています。',
+    'bilibili_features_title' => 'サポート機能',
+    'bilibili_features_content' => '• マルチパート動画ダウンロード\n• 弾幕ファイルダウンロード\n• 複数解像度選択\n• 音声単独抽出',
+    'bilibili_tip' => 'Bilibili動画ダウンロードは関連法規を遵守し、個人学習・研究目的のみに使用してください。',
+
+    // Douyin
+    'douyin_help_intro' => 'Douyin動画ダウンロードはウォーターマーク除去と高品質ダウンロードをサポートしています。',
+    'douyin_features_title' => '特色機能',
+    'douyin_features_content' => '• Douyinウォーターマークを自動除去\n• オリジナル音質を維持\n• バッチダウンロードをサポート\n• 高速解析処理',
+
+    // アカウント関連
+    // ログイン登録
+    'login_registration_intro' => 'アカウント登録でより多くの機能とより高い使用制限を取得できます。',
+    'login_registration_steps_title' => '登録手順：',
+    'login_registration_step_1' => 'ページ右上の「登録」ボタンをクリック',
+    'login_registration_step_2' => 'メールアドレスとパスワードを入力',
+    'login_registration_step_3' => '「登録」をクリックしてアカウント作成を完了',
+    'login_registration_step_4' => 'メール確認メールを受信',
+    'login_registration_step_5' => '確認リンクをクリックしてアカウントを有効化',
+    'login_registration_benefits_title' => '登録のメリット',
+    'login_registration_benefits_content' => '• より多くの日次解析回数\n• バッチダウンロードをサポート\n• ダウンロード履歴記録\n• 優先カスタマーサポート',
+
+    // パスワードリセット
+    'password_reset_intro' => 'パスワードを忘れた場合、メールでリセットできます。',
+    'password_reset_steps_title' => 'パスワードリセット手順：',
+    'password_reset_step_1' => 'ログインページの「パスワードを忘れた」リンクをクリック',
+    'password_reset_step_2' => '登録時に使用したメールアドレスを入力',
+    'password_reset_step_3' => '「リセットメール送信」をクリック',
+    'password_reset_step_4' => 'メールでリセットメールを受信',
+    'password_reset_step_5' => 'メール内のリセットリンクをクリック',
+    'password_reset_step_6' => '新しいパスワードを設定して確認',
+
+    // メール確認
+    'email_verification_intro' => 'メール確認はアカウントセキュリティの重要なステップで、すべての機能を正常に使用できることを保証します。',
+    'email_verification_importance_title' => '確認の重要性',
+    'email_verification_importance_content' => '• アカウントセキュリティを確保\n• 重要な通知を受信\n• パスワードリセット機能\n• 完全な機能アクセス',
+    'email_verification_tip' => '確認メールが届かない場合は、スパムフォルダを確認するか、確認メールの再送信をクリックしてください。',
+    //使用制限
+    'usage_limits_intro' => 'サービス品質を保証するため、異なるユーザータイプに対応する使用制限を設定しています。',
+    'usage_limits_explanation_title' => '制限説明',
+    'usage_limits_explanation_content' => '• ゲストユーザー：1日6回解析\n• 登録ユーザー：1日10回解析\n• 紹介報酬：成功紹介1人につき20回追加解析\n• APIユーザー：プランに応じて異なる制限',
+    'usage_limits_tip' => '制限は毎日深夜にリセットされます。より高い制限が必要な場合は、APIサービスの使用をご検討ください。',
+
+    // 紹介システム
+    'referral_system_intro' => '紹介システムにより、共有を通じて追加の解析回数報酬を獲得できます。',
+    'referral_system_steps_title' => '紹介システムの使用方法：',
+    'referral_system_step_1' => 'アカウントにログイン',
+    'referral_system_step_2' => 'ユーザーセンターに入る',
+    'referral_system_step_3' => '紹介リンクを見つける',
+    'referral_system_step_4' => '友人やソーシャルメディアで共有',
+    'referral_system_step_5' => '友人登録後に報酬を獲得',
+    'referral_system_rules_title' => '報酬ルール',
+    'referral_system_rules_content' => '• 成功紹介1人につき20回解析報酬を獲得\n• 被紹介者はメール確認を完了する必要があります\n• 報酬回数は永続的に有効\n• 紹介人数に制限なし',
+
+    // トラブルシューティング
+    // 一般的なエラー
+    'common_errors_intro' => '以下はユーザーがよく遭遇するエラーとその解決方法です。\n\nCORS関連エラーが発生した場合は、ブラウザ拡張機能をインストールして解決することをお勧めします。',
+    'common_errors_types_title' => '一般的なエラータイプ',
+    'common_errors_types_content' => '• 「解析失敗」 - 動画リンクが無効またはプラットフォーム制限\n• 「ネットワークタイムアウト」 - ネットワーク接続問題\n• 「フォーマット未サポート」 - 動画フォーマット制限\n• 「ダウンロード中断」 - ネットワーク不安定\n• 「権限不足」 - アカウント制限\n• 「CORSエラー」 - クロスドメインアクセスがブロック',
+    'common_errors_cors_title' => 'CORSエラー解決方案',
+    'common_errors_cors_content' => 'クロスドメインアクセスエラーが発生した場合は、以下の拡張機能をインストールしてください：\n\n**Chromeブラウザ：**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefoxブラウザ：**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'common_errors_tip' => 'リストにないエラーが発生した場合は、カスタマーサービスに連絡して詳細なエラー情報を提供してください。\n\n拡張機能をインストール後、使用完了後は無効にしてブラウザのセキュリティを確保してください。',
+
+    // ネットワーク問題
+    'network_issues_intro' => 'ネットワーク問題は動画解析とダウンロードの正常な進行に影響する可能性があります。',
+    'network_issues_symptoms_title' => '一般的な症状',
+    'network_issues_symptoms_content' => '• 解析タイムアウト\n• ダウンロード中断\n• 接続失敗\n• 異常に遅い速度',
+    'network_issues_solutions_title' => '解決方法：',
+    'network_issues_solution_1' => 'ネットワーク接続状態を確認',
+    'network_issues_solution_2' => 'ページの更新を試行',
+    'network_issues_solution_3' => 'ネットワーク環境を変更',
+    'network_issues_solution_4' => 'VPNまたはプロキシを使用',
+    'network_issues_solution_5' => 'ネットワークサービスプロバイダーに連絡',
+
+    // ブラウザ問題
+    'browser_issues_intro' => '異なるブラウザには互換性の違いがある場合があります。以下は一般的な問題の解決方法です。',
+    'browser_issues_common_title' => '一般的なブラウザ問題',
+    'browser_issues_common_content' => '• JavaScriptが無効\n• Cookieがブロック\n• 広告ブロッカーの干渉\n• ブラウザバージョンが古い\n• 拡張機能の競合',
+    'browser_issues_solutions_title' => '解決提案：',
+    'browser_issues_solution_1' => 'JavaScriptとCookieを有効化',
+    'browser_issues_solution_2' => '広告ブロッカーを一時的に無効化',
+    'browser_issues_solution_3' => 'ブラウザを最新バージョンに更新',
+    'browser_issues_solution_4' => 'シークレット/プライベートモードを試行',
+    'browser_issues_solution_5' => 'ブラウザキャッシュとデータをクリア',
+
+    // モバイル問題
+    'mobile_issues_intro' => 'モバイルデバイス使用時に遭遇する可能性のある特別な問題と解決方案。',
+    'mobile_issues_common_title' => 'モバイル一般問題',
+    'mobile_issues_common_content' => '• タッチ操作が応答しない\n• ページ表示異常\n• ダウンロード機能制限\n• プレーヤー非互換',
+    'mobile_issues_solutions_title' => 'モバイル最適化提案：',
+    'mobile_issues_solution_1' => '推奨モバイルブラウザを使用',
+    'mobile_issues_solution_2' => 'ネットワーク接続の安定性を確保',
+    'mobile_issues_solution_3' => '省電力モードを無効化',
+    'mobile_issues_solution_4' => 'デバイスストレージ容量をクリア',
+    'mobile_issues_solution_5' => 'ブラウザアプリを再起動',
+
+    // API文書関連
+    'api_getting_started_intro' => 'VideoParser.top APIへようこそ！このガイドは動画解析サービスの統合を素早く開始するのに役立ちます。',
+    'api_getting_started_requirements_title' => '開始前の準備',
+    'api_getting_started_requirements_content' => '• VideoParser.topアカウントを登録\n• APIキーを取得\n• 基本的なHTTPリクエストを理解\n• 開発環境を準備',
+    'api_getting_started_first_request_title' => '最初のAPIリクエスト',
+    'api_getting_started_first_request_content' => 'APIキーを使用してシンプルな動画解析リクエストを送信し、統合が成功したことを確認します。',
+
+    'api_authentication_intro' => 'API認証は認可されたユーザーのみがサービスにアクセスできることを保証します。',
+    'api_authentication_methods_title' => '認証方式',
+    'api_authentication_methods_content' => '• APIキー認証（推奨）\n• OAuth 2.0認証\n• JWTトークン認証',
+    'api_authentication_security_title' => 'セキュリティ推奨',
+    'api_authentication_security_content' => '• APIキーを適切に保管\n• 定期的にキーを変更\n• HTTPSリクエストを使用\n• リクエスト制限を実装',
+
+    'api_endpoints_intro' => '異なる使用ニーズを満たすために複数のAPIエンドポイントを提供しています。',
+    'api_endpoints_main_title' => '主要エンドポイント',
+    'api_endpoints_main_content' => '• /api/parse - 動画リンクを解析\n• /api/download - ダウンロードリンクを取得\n• /api/info - 動画情報を取得\n• /api/batch - バッチ処理',
+    'api_endpoints_parameters_title' => 'リクエストパラメータ',
+    'api_endpoints_parameters_content' => '各エンドポイントには特定の必須および任意パラメータがあります。具体的な要件については詳細文書を参照してください。',
+
+    'api_examples_intro' => '以下はサービスの使用方法を素早く理解するのに役立つ一般的なAPI呼び出し例です。',
+    'api_examples_basic_title' => '基本例',
+    'api_examples_basic_content' => '基本的な動画解析リクエストの送信と応答データの処理方法を示します。',
+    'api_examples_advanced_title' => '高度な例',
+    'api_examples_advanced_content' => 'バッチ処理、エラー処理、非同期リクエストなどの高度な使用例を含みます。',
+
+    'api_rate_limits_intro' => 'サービス品質と公平な使用を保証するため、APIリクエストに速度制限を実装しています。',
+    'api_rate_limits_tiers_title' => '制限階層',
+    'api_rate_limits_tiers_content' => '• 無料ユーザー：毎分10リクエスト\n• 有料ユーザー：毎分100リクエスト\n• エンタープライズユーザー：カスタム制限',
+    'api_rate_limits_headers_title' => '制限ヘッダー情報',
+    'api_rate_limits_headers_content' => 'API応答には現在の制限状態のヘッダー情報が含まれ、リクエスト頻度の管理に役立ちます。',
+
+    // 追加のAPI関連翻訳
+    'api_getting_started_steps_title' => 'API クイックスタート：',
+    'api_getting_started_step_1' => '開発者アカウントを登録',
+    'api_getting_started_step_2' => 'APIキーを取得',
+    'api_getting_started_step_3' => 'API文書を読む',
+    'api_getting_started_step_4' => 'テスト呼び出しを実行',
+    'api_getting_started_step_5' => 'アプリケーションに統合',
+    'api_getting_started_advantages_title' => 'API の利点',
+    'api_getting_started_advantages_content' => '• 高速解析\n• 安定信頼性\n• マルチフォーマットサポート\n• 詳細文書\n• 技術サポート',
+
+    'api_authentication_method_title' => '認証方式',
+    'api_authentication_method_content' => 'APIキー認証を使用します。リクエストヘッダーに含めてください：\nAuthorization: Bearer YOUR_API_KEY',
+    'api_authentication_tip' => 'APIキーを適切に保管し、クライアントサイドコードで公開しないでください。',
+
+    'api_endpoints_list_title' => '主要エンドポイント',
+    'api_endpoints_list_content' => '• /api/parse - 動画リンクを解析\n• /api/info - 動画情報を取得\n• /api/download - ダウンロードリンクを取得\n• /api/batch - バッチ処理',
+    'api_endpoints_usage_title' => '使用説明',
+    'api_endpoints_usage_content' => '各エンドポイントには詳細なパラメータ説明とサンプルコードがあります。完全なAPI文書を参照してください。',
+
+    'api_rate_limits_management_title' => '制限管理',
+    'api_rate_limits_management_content' => 'API応答には現在の制限状態のヘッダー情報が含まれ、リクエスト頻度の管理に役立ちます。',
+
+    // 追加のネットワーク問題翻訳
+    'network_issues_diagnosis_title' => 'ネットワーク診断',
+    'network_issues_diagnosis_content' => '• ネットワーク接続状態を確認\n• ネットワーク速度をテスト\n• DNS設定を確認\n• ファイアウォール設定を確認\n• ネットワーク環境の変更を試行',
+
+    // 追加のモバイル問題翻訳
+    'mobile_issues_tip' => 'より良い体験とデータ消費を避けるため、WiFi環境での使用をお勧めします。',
+];

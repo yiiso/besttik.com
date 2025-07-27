@@ -56,15 +56,15 @@ Route::prefix('{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
     ->middleware(['detect.language','set.locale'])
     ->group(function () {
-        Route::get('/', function ($locale) {
+        Route::get('/', function () {
             return view('home');
         });
     // 多语言页面路由
-        Route::get('/batch-download', function ($locale) {
+        Route::get('/batch-download', function () {
             return view('pages.batch-download');
         })->name('batch-download.locale');
 
-        Route::get('/api', function ($locale) {
+        Route::get('/api', function () {
             return view('pages.api');
         })->name('api.locale');
 
@@ -74,19 +74,19 @@ Route::prefix('{locale}')
         Route::get('/help/{category}', [App\Http\Controllers\HelpController::class, 'category'])->name('help.category.locale');
         Route::get('/help/{category}/{article}', [App\Http\Controllers\HelpController::class, 'article'])->name('help.article.locale');
 
-        Route::get('/contact', function ($locale) {
+        Route::get('/contact', function () {
             return view('pages.contact');
         })->name('contact.locale');
 
-        Route::get('/privacy', function ($locale) {
+        Route::get('/privacy', function () {
             return view('pages.privacy');
         })->name('privacy.locale');
 
-        Route::get('/terms', function ($locale) {
+        Route::get('/terms', function () {
             return view('pages.terms');
         })->name('terms.locale');
 
-        Route::get('/dashboard', function ($locale) {
+        Route::get('/dashboard', function () {
             return view('pages.dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard.locale');
 });
@@ -131,13 +131,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // 登录路由（不需要认证）
     Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login']);
-    
+
     // 密码重置路由（不需要认证）
     Route::get('/forgot-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'showForgotForm'])->name('password.request');
     Route::post('/forgot-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'sendResetLink'])->name('password.email');
     Route::get('/reset-password/{token}', [App\Http\Controllers\Admin\PasswordResetController::class, 'showResetForm'])->name('password.reset');
     Route::post('/reset-password', [App\Http\Controllers\Admin\PasswordResetController::class, 'resetPassword'])->name('password.update');
-    
+
     // 需要管理员认证的路由
     Route::middleware('admin.auth')->group(function () {
         Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
@@ -149,13 +149,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'updateProfile'])->name('profile.update');
         Route::put('/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('password.update');
         Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
-        
+
         // 安全相关接口
         Route::post('/unlock', [App\Http\Controllers\Admin\SecurityController::class, 'unlock'])->name('unlock');
         Route::get('/login-stats', [App\Http\Controllers\Admin\SecurityController::class, 'getLoginStats'])->name('login-stats');
         Route::get('/abnormal-ips', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalIps'])->name('abnormal-ips');
         Route::get('/abnormal-emails', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalEmails'])->name('abnormal-emails');
-        
+
         // API接口
         Route::get('/api/today', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayData'])->name('api.today');
         Route::get('/api/today-hourly', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayHourlyData'])->name('api.today-hourly');

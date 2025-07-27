@@ -469,4 +469,270 @@ k_actions' => '빠른 작업',
     'email_verification_failed' => '이메일 인증 실패',
     'email_not_found' => '이메일 주소를 찾을 수 없음',
     'verification_email_sent' => '인증 이메일 발송됨',
+    // 새로운 레이아웃 관련 번역
+    'welcome_to_help_center' => '도움말 센터에 오신 것을 환영합니다',
+    'help_center_welcome_desc' => '왼쪽에서 알고 싶은 주제를 선택하거나 위의 검색 기능을 사용하여 빠르게 답변을 찾으세요.',
+    'loading' => '로딩 중...',
+    'article_not_found' => '문서를 찾을 수 없습니다',
+    'loading_error' => '로딩에 실패했습니다. 다시 시도해주세요',
+    'search_help_hint' => '키워드를 입력하여 필요한 답변을 빠르게 찾으세요',
+
+    // 도움말 센터 문서 내용
+    // 빠른 시작 가이드
+    'quick_start_welcome' => 'VideoParser.top에 오신 것을 환영합니다! 여러 주요 비디오 플랫폼을 지원하는 강력한 온라인 비디오 분석 다운로드 도구입니다.',
+    'quick_start_steps_title' => '빠른 시작 단계:',
+    'quick_start_step_1' => 'VideoParser.top 홈페이지 방문',
+    'quick_start_step_2' => '다운로드하고 싶은 비디오 링크 복사',
+    'quick_start_step_3' => '링크를 입력 상자에 붙여넣기',
+    'quick_start_step_4' => '"분석" 버튼 클릭',
+    'quick_start_step_5' => '적절한 화질과 형식 선택',
+    'quick_start_step_6' => '"다운로드" 버튼을 클릭하여 다운로드 시작',
+    'quick_start_tip' => '팁: 계정을 등록하면 더 많은 일일 분석 횟수를 얻을 수 있습니다!',
+
+    // 기본 사용법
+    'basic_usage_intro' => 'VideoParser.top의 기본 사용법은 매우 간단하며, 몇 단계만으로 비디오 다운로드를 완료할 수 있습니다.',
+    'basic_usage_platforms_title' => '지원 플랫폼',
+    'basic_usage_platforms_content' => '다음과 같은 주요 비디오 플랫폼을 지원합니다: YouTube, TikTok, Instagram, Facebook, Twitter, Bilibili, Douyin 등 100개 이상의 비디오 플랫폼.',
+    'basic_usage_limits_title' => '사용 제한',
+    'basic_usage_limits_content' => '게스트 사용자는 일일 분석 횟수에 일정한 제한이 있으며, 등록 사용자는 더 많은 횟수를 얻을 수 있습니다. 구체적인 제한은 계정 설정 페이지를 확인해주세요.',
+
+    // 플랫폼 개요
+    'platforms_overview_intro' => 'VideoParser.top은 여러 주요 비디오 플랫폼을 지원하여 포괄적인 비디오 분석 서비스를 제공합니다.',
+    'platforms_main_title' => '주요 지원 플랫폼',
+    'platforms_main_content' => '• YouTube - 세계 최대의 비디오 공유 플랫폼\n• TikTok - 짧은 비디오 소셜 플랫폼\n• Instagram - 사진 및 비디오 공유 플랫폼\n• Facebook - 소셜 네트워크 플랫폼\n• Twitter - 마이크로블로그 소셜 플랫폼\n• Bilibili - 중국 최고의 비디오 댓글 사이트\n• Douyin - 중국 짧은 비디오 플랫폼',
+    'platforms_tip' => '새로운 플랫폼에 대한 지원을 지속적으로 추가하고 있습니다. 특정 플랫폼의 지원이 필요하시면 문의해주세요.',
+
+    // 첫 사용자 팁
+    'first_time_tips_intro' => '새로운 사용자로서 이러한 팁들이 VideoParser.top을 더 잘 사용하는 데 도움이 될 것입니다.',
+    'first_time_tips_title' => '첫 사용자 팁:',
+    'first_time_tip_1' => '계정 등록으로 더 많은 분석 횟수 획득',
+    'first_time_tip_2' => '자주 사용하는 비디오 링크 북마크',
+    'first_time_tip_3' => '적절한 비디오 품질을 선택하여 데이터 절약',
+    'first_time_tip_4' => '일괄 다운로드 기능으로 효율성 향상',
+    'first_time_tip_5' => '업데이트를 팔로우하여 새로운 기능 획득',
+    'first_time_tips_advice' => '간단한 단일 비디오 다운로드부터 시작하여 프로세스에 익숙해진 후 일괄 다운로드 등의 고급 기능을 시도하는 것을 권장합니다.',
+
+    // 다운로드 실패
+    'download_failed_intro' => '다운로드 실패는 사용자가 겪는 일반적인 문제 중 하나입니다. 다음은 일반적인 원인과 해결 방법입니다.',
+    'download_failed_reasons_title' => '일반적인 원인',
+    'download_failed_reasons_content' => '• 불안정한 네트워크 연결\n• 비디오 링크 만료\n• 플랫폼 제한 또는 지역 제한\n• 브라우저 호환성 문제\n• 비디오가 크로스 도메인 요청을 허용하지 않음',
+    'download_failed_solutions_title' => '해결 단계:',
+    'download_failed_solution_1' => '네트워크 연결이 정상인지 확인',
+    'download_failed_solution_2' => '비디오 링크가 유효한지 확인',
+    'download_failed_solution_3' => '페이지를 새로고침하여 재분석 시도',
+    'download_failed_solution_4' => '크로스 도메인 플러그인 <a href="https://chromewebstore.google.com/search/CORS%20Control?utm_source=ext_sidebar" class="text-blue-600">CORS Control</a> 사용',
+    'download_failed_solution_5' => '다른 플랫폼 시도',
+
+    // 느린 다운로드 속도
+    'slow_speed_intro' => '느린 다운로드 속도는 다양한 요인으로 인해 발생할 수 있습니다. 다음은 최적화 제안입니다.',
+    'slow_speed_factors_title' => '영향 요인',
+    'slow_speed_factors_content' => '• 네트워크 대역폭 제한\n• 서버 부하\n• 비디오 파일 크기\n• 지리적 거리\n• 동시 다운로드 수',
+    'slow_speed_optimization_title' => '최적화 방법:',
+    'slow_speed_optimization_1' => '더 낮은 비디오 품질 선택',
+    'slow_speed_optimization_2' => '여러 비디오를 동시에 다운로드하지 않기',
+    'slow_speed_optimization_3' => '네트워크가 좋은 시간대에 다운로드',
+    'slow_speed_optimization_4' => '다른 대역폭을 소모하는 애플리케이션 종료',
+    'slow_speed_optimization_5' => '네트워크 요금제 업그레이드 고려',
+
+    // 비디오 품질 문제
+    'quality_issues_intro' => '비디오 품질 문제는 일반적으로 원본 비디오 품질과 플랫폼 제한과 관련이 있습니다.',
+    'quality_options_title' => '품질 옵션 설명',
+    'quality_options_content' => '• 원본 품질: 원본 비디오 품질 유지\n• HD: 1080p 고화질\n• SD: 720p 표준 화질\n• 부드러움: 480p 이하 품질',
+    'quality_limitation_tip' => '다운로드 품질은 원본 비디오 품질을 초과하지 않습니다. 원본 비디오가 720p인 경우 1080p 버전을 다운로드할 수 없습니다.',
+
+    // 브라우저 호환성
+    'browser_compatibility_intro' => '최상의 경험을 위해 최신 브라우저를 사용하여 서비스에 액세스하는 것을 권장합니다.\n\n일부 브라우저는 크로스 도메인 문제를 해결하기 위해 확장 프로그램 설치가 필요할 수 있습니다.',
+    'browser_recommended_title' => '권장 브라우저',
+    'browser_recommended_content' => '• Chrome 80+ (권장)\n• Firefox 75+\n• Safari 13+\n• Edge 80+\n• Opera 67+',
+    'browser_extensions_title' => '권장 확장 프로그램',
+    'browser_extensions_content' => '크로스 도메인 문제가 발생하면 다음 확장 프로그램을 설치하는 것을 권장합니다:\n\n**Chrome 브라우저:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox 브라우저:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'browser_common_issues_title' => '일반적인 문제',
+    'browser_common_issues_content' => '호환성 문제가 발생하면 다음을 시도해보세요:\n• 브라우저를 최신 버전으로 업데이트\n• 브라우저 캐시 및 쿠키 삭제\n• 광고 차단기 비활성화\n• JavaScript 활성화\n• 위에서 권장한 CORS 확장 프로그램 설치',
+    'browser_security_tip' => '주의: 확장 프로그램을 설치할 때는 공식 스토어에서 다운로드하여 악성 소프트웨어 설치를 피하세요. 사용 후에는 확장 프로그램을 비활성화하여 보안을 보장할 수 있습니다.',
+
+    // 플랫폼별 도움말 내용
+    // YouTube
+    'youtube_help_intro' => 'YouTube는 저희가 지원하는 주요 플랫폼 중 하나로, 다양한 품질 옵션을 제공합니다.',
+    'youtube_steps_title' => 'YouTube 비디오 다운로드 단계:',
+    'youtube_step_1' => 'YouTube에서 다운로드하고 싶은 비디오 찾기',
+    'youtube_step_2' => '비디오 페이지의 URL 복사',
+    'youtube_step_3' => '분석 상자에 붙여넣기',
+    'youtube_step_4' => '적절한 품질과 형식 선택',
+    'youtube_step_5' => '다운로드 버튼 클릭',
+    'youtube_tip' => 'YouTube는 4K, 1080p, 720p 등 다양한 품질 옵션을 지원합니다. 필요에 따라 적절한 품질을 선택해주세요.',
+
+    // TikTok
+    'tiktok_help_intro' => 'TikTok 짧은 비디오 다운로드는 워터마크 제거 기능을 지원하여 더 깨끗한 비디오를 얻을 수 있습니다.',
+    'tiktok_features_title' => '특별 기능',
+    'tiktok_features_content' => '• TikTok 워터마크 자동 제거\n• 오디오 별도 다운로드 지원\n• 원본 품질 유지\n• 빠른 분석 처리',
+    'tiktok_tip' => 'TikTok 비디오는 일반적으로 세로 형식이며, 다운로드 후 모바일 기기에서 최상의 시청 경험을 얻을 수 있습니다.',
+
+    // Instagram
+    'instagram_help_intro' => 'Instagram은 사진, 비디오 및 스토리 다운로드를 지원합니다.',
+    'instagram_content_types_title' => '지원 콘텐츠 유형',
+    'instagram_content_types_content' => '• 일반 게시물 비디오\n• Instagram Stories\n• IGTV 비디오\n• Reels 짧은 비디오',
+    'instagram_tip' => '관련 콘텐츠를 다운로드할 권리가 있는지 확인하고 Instagram의 이용 약관을 준수해주세요.',
+
+    // Facebook
+    'facebook_help_intro' => 'Facebook 비디오 다운로드는 공개 비디오와 개인 공유 비디오를 지원합니다.',
+    'facebook_notes_title' => '주의사항',
+    'facebook_notes_content' => '• 공개 비디오만 지원\n• 유효한 비디오 링크 필요\n• 일부 비디오에는 지역 제한이 있을 수 있음\n• 원작자의 저작권 존중',
+
+    // Bilibili
+    'bilibili_help_intro' => 'Bilibili는 중국 최고의 비디오 댓글 사이트로, 완전한 다운로드 지원을 제공합니다.',
+    'bilibili_features_title' => '지원 기능',
+    'bilibili_features_content' => '• 멀티파트 비디오 다운로드\n• 댓글 파일 다운로드\n• 다양한 해상도 선택\n• 오디오 별도 추출',
+    'bilibili_tip' => 'Bilibili 비디오 다운로드는 관련 법규를 준수하며 개인 학습 및 연구 목적으로만 사용해주세요.',
+
+    // Douyin
+    'douyin_help_intro' => 'Douyin 비디오 다운로드는 워터마크 제거와 고품질 다운로드를 지원합니다.',
+    'douyin_features_title' => '특색 기능',
+    'douyin_features_content' => '• Douyin 워터마크 자동 제거\n• 원본 음질 유지\n• 일괄 다운로드 지원\n• 빠른 분석 처리',
+
+    // 계정 관련
+    // 로그인 등록
+    'login_registration_intro' => '계정 등록으로 더 많은 기능과 더 높은 사용 제한을 얻을 수 있습니다.',
+    'login_registration_steps_title' => '등록 단계:',
+    'login_registration_step_1' => '페이지 우상단의 "등록" 버튼 클릭',
+    'login_registration_step_2' => '이메일 주소와 비밀번호 입력',
+    'login_registration_step_3' => '"등록"을 클릭하여 계정 생성 완료',
+    'login_registration_step_4' => '이메일 인증 메일 확인',
+    'login_registration_step_5' => '인증 링크를 클릭하여 계정 활성화',
+    'login_registration_benefits_title' => '등록 혜택',
+    'login_registration_benefits_content' => '• 더 많은 일일 분석 횟수\n• 일괄 다운로드 지원\n• 다운로드 기록\n• 우선 고객 지원',
+
+    // 비밀번호 재설정
+    'password_reset_intro' => '비밀번호를 잊어버린 경우 이메일을 통해 재설정할 수 있습니다.',
+    'password_reset_steps_title' => '비밀번호 재설정 단계:',
+    'password_reset_step_1' => '로그인 페이지의 "비밀번호 찾기" 링크 클릭',
+    'password_reset_step_2' => '등록 시 사용한 이메일 주소 입력',
+    'password_reset_step_3' => '"재설정 이메일 보내기" 클릭',
+    'password_reset_step_4' => '이메일에서 재설정 메일 확인',
+    'password_reset_step_5' => '이메일의 재설정 링크 클릭',
+    'password_reset_step_6' => '새 비밀번호 설정 및 확인',
+
+    // 이메일 인증
+    'email_verification_intro' => '이메일 인증은 계정 보안의 중요한 단계로, 모든 기능을 정상적으로 사용할 수 있도록 보장합니다.',
+    'email_verification_importance_title' => '인증의 중요성',
+    'email_verification_importance_content' => '• 계정 보안 보장\n• 중요한 알림 수신\n• 비밀번호 재설정 기능\n• 완전한 기능 액세스',
+    'email_verification_tip' => '인증 이메일을 받지 못한 경우 스팸 폴더를 확인하거나 인증 이메일 재전송을 클릭해주세요.',
+
+    // 사용 제한
+    'usage_limits_intro' => '서비스 품질을 보장하기 위해 다양한 사용자 유형에 대해 해당 사용 제한을 설정했습니다.',
+    'usage_limits_explanation_title' => '제한 설명',
+    'usage_limits_explanation_content' => '• 게스트 사용자: 일일 6회 분석\n• 등록 사용자: 일일 10회 분석\n• 추천 보상: 성공적인 추천 1명당 20회 추가 분석\n• API 사용자: 플랜에 따라 다른 제한',
+    'usage_limits_tip' => '제한은 매일 자정에 재설정됩니다. 더 높은 제한이 필요한 경우 API 서비스 사용을 고려해주세요.',
+
+    // 추천 시스템
+    'referral_system_intro' => '추천 시스템을 통해 공유를 통해 추가 분석 횟수 보상을 얻을 수 있습니다.',
+    'referral_system_steps_title' => '추천 시스템 사용 방법:',
+    'referral_system_step_1' => '계정에 로그인',
+    'referral_system_step_2' => '사용자 센터 진입',
+    'referral_system_step_3' => '추천 링크 찾기',
+    'referral_system_step_4' => '친구나 소셜 미디어에 공유',
+    'referral_system_step_5' => '친구 등록 후 보상 획득',
+    'referral_system_rules_title' => '보상 규칙',
+    'referral_system_rules_content' => '• 성공적인 추천 1명당 20회 분석 보상 획득\n• 피추천자는 이메일 인증을 완료해야 함\n• 보상 횟수는 영구적으로 유효\n• 추천 인원 수 제한 없음',
+
+    // 문제 해결
+    // 일반적인 오류
+    'common_errors_intro' => '다음은 사용자가 자주 겪는 오류와 해결 방법입니다.\n\nCORS 관련 오류가 발생하면 브라우저 확장 프로그램을 설치하여 해결하는 것을 권장합니다.',
+    'common_errors_types_title' => '일반적인 오류 유형',
+    'common_errors_types_content' => '• "분석 실패" - 비디오 링크가 무효하거나 플랫폼 제한\n• "네트워크 타임아웃" - 네트워크 연결 문제\n• "형식 지원 안 함" - 비디오 형식 제한\n• "다운로드 중단" - 네트워크 불안정\n• "권한 부족" - 계정 제한\n• "CORS 오류" - 크로스 도메인 액세스 차단',
+    'common_errors_cors_title' => 'CORS 오류 해결 방안',
+    'common_errors_cors_content' => '크로스 도메인 액세스 오류가 발생하면 다음 확장 프로그램을 설치해주세요:\n\n**Chrome 브라우저:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox 브라우저:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'common_errors_tip' => '목록에 없는 오류가 발생하면 고객 서비스에 연락하여 자세한 오류 정보를 제공해주세요.\n\n확장 프로그램 설치 후 사용 완료 후에는 비활성화하여 브라우저 보안을 보장해주세요.',
+
+    // 네트워크 문제
+    'network_issues_intro' => '네트워크 문제는 비디오 분석 및 다운로드의 정상적인 진행에 영향을 줄 수 있습니다.',
+    'network_issues_symptoms_title' => '일반적인 증상',
+    'network_issues_symptoms_content' => '• 분석 타임아웃\n• 다운로드 중단\n• 연결 실패\n• 비정상적으로 느린 속도',
+    'network_issues_solutions_title' => '해결 방법:',
+    'network_issues_solution_1' => '네트워크 연결 상태 확인',
+    'network_issues_solution_2' => '페이지 새로고침 시도',
+    'network_issues_solution_3' => '네트워크 환경 변경',
+    'network_issues_solution_4' => 'VPN 또는 프록시 사용',
+    'network_issues_solution_5' => '네트워크 서비스 제공업체에 문의',
+
+    // 브라우저 문제
+    'browser_issues_intro' => '다른 브라우저는 호환성 차이가 있을 수 있습니다. 다음은 일반적인 문제의 해결 방법입니다.',
+    'browser_issues_common_title' => '일반적인 브라우저 문제',
+    'browser_issues_common_content' => '• JavaScript 비활성화\n• 쿠키 차단\n• 광고 차단기 간섭\n• 브라우저 버전이 너무 오래됨\n• 확장 프로그램 충돌',
+    'browser_issues_solutions_title' => '해결 제안:',
+    'browser_issues_solution_1' => 'JavaScript 및 쿠키 활성화',
+    'browser_issues_solution_2' => '광고 차단기 일시적으로 비활성화',
+    'browser_issues_solution_3' => '브라우저를 최신 버전으로 업데이트',
+    'browser_issues_solution_4' => '시크릿/프라이빗 모드 시도',
+    'browser_issues_solution_5' => '브라우저 캐시 및 데이터 삭제',
+
+    // 모바일 문제
+    'mobile_issues_intro' => '모바일 기기 사용 시 겪을 수 있는 특별한 문제와 해결 방안입니다.',
+    'mobile_issues_common_title' => '모바일 일반 문제',
+    'mobile_issues_common_content' => '• 터치 조작이 응답하지 않음\n• 페이지 표시 이상\n• 다운로드 기능 제한\n• 플레이어 비호환',
+    'mobile_issues_solutions_title' => '모바일 최적화 제안:',
+    'mobile_issues_solution_1' => '권장 모바일 브라우저 사용',
+    'mobile_issues_solution_2' => '네트워크 연결 안정성 보장',
+    'mobile_issues_solution_3' => '절전 모드 끄기',
+    'mobile_issues_solution_4' => '기기 저장 공간 정리',
+    'mobile_issues_solution_5' => '브라우저 앱 재시작',
+
+    // API 문서 관련
+    'api_getting_started_intro' => 'VideoParser.top API에 오신 것을 환영합니다! 이 가이드는 비디오 분석 서비스 통합을 빠르게 시작하는 데 도움이 됩니다.',
+    'api_getting_started_requirements_title' => '시작 전 준비',
+    'api_getting_started_requirements_content' => '• VideoParser.top 계정 등록\n• API 키 획득\n• 기본 HTTP 요청 이해\n• 개발 환경 준비',
+    'api_getting_started_first_request_title' => '첫 번째 API 요청',
+    'api_getting_started_first_request_content' => 'API 키를 사용하여 간단한 비디오 분석 요청을 보내 통합이 성공했는지 확인합니다.',
+
+    'api_authentication_intro' => 'API 인증은 승인된 사용자만 서비스에 액세스할 수 있도록 보장합니다.',
+    'api_authentication_methods_title' => '인증 방식',
+    'api_authentication_methods_content' => '• API 키 인증 (권장)\n• OAuth 2.0 인증\n• JWT 토큰 인증',
+    'api_authentication_security_title' => '보안 권장사항',
+    'api_authentication_security_content' => '• API 키를 안전하게 보관\n• 정기적으로 키 변경\n• HTTPS 요청 사용\n• 요청 제한 구현',
+
+    'api_endpoints_intro' => '다양한 사용 요구를 충족하기 위해 여러 API 엔드포인트를 제공합니다.',
+    'api_endpoints_main_title' => '주요 엔드포인트',
+    'api_endpoints_main_content' => '• /api/parse - 비디오 링크 분석\n• /api/download - 다운로드 링크 획득\n• /api/info - 비디오 정보 획득\n• /api/batch - 일괄 처리',
+    'api_endpoints_parameters_title' => '요청 매개변수',
+    'api_endpoints_parameters_content' => '각 엔드포인트에는 특정한 필수 및 선택적 매개변수가 있습니다. 구체적인 요구사항은 자세한 문서를 참조해주세요.',
+
+    'api_examples_intro' => '다음은 서비스 사용 방법을 빠르게 이해하는 데 도움이 되는 일반적인 API 호출 예제입니다.',
+    'api_examples_basic_title' => '기본 예제',
+    'api_examples_basic_content' => '기본 비디오 분석 요청 전송 및 응답 데이터 처리 방법을 보여줍니다.',
+    'api_examples_advanced_title' => '고급 예제',
+    'api_examples_advanced_content' => '일괄 처리, 오류 처리, 비동기 요청 등의 고급 사용 예제를 포함합니다.',
+
+    'api_rate_limits_intro' => '서비스 품질과 공정한 사용을 보장하기 위해 API 요청에 속도 제한을 구현합니다.',
+    'api_rate_limits_tiers_title' => '제한 계층',
+    'api_rate_limits_tiers_content' => '• 무료 사용자: 분당 10회 요청\n• 유료 사용자: 분당 100회 요청\n• 엔터프라이즈 사용자: 사용자 정의 제한',
+    'api_rate_limits_headers_title' => '제한 헤더 정보',
+    'api_rate_limits_headers_content' => 'API 응답에는 현재 제한 상태의 헤더 정보가 포함되어 요청 빈도 관리에 도움이 됩니다.',
+
+    // 추가 API 관련 번역
+    'api_getting_started_steps_title' => 'API 빠른 시작:',
+    'api_getting_started_step_1' => '개발자 계정 등록',
+    'api_getting_started_step_2' => 'API 키 획득',
+    'api_getting_started_step_3' => 'API 문서 읽기',
+    'api_getting_started_step_4' => '테스트 호출 수행',
+    'api_getting_started_step_5' => '애플리케이션에 통합',
+    'api_getting_started_advantages_title' => 'API 장점',
+    'api_getting_started_advantages_content' => '• 고속 분석\n• 안정적이고 신뢰할 수 있음\n• 다중 형식 지원\n• 자세한 문서\n• 기술 지원',
+
+    'api_authentication_method_title' => '인증 방식',
+    'api_authentication_method_content' => 'API 키 인증을 사용합니다. 요청 헤더에 포함해주세요:\nAuthorization: Bearer YOUR_API_KEY',
+    'api_authentication_tip' => 'API 키를 안전하게 보관하고 클라이언트 측 코드에서 노출하지 마세요.',
+
+    'api_endpoints_list_title' => '주요 엔드포인트',
+    'api_endpoints_list_content' => '• /api/parse - 비디오 링크 분석\n• /api/info - 비디오 정보 획득\n• /api/download - 다운로드 링크 획득\n• /api/batch - 일괄 처리',
+    'api_endpoints_usage_title' => '사용 설명',
+    'api_endpoints_usage_content' => '각 엔드포인트에는 자세한 매개변수 설명과 예제 코드가 있습니다. 완전한 API 문서를 참조해주세요.',
+
+    'api_rate_limits_management_title' => '제한 관리',
+    'api_rate_limits_management_content' => 'API 응답에는 현재 제한 상태의 헤더 정보가 포함되어 요청 빈도 관리에 도움이 됩니다.',
+
+    // 추가 네트워크 문제 번역
+    'network_issues_diagnosis_title' => '네트워크 진단',
+    'network_issues_diagnosis_content' => '• 네트워크 연결 상태 확인\n• 네트워크 속도 테스트\n• DNS 설정 확인\n• 방화벽 설정 확인\n• 네트워크 환경 변경 시도',
+
+    // 추가 모바일 문제 번역
+    'mobile_issues_tip' => '더 나은 경험과 데이터 소모를 피하기 위해 WiFi 환경에서 사용하는 것을 권장합니다.',
 ];

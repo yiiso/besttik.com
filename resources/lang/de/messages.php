@@ -469,4 +469,269 @@ return [
     'email_verification_failed' => 'E-Mail-Bestätigung fehlgeschlagen',
     'email_not_found' => 'E-Mail-Adresse nicht gefunden',
     'verification_email_sent' => 'Bestätigungs-E-Mail gesendet',
+    // Neue Layout-bezogene Übersetzungen
+    'welcome_to_help_center' => 'Willkommen im Hilfezentrum',
+    'help_center_welcome_desc' => 'Bitte wählen Sie links das Thema aus, das Sie lernen möchten, oder verwenden Sie die Suchfunktion oben, um schnell Antworten zu finden.',
+    'loading' => 'Wird geladen...',
+    'article_not_found' => 'Artikel nicht gefunden',
+    'loading_error' => 'Laden fehlgeschlagen, bitte versuchen Sie es erneut',
+    'search_help_hint' => 'Geben Sie Schlüsselwörter ein, um schnell die benötigten Antworten zu finden',
+
+    // Hilfezentrum-Artikelinhalt
+    // Schnellstart-Anleitung
+    'quick_start_welcome' => 'Willkommen bei VideoParser.top! Dies ist ein leistungsstarkes Online-Video-Analyse- und Download-Tool, das mehrere Mainstream-Video-Plattformen unterstützt.',
+    'quick_start_steps_title' => 'Schnellstart-Schritte:',
+    'quick_start_step_1' => 'Besuchen Sie die VideoParser.top-Startseite',
+    'quick_start_step_2' => 'Kopieren Sie den Video-Link, den Sie herunterladen möchten',
+    'quick_start_step_3' => 'Fügen Sie den Link in das Eingabefeld ein',
+    'quick_start_step_4' => 'Klicken Sie auf die Schaltfläche "Analysieren"',
+    'quick_start_step_5' => 'Wählen Sie die geeignete Qualität und das Format',
+    'quick_start_step_6' => 'Klicken Sie auf die Schaltfläche "Herunterladen", um den Download zu starten',
+    'quick_start_tip' => 'Tipp: Registrieren Sie ein Konto, um mehr tägliche Analyseversuche zu erhalten!',
+
+    // Grundlegende Verwendung
+    'basic_usage_intro' => 'Die grundlegende Verwendung von VideoParser.top ist sehr einfach, nur wenige Schritte sind erforderlich, um den Video-Download abzuschließen.',
+    'basic_usage_platforms_title' => 'Unterstützte Plattformen',
+    'basic_usage_platforms_content' => 'Wir unterstützen die folgenden Mainstream-Video-Plattformen: YouTube, TikTok, Instagram, Facebook, Twitter, Bilibili, Douyin und über 100 Video-Plattformen.',
+    'basic_usage_limits_title' => 'Nutzungsbeschränkungen',
+    'basic_usage_limits_content' => 'Gastbenutzer haben bestimmte tägliche Analysebeschränkungen, registrierte Benutzer können mehr Versuche erhalten. Bitte überprüfen Sie die Kontoeinstellungsseite für spezifische Beschränkungen.',
+
+    // Plattform-Übersicht
+    'platforms_overview_intro' => 'VideoParser.top unterstützt mehrere Mainstream-Video-Plattformen und bietet Ihnen umfassende Video-Analysedienste.',
+    'platforms_main_title' => 'Hauptsächlich unterstützte Plattformen',
+    'platforms_main_content' => '• YouTube - Die weltweit größte Video-Sharing-Plattform\n• TikTok - Kurzvideo-Social-Plattform\n• Instagram - Foto- und Video-Sharing-Plattform\n• Facebook - Social-Network-Plattform\n• Twitter - Microblogging-Social-Plattform\n• Bilibili - Chinas führende Video-Kommentar-Website\n• Douyin - Chinesische Kurzvideo-Plattform',
+    'platforms_tip' => 'Wir fügen kontinuierlich Unterstützung für neue Plattformen hinzu. Wenn Sie Unterstützung für eine bestimmte Plattform benötigen, kontaktieren Sie uns bitte.',
+
+    // Tipps für Erstbenutzer
+    'first_time_tips_intro' => 'Als neuer Benutzer helfen Ihnen diese Tipps, VideoParser.top besser zu nutzen.',
+    'first_time_tips_title' => 'Tipps für Erstbenutzer:',
+    'first_time_tip_1' => 'Registrieren Sie ein Konto, um mehr Analyseversuche zu erhalten',
+    'first_time_tip_2' => 'Lesezeichen für häufig verwendete Video-Links setzen',
+    'first_time_tip_3' => 'Wählen Sie geeignete Videoqualität, um Bandbreite zu sparen',
+    'first_time_tip_4' => 'Verwenden Sie die Batch-Download-Funktion, um die Effizienz zu steigern',
+    'first_time_tip_5' => 'Folgen Sie unseren Updates, um neue Funktionen zu erhalten',
+    'first_time_tips_advice' => 'Es wird empfohlen, mit einfachen Einzel-Video-Downloads zu beginnen und nach der Vertrautheit mit dem Prozess erweiterte Funktionen wie Batch-Downloads auszuprobieren.',
+
+    // Download fehlgeschlagen
+    'download_failed_intro' => 'Download-Fehler sind eines der häufigen Probleme, denen Benutzer begegnen. Hier sind einige häufige Ursachen und Lösungen.',
+    'download_failed_reasons_title' => 'Häufige Ursachen',
+    'download_failed_reasons_content' => '• Instabile Netzwerkverbindung\n• Video-Link abgelaufen\n• Plattformbeschränkungen oder regionale Beschränkungen\n• Browser-Kompatibilitätsprobleme\n• Video erlaubt keine Cross-Domain-Anfragen',
+    'download_failed_solutions_title' => 'Lösungsschritte:',
+    'download_failed_solution_1' => 'Überprüfen Sie, ob die Netzwerkverbindung normal ist',
+    'download_failed_solution_2' => 'Bestätigen Sie, ob der Video-Link gültig ist',
+    'download_failed_solution_3' => 'Versuchen Sie, die Seite zu aktualisieren und erneut zu analysieren',
+    'download_failed_solution_4' => 'Verwenden Sie das Cross-Domain-Plugin <a href="https://chromewebstore.google.com/search/CORS%20Control?utm_source=ext_sidebar" class="text-blue-600">CORS Control</a>',
+    'download_failed_solution_5' => 'Versuchen Sie andere Plattformen',
+    //Langsame Download-Geschwindigkeit
+    'slow_speed_intro' => 'Langsame Download-Geschwindigkeit kann durch verschiedene Faktoren verursacht werden. Hier sind einige Optimierungsvorschläge.',
+    'slow_speed_factors_title' => 'Einflussfaktoren',
+    'slow_speed_factors_content' => '• Netzwerkbandbreitenbeschränkungen\n• Serverlast\n• Videodateigröße\n• Geografische Entfernung\n• Anzahl gleichzeitiger Downloads',
+    'slow_speed_optimization_title' => 'Optimierungsmethoden:',
+    'slow_speed_optimization_1' => 'Niedrigere Videoqualität wählen',
+    'slow_speed_optimization_2' => 'Vermeiden Sie gleichzeitige Downloads mehrerer Videos',
+    'slow_speed_optimization_3' => 'In Zeiten besserer Netzwerkbedingungen herunterladen',
+    'slow_speed_optimization_4' => 'Andere bandbreitenverbrauchende Anwendungen schließen',
+    'slow_speed_optimization_5' => 'Erwägen Sie ein Upgrade Ihres Netzwerktarifs',
+
+    // Videoqualitätsprobleme
+    'quality_issues_intro' => 'Videoqualitätsprobleme hängen normalerweise mit der ursprünglichen Videoqualität und Plattformbeschränkungen zusammen.',
+    'quality_options_title' => 'Beschreibung der Qualitätsoptionen',
+    'quality_options_content' => '• Originalqualität: Ursprüngliche Videoqualität beibehalten\n• HD: 1080p hochauflösende Qualität\n• SD: 720p Standardqualität\n• Flüssig: 480p oder niedrigere Qualität',
+    'quality_limitation_tip' => 'Die Download-Qualität wird die ursprüngliche Videoqualität nicht überschreiten. Wenn das ursprüngliche Video 720p ist, können Sie keine 1080p-Version herunterladen.',
+
+    // Browser-Kompatibilität
+    'browser_compatibility_intro' => 'Für die beste Erfahrung wird empfohlen, moderne Browser zu verwenden, um auf unsere Dienste zuzugreifen.\n\nEinige Browser benötigen möglicherweise die Installation von Erweiterungen, um Cross-Domain-Probleme zu lösen.',
+    'browser_recommended_title' => 'Empfohlene Browser',
+    'browser_recommended_content' => '• Chrome 80+ (Empfohlen)\n• Firefox 75+\n• Safari 13+\n• Edge 80+\n• Opera 67+',
+    'browser_extensions_title' => 'Empfohlene Erweiterungen',
+    'browser_extensions_content' => 'Wenn Sie Cross-Domain-Probleme haben, wird empfohlen, die folgenden Erweiterungen zu installieren:\n\n**Chrome-Browser:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox-Browser:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'browser_common_issues_title' => 'Häufige Probleme',
+    'browser_common_issues_content' => 'Wenn Sie Kompatibilitätsprobleme haben, versuchen Sie bitte:\n• Browser auf die neueste Version aktualisieren\n• Browser-Cache und Cookies löschen\n• Werbeblocker deaktivieren\n• JavaScript aktivieren\n• Die oben empfohlenen CORS-Erweiterungen installieren',
+    'browser_security_tip' => 'Hinweis: Stellen Sie beim Installieren von Erweiterungen sicher, dass Sie von offiziellen Stores herunterladen, um die Installation von Malware zu vermeiden. Sie können Erweiterungen nach der Verwendung deaktivieren, um die Sicherheit zu gewährleisten.',
+
+    // Plattformspezifischer Hilfeinhalt
+    // YouTube
+    'youtube_help_intro' => 'YouTube ist eine der Hauptplattformen, die wir unterstützen und bietet mehrere Qualitätsoptionen.',
+    'youtube_steps_title' => 'YouTube-Video-Download-Schritte:',
+    'youtube_step_1' => 'Finden Sie das Video, das Sie auf YouTube herunterladen möchten',
+    'youtube_step_2' => 'Kopieren Sie die URL der Videoseite',
+    'youtube_step_3' => 'Fügen Sie es in unser Analysefeld ein',
+    'youtube_step_4' => 'Wählen Sie die geeignete Qualität und das Format',
+    'youtube_step_5' => 'Klicken Sie auf die Download-Schaltfläche',
+    'youtube_tip' => 'YouTube unterstützt mehrere Qualitätsoptionen, einschließlich 4K, 1080p, 720p usw. Bitte wählen Sie die geeignete Qualität nach Ihren Bedürfnissen.',
+
+    // TikTok
+    'tiktok_help_intro' => 'TikTok-Kurzvideo-Download unterstützt die Wasserzeichen-Entfernungsfunktion, um Ihnen sauberere Videos zu geben.',
+    'tiktok_features_title' => 'Besondere Funktionen',
+    'tiktok_features_content' => '• Automatische Entfernung von TikTok-Wasserzeichen\n• Unterstützung für separaten Audio-Download\n• Beibehaltung der ursprünglichen Qualität\n• Schnelle Analyseverarbeitung',
+    'tiktok_tip' => 'TikTok-Videos sind normalerweise im Hochformat und bieten nach dem Download die beste Seherfahrung auf mobilen Geräten.',
+
+    // Instagram
+    'instagram_help_intro' => 'Instagram unterstützt das Herunterladen von Fotos, Videos und Stories.',
+    'instagram_content_types_title' => 'Unterstützte Inhaltstypen',
+    'instagram_content_types_content' => '• Reguläre Post-Videos\n• Instagram Stories\n• IGTV-Videos\n• Reels-Kurzvideos',
+    'instagram_tip' => 'Bitte stellen Sie sicher, dass Sie das Recht haben, relevante Inhalte herunterzuladen, und befolgen Sie Instagrams Nutzungsbedingungen.',
+
+    // Facebook
+    'facebook_help_intro' => 'Facebook-Video-Download unterstützt öffentliche Videos und persönlich geteilte Videos.',
+    'facebook_notes_title' => 'Hinweise',
+    'facebook_notes_content' => '• Unterstützt nur öffentliche Videos\n• Benötigt gültige Video-Links\n• Einige Videos können regionale Beschränkungen haben\n• Respektieren Sie das Urheberrecht des ursprünglichen Autors',
+
+    // Bilibili
+    'bilibili_help_intro' => 'Bilibili ist Chinas führende Video-Kommentar-Website, wir bieten vollständige Download-Unterstützung.',
+    'bilibili_features_title' => 'Unterstützte Funktionen',
+    'bilibili_features_content' => '• Multi-Teil-Video-Download\n• Kommentar-Datei-Download\n• Mehrere Auflösungsoptionen\n• Separate Audio-Extraktion',
+    'bilibili_tip' => 'Bilibili-Video-Download muss relevante Vorschriften befolgen, nur für persönliches Lernen und Forschungszwecke.',
+
+    // Douyin
+    'douyin_help_intro' => 'Douyin-Video-Download unterstützt Wasserzeichen-Entfernung und hochwertigen Download.',
+    'douyin_features_title' => 'Charakteristische Funktionen',
+    'douyin_features_content' => '• Automatische Entfernung von Douyin-Wasserzeichen\n• Beibehaltung der ursprünglichen Audioqualität\n• Unterstützung für Batch-Download\n• Schnelle Analyseverarbeitung',
+
+    // Kontobezogen
+    // Anmeldung und Registrierung
+    'login_registration_intro' => 'Die Registrierung eines Kontos kann mehr Funktionen und höhere Nutzungsbeschränkungen erhalten.',
+    'login_registration_steps_title' => 'Registrierungsschritte:',
+    'login_registration_step_1' => 'Klicken Sie auf die Schaltfläche "Registrieren" oben rechts auf der Seite',
+    'login_registration_step_2' => 'Geben Sie E-Mail-Adresse und Passwort ein',
+    'login_registration_step_3' => 'Klicken Sie auf "Registrieren", um die Kontoerstellung abzuschließen',
+    'login_registration_step_4' => 'Überprüfen Sie die E-Mail-Verifizierungs-E-Mail',
+    'login_registration_step_5' => 'Klicken Sie auf den Verifizierungslink, um das Konto zu aktivieren',
+    'login_registration_benefits_title' => 'Registrierungsvorteile',
+    'login_registration_benefits_content' => '• Mehr tägliche Analyseversuche\n• Unterstützung für Batch-Download\n• Download-Verlauf\n• Prioritärer Kundensupport',
+
+    // Passwort zurücksetzen
+    'password_reset_intro' => 'Wenn Sie Ihr Passwort vergessen haben, können Sie es per E-Mail zurücksetzen.',
+    'password_reset_steps_title' => 'Passwort-Zurücksetzungsschritte:',
+    'password_reset_step_1' => 'Klicken Sie auf den Link "Passwort vergessen" auf der Anmeldeseite',
+    'password_reset_step_2' => 'Geben Sie die bei der Registrierung verwendete E-Mail-Adresse ein',
+    'password_reset_step_3' => 'Klicken Sie auf "Zurücksetzungs-E-Mail senden"',
+    'password_reset_step_4' => 'Überprüfen Sie die Zurücksetzungs-E-Mail in Ihrem Postfach',
+    'password_reset_step_5' => 'Klicken Sie auf den Zurücksetzungslink in der E-Mail',
+    'password_reset_step_6' => 'Setzen Sie ein neues Passwort und bestätigen Sie es',
+
+    // E-Mail-Verifizierung
+    'email_verification_intro' => 'E-Mail-Verifizierung ist ein wichtiger Schritt für die Kontosicherheit und stellt sicher, dass Sie alle Funktionen normal nutzen können.',
+    'email_verification_importance_title' => 'Wichtigkeit der Verifizierung',
+    'email_verification_importance_content' => '• Kontosicherheit gewährleisten\n• Wichtige Benachrichtigungen erhalten\n• Passwort-Zurücksetzungsfunktion\n• Vollständiger Funktionszugriff',
+    'email_verification_tip' => 'Wenn Sie die Verifizierungs-E-Mail nicht erhalten, überprüfen Sie bitte Ihren Spam-Ordner oder klicken Sie, um die Verifizierungs-E-Mail erneut zu senden.',
+
+    // Nutzungsbeschränkungen
+    'usage_limits_intro' => 'Um die Servicequalität zu gewährleisten, haben wir entsprechende Nutzungsbeschränkungen für verschiedene Benutzertypen festgelegt.',
+    'usage_limits_explanation_title' => 'Beschränkungserklärung',
+    'usage_limits_explanation_content' => '• Gastbenutzer: 6 Analysen pro Tag\n• Registrierte Benutzer: 10 Analysen pro Tag\n• Empfehlungsbelohnungen: 20 zusätzliche Analysen für jede erfolgreiche Empfehlung\n• API-Benutzer: Verschiedene Beschränkungen je nach Plan',
+    'usage_limits_tip' => 'Beschränkungen werden täglich um Mitternacht zurückgesetzt. Wenn Sie höhere Beschränkungen benötigen, erwägen Sie bitte die Nutzung unseres API-Services.',
+
+    // Empfehlungssystem
+    'referral_system_intro' => 'Das Empfehlungssystem ermöglicht es Ihnen, durch Teilen zusätzliche Analyseversuche als Belohnung zu erhalten.',
+    'referral_system_steps_title' => 'Wie man das Empfehlungssystem verwendet:',
+    'referral_system_step_1' => 'Melden Sie sich bei Ihrem Konto an',
+    'referral_system_step_2' => 'Gehen Sie zum Benutzerzentrum',
+    'referral_system_step_3' => 'Finden Sie den Empfehlungslink',
+    'referral_system_step_4' => 'Teilen Sie mit Freunden oder in sozialen Medien',
+    'referral_system_step_5' => 'Erhalten Sie Belohnungen nach der Registrierung von Freunden',
+    'referral_system_rules_title' => 'Belohnungsregeln',
+    'referral_system_rules_content' => '• Erhalten Sie 20 Analysebelohnungen für jede erfolgreiche Empfehlung\n• Empfohlene Personen müssen die E-Mail-Verifizierung abschließen\n• Belohnungsversuche sind dauerhaft gültig\n• Keine Begrenzung der Anzahl der Empfehlungen',
+
+    // Fehlerbehebung
+    // Häufige Fehler
+    'common_errors_intro' => 'Hier sind Fehler, denen Benutzer häufig begegnen, und ihre Lösungen.\n\nWenn Sie CORS-bezogene Fehler haben, wird empfohlen, Browser-Erweiterungen zu installieren, um sie zu lösen.',
+    'common_errors_types_title' => 'Häufige Fehlertypen',
+    'common_errors_types_content' => '• "Analyse fehlgeschlagen" - Ungültiger Video-Link oder Plattformbeschränkungen\n• "Netzwerk-Timeout" - Netzwerkverbindungsprobleme\n• "Format nicht unterstützt" - Videoformatbeschränkungen\n• "Download unterbrochen" - Netzwerkinstabilität\n• "Unzureichende Berechtigungen" - Kontobeschränkungen\n• "CORS-Fehler" - Cross-Domain-Zugriff blockiert',
+    'common_errors_cors_title' => 'CORS-Fehlerlösungen',
+    'common_errors_cors_content' => 'Wenn Sie Cross-Domain-Zugriffsfehler haben, installieren Sie bitte die folgenden Erweiterungen:\n\n**Chrome-Browser:**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox-Browser:**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'common_errors_tip' => 'Wenn Sie auf nicht aufgelistete Fehler stoßen, kontaktieren Sie bitte den Kundendienst und geben Sie detaillierte Fehlerinformationen an.\n\nNach der Installation von Erweiterungen denken Sie daran, sie nach der Verwendung zu deaktivieren, um die Browser-Sicherheit zu gewährleisten.',
+
+    // Netzwerkprobleme
+    'network_issues_intro' => 'Netzwerkprobleme können den normalen Ablauf der Videoanalyse und des Downloads beeinträchtigen.',
+    'network_issues_symptoms_title' => 'Häufige Symptome',
+    'network_issues_symptoms_content' => '• Analyse-Timeout\n• Download-Unterbrechung\n• Verbindungsfehler\n• Abnormal langsame Geschwindigkeit',
+    'network_issues_solutions_title' => 'Lösungsmethoden:',
+    'network_issues_solution_1' => 'Netzwerkverbindungsstatus überprüfen',
+    'network_issues_solution_2' => 'Versuchen Sie, die Seite zu aktualisieren',
+    'network_issues_solution_3' => 'Netzwerkumgebung wechseln',
+    'network_issues_solution_4' => 'VPN oder Proxy verwenden',
+    'network_issues_solution_5' => 'Netzwerkdienstanbieter kontaktieren',
+
+    // Browser-Probleme
+    'browser_issues_intro' => 'Verschiedene Browser können Kompatibilitätsunterschiede haben. Hier sind Lösungen für häufige Probleme.',
+    'browser_issues_common_title' => 'Häufige Browser-Probleme',
+    'browser_issues_common_content' => '• JavaScript deaktiviert\n• Cookies blockiert\n• Werbeblocker-Interferenz\n• Browser-Version zu alt\n• Erweiterungskonflikte',
+    'browser_issues_solutions_title' => 'Lösungsvorschläge:',
+    'browser_issues_solution_1' => 'JavaScript und Cookies aktivieren',
+    'browser_issues_solution_2' => 'Werbeblocker vorübergehend deaktivieren',
+    'browser_issues_solution_3' => 'Browser auf die neueste Version aktualisieren',
+    'browser_issues_solution_4' => 'Inkognito-/Privat-Modus versuchen',
+    'browser_issues_solution_5' => 'Browser-Cache und Daten löschen',
+
+    // Mobile Probleme
+    'mobile_issues_intro' => 'Besondere Probleme und Lösungen, die bei der Verwendung mobiler Geräte auftreten können.',
+    'mobile_issues_common_title' => 'Häufige mobile Probleme',
+    'mobile_issues_common_content' => '• Touch-Operationen reagieren nicht\n• Abnormale Seitenanzeige\n• Download-Funktionalität eingeschränkt\n• Player inkompatibel',
+    'mobile_issues_solutions_title' => 'Mobile Optimierungsvorschläge:',
+    'mobile_issues_solution_1' => 'Empfohlene mobile Browser verwenden',
+    'mobile_issues_solution_2' => 'Stabile Netzwerkverbindung sicherstellen',
+    'mobile_issues_solution_3' => 'Energiesparmodus ausschalten',
+    'mobile_issues_solution_4' => 'Gerätespeicherplatz bereinigen',
+    'mobile_issues_solution_5' => 'Browser-App neu starten',
+
+    // API-Dokumentation bezogen
+    'api_getting_started_intro' => 'Willkommen bei der VideoParser.top API! Diese Anleitung hilft Ihnen, schnell mit der Integration unserer Videoanalysedienste zu beginnen.',
+    'api_getting_started_requirements_title' => 'Vorbereitung vor dem Start',
+    'api_getting_started_requirements_content' => '• VideoParser.top-Konto registrieren\n• API-Schlüssel erhalten\n• Grundlegende HTTP-Anfragen verstehen\n• Entwicklungsumgebung vorbereiten',
+    'api_getting_started_first_request_title' => 'Erste API-Anfrage',
+    'api_getting_started_first_request_content' => 'Verwenden Sie Ihren API-Schlüssel, um eine einfache Videoanalyse-Anfrage zu senden und zu überprüfen, ob die Integration erfolgreich ist.',
+
+    'api_authentication_intro' => 'API-Authentifizierung stellt sicher, dass nur autorisierte Benutzer auf unsere Dienste zugreifen können.',
+    'api_authentication_methods_title' => 'Authentifizierungsmethoden',
+    'api_authentication_methods_content' => '• API-Schlüssel-Authentifizierung (empfohlen)\n• OAuth 2.0-Authentifizierung\n• JWT-Token-Authentifizierung',
+    'api_authentication_security_title' => 'Sicherheitsempfehlungen',
+    'api_authentication_security_content' => '• API-Schlüssel sicher aufbewahren\n• Schlüssel regelmäßig wechseln\n• HTTPS-Anfragen verwenden\n• Anfragebeschränkungen implementieren',
+
+    'api_endpoints_intro' => 'Wir bieten mehrere API-Endpunkte, um verschiedene Nutzungsanforderungen zu erfüllen.',
+    'api_endpoints_main_title' => 'Haupt-Endpunkte',
+    'api_endpoints_main_content' => '• /api/parse - Video-Links analysieren\n• /api/download - Download-Links erhalten\n• /api/info - Video-Informationen erhalten\n• /api/batch - Batch-Verarbeitung',
+    'api_endpoints_parameters_title' => 'Anfrageparameter',
+    'api_endpoints_parameters_content' => 'Jeder Endpunkt hat spezifische erforderliche und optionale Parameter. Bitte beziehen Sie sich auf die detaillierte Dokumentation für spezifische Anforderungen.',
+
+    'api_examples_intro' => 'Hier sind einige häufige API-Aufrufbeispiele, die Ihnen helfen, schnell zu verstehen, wie Sie unsere Dienste nutzen.',
+    'api_examples_basic_title' => 'Grundlegende Beispiele',
+    'api_examples_basic_content' => 'Zeigt, wie man grundlegende Videoanalyse-Anfragen sendet und Antwortdaten verarbeitet.',
+    'api_examples_advanced_title' => 'Erweiterte Beispiele',
+    'api_examples_advanced_content' => 'Enthält erweiterte Nutzungsbeispiele wie Batch-Verarbeitung, Fehlerbehandlung, asynchrone Anfragen usw.',
+
+    'api_rate_limits_intro' => 'Um Servicequalität und faire Nutzung zu gewährleisten, implementieren wir Ratenbeschränkungen für API-Anfragen.',
+    'api_rate_limits_tiers_title' => 'Beschränkungsebenen',
+    'api_rate_limits_tiers_content' => '• Kostenlose Benutzer: 10 Anfragen pro Minute\n• Bezahlte Benutzer: 100 Anfragen pro Minute\n• Unternehmensbenutzer: Benutzerdefinierte Beschränkungen',
+    'api_rate_limits_headers_title' => 'Beschränkungs-Header-Informationen',
+    'api_rate_limits_headers_content' => 'API-Antworten enthalten Header-Informationen über den aktuellen Beschränkungsstatus, um Ihnen bei der Verwaltung der Anfragefrequenz zu helfen.',
+
+    // Zusätzliche API-bezogene Übersetzungen
+    'api_getting_started_steps_title' => 'API-Schnellstart:',
+    'api_getting_started_step_1' => 'Entwicklerkonto registrieren',
+    'api_getting_started_step_2' => 'API-Schlüssel erhalten',
+    'api_getting_started_step_3' => 'API-Dokumentation lesen',
+    'api_getting_started_step_4' => 'Testaufrufe durchführen',
+    'api_getting_started_step_5' => 'In Ihre Anwendung integrieren',
+    'api_getting_started_advantages_title' => 'API-Vorteile',
+    'api_getting_started_advantages_content' => '• Hochgeschwindigkeitsanalyse\n• Stabil und zuverlässig\n• Multi-Format-Unterstützung\n• Detaillierte Dokumentation\n• Technischer Support',
+
+    'api_authentication_method_title' => 'Authentifizierungsmethode',
+    'api_authentication_method_content' => 'Wir verwenden API-Schlüssel-Authentifizierung. Bitte in Anfrage-Headern einschließen:\nAuthorization: Bearer YOUR_API_KEY',
+    'api_authentication_tip' => 'Bitte bewahren Sie Ihren API-Schlüssel sicher auf und setzen Sie ihn nicht in clientseitigem Code frei.',
+
+    'api_endpoints_list_title' => 'Haupt-Endpunkte',
+    'api_endpoints_list_content' => '• /api/parse - Video-Links analysieren\n• /api/info - Video-Informationen erhalten\n• /api/download - Download-Links erhalten\n• /api/batch - Batch-Verarbeitung',
+    'api_endpoints_usage_title' => 'Nutzungsanweisungen',
+    'api_endpoints_usage_content' => 'Jeder Endpunkt hat detaillierte Parameterbeschreibungen und Beispielcode. Bitte beziehen Sie sich auf die vollständige API-Dokumentation.',
+
+    'api_rate_limits_management_title' => 'Beschränkungsverwaltung',
+    'api_rate_limits_management_content' => 'API-Antworten enthalten Header-Informationen über den aktuellen Beschränkungsstatus, um Ihnen bei der Verwaltung der Anfragefrequenz zu helfen.',
+
+    // Zusätzliche Netzwerkproblem-Übersetzungen
+    'network_issues_diagnosis_title' => 'Netzwerkdiagnose',
+    'network_issues_diagnosis_content' => '• Netzwerkverbindungsstatus überprüfen\n• Netzwerkgeschwindigkeit testen\n• DNS-Einstellungen bestätigen\n• Firewall-Einstellungen überprüfen\n• Netzwerkumgebung wechseln versuchen',
+
+    // Zusätzliche mobile Problem-Übersetzungen
+    'mobile_issues_tip' => 'Es wird empfohlen, in einer WiFi-Umgebung zu verwenden, um eine bessere Erfahrung zu erzielen und Datenverbrauch zu vermeiden.',
 ];

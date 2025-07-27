@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帮助中心滚动测试</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .hero { height: 400px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; display: flex; align-items: center; justify-content: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .search-section { margin: 40px 0; padding: 20px; background: #f8f9fa; border-radius: 10px; }
+        .search-box { width: 100%; max-width: 600px; margin: 0 auto; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; }
+        .content { margin: 40px 0; }
+        .nav-links { margin: 20px 0; }
+        .nav-links a { display: inline-block; margin: 10px; padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        .nav-links a:hover { background: #0056b3; }
+        .article { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>帮助中心滚动测试</h1>
+    </div>
+
+    <div class="container">
+        <div class="search-section" id="help-search-section">
+            <h2>搜索帮助内容</h2>
+            <input type="text" class="search-box" placeholder="输入关键词搜索..." />
+        </div>
+
+        <div class="nav-links">
+            <a href="#" onclick="simulateNavigation(event)">文章1</a>
+            <a href="#" onclick="simulateNavigation(event)">文章2</a>
+            <a href="#" onclick="simulateNavigation(event)">文章3</a>
+            <a href="#" onclick="simulateNavigation(event)">分类页面</a>
+        </div>
+
+        <div class="content">
+            <div class="article">
+                <h2>测试说明</h2>
+                <p>这是一个测试页面，用于验证帮助中心的自动滚动功能。</p>
+                <p>点击上方的链接，页面应该自动滚动到搜索框位置。</p>
+                <p>滚动功能的特点：</p>
+                <ul>
+                    <li>页面加载时自动滚动到搜索框</li>
+                    <li>点击帮助中心内的链接时，新页面会滚动到搜索框</li>
+                    <li>使用平滑滚动效果</li>
+                    <li>在搜索框上方留出20px的空间</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 模拟帮助中心的导航处理
+        function simulateNavigation(event) {
+            event.preventDefault();
+            
+            // 模拟设置sessionStorage标记
+            sessionStorage.setItem('scrollToSearch', 'true');
+            
+            // 模拟页面重新加载后的滚动
+            setTimeout(function() {
+                scrollToSearchSection();
+            }, 100);
+        }
+
+        // 滚动到搜索框的函数
+        function scrollToSearchSection() {
+            const searchSection = document.getElementById('help-search-section');
+            if (searchSection) {
+                const offsetTop = searchSection.offsetTop - 20;
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+                
+                // 清除标记
+                sessionStorage.removeItem('scrollToSearch');
+            }
+        }
+
+        // 页面加载时检查是否需要滚动
+        document.addEventListener('DOMContentLoaded', function() {
+            const shouldScrollToSearch = sessionStorage.getItem('scrollToSearch');
+            
+            setTimeout(function() {
+                const searchSection = document.getElementById('help-search-section');
+                if (searchSection && (shouldScrollToSearch === 'true' || window.location.hash === '#test')) {
+                    const offsetTop = searchSection.offsetTop - 20;
+                    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    sessionStorage.removeItem('scrollToSearch');
+                }
+            }, 100);
+        });
+
+        // 添加一些测试内容让页面更长
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.querySelector('.content');
+            for (let i = 0; i < 5; i++) {
+                const div = document.createElement('div');
+                div.className = 'article';
+                div.style.marginTop = '30px';
+                div.innerHTML = `
+                    <h3>测试内容 ${i + 1}</h3>
+                    <p>这是一些测试内容，用于让页面变长，以便测试滚动功能。</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                `;
+                content.appendChild(div);
+            }
+        });
+    </script>
+</body>
+</html>

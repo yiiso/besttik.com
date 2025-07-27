@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 use App\Http\Controllers\VideoParserController;
 // 认证路由
 use App\Http\Controllers\AuthController;
@@ -29,9 +30,11 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
         return view('pages.api');
     })->name('api');
 
-    Route::get('/help', function () {
-        return view('pages.help');
-    })->name('help');
+    // 帮助中心路由
+    Route::get('/help', [App\Http\Controllers\HelpController::class, 'index'])->name('help');
+    Route::get('/help/search', [App\Http\Controllers\HelpController::class, 'search'])->name('help.search');
+    Route::get('/help/{category}', [App\Http\Controllers\HelpController::class, 'category'])->name('help.category');
+    Route::get('/help/{category}/{article}', [App\Http\Controllers\HelpController::class, 'article'])->name('help.article');
 
     Route::get('/contact', function () {
         return view('pages.contact');
@@ -65,9 +68,11 @@ Route::prefix('{locale}')
             return view('pages.api');
         })->name('api.locale');
 
-        Route::get('/help', function ($locale) {
-            return view('pages.help');
-        })->name('help.locale');
+        // 多语言帮助中心路由
+        Route::get('/help', [App\Http\Controllers\HelpController::class, 'index'])->name('help.locale');
+        Route::get('/help/search', [App\Http\Controllers\HelpController::class, 'search'])->name('help.search.locale');
+        Route::get('/help/{category}', [App\Http\Controllers\HelpController::class, 'category'])->name('help.category.locale');
+        Route::get('/help/{category}/{article}', [App\Http\Controllers\HelpController::class, 'article'])->name('help.article.locale');
 
         Route::get('/contact', function ($locale) {
             return view('pages.contact');

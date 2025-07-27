@@ -206,31 +206,190 @@ return [
     'search_help_description' => '查找常见问题的答案',
     'browse_help' => '浏览帮助中心',
 
-    // Help Center
-    'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.top。',
+    // Help Center - 完善的帮助中心内容
+    'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.top的所有功能。',
+    'search_help' => '搜索帮助内容...',
+    'search_help_placeholder' => '输入关键词搜索帮助内容',
+    'help_categories' => '帮助分类',
+    'all_categories' => '所有分类',
+    
+    // 入门指南
     'getting_started' => '入门指南',
-    'getting_started_description' => '学习使用VideoParser.top的基础知识',
+    'getting_started_description' => '学习使用VideoParser.top的基础知识，快速上手视频解析下载',
+    'quick_start_guide' => '快速开始指南',
+    'basic_usage' => '基本使用方法',
+    'supported_platforms_overview' => '支持平台概览',
+    'first_time_user_tips' => '新手使用技巧',
+    
+    // 下载相关问题
     'download_issues' => '下载问题',
-    'download_issues_description' => '解决常见的下载问题',
-    'supported_platforms_help_description' => '查看我们支持的平台',
+    'download_issues_description' => '解决视频下载过程中遇到的常见问题',
+    'download_failed' => '下载失败怎么办？',
+    'slow_download_speed' => '下载速度慢的解决方法',
+    'video_quality_issues' => '视频质量问题',
+    'audio_sync_problems' => '音频同步问题',
+    'browser_compatibility' => '浏览器兼容性',
+    
+    // 支持的平台
+    'supported_platforms_help_description' => '查看我们支持的所有视频平台及其特殊说明',
+    'platform_specific_help' => '平台专属帮助',
+    'youtube_help' => 'YouTube 使用帮助',
+    'tiktok_help' => 'TikTok 使用帮助',
+    'instagram_help' => 'Instagram 使用帮助',
+    'facebook_help' => 'Facebook 使用帮助',
+    'twitter_help' => 'Twitter 使用帮助',
+    'bilibili_help' => 'B站 使用帮助',
+    'douyin_help' => '抖音 使用帮助',
+    
+    // 账户和设置
     'account_settings' => '账户和设置',
-    'account_settings_description' => '管理您的账户和偏好',
+    'account_settings_description' => '管理您的账户信息、偏好设置和使用限制',
+    'account_management' => '账户管理',
+    'login_registration' => '登录和注册',
+    'password_reset' => '密码重置',
+    'email_verification' => '邮箱验证',
+    'usage_limits' => '使用限制说明',
+    'referral_system' => '推荐系统',
+    
+    // 故障排除
     'troubleshooting' => '故障排除',
-    'troubleshooting_description' => '解决常见的技术问题',
+    'troubleshooting_description' => '解决使用过程中遇到的技术问题',
+    'common_errors' => '常见错误',
+    'network_issues' => '网络问题',
+    'browser_issues' => '浏览器问题',
+    'mobile_issues' => '移动端问题',
+    'performance_optimization' => '性能优化',
+    
+    // API文档
     'api_documentation' => 'API文档',
-    'api_documentation_description' => '开发者资源和API指南',
+    'api_documentation_description' => '开发者资源、API接口文档和集成指南',
+    'api_getting_started' => 'API 快速开始',
+    'api_authentication' => 'API 认证',
+    'api_endpoints' => 'API 接口',
+    'api_examples' => 'API 示例',
+    'api_rate_limits' => 'API 限制',
+    'api_error_codes' => 'API 错误代码',
+    
+    // 热门问题
     'popular_questions' => '热门问题',
+    'faq_section' => '常见问题解答',
+    
+    // 具体问题和答案
     'how_to_download_video' => '如何下载视频？',
-    'how_to_download_video_answer' => '只需将视频URL粘贴到我们的解析器中，选择您喜欢的质量，然后点击下载。',
+    'how_to_download_video_answer' => '1. 复制视频链接\n2. 粘贴到解析框中\n3. 点击"解析"按钮\n4. 选择画质和格式\n5. 点击"下载"按钮',
+    'how_to_download_video_detailed' => '详细步骤：首先从支持的平台（如YouTube、TikTok等）复制视频链接，然后粘贴到我们网站首页的输入框中，点击解析按钮等待处理完成，最后选择您需要的画质和格式进行下载。',
+    
     'supported_video_formats' => '支持哪些视频格式？',
-    'supported_video_formats_answer' => '我们支持MP4、WebM和各种其他格式，具体取决于源平台。',
+    'supported_video_formats_answer' => '我们支持MP4、WebM、AVI、MOV等多种格式，具体格式取决于源平台提供的选项。',
+    'supported_video_formats_detailed' => '支持的格式包括：MP4（推荐，兼容性最好）、WebM（Google开发的开源格式）、AVI（传统格式）、MOV（Apple格式）等。不同平台提供的格式可能有所不同。',
+    
     'is_service_free' => '服务是免费的吗？',
-    'is_service_free_answer' => '是的，我们的基本服务完全免费。我们还为高级用户提供高级功能。',
-    'download_not_working' => '为什么我的下载不工作？',
-    'download_not_working_answer' => '这可能由于各种因素。尝试刷新页面，检查您的互联网连接，或使用不同的浏览器。',
+    'is_service_free_answer' => '是的，我们的基本服务完全免费。注册用户每日可获得更多解析次数。',
+    'is_service_free_detailed' => '我们提供免费的基本服务，游客用户每日有一定的解析次数限制，注册用户可获得更多次数。我们还提供API服务供开发者使用。',
+    
+    'download_not_working' => '为什么下载不工作？',
+    'download_not_working_answer' => '可能的原因：1. 网络连接问题 2. 浏览器兼容性 3. 视频链接失效 4. 平台限制。请尝试刷新页面或更换浏览器。',
+    'download_not_working_detailed' => '下载失败的常见原因及解决方法：\n1. 检查网络连接是否稳定\n2. 尝试使用Chrome、Firefox等主流浏览器\n3. 确认视频链接是否有效\n4. 某些平台可能有地区限制\n5. 清除浏览器缓存后重试',
+    
+    'video_quality_options' => '有哪些画质选项？',
+    'video_quality_options_answer' => '我们提供从流畅到超高清的多种画质选项，包括360p、480p、720p、1080p等，具体选项取决于原视频质量。',
+    
+    'batch_download_help' => '如何批量下载视频？',
+    'batch_download_help_answer' => '您可以在批量下载页面一次性添加多个视频链接，系统会自动排队处理并提供统一的下载管理。',
+    
+    'mobile_usage' => '如何在手机上使用？',
+    'mobile_usage_answer' => '我们的网站完全支持移动设备，您可以在手机浏览器中正常使用所有功能，操作方式与电脑端相同。',
+    
+    'copyright_notice' => '版权相关说明',
+    'copyright_notice_answer' => '请确保您下载的内容符合相关版权法律法规，仅用于个人学习和研究目的。',
+    
+    'service_limits' => '服务限制说明',
+    'service_limits_answer' => '为保证服务质量，我们对解析次数有一定限制。游客用户每日限制较少，注册用户可获得更多次数。',
+    
+    'data_privacy' => '数据隐私保护',
+    'data_privacy_answer' => '我们不会存储您的视频内容或个人数据，所有解析过程都是实时进行的，保护您的隐私安全。',
+    
+    // 帮助中心导航和操作
     'still_need_help' => '仍需要帮助？',
     'contact_support_description' => '我们的支持团队随时准备为您提供帮助',
     'contact_support' => '联系支持',
+    'helpful_article' => '这篇文章有帮助吗？',
+    'yes_helpful' => '有帮助',
+    'no_helpful' => '没有帮助',
+    'improve_article' => '如何改进这篇文章？',
+    'related_articles' => '相关文章',
+    'back_to_help_center' => '返回帮助中心',
+    'print_article' => '打印文章',
+    'share_article' => '分享文章',
+    
+    // 帮助中心额外翻译
+    'articles' => '篇文章',
+    'read_more' => '阅读更多',
+    'quick_links' => '快速链接',
+    'get_personal_help' => '获取个人帮助',
+    'developer_resources' => '开发者资源',
+    'try_service' => '试用服务',
+    'start_parsing_videos' => '开始解析视频',
+    'need_more_help' => '需要更多帮助？',
+    'back_to_category' => '返回分类',
+    'comprehensive_guide' => '详细指南',
+    'content_coming_soon' => '内容即将推出',
+    'content_development_message' => '我们正在为您准备详细的帮助内容，敬请期待。',
+    'contact_for_help' => '联系我们获取帮助',
+    'thanks_for_feedback' => '感谢您的反馈！',
+    'feedback_received' => '感谢您的建议，我们会持续改进！',
+    'browse_all_articles' => '浏览所有文章',
+    'find_more_help' => '查找更多帮助内容',
+    'helpful_article_share' => '查看这篇有用的帮助文章',
+    'related_categories' => '相关分类',
+    'browse_all_help_topics' => '浏览所有帮助主题',
+    'click_to_read_full_article' => '点击阅读完整文章',
+    
+    // 搜索相关翻译
+    'search_results' => '搜索结果',
+    'no_results_found' => '未找到相关结果',
+    'try_different_keywords' => '请尝试使用不同的关键词或浏览下面的建议',
+    'search_suggestions' => '搜索建议',
+    'popular_topics' => '热门主题',
+    'common_issues' => '常见问题',
+    'browse_help_center' => '浏览帮助中心',
+    'explore_all_topics' => '探索所有主题',
+    'category' => '分类',
+    'article' => '文章',
+    'faq' => '常见问题',
+    'in_category' => '在分类',
+    'parsing' => '解析',
+    'account' => '账户',
+    
+    // 新增的帮助内容翻译
+    'quick_start_guide' => '快速开始指南',
+    'basic_usage' => '基本使用方法',
+    'supported_platforms_overview' => '支持平台概览',
+    'first_time_user_tips' => '新手使用技巧',
+    'download_failed' => '下载失败怎么办？',
+    'slow_download_speed' => '下载速度慢的解决方法',
+    'video_quality_issues' => '视频质量问题',
+    'browser_compatibility' => '浏览器兼容性',
+    'youtube_help' => 'YouTube 使用帮助',
+    'tiktok_help' => 'TikTok 使用帮助',
+    'instagram_help' => 'Instagram 使用帮助',
+    'facebook_help' => 'Facebook 使用帮助',
+    'bilibili_help' => 'B站 使用帮助',
+    'douyin_help' => '抖音 使用帮助',
+    'login_registration' => '登录和注册',
+    'password_reset' => '密码重置',
+    'email_verification' => '邮箱验证',
+    'usage_limits' => '使用限制说明',
+    'referral_system' => '推荐系统',
+    'common_errors' => '常见错误',
+    'network_issues' => '网络问题',
+    'browser_issues' => '浏览器问题',
+    'mobile_issues' => '移动端问题',
+    'api_getting_started' => 'API 快速开始',
+    'api_authentication' => 'API 认证',
+    'api_endpoints' => 'API 接口',
+    'api_examples' => 'API 示例',
+    'api_rate_limits' => 'API 限制',
 
     // API Service
     'api_service_description' => '通过我们全面的API将强大的视频解析功能集成到您的应用程序中。',
@@ -470,4 +629,11 @@ return [
     'email_verification_failed' => '邮箱验证失败',
     'email_not_found' => '未找到该邮箱地址',
     'verification_email_sent' => '验证邮件已发送',
+    
+    // 新布局相关翻译
+    'welcome_to_help_center' => '欢迎使用帮助中心',
+    'help_center_welcome_desc' => '请从左侧选择您需要了解的主题，或使用上方的搜索功能快速找到答案。',
+    'loading' => '加载中...',
+    'article_not_found' => '文章未找到',
+    'loading_error' => '加载失败，请重试',
     ];

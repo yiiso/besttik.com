@@ -28,7 +28,9 @@ class SetLocale
         if (in_array($locale, $supportedLocales) && $locale !== $defaultLocale) {
             app()->setLocale($locale);
             // 从请求中移除语言段，避免影响路由匹配
-            $request->route()->forgetParameter($locale);
+            if ($request->route()) {
+                $request->route()->forgetParameter('locale');
+            }
         } // 3. 无前缀URL默认使用英文
         else {
             app()->setLocale($defaultLocale);

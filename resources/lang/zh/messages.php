@@ -212,7 +212,7 @@ return [
     'search_help_placeholder' => '输入关键词搜索帮助内容',
     'help_categories' => '帮助分类',
     'all_categories' => '所有分类',
-    
+
     // 入门指南
     'getting_started' => '入门指南',
     'getting_started_description' => '学习使用VideoParser.top的基础知识，快速上手视频解析下载',
@@ -220,7 +220,7 @@ return [
     'basic_usage' => '基本使用方法',
     'supported_platforms_overview' => '支持平台概览',
     'first_time_user_tips' => '新手使用技巧',
-    
+
     // 下载相关问题
     'download_issues' => '下载问题',
     'download_issues_description' => '解决视频下载过程中遇到的常见问题',
@@ -229,7 +229,7 @@ return [
     'video_quality_issues' => '视频质量问题',
     'audio_sync_problems' => '音频同步问题',
     'browser_compatibility' => '浏览器兼容性',
-    
+
     // 支持的平台
     'supported_platforms_help_description' => '查看我们支持的所有视频平台及其特殊说明',
     'platform_specific_help' => '平台专属帮助',
@@ -240,7 +240,7 @@ return [
     'twitter_help' => 'Twitter 使用帮助',
     'bilibili_help' => 'B站 使用帮助',
     'douyin_help' => '抖音 使用帮助',
-    
+
     // 账户和设置
     'account_settings' => '账户和设置',
     'account_settings_description' => '管理您的账户信息、偏好设置和使用限制',
@@ -250,7 +250,7 @@ return [
     'email_verification' => '邮箱验证',
     'usage_limits' => '使用限制说明',
     'referral_system' => '推荐系统',
-    
+
     // 故障排除
     'troubleshooting' => '故障排除',
     'troubleshooting_description' => '解决使用过程中遇到的技术问题',
@@ -259,7 +259,7 @@ return [
     'browser_issues' => '浏览器问题',
     'mobile_issues' => '移动端问题',
     'performance_optimization' => '性能优化',
-    
+
     // API文档
     'api_documentation' => 'API文档',
     'api_documentation_description' => '开发者资源、API接口文档和集成指南',
@@ -269,46 +269,46 @@ return [
     'api_examples' => 'API 示例',
     'api_rate_limits' => 'API 限制',
     'api_error_codes' => 'API 错误代码',
-    
+
     // 热门问题
     'popular_questions' => '热门问题',
     'faq_section' => '常见问题解答',
-    
+
     // 具体问题和答案
     'how_to_download_video' => '如何下载视频？',
     'how_to_download_video_answer' => '1. 复制视频链接\n2. 粘贴到解析框中\n3. 点击"解析"按钮\n4. 选择画质和格式\n5. 点击"下载"按钮',
     'how_to_download_video_detailed' => '详细步骤：首先从支持的平台（如YouTube、TikTok等）复制视频链接，然后粘贴到我们网站首页的输入框中，点击解析按钮等待处理完成，最后选择您需要的画质和格式进行下载。',
-    
+
     'supported_video_formats' => '支持哪些视频格式？',
     'supported_video_formats_answer' => '我们支持MP4、WebM、AVI、MOV等多种格式，具体格式取决于源平台提供的选项。',
     'supported_video_formats_detailed' => '支持的格式包括：MP4（推荐，兼容性最好）、WebM（Google开发的开源格式）、AVI（传统格式）、MOV（Apple格式）等。不同平台提供的格式可能有所不同。',
-    
+
     'is_service_free' => '服务是免费的吗？',
     'is_service_free_answer' => '是的，我们的基本服务完全免费。注册用户每日可获得更多解析次数。',
     'is_service_free_detailed' => '我们提供免费的基本服务，游客用户每日有一定的解析次数限制，注册用户可获得更多次数。我们还提供API服务供开发者使用。',
-    
+
     'download_not_working' => '为什么下载不工作？',
     'download_not_working_answer' => '可能的原因：1. 网络连接问题 2. 浏览器兼容性 3. 视频链接失效 4. 平台限制。请尝试刷新页面或更换浏览器。',
     'download_not_working_detailed' => '下载失败的常见原因及解决方法：\n1. 检查网络连接是否稳定\n2. 尝试使用Chrome、Firefox等主流浏览器\n3. 确认视频链接是否有效\n4. 某些平台可能有地区限制\n5. 清除浏览器缓存后重试',
-    
+
     'video_quality_options' => '有哪些画质选项？',
     'video_quality_options_answer' => '我们提供从流畅到超高清的多种画质选项，包括360p、480p、720p、1080p等，具体选项取决于原视频质量。',
-    
+
     'batch_download_help' => '如何批量下载视频？',
     'batch_download_help_answer' => '您可以在批量下载页面一次性添加多个视频链接，系统会自动排队处理并提供统一的下载管理。',
-    
+
     'mobile_usage' => '如何在手机上使用？',
     'mobile_usage_answer' => '我们的网站完全支持移动设备，您可以在手机浏览器中正常使用所有功能，操作方式与电脑端相同。',
-    
+
     'copyright_notice' => '版权相关说明',
     'copyright_notice_answer' => '请确保您下载的内容符合相关版权法律法规，仅用于个人学习和研究目的。',
-    
+
     'service_limits' => '服务限制说明',
     'service_limits_answer' => '为保证服务质量，我们对解析次数有一定限制。游客用户每日限制较少，注册用户可获得更多次数。',
-    
+
     'data_privacy' => '数据隐私保护',
     'data_privacy_answer' => '我们不会存储您的视频内容或个人数据，所有解析过程都是实时进行的，保护您的隐私安全。',
-    
+
     // 帮助中心导航和操作
     'still_need_help' => '仍需要帮助？',
     'contact_support_description' => '我们的支持团队随时准备为您提供帮助',
@@ -321,7 +321,7 @@ return [
     'back_to_help_center' => '返回帮助中心',
     'print_article' => '打印文章',
     'share_article' => '分享文章',
-    
+
     // 帮助中心额外翻译
     'articles' => '篇文章',
     'read_more' => '阅读更多',
@@ -344,7 +344,7 @@ return [
     'related_categories' => '相关分类',
     'browse_all_help_topics' => '浏览所有帮助主题',
     'click_to_read_full_article' => '点击阅读完整文章',
-    
+
     // 搜索相关翻译
     'search_results' => '搜索结果',
     'no_results_found' => '未找到相关结果',
@@ -360,7 +360,7 @@ return [
     'in_category' => '在分类',
     'parsing' => '解析',
     'account' => '账户',
-    
+
     // 新增的帮助内容翻译
     'quick_start_guide' => '快速开始指南',
     'basic_usage' => '基本使用方法',
@@ -629,11 +629,308 @@ return [
     'email_verification_failed' => '邮箱验证失败',
     'email_not_found' => '未找到该邮箱地址',
     'verification_email_sent' => '验证邮件已发送',
-    
+
     // 新布局相关翻译
     'welcome_to_help_center' => '欢迎使用帮助中心',
     'help_center_welcome_desc' => '请从左侧选择您需要了解的主题，或使用上方的搜索功能快速找到答案。',
     'loading' => '加载中...',
     'article_not_found' => '文章未找到',
     'loading_error' => '加载失败，请重试',
+    'search_help_hint' => '输入关键词快速找到您需要的答案',
+
+    // 帮助中心文章内容
+    // 快速开始指南
+    'quick_start_welcome' => '欢迎使用 VideoParser.top！这是一个功能强大的在线视频解析下载工具，支持多个主流视频平台。',
+    'quick_start_steps_title' => '快速开始步骤：',
+    'quick_start_step_1' => '访问 VideoParser.top 首页',
+    'quick_start_step_2' => '复制您想要下载的视频链接',
+    'quick_start_step_3' => '将链接粘贴到输入框中',
+    'quick_start_step_4' => '点击"解析"按钮',
+    'quick_start_step_5' => '选择合适的画质和格式',
+    'quick_start_step_6' => '点击"下载"按钮开始下载',
+    'quick_start_tip' => '提示：注册账户可以获得更多的每日解析次数！',
+
+    // 基本使用方法
+    'basic_usage_intro' => 'VideoParser.top 的基本使用非常简单，只需要几个步骤就能完成视频下载。',
+    'basic_usage_platforms_title' => '支持的平台',
+    'basic_usage_platforms_content' => '我们支持以下主流视频平台：YouTube、TikTok、Instagram、Facebook、Twitter、B站、抖音等100多个视频平台。',
+    'basic_usage_limits_title' => '使用限制',
+    'basic_usage_limits_content' => '游客用户每日有一定的解析次数限制，注册用户可获得更多次数。具体限制请查看账户设置页面。',
+
+    // 支持平台概览
+    'platforms_overview_intro' => 'VideoParser.top 支持多个主流视频平台，为您提供全面的视频解析服务。',
+    'platforms_main_title' => '主要支持平台',
+    'platforms_main_content' => '• YouTube - 全球最大的视频分享平台\n• TikTok - 短视频社交平台\n• Instagram - 图片和视频分享平台\n• Facebook - 社交网络平台\n• Twitter - 微博社交平台\n• B站 - 中国领先的视频弹幕网站\n• 抖音 - 中国短视频平台',
+    'platforms_tip' => '我们会持续添加对新平台的支持，如果您需要特定平台的支持，请联系我们。',
+
+    // 新手使用技巧
+    'first_time_tips_intro' => '作为新用户，这些技巧将帮助您更好地使用 VideoParser.top。',
+    'first_time_tips_title' => '新手使用技巧：',
+    'first_time_tip_1' => '注册账户获得更多解析次数',
+    'first_time_tip_2' => '收藏常用的视频链接',
+    'first_time_tip_3' => '选择合适的视频质量以节省流量',
+    'first_time_tip_4' => '使用批量下载功能提高效率',
+    'first_time_tip_5' => '关注我们的更新获取新功能',
+    'first_time_tips_advice' => '建议先从简单的单个视频下载开始，熟悉流程后再尝试批量下载等高级功能。',
+
+    // 下载失败
+    'download_failed_intro' => '下载失败是用户遇到的常见问题之一，以下是一些常见原因和解决方法。',
+    'download_failed_reasons_title' => '常见原因',
+    'download_failed_reasons_content' => '• 网络连接不稳定\n• 视频链接已失效\n• 平台限制或地区限制\n• 浏览器兼容性问题\n• 视频不允许跨域请求',
+    'download_failed_solutions_title' => '解决步骤：',
+    'download_failed_solution_1' => '检查网络连接是否正常',
+    'download_failed_solution_2' => '确认视频链接是否有效',
+    'download_failed_solution_3' => '尝试刷新页面重新解析',
+    'download_failed_solution_4' => '使用跨域插件<a href="https://chromewebstore.google.com/search/CORS%20Control?utm_source=ext_sidebar" class="text-blue-600">CORS Control</a>',
+    'download_failed_solution_5' => '尝试其他平台',
+
+    // 下载速度慢
+    'slow_speed_intro' => '下载速度慢可能由多种因素造成，以下是一些优化建议。',
+    'slow_speed_factors_title' => '影响因素',
+    'slow_speed_factors_content' => '• 网络带宽限制\n• 服务器负载\n• 视频文件大小\n• 地理位置距离\n• 同时下载数量',
+    'slow_speed_optimization_title' => '优化方法：',
+    'slow_speed_optimization_1' => '选择较低的视频质量',
+    'slow_speed_optimization_2' => '避免同时下载多个视频',
+    'slow_speed_optimization_3' => '在网络较好的时段下载',
+    'slow_speed_optimization_4' => '关闭其他占用带宽的应用',
+    'slow_speed_optimization_5' => '考虑升级网络套餐',
+
+    // 视频质量问题
+    'quality_issues_intro' => '视频质量问题通常与原始视频质量和平台限制有关。',
+    'quality_options_title' => '质量选项说明',
+    'quality_options_content' => '• 原画质：保持原始视频质量\n• 高清：1080p 高清画质\n• 标清：720p 标准画质\n• 流畅：480p 或更低画质',
+    'quality_limitation_tip' => '下载质量不会超过原始视频的质量。如果原视频是720p，则无法下载1080p版本。',
+
+    // 浏览器兼容性
+    'browser_compatibility_intro' => '为了获得最佳体验，建议使用现代浏览器访问我们的服务。\n\n某些浏览器可能需要安装扩展程序来解决跨域问题。',
+    'browser_recommended_title' => '推荐浏览器',
+    'browser_recommended_content' => '• Chrome 80+ (推荐)\n• Firefox 75+\n• Safari 13+\n• Edge 80+\n• Opera 67+',
+    'browser_extensions_title' => '推荐扩展程序',
+    'browser_extensions_content' => '如果遇到跨域问题，建议安装以下扩展程序：\n\n**Chrome浏览器：**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox浏览器：**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'browser_common_issues_title' => '常见问题',
+    'browser_common_issues_content' => '如果遇到兼容性问题，请尝试：\n• 更新浏览器到最新版本\n• 清除浏览器缓存和Cookie\n• 禁用广告拦截器\n• 启用JavaScript\n• 安装上述推荐的CORS扩展程序',
+    'browser_security_tip' => '注意：安装扩展程序时请确保从官方商店下载，避免安装恶意软件。使用完毕后可以禁用扩展程序以保证安全。',
+
+    // 平台特定帮助内容
+    // YouTube
+    'youtube_help_intro' => 'YouTube 是我们支持的主要平台之一，提供多种质量选项。',
+    'youtube_steps_title' => 'YouTube 视频下载步骤：',
+    'youtube_step_1' => '在 YouTube 上找到要下载的视频',
+    'youtube_step_2' => '复制视频页面的 URL',
+    'youtube_step_3' => '粘贴到我们的解析框中',
+    'youtube_step_4' => '选择合适的质量和格式',
+    'youtube_step_5' => '点击下载按钮',
+    'youtube_tip' => 'YouTube 支持多种质量选项，包括4K、1080p、720p等。请根据需要选择合适的质量。',
+
+    // TikTok
+    'tiktok_help_intro' => 'TikTok 短视频下载支持去水印功能，让您获得更清洁的视频。',
+    'tiktok_features_title' => '特殊功能',
+    'tiktok_features_content' => '• 自动去除 TikTok 水印\n• 支持音频单独下载\n• 保持原始质量\n• 快速解析处理',
+    'tiktok_tip' => 'TikTok 视频通常为竖屏格式，下载后可在移动设备上获得最佳观看体验。',
+
+    // Instagram
+    'instagram_help_intro' => 'Instagram 支持图片、视频和故事的下载。',
+    'instagram_content_types_title' => '支持内容类型',
+    'instagram_content_types_content' => '• 普通帖子视频\n• Instagram Stories\n• IGTV 视频\n• Reels 短视频',
+    'instagram_tip' => '请确保您有权下载相关内容，并遵守 Instagram 的使用条款。',
+
+    // Facebook
+    'facebook_help_intro' => 'Facebook 视频下载支持公开视频和个人分享视频。',
+    'facebook_notes_title' => '注意事项',
+    'facebook_notes_content' => '• 仅支持公开视频\n• 需要有效的视频链接\n• 某些视频可能有地区限制\n• 尊重原作者版权',
+
+    // B站
+    'bilibili_help_intro' => 'B站（Bilibili）是中国领先的视频弹幕网站，我们提供完整的下载支持。',
+    'bilibili_features_title' => '支持功能',
+    'bilibili_features_content' => '• 多P视频下载\n• 弹幕文件下载\n• 多种清晰度选择\n• 音频单独提取',
+    'bilibili_tip' => 'B站视频下载请遵守相关法律法规，仅用于个人学习和研究目的。',
+
+    // 抖音
+    'douyin_help_intro' => '抖音视频下载支持去水印和高质量下载。',
+    'douyin_features_title' => '特色功能',
+    'douyin_features_content' => '• 自动去除抖音水印\n• 保持原始音质\n• 支持批量下载\n• 快速解析处理',
+
+    // 账户相关
+    // 登录注册
+    'login_registration_intro' => '注册账户可以获得更多功能和更高的使用限制。',
+    'login_registration_steps_title' => '注册步骤：',
+    'login_registration_step_1' => '点击页面右上角的"注册"按钮',
+    'login_registration_step_2' => '填写邮箱地址和密码',
+    'login_registration_step_3' => '点击"注册"完成账户创建',
+    'login_registration_step_4' => '查收邮箱验证邮件',
+    'login_registration_step_5' => '点击验证链接激活账户',
+    'login_registration_benefits_title' => '注册优势',
+    'login_registration_benefits_content' => '• 每日解析次数更多\n• 支持批量下载\n• 下载历史记录\n• 优先客服支持',
+
+    // 密码重置
+    'password_reset_intro' => '如果忘记密码，可以通过邮箱重置密码。',
+    'password_reset_steps_title' => '密码重置步骤：',
+    'password_reset_step_1' => '点击登录页面的"忘记密码"链接',
+    'password_reset_step_2' => '输入注册时使用的邮箱地址',
+    'password_reset_step_3' => '点击"发送重置邮件"',
+    'password_reset_step_4' => '查收邮箱中的重置邮件',
+    'password_reset_step_5' => '点击邮件中的重置链接',
+    'password_reset_step_6' => '设置新密码并确认',
+
+    // 邮箱验证
+    'email_verification_intro' => '邮箱验证是账户安全的重要步骤，确保您能正常使用所有功能。',
+    'email_verification_importance_title' => '验证重要性',
+    'email_verification_importance_content' => '• 确保账户安全\n• 接收重要通知\n• 密码重置功能\n• 完整功能访问',
+    'email_verification_tip' => '如果没有收到验证邮件，请检查垃圾邮件文件夹，或点击重新发送验证邮件。',
+
+    // 使用限制
+    'usage_limits_intro' => '为了保证服务质量，我们对不同用户类型设置了相应的使用限制。',
+    'usage_limits_explanation_title' => '限制说明',
+    'usage_limits_explanation_content' => '• 游客用户：每日6次解析\n• 注册用户：每日10次解析\n• 推荐奖励：每成功推荐1人获得20次额外解析\n• API用户：根据套餐不同有相应限制',
+    'usage_limits_tip' => '限制每日凌晨重置。如需更高限制，请考虑使用我们的API服务。',
+
+    // 推荐系统
+    'referral_system_intro' => '推荐系统让您通过分享获得额外的解析次数奖励。',
+    'referral_system_steps_title' => '如何使用推荐系统：',
+    'referral_system_step_1' => '登录您的账户',
+    'referral_system_step_2' => '进入用户中心',
+    'referral_system_step_3' => '找到推荐链接',
+    'referral_system_step_4' => '分享给朋友或社交媒体',
+    'referral_system_step_5' => '朋友注册后您获得奖励',
+    'referral_system_rules_title' => '奖励规则',
+    'referral_system_rules_content' => '• 每成功推荐1人获得20次解析奖励\n• 被推荐人需要完成邮箱验证\n• 奖励次数永久有效\n• 无推荐人数限制',
+
+    // 故障排除
+    // 常见错误
+    'common_errors_intro' => '以下是用户经常遇到的错误及其解决方法。\n\n如果您遇到CORS相关错误，建议安装浏览器扩展程序来解决。',
+    'common_errors_types_title' => '常见错误类型',
+    'common_errors_types_content' => '• "解析失败" - 视频链接无效或平台限制\n• "网络超时" - 网络连接问题\n• "格式不支持" - 视频格式限制\n• "下载中断" - 网络不稳定\n• "权限不足" - 账户限制\n• "CORS错误" - 跨域访问被阻止',
+    'common_errors_cors_title' => 'CORS错误解决方案',
+    'common_errors_cors_content' => '如果遇到跨域访问错误，请安装以下扩展程序：\n\n**Chrome浏览器：**\n• <a href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino">CORS Unblock</a>\n• <a href="https://chrome.google.com/webstore/detail/allow-cors/lhobafahddgcelffkeicbaginigeejlf">Allow CORS</a>\n\n**Firefox浏览器：**\n• <a href="https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/">CORS Everywhere</a>',
+    'common_errors_tip' => '如果遇到未列出的错误，请联系客服并提供详细的错误信息。\n\n安装扩展程序后，记得在使用完毕后禁用以确保浏览器安全。',
+
+    // 网络问题
+    'network_issues_intro' => '网络问题可能影响视频解析和下载的正常进行。',
+    'network_issues_symptoms_title' => '常见症状',
+    'network_issues_symptoms_content' => '• 解析超时\n• 下载中断\n• 连接失败\n• 速度异常慢',
+    'network_issues_solutions_title' => '解决方法：',
+    'network_issues_solution_1' => '检查网络连接状态',
+    'network_issues_solution_2' => '尝试刷新页面',
+    'network_issues_solution_3' => '更换网络环境',
+    'network_issues_solution_4' => '使用VPN或代理',
+    'network_issues_solution_5' => '联系网络服务提供商',
+
+    // 浏览器问题
+    'browser_issues_intro' => '不同浏览器可能存在兼容性差异，以下是常见问题的解决方法。',
+    'browser_issues_common_title' => '常见浏览器问题',
+    'browser_issues_common_content' => '• JavaScript被禁用\n• Cookie被阻止\n• 广告拦截器干扰\n• 浏览器版本过旧\n• 扩展程序冲突',
+    'browser_issues_solutions_title' => '解决建议：',
+    'browser_issues_solution_1' => '启用JavaScript和Cookie',
+    'browser_issues_solution_2' => '暂时禁用广告拦截器',
+    'browser_issues_solution_3' => '更新浏览器到最新版本',
+    'browser_issues_solution_4' => '尝试无痕/隐私模式',
+    'browser_issues_solution_5' => '清除浏览器缓存和数据',
+
+    // 移动端问题
+    'mobile_issues_intro' => '移动设备使用时可能遇到的特殊问题和解决方案。',
+    'mobile_issues_common_title' => '移动端常见问题',
+    'mobile_issues_common_content' => '• 触摸操作不响应\n• 页面显示异常\n• 下载功能受限\n• 播放器不兼容',
+    'mobile_issues_solutions_title' => '移动端优化建议：',
+    'mobile_issues_solution_1' => '使用推荐的移动浏览器',
+    'mobile_issues_solution_2' => '确保网络连接稳定',
+    'mobile_issues_solution_3' => '关闭省电模式',
+    'mobile_issues_solution_4' => '清理设备存储空间',
+    'mobile_issues_solution_5' => '重启浏览器应用',
+
+    // API文档相关
+    'api_getting_started_intro' => '欢迎使用 VideoParser.top API！本指南将帮助您快速开始集成我们的视频解析服务。',
+    'api_getting_started_requirements_title' => '开始前准备',
+    'api_getting_started_requirements_content' => '• 注册 VideoParser.top 账户\n• 获取 API 密钥\n• 了解基本的 HTTP 请求\n• 准备开发环境',
+    'api_getting_started_first_request_title' => '第一个API请求',
+    'api_getting_started_first_request_content' => '使用您的API密钥发送一个简单的视频解析请求，验证集成是否成功。',
+
+    'api_authentication_intro' => 'API 认证确保只有授权用户才能访问我们的服务。',
+    'api_authentication_methods_title' => '认证方式',
+    'api_authentication_methods_content' => '• API Key 认证（推荐）\n• OAuth 2.0 认证\n• JWT Token 认证',
+    'api_authentication_security_title' => '安全建议',
+    'api_authentication_security_content' => '• 妥善保管API密钥\n• 定期更换密钥\n• 使用HTTPS请求\n• 实施请求限制',
+
+    'api_endpoints_intro' => '我们提供多个API端点来满足不同的使用需求。',
+    'api_endpoints_main_title' => '主要端点',
+    'api_endpoints_main_content' => '• /api/parse - 解析视频链接\n• /api/download - 获取下载链接\n• /api/info - 获取视频信息\n• /api/batch - 批量处理',
+    'api_endpoints_parameters_title' => '请求参数',
+    'api_endpoints_parameters_content' => '每个端点都有特定的必需和可选参数，请参考详细文档了解具体要求。',
+
+    'api_examples_intro' => '以下是一些常用的API调用示例，帮助您快速理解如何使用我们的服务。',
+    'api_examples_basic_title' => '基础示例',
+    'api_examples_basic_content' => '展示如何发送基本的视频解析请求和处理响应数据。',
+    'api_examples_advanced_title' => '高级示例',
+    'api_examples_advanced_content' => '包括批量处理、错误处理、异步请求等高级用法示例。',
+
+    'api_rate_limits_intro' => '为了保证服务质量和公平使用，我们对API请求实施了速率限制。',
+    'api_rate_limits_tiers_title' => '限制层级',
+    'api_rate_limits_tiers_content' => '• 免费用户：每分钟10次请求\n• 付费用户：每分钟100次请求\n• 企业用户：自定义限制',
+    'api_rate_limits_headers_title' => '限制头信息',
+    'api_rate_limits_headers_content' => 'API响应包含当前限制状态的头信息，帮助您管理请求频率。',
+
+    // 网络问题
+    'network_issues_intro' => '网络问题是影响使用体验的主要因素之一。',
+    'network_issues_diagnosis_title' => '网络诊断',
+    'network_issues_diagnosis_content' => '• 检查网络连接状态\n• 测试网络速度\n• 确认DNS设置\n• 检查防火墙设置\n• 尝试更换网络环境',
+    'network_issues_solutions_title' => '解决步骤：',
+    'network_issues_solution_1' => '重启路由器和设备',
+    'network_issues_solution_2' => '尝试使用移动网络',
+    'network_issues_solution_3' => '清除DNS缓存',
+    'network_issues_solution_4' => '联系网络服务提供商',
+    'network_issues_solution_5' => '使用VPN（如果适用）',
+
+    // 浏览器问题
+    'browser_issues_intro' => '浏览器相关问题通常可以通过简单的设置调整来解决。',
+    'browser_issues_common_title' => '常见浏览器问题',
+    'browser_issues_common_content' => '• JavaScript被禁用\n• Cookie被阻止\n• 缓存过期\n• 扩展程序冲突\n• 版本过旧',
+    'browser_issues_solutions_title' => '解决方法：',
+    'browser_issues_solution_1' => '启用JavaScript和Cookie',
+    'browser_issues_solution_2' => '清除浏览器缓存',
+    'browser_issues_solution_3' => '禁用广告拦截器',
+    'browser_issues_solution_4' => '更新浏览器版本',
+    'browser_issues_solution_5' => '尝试隐私模式',
+
+    // 移动端问题
+    'mobile_issues_intro' => '移动设备使用时可能遇到的特殊问题和解决方案。',
+    'mobile_issues_common_title' => '移动端常见问题',
+    'mobile_issues_common_content' => '• 触摸操作不响应\n• 页面显示异常\n• 下载功能受限\n• 网络切换问题\n• 存储空间不足',
+    'mobile_issues_tip' => '建议在WiFi环境下使用，以获得更好的体验和避免流量消耗。',
+
+    // API快速开始
+    'api_getting_started_intro' => 'VideoParser.top API 为开发者提供强大的视频解析功能。',
+    'api_getting_started_steps_title' => 'API 快速开始：',
+    'api_getting_started_step_1' => '注册开发者账户',
+    'api_getting_started_step_2' => '获取API密钥',
+    'api_getting_started_step_3' => '阅读API文档',
+    'api_getting_started_step_4' => '进行测试调用',
+    'api_getting_started_step_5' => '集成到您的应用',
+    'api_getting_started_advantages_title' => 'API 优势',
+    'api_getting_started_advantages_content' => '• 高速解析\n• 稳定可靠\n• 多格式支持\n• 详细文档\n• 技术支持',
+
+    // API认证
+    'api_authentication_intro' => 'API 认证确保您的请求安全和合法。',
+    'api_authentication_method_title' => '认证方式',
+    'api_authentication_method_content' => '我们使用API密钥进行认证。请在请求头中包含：\nAuthorization: Bearer YOUR_API_KEY',
+    'api_authentication_tip' => '请妥善保管您的API密钥，不要在客户端代码中暴露。',
+
+    // API端点
+    'api_endpoints_intro' => 'API 提供多个端点来满足不同的需求。',
+    'api_endpoints_list_title' => '主要端点',
+    'api_endpoints_list_content' => '• /api/parse - 解析视频链接\n• /api/info - 获取视频信息\n• /api/download - 获取下载链接\n• /api/batch - 批量处理',
+    'api_endpoints_usage_title' => '使用说明',
+    'api_endpoints_usage_content' => '每个端点都有详细的参数说明和示例代码，请参考完整的API文档。',
+
+    // API示例
+    'api_examples_intro' => '以下是常用的API调用示例，帮助您快速上手。',
+    'api_examples_basic_title' => '基础示例',
+    'api_examples_basic_content' => '展示如何发送基本的视频解析请求和处理响应数据。',
+    'api_examples_advanced_title' => '高级示例',
+    'api_examples_advanced_content' => '包括批量处理、错误处理、异步请求等高级用法示例。',
+
+    // API限制
+    'api_rate_limits_intro' => '为了保证服务质量和公平使用，我们对API请求实施了速率限制。',
+    'api_rate_limits_tiers_title' => '限制层级',
+    'api_rate_limits_tiers_content' => '• 免费用户：每分钟10次请求\n• 付费用户：每分钟100次请求\n• 企业用户：自定义限制',
+    'api_rate_limits_management_title' => '限制管理',
+    'api_rate_limits_management_content' => 'API响应包含当前限制状态的头信息，帮助您管理请求频率。',
     ];

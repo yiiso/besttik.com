@@ -18,7 +18,7 @@
 @endsection
 
 @section('page-content')
-<div class="max-w-7xl mx-auto">
+<div class="w-full px-0 sm:px-2 md:px-4 mx-auto">
     <!-- 搜索框 -->
     <div class="mb-8" id="help-search-section">
         <div class="max-w-2xl mx-auto">
@@ -41,8 +41,8 @@
 
     <!-- 主要内容区域 -->
     <div class="flex gap-8">
-        <!-- 左侧导航 -->
-        <div class="w-64 flex-shrink-0">
+        <!-- 左侧导航（仅桌面端显示） -->
+        <div class="w-64 flex-shrink-0 hidden md:block">
             <div class="bg-white rounded-2xl border border-gray-200 sticky top-4">
                 <div class="p-6">
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('messages.help_categories') }}</h3>
@@ -105,10 +105,50 @@
             </div>
         </div>
 
+        <!-- 移动端分类弹窗按钮 -->
+        <button class="fixed bottom-6 left-6 z-50 block md:hidden bg-blue-600 text-white rounded-full p-4 shadow-lg" onclick="document.getElementById('mobile-category-modal').classList.remove('hidden')">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+        <!-- 移动端分类弹窗 -->
+        <div id="mobile-category-modal" class="fixed inset-0 bg-black bg-opacity-40 flex items-end md:hidden hidden z-50" onclick="this.classList.add('hidden')">
+            <div class="bg-white w-full rounded-t-2xl p-6 max-h-2/3 overflow-y-auto" onclick="event.stopPropagation()">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">{{ __('messages.help_categories') }}</h3>
+                <nav class="space-y-2">
+                    @foreach($categories as $categoryKey => $category)
+                    <div class="mb-2">
+                        <button type="button" class="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 rounded-lg transition-colors" onclick="toggleMobileCategory('{{ $categoryKey }}')">
+                            <span class="font-medium text-gray-900">{{ $category['title'] }}</span>
+                            <svg id="mobile-arrow-{{ $categoryKey }}" class="w-4 h-4 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                        <div id="mobile-articles-{{ $categoryKey }}" class="hidden ml-6 mt-1 space-y-1">
+                            @foreach($category['articles'] as $articleKey => $articleTitle)
+                            <a href="{{ localized_url('/help/' . $categoryKey . '/' . $articleKey) }}" class="block p-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded transition-colors" onclick="document.getElementById('mobile-category-modal').classList.add('hidden')">{{ $articleTitle }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endforeach
+                </nav>
+            </div>
+        </div>
+        <script>
+        function toggleMobileCategory(categoryKey) {
+            const articles = document.getElementById(`mobile-articles-${categoryKey}`);
+            const arrow = document.getElementById(`mobile-arrow-${categoryKey}`);
+            if (articles.classList.contains('hidden')) {
+                articles.classList.remove('hidden');
+                arrow.style.transform = 'rotate(90deg)';
+            } else {
+                articles.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+        </script>
         <!-- 右侧内容区域 -->
         <div class="flex-1">
-            <div class="bg-white rounded-2xl border border-gray-200">
-                <div class="p-8">
+            <div class="bg-white md:rounded-2xl md:border md:border-gray-200">
+                <div class="p-0 sm:p-4 md:p-8">
                     @if(isset($articleData))
                         <!-- 文章内容 -->
                         <div class="mb-6">

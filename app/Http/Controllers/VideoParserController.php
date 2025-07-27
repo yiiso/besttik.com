@@ -94,13 +94,13 @@ class VideoParserController extends Controller
                     break;
                 case 'youtube':
                     $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
-                    $format = 'bestvideo+bestaudio';
+                    $format = 'bestvideo,bestaudio';
                     $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format, $cookiePath);
 
                     break;
                 case 'twitter':
                 case 'facebook':
-                    $format = 'best+bestaudio';
+                    $format = 'best,bestaudio';
                     $videoInfo = (new TwitterService())->getVideoUrl($videoUrl, $format);
                     break;
                 case 'douyin':
@@ -108,10 +108,10 @@ class VideoParserController extends Controller
                     break;
                 default :
                     try {
-                        $videoInfo = (new DouyinService())->parseVideoFromAPI($videoUrl);
-                    }catch (\Exception $exception){
-                        $format = 'best+bestaudio';
+                        $format = 'best,bestaudio';
                         $videoInfo = (new TwitterService())->getVideoUrl($videoUrl, $format);
+                    }catch (\Exception $exception){
+                        $videoInfo = (new DouyinService())->parseVideoFromAPI($videoUrl);
                     }
 
 
@@ -123,7 +123,7 @@ class VideoParserController extends Controller
                 $user = Auth::user();
                 $baseLimit = config('app.daily_parse_limit_user', 10);
                 $todayUsed = ParseLog::getTodaySuccessCountByUser($userId);
-                
+
                 // 如果超过基础限制，使用奖励次数
                 if ($todayUsed >= $baseLimit && $user->bonus_parse_count > 0) {
                     $user->useBonusParseCount(1);

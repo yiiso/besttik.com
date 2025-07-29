@@ -10,7 +10,7 @@ class DouyinService
     public function parseVideoFromAPI(string $videoUrl): array
     {
         $videoUrl = $this->getModalIdFromUrl($videoUrl);
-        var_dump($videoUrl);
+         
 
         $realUrl = env('PARSER_DOUYIN_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();

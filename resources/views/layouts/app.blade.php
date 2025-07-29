@@ -259,7 +259,7 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 header-right">
+                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 header-right ml-auto">
                     <!-- 语言选择器 - 移动端优化 -->
                     <div class="relative" id="languageSelector">
                         <!-- 移动端：显示当前语言 + 下拉 -->

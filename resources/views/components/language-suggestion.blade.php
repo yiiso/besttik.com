@@ -1,5 +1,5 @@
 {{-- 语言建议提示组件 --}}
-<div id="languageSuggestion" class="hidden fixed left-1/2 transform -translate-x-1/2 z-40 max-w-md w-full mx-4" style="top: 100px;">
+<div id="languageSuggestion" class="hidden fixed right-8 top-6 z-40 max-w-md w-full" style="left:auto;transform:none;">
     <div class="bg-white border border-blue-200 rounded-lg shadow-xl p-4 backdrop-blur-sm bg-white/95">
         <div class="flex items-start space-x-3">
             <div class="flex-shrink-0">

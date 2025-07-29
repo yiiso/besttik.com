@@ -37,7 +37,7 @@ if (!function_exists('locale_url')) {
         // 移除路径中可能存在的旧语言前缀（避免重复）
         $supportedLocales = array_keys(config('app.locales'));
         foreach ($supportedLocales as $lang) {
-            if ($lang !== $defaultLocale && str_starts_with($path, "/{$lang}")) {
+            if (str_starts_with($path, "/{$lang}")) {
                 $path = substr($path, strlen("/{$lang}"));
                 break;
             }
@@ -61,7 +61,7 @@ if (!function_exists('get_alternate_urls')) {
      */
     function get_alternate_urls($path = '')
     {
-        $languages = ['en', 'zh', 'es', 'fr', 'ja'];
+        $languages = array_keys(config('app.locales'));
         $alternates = [];
 
         foreach ($languages as $lang) {

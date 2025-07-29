@@ -23,10 +23,10 @@
     <div class="mb-8" id="help-search-section">
         <div class="max-w-2xl mx-auto">
             <form action="{{ localized_url('/help/search') }}" method="GET" class="relative">
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     name="q"
-                    placeholder="{{ __('messages.search_help_placeholder') }}" 
+                    placeholder="{{ __('messages.search_help_placeholder') }}"
                     class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:outline-none transition-colors pr-16"
                     value="{{ request('q') }}"
                 >
@@ -49,7 +49,7 @@
                     <nav class="space-y-2">
                         @foreach($categories as $categoryKey => $category)
                         <div class="category-section">
-                            <button 
+                            <button
                                 class="category-toggle w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 rounded-lg transition-colors"
                                 onclick="toggleCategory('{{ $categoryKey }}')"
                             >
@@ -89,7 +89,7 @@
                             </button>
                             <div class="category-articles {{ isset($currentCategory) && $currentCategory === $categoryKey ? '' : 'hidden' }} ml-11 mt-2 space-y-1" id="articles-{{ $categoryKey }}">
                                 @foreach($category['articles'] as $articleKey => $articleTitle)
-                                <a 
+                                <a
                                     href="{{ localized_url('/help/' . $categoryKey . '/' . $articleKey) }}"
                                     class="article-link block w-full text-left p-2 text-sm {{ isset($article) && $article === $articleKey && isset($currentCategory) && $currentCategory === $categoryKey ? 'bg-blue-100 text-blue-600' : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50' }} rounded transition-colors"
                                     onclick="handleHelpNavigation(event)"
@@ -106,7 +106,7 @@
         </div>
 
         <!-- 移动端分类弹窗按钮 -->
-        <button class="fixed bottom-6 left-6 z-50 block md:hidden bg-blue-600 text-white rounded-full p-4 shadow-lg" onclick="document.getElementById('mobile-category-modal').classList.remove('hidden')">
+        <button class="fixed bottom-24 left-12 z-50 block md:hidden bg-blue-600 text-white rounded-full p-4 shadow-lg" onclick="document.getElementById('mobile-category-modal').classList.remove('hidden')">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
         </button>
         <!-- 移动端分类弹窗 -->
@@ -265,13 +265,13 @@
                         <!-- 默认显示欢迎内容 -->
                         <h1 class="text-3xl font-bold text-gray-900 mb-6">{{ __('messages.welcome_to_help_center') ?? '欢迎使用帮助中心' }}</h1>
                         <p class="text-gray-600 mb-8 text-lg">{{ __('messages.help_center_welcome_desc') ?? '请从左侧选择您需要了解的主题，或使用上方的搜索功能快速找到答案。' }}</p>
-                        
+
                         <!-- 热门问题 -->
                         <div class="mb-8">
                             <h2 class="text-xl font-semibold text-gray-900 mb-4">{{ __('messages.popular_questions') }}</h2>
                             <div class="space-y-3">
                                 @foreach($popularQuestions as $index => $qa)
-                                <a 
+                                <a
                                     href="{{ localized_url('/help/' . $qa['category'] . '/' . $qa['article']) }}"
                                     class="block w-full text-left p-4 bg-gray-50 hover:bg-gray-100 rounded-lg transition-colors"
                                     onclick="handleHelpNavigation(event)"
@@ -298,7 +298,7 @@
                                         <p class="text-sm text-gray-600">{{ __('messages.get_personal_help') ?? '获取个人帮助' }}</p>
                                     </div>
                                 </a>
-                                
+
                                 <a href="{{ localized_url('/api') }}" class="flex items-center p-4 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors">
                                     <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
                                         <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -324,7 +324,7 @@
 function toggleCategory(categoryKey) {
     const articles = document.getElementById(`articles-${categoryKey}`);
     const arrow = document.getElementById(`arrow-${categoryKey}`);
-    
+
     if (articles.classList.contains('hidden')) {
         // 展开当前分类
         articles.classList.remove('hidden');
@@ -370,20 +370,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // 自动滚动到搜索框位置
     // 检查是否需要滚动（从其他帮助页面导航过来）
     const shouldScrollToSearch = sessionStorage.getItem('scrollToSearch');
-    
+
     // 延迟执行以确保页面完全加载
     setTimeout(function() {
         const searchSection = document.getElementById('help-search-section');
         if (searchSection && (shouldScrollToSearch === 'true' || window.location.pathname.includes('/help/'))) {
             // 计算搜索框位置，留出一些顶部空间
             const offsetTop = searchSection.offsetTop - 20;
-            
+
             // 平滑滚动到搜索框位置
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
             });
-            
+
             // 清除标记
             sessionStorage.removeItem('scrollToSearch');
         }

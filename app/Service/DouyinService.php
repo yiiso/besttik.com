@@ -94,6 +94,9 @@ class DouyinService
             parse_str($parts['query'] ?? '', $query);
             return 'https://www.douyin.com/video/'.($query['modal_id'] ?? '');
         }
+        if(str_contains($url,'https://www.iesdouyin.com/share/video')){
+            return str_replace('https://www.iesdouyin.com/share/video','https://www.douyin.com/video',$url);
+        }
 
         return $url;
     }

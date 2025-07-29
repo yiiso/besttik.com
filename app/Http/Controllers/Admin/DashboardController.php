@@ -305,8 +305,16 @@ class DashboardController extends Controller
 
         // 获取筛选选项数据
         $platforms = ParseLog::distinct()->pluck('platform')->filter()->sort();
-        
-        return view('admin.parse-logs', compact('logs', 'platforms'));
+
+        $ipLocationService = new IpLocationService();
+        $ipLocations = [];
+        foreach ($logs as $log) {
+            $ip = $log->ip_address;
+            if ($ip && !isset($ipLocations[$ip])) {
+                $ipLocations[$ip] = $ipLocationService->getLocationText($ip);
+            }
+        }
+        return view('admin.parse-logs', compact('logs', 'platforms', 'ipLocations'));
     }
 
     /**

@@ -10,6 +10,7 @@ class DouyinService
     public function parseVideoFromAPI(string $videoUrl): array
     {
         $videoUrl = $this->getModalIdFromUrl($videoUrl);
+        var_dump($videoUrl);
 
         $realUrl = env('PARSER_DOUYIN_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
@@ -95,7 +96,9 @@ class DouyinService
             return 'https://www.douyin.com/video/'.($query['modal_id'] ?? '');
         }
         if(str_contains($url,'https://www.iesdouyin.com/share/video')){
-            return str_replace('https://www.iesdouyin.com/share/video','https://www.douyin.com/video',$url);
+            preg_match('/video\/(\d+)/', $url, $matches);
+            $id = $matches[1] ?? null;
+            return  'https://www.douyin.com/video/'.$id ;
         }
 
         return $url;

@@ -177,4 +177,13 @@ class IpLocationService
 
         return $results;
     }
+
+    public function getLocationText(string $ip): string
+    {
+        $info = $this->queryLocation($ip);
+        $country = $info['country'] ?? '未知';
+        $region = $info['region'] ?? '未知';
+        $city = $info['city'] ?? '未知';
+        return $country . '-' . $region . '-' . $city;
+    }
 }

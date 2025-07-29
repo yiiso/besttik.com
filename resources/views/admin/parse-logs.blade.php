@@ -174,6 +174,7 @@
                 <div class="flex justify-between text-xs">
                     <span class="text-gray-500">IP地址:</span>
                     <span class="text-gray-900 font-mono">{{ $log->ip_address }}</span>
+                    <span class="text-gray-500 ml-2">{{ $ipLocations[$log->ip_address] ?? '未知' }}</span>
                 </div>
                 
                 @if($log->platform)
@@ -294,9 +295,23 @@
                     </table>
                 </div>
                 
-                <!-- 移动端列表 -->
+                <!-- 移动端列表部分，找到类似如下结构 --}}
                 <div class="sm:hidden" id="ipStatsMobileList">
-                    <!-- 动态加载 -->
+                    @foreach($logs as $log)
+                        <div class="border-b border-gray-200 p-3">
+                            <div class="flex justify-between items-center">
+                                <div class="flex-1 min-w-0">
+                                    <div class="text-sm font-mono text-gray-900">{{ $log->ip_address }}</div>
+                                    <div class="text-xs text-gray-500 mt-1">{{ $ipLocations[$log->ip_address] ?? '未知' }}</div>
+                                </div>
+                                <div class="flex-shrink-0 ml-2">
+                                    <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        {{ $log->count ?? '' }} 次
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

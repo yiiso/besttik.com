@@ -12,7 +12,7 @@
         <div class="mb-8">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-3">
                 <h2 class="text-lg font-medium text-gray-900">今日数据概览</h2>
-                <button onclick="showTodayHourlyData()" 
+                <button onclick="showTodayHourlyData()"
                         class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                     查看今日小时趋势
                 </button>
@@ -109,63 +109,63 @@
             <div class="px-4 py-5 sm:p-6">
                 <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-4 gap-4">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">数据趋势</h3>
-                    
+
                     <!-- 移动端快速选择按钮 -->
                     <div class="flex flex-wrap gap-2 lg:hidden">
-                        <button type="button" onclick="quickSelect('yesterday')" 
+                        <button type="button" onclick="quickSelect('yesterday')"
                                 class="px-3 py-2 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors flex-1 min-w-0">
                             昨天
                         </button>
-                        <button type="button" onclick="quickSelect('today')" 
+                        <button type="button" onclick="quickSelect('today')"
                                 class="px-3 py-2 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors flex-1 min-w-0">
                             今天
                         </button>
-                        <button type="button" onclick="quickSelect('7days')" 
+                        <button type="button" onclick="quickSelect('7days')"
                                 class="px-3 py-2 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors flex-1 min-w-0">
                             7天
                         </button>
-                        <button type="button" onclick="quickSelect('30days')" 
+                        <button type="button" onclick="quickSelect('30days')"
                                 class="px-3 py-2 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors flex-1 min-w-0">
                             30天
                         </button>
                     </div>
-                    
+
                     <div class="flex flex-col lg:flex-row lg:items-center gap-4">
                         <!-- 桌面端快速选择按钮 -->
                         <div class="hidden lg:flex items-center space-x-2">
-                            <button type="button" onclick="quickSelect('yesterday')" 
+                            <button type="button" onclick="quickSelect('yesterday')"
                                     class="px-3 py-1 text-xs bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors">
                                 昨天
                             </button>
-                            <button type="button" onclick="quickSelect('today')" 
+                            <button type="button" onclick="quickSelect('today')"
                                     class="px-3 py-1 text-xs bg-green-100 text-green-700 rounded hover:bg-green-200 transition-colors">
                                 今天
                             </button>
-                            <button type="button" onclick="quickSelect('7days')" 
+                            <button type="button" onclick="quickSelect('7days')"
                                     class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
                                 最近7天
                             </button>
-                            <button type="button" onclick="quickSelect('30days')" 
+                            <button type="button" onclick="quickSelect('30days')"
                                     class="px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors">
                                 最近30天
                             </button>
                         </div>
-                        
+
                         <!-- 时间范围选择器 -->
                         <form method="GET" action="{{ route('admin.dashboard') }}" id="rangeForm" class="flex flex-col sm:flex-row sm:items-center gap-2">
-                            <select name="range" id="rangeSelect" onchange="handleRangeChange()" 
+                            <select name="range" id="rangeSelect" onchange="handleRangeChange()"
                                     class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                                 <option value="7days" {{ $dateRange === '7days' ? 'selected' : '' }}>最近7天</option>
                                 <option value="30days" {{ $dateRange === '30days' ? 'selected' : '' }}>最近30天</option>
                                 <option value="custom" {{ $dateRange === 'custom' ? 'selected' : '' }}>自定义范围</option>
                             </select>
-                            
+
                             <!-- 自定义日期范围 -->
                             <div id="customDateRange" class="flex flex-col sm:flex-row sm:items-center gap-2" style="display: {{ $dateRange === 'custom' ? 'flex' : 'none' }}">
-                                <input type="date" name="start_date" value="{{ $startDate }}" 
+                                <input type="date" name="start_date" value="{{ $startDate }}"
                                        class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                                 <span class="text-gray-500 text-center sm:text-left">至</span>
-                                <input type="date" name="end_date" value="{{ $endDate }}" 
+                                <input type="date" name="end_date" value="{{ $endDate }}"
                                        class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full sm:w-auto">
                                 <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm w-full sm:w-auto">
                                     查询
@@ -174,7 +174,7 @@
                         </form>
                     </div>
                 </div>
-                
+
                 <!-- 图表容器 -->
                 <div class="mb-6 overflow-x-auto">
                     <div class="min-w-0" style="min-height: 300px;">
@@ -248,8 +248,9 @@
             return beijingTime;
         }
 
-        function getBeijingDateString() {
-            const beijingDate = getBeijingDate();
+        function getBeijingDateString(currentDay) {
+            if(currentDay) return currentDay;
+            const beijingDate = currentDay ?? getBeijingDate();
             const year = beijingDate.getFullYear();
             const month = String(beijingDate.getMonth() + 1).padStart(2, '0');
             const day = String(beijingDate.getDate()).padStart(2, '0');
@@ -268,10 +269,10 @@
         // 图表数据
         const chartData = @json($chartData);
         const dateRange = @json($dateRange);
-        
+
         // 检查是否为单天数据
         const isSingleDay = @json(isset($chartData[0]['hour']) ? true : false);
-        
+
         // 创建图表
         const ctx = document.getElementById('statsChart').getContext('2d');
         let chart = new Chart(ctx, {
@@ -338,7 +339,7 @@
             const rangeSelect = document.getElementById('rangeSelect');
             const customDateRange = document.getElementById('customDateRange');
             const rangeForm = document.getElementById('rangeForm');
-            
+
             if (rangeSelect.value === 'custom') {
                 customDateRange.style.display = 'flex';
             } else {
@@ -368,23 +369,23 @@
                 const params = new URLSearchParams({ range });
                 if (startDate) params.append('start_date', startDate);
                 if (endDate) params.append('end_date', endDate);
-                
+
                 const response = await fetch(`{{ route('admin.api.stats') }}?${params}`);
                 const result = await response.json();
-                
+
                 // 更新图表数据
                 chart.data.labels = result.data.map(item => item.date_display);
                 chart.data.datasets[0].data = result.data.map(item => item.new_users);
                 chart.data.datasets[1].data = result.data.map(item => item.total_parses);
                 chart.data.datasets[2].data = result.data.map(item => item.success_parses);
                 chart.data.datasets[3].data = result.data.map(item => item.failed_parses);
-                
+
                 // 根据数据类型调整图表类型和样式
                 if (result.is_single_day) {
                     // 切换到柱状图
                     chart.config.type = 'bar';
                     chart.options.plugins.title.text = '今日24小时数据趋势';
-                    
+
                     // 为柱状图设置颜色和样式
                     const barColors = [
                         { bg: 'rgba(59, 130, 246, 0.8)', border: 'rgb(59, 130, 246)' },
@@ -392,7 +393,7 @@
                         { bg: 'rgba(34, 197, 94, 0.8)', border: 'rgb(34, 197, 94)' },
                         { bg: 'rgba(239, 68, 68, 0.8)', border: 'rgb(239, 68, 68)' }
                     ];
-                    
+
                     chart.data.datasets.forEach((dataset, index) => {
                         dataset.backgroundColor = barColors[index].bg;
                         dataset.borderColor = barColors[index].border;
@@ -404,7 +405,7 @@
                     // 切换到折线图
                     chart.config.type = 'line';
                     chart.options.plugins.title.text = getTitleByRange(result.range);
-                    
+
                     // 为折线图设置颜色和样式
                     const lineColors = [
                         { bg: 'rgba(59, 130, 246, 0.1)', border: 'rgb(59, 130, 246)' },
@@ -412,7 +413,7 @@
                         { bg: 'rgba(34, 197, 94, 0.1)', border: 'rgb(34, 197, 94)' },
                         { bg: 'rgba(239, 68, 68, 0.1)', border: 'rgb(239, 68, 68)' }
                     ];
-                    
+
                     chart.data.datasets.forEach((dataset, index) => {
                         dataset.backgroundColor = lineColors[index].bg;
                         dataset.borderColor = lineColors[index].border;
@@ -421,16 +422,16 @@
                         dataset.fill = true;
                     });
                 }
-                
+
                 // 确保图例显示
                 chart.options.plugins.legend = {
                     display: true,
                     position: 'top'
                 };
-                
+
                 // 更新表格
                 updateTable(result.data, result.is_single_day);
-                
+
                 chart.update();
             } catch (error) {
                 console.error('更新图表数据失败:', error);
@@ -441,22 +442,22 @@
         function updateTable(data, isSingleDay) {
             const tableBody = document.getElementById('statsTableBody');
             const dateHeader = document.getElementById('dateHeader');
-            
+
             // 更新表头
             dateHeader.textContent = isSingleDay ? '时间' : '日期';
-            
+
             // 清空表格内容
             tableBody.innerHTML = '';
-            
+
             // 添加新数据
             data.forEach(item => {
                 const row = document.createElement('tr');
-                const successRate = item.total_parses > 0 ? 
+                const successRate = item.total_parses > 0 ?
                     ((item.success_parses / item.total_parses) * 100).toFixed(1) + '%' : '-';
-                
-                const dateDisplay = isSingleDay ? 
+
+                const dateDisplay = isSingleDay ?
                     `${item.date} ${item.date_display}` : item.date;
-                
+
                 row.innerHTML = `
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${dateDisplay}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">${item.new_users}</td>
@@ -473,14 +474,14 @@
         async function showTodayHourlyData() {
             const today = getBeijingDateString();
             await updateChart('custom', today, today);
-            
+
             // 更新URL参数
             const url = new URL(window.location);
             url.searchParams.set('range', 'custom');
             url.searchParams.set('start_date', today);
             url.searchParams.set('end_date', today);
             window.history.pushState({}, '', url);
-            
+
             // 更新表单选择
             document.getElementById('rangeSelect').value = 'custom';
             document.querySelector('input[name="start_date"]').value = today;
@@ -492,7 +493,7 @@
         async function quickSelect(range) {
             let startDate, endDate;
             const today = getBeijingDateString();
-            
+
             switch(range) {
                 case 'yesterday':
                     const yesterday = getBeijingDateString(getBeijingDateOffset(-1));
@@ -512,16 +513,17 @@
                 default:
                     return;
             }
-            
+
+
             // 更新图表
             await updateChart('custom', startDate, endDate);
-            
+
             // 更新表单
             document.getElementById('rangeSelect').value = 'custom';
             document.querySelector('input[name="start_date"]').value = startDate;
             document.querySelector('input[name="end_date"]').value = endDate;
             document.getElementById('customDateRange').style.display = 'flex';
-            
+
             // 更新URL
             const url = new URL(window.location);
             url.searchParams.set('range', 'custom');

@@ -42,6 +42,7 @@ return [
     'duration' => 'Duración',
     'author' => 'Autor',
     'platform' => 'Plataforma',
+    'dismiss' => 'Descartar',
     'play_video' => 'Reproducir Video',
     'open_new_tab' => 'Abrir en Nueva Pestaña',
     'download_video' => 'Descargar Video',

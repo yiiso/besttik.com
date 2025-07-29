@@ -48,6 +48,7 @@ return [
     'duration' => 'Duration',
     'author' => 'Author',
     'platform' => 'Platform',
+    'dismiss' => 'Dismiss',
     'play_video' => 'Play Video',
     'open_new_tab' => 'Open in New Tab',
     'download_video' => 'Download Video',

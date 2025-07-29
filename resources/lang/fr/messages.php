@@ -48,6 +48,7 @@ return [
     'duration' => 'Durée',
     'author' => 'Auteur',
     'platform' => 'Plateforme',
+    'dismiss' => 'Ignorer',
     'play_video' => 'Lire Vidéo',
 
     'open_new_tab' => 'Ouvrir dans Nouvel Onglet',

@@ -48,6 +48,7 @@ return [
     'duration' => '再生時間',
     'author' => '作者',
     'platform' => 'プラットフォーム',
+    'dismiss' => '無視',
     'play_video' => '動画再生',
     'open_new_tab' => '新しいタブで開く',
     'download_video' => '動画ダウンロード',

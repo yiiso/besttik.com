@@ -48,6 +48,7 @@ return [
     'duration' => '时长',
     'author' => '作者',
     'platform' => '平台',
+    'dismiss' => '忽略',
     'play_video' => '播放视频',
     'copy_link' => '复制链接',
     'open_new_tab' => '新窗口打开',

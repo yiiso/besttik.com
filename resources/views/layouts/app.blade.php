@@ -35,12 +35,10 @@
     <link rel="canonical" href="@yield('canonical', url()->current())">
 
     <!-- Hreflang Tags -->
-    <link rel="alternate" hreflang="en" href="{{ str_replace('/'.app()->getLocale().'/', '/en/', url()->current()) }}">
-    <link rel="alternate" hreflang="zh" href="{{ str_replace('/'.app()->getLocale().'/', '/zh/', url()->current()) }}">
-    <link rel="alternate" hreflang="es" href="{{ str_replace('/'.app()->getLocale().'/', '/es/', url()->current()) }}">
-    <link rel="alternate" hreflang="fr" href="{{ str_replace('/'.app()->getLocale().'/', '/fr/', url()->current()) }}">
-    <link rel="alternate" hreflang="ja" href="{{ str_replace('/'.app()->getLocale().'/', '/ja/', url()->current()) }}">
-    <link rel="alternate" hreflang="x-default" href="{{ str_replace('/'.app()->getLocale().'/', '/', url()->current()) }}">
+    @foreach(config('app.locales') as $localeCode => $localeName)
+        <link rel="alternate" hreflang="{{ $localeCode }}" href="{{locale_url($localeCode) }}">
+    @endforeach
+
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">

@@ -206,6 +206,7 @@
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9659370170474441"
             crossorigin="anonymous"></script>
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="DExqyeeSYPkh3KNpyY+M7A" async></script>
 </head>
 <body class="bg-white text-gray-900 font-elegant antialiased">
     <!-- Header -->

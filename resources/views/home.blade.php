@@ -401,28 +401,29 @@
         </a>
     </div>
 </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Page loaded with language:', document.documentElement.lang);
+
+        // 粘贴功能
+        const pasteBtn = document.getElementById('pasteBtn');
+        const videoInput = document.getElementById('videoUrl');
+
+        if (pasteBtn && videoInput) {
+            pasteBtn.addEventListener('click', async function() {
+                try {
+                    const text = await navigator.clipboard.readText();
+                    videoInput.value = text;
+                    videoInput.focus();
+                    console.log('Pasted text:', text);
+                } catch (err) {
+                    console.log('Failed to read clipboard:', err);
+                    // 如果剪贴板API不可用，可以显示提示
+                }
+            });
+        }
+    });
+</script>
 @endsection
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded with language:', document.documentElement.lang);
 
-    // 粘贴功能
-    const pasteBtn = document.getElementById('pasteBtn');
-    const videoInput = document.getElementById('videoUrl');
-
-    if (pasteBtn && videoInput) {
-        pasteBtn.addEventListener('click', async function() {
-            try {
-                const text = await navigator.clipboard.readText();
-                videoInput.value = text;
-                videoInput.focus();
-                console.log('Pasted text:', text);
-            } catch (err) {
-                console.log('Failed to read clipboard:', err);
-                // 如果剪贴板API不可用，可以显示提示
-            }
-        });
-    }
-});
-</script>

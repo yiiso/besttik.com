@@ -352,6 +352,9 @@
     <!-- Breadcrumb Navigation -->
     @include('components.breadcrumb')
 
+    <!-- Language Suggestion -->
+    @include('components.language-suggestion')
+
     <!-- Main Content -->
     <main>
         @yield('content')

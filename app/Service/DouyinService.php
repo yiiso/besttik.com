@@ -9,6 +9,8 @@ class DouyinService
 {
     public function parseVideoFromAPI(string $videoUrl): array
     {
+        $videoUrl = $this->getModalIdFromUrl($videoUrl);
+
         $realUrl = env('PARSER_DOUYIN_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
         curl_setopt_array($ch, [
@@ -83,6 +85,17 @@ class DouyinService
         }
 
         return $formatted;
+    }
+
+    function getModalIdFromUrl(string $url): ?string
+    {
+        if(str_contains($url, 'modal_id=')){
+            $parts = parse_url($url);
+            parse_str($parts['query'] ?? '', $query);
+            return 'https://www.douyin.com/video/'.($query['modal_id'] ?? '');
+        }
+
+        return $url;
     }
 
 

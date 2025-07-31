@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - 最顶级的视频解析 抖音去水印 抖音视频解析下载',
-    'description' => '最牛的视频解析下载。抖音去水印， YouTube视频解析、TikTok解析、Instagram、Facebook、Twitter等平台视频解析 ',
-    'keywords' => '视频解析,视频去水印,抖音去水印,TikTok解析, youtube下载, 抖音下载,B站下载',
-    'hero_title' => '免费在线视频下载器',
+    'title' => ' 抖音无水印视频解析工具 免费解析抖音去水印 完全免费的视频解析 速度最快的抖音去水印 ',
+    'description' => '这是一个完全免费的视频解析的页面，支持抖音去水印，YouTube视频解析、TikTok视频解析、Instagram视频解析、Facebook视频解析、Twitter视频解析，还支持更多平台。在这里会解析最高清的视频格式，只需点击粘贴按钮即可实现解析视频，提供实时预览，播放及下载！如果你需要高清的视频解析欢迎来这里。 ',
+    'keywords' => '抖音去水印,抖音无水印工具, 抖音视频下载工具, 免费抖音去水印,免费B站视频下载',
+    'hero_title' => '免费解析抖音无水印视频下载',
     'hero_subtitle' => '支持YouTube、TikTok、Instagram、Facebook、Twitter等平台视频下载。快速、安全、完全免费。',
     'how_to_use_desc' => '简单4步下载任何视频',
     'step_1_title' => '复制视频链接',

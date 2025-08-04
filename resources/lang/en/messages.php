@@ -853,4 +853,73 @@ return [
     'copyright_notice' => 'Copyright Notice',
     'service_limits' => 'Service Limits',
     'data_privacy' => 'Data Privacy Protection',
+
+    // Douyin Parser Page
+    'douyin_parser_title' => 'Douyin Video Download - Douyin Watermark Remover - Free Douyin Parser Tool',
+    'douyin_parser_description' => 'Professional Douyin video download tool, supports Douyin watermark removal, Douyin video parsing, Douyin HD download. Free online Douyin downloader.',
+    'douyin_parser_keywords' => 'Douyin video download,Douyin watermark remover,Douyin video parser,Douyin downloader,Douyin HD download,Douyin video save',
+    'douyin_parser_hero_title' => 'Douyin Video Download',
+    'douyin_parser_hero_subtitle' => 'Professional Douyin video download tool, supports Douyin watermark removal, Douyin video parsing, completely free',
+    'douyin_parser_placeholder' => 'Paste Douyin video link here...',
+    'douyin_parser_button' => 'Parse Douyin',
+    'douyin_parser_loading' => 'Parsing Douyin video...',
+    'douyin_parser_features_title' => 'Douyin Download Features',
+    'douyin_parser_features_subtitle' => 'Professional Douyin video download service',
+    'douyin_watermark_removal' => 'Douyin Watermark Removal',
+    'douyin_watermark_removal_desc' => 'Automatically remove Douyin video watermarks, get clean and clear Douyin video files, support HD quality Douyin download',
+    'douyin_fast_parsing' => 'Douyin Fast Parsing',
+    'douyin_fast_parsing_desc' => 'No need to download software, online Douyin video parsing, support Douyin video batch download',
+    'douyin_hd_download' => 'Douyin HD Download',
+    'douyin_hd_download_desc' => 'Maintain Douyin original quality, support multiple format Douyin video download, meet different device playback needs',
+    
+    // YouTube Parser Page
+    'youtube_parser_title' => 'YouTube Video Download - YouTube Video Parser - Free YouTube Download Tool',
+    'youtube_parser_description' => 'Professional YouTube video download tool, supports YouTube video parsing, HD video download, audio extraction. Free online YouTube downloader, supports 4K, 1080p and other qualities.',
+    'youtube_parser_keywords' => 'YouTube video download,YouTube downloader,YouTube video parser,YouTube audio download,YouTube HD download,YouTube free download',
+    'youtube_parser_hero_title' => 'YouTube Video Download',
+    'youtube_parser_hero_subtitle' => 'Professional YouTube video download tool, supports 4K, 1080p HD download, audio extraction, completely free',
+    'youtube_parser_placeholder' => 'Paste YouTube video link here...',
+    'youtube_parser_button' => 'Parse YouTube',
+    'youtube_parser_loading' => 'Parsing YouTube video...',
+    
+    // TikTok Parser Page  
+    'tiktok_parser_title' => 'TikTok Video Download - TikTok Watermark Remover - Free TikTok Parser Tool',
+    'tiktok_parser_description' => 'Professional TikTok video download tool, supports TikTok watermark removal, TikTok video parsing, TikTok HD download. Free online TikTok downloader.',
+    'tiktok_parser_keywords' => 'TikTok video download,TikTok watermark remover,TikTok video parser,TikTok downloader,TikTok HD download,TikTok video save',
+    'tiktok_parser_hero_title' => 'TikTok Video Download',
+    'tiktok_parser_hero_subtitle' => 'Professional TikTok video download tool, supports TikTok watermark removal, TikTok video parsing, TikTok HD download, completely free',
+    'tiktok_parser_placeholder' => 'Paste TikTok video link here...',
+    'tiktok_parser_button' => 'Parse TikTok',
+    'tiktok_parser_loading' => 'Parsing TikTok video...',
+
+    // Instagram Parser Page
+    'instagram_parser_title' => 'Instagram Video Download - Instagram Photo Download - Free Instagram Download Tool',
+    'instagram_parser_description' => 'Professional Instagram video download tool, supports Instagram photo download, Instagram video parsing, Instagram Stories download. Free online Instagram downloader.',
+    'instagram_parser_keywords' => 'Instagram video download,Instagram photo download,Instagram downloader,Instagram video parser,Instagram Stories download,Instagram Reels download',
+    'instagram_parser_hero_title' => 'Instagram Download',
+    'instagram_parser_hero_subtitle' => 'Professional Instagram video download tool, supports Instagram photo download, Instagram Stories download, Instagram Reels download',
+    'instagram_parser_placeholder' => 'Paste Instagram link here...',
+    'instagram_parser_button' => 'Parse Instagram',
+    'instagram_parser_loading' => 'Parsing Instagram content...',
+
+    // Facebook Parser Page
+    'facebook_parser_title' => 'Facebook Video Download - Facebook Video Parser - Free Facebook Download Tool',
+    'facebook_parser_description' => 'Professional Facebook video download tool, supports Facebook video parsing, Facebook video save, Facebook HD video download. Free online Facebook downloader.',
+    'facebook_parser_keywords' => 'Facebook video download,Facebook video parser,Facebook downloader,Facebook video save,Facebook HD download,Facebook video extract',
+    'facebook_parser_hero_title' => 'Facebook Video Download',
+    'facebook_parser_hero_subtitle' => 'Professional Facebook video download tool, supports Facebook video parsing, Facebook HD video download, Facebook video save',
+    'facebook_parser_placeholder' => 'Paste Facebook video link here...',
+    'facebook_parser_button' => 'Parse Facebook',
+    'facebook_parser_loading' => 'Parsing Facebook video...',
+
+    // Twitter Parser Page
+    'twitter_parser_title' => 'Twitter Video Download - X Video Download - Free Twitter Video Parser Tool',
+    'twitter_parser_description' => 'Professional Twitter video download tool, supports X video download, Twitter video parsing, Twitter video save. Free online Twitter downloader.',
+    'twitter_parser_keywords' => 'Twitter video download,X video download,Twitter video parser,Twitter downloader,Twitter video save,X video parser',
+    'twitter_parser_hero_title' => 'Twitter Video Download',
+    'twitter_parser_hero_subtitle' => 'Professional Twitter video download tool, supports X video download, Twitter video parsing, Twitter video save, completely free',
+    'twitter_parser_placeholder' => 'Paste Twitter/X video link here...',
+    'twitter_parser_button' => 'Parse Twitter',
+    'twitter_parser_loading' => 'Parsing Twitter video...',
+
 ];

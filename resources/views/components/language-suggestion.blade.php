@@ -100,22 +100,36 @@ document.addEventListener('DOMContentLoaded', function() {
             return pathParts[0];
         }
 
-        // 否则返回默认语言（英文）
-        return 'en';
+        // 否则返回默认语言（中文）
+        return 'zh';
     }
 
     function shouldShowSuggestion(detectedLang, currentLang) {
-        // 如果检测到的语言与当前语言不同，且检测到的语言被支持，则显示建议
-        return detectedLang && detectedLang !== currentLang && suggestionTexts[detectedLang];
+        // 如果检测到的语言与当前语言不同，则显示建议
+        if (!detectedLang || detectedLang === currentLang) {
+            return false;
+        }
+        
+        // 如果检测到的语言有对应的提示文本，显示该语言建议
+        if (suggestionTexts[detectedLang]) {
+            return true;
+        }
+        
+        // 如果检测到的语言没有对应提示文本，但当前是中文页面，建议切换到英文
+        if (currentLang === 'zh' && detectedLang !== 'zh') {
+            return true;
+        }
+        
+        return false;
     }
 
     function getLanguageUrl(targetLang) {
         const currentPath = window.location.pathname;
         const currentLang = getCurrentPageLanguage();
 
-        if (targetLang === 'en') {
-            // 英文版本使用根路径
-            if (currentLang === 'en') {
+        if (targetLang === 'zh') {
+            // 中文版本使用根路径（现在中文是默认语言）
+            if (currentLang === 'zh') {
                 return currentPath;
             } else {
                 // 移除语言前缀
@@ -123,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else {
             // 其他语言版本
-            if (currentLang === 'en') {
+            if (currentLang === 'zh') {
                 // 从根路径添加语言前缀
                 return `/${targetLang}${currentPath === '/' ? '' : currentPath}`;
             } else {
@@ -143,7 +157,15 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        const texts = suggestionTexts[detectedLang];
+        let texts = suggestionTexts[detectedLang];
+        let targetLang = detectedLang;
+        
+        // 如果检测到的语言没有对应的提示文本，且当前是中文页面，建议切换到英文
+        if (!texts && getCurrentPageLanguage() === 'zh') {
+            texts = suggestionTexts['en'];
+            targetLang = 'en';
+        }
+        
         if (!texts) {
             console.log('No suggestion texts found for language:', detectedLang);
             return;
@@ -155,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 设置按钮点击事件
         acceptButton.onclick = function() {
-            const targetUrl = getLanguageUrl(detectedLang);
+            const targetUrl = getLanguageUrl(targetLang);
             console.log('Redirecting to:', targetUrl);
             window.location.href = targetUrl;
         };
@@ -168,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
             suggestionElement.classList.add('show');
         }, 100);
 
-        console.log('Language suggestion shown for:', detectedLang);
+        console.log('Language suggestion shown for:', targetLang);
     }
 
     function dismissSuggestion() {

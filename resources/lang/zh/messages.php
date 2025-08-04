@@ -934,4 +934,73 @@ return [
     'api_rate_limits_tiers_content' => '• 免费用户：每分钟10次请求\n• 付费用户：每分钟100次请求\n• 企业用户：自定义限制',
     'api_rate_limits_management_title' => '限制管理',
     'api_rate_limits_management_content' => 'API响应包含当前限制状态的头信息，帮助您管理请求频率。',
-    ];
+    
+    // 抖音专题页面
+    'douyin_parser_title' => '抖音视频解析 - 抖音去水印在线解析工具 - 免费抖音视频下载',
+    'douyin_parser_description' => '专业的抖音视频解析工具，支持抖音视频在线解析、抖音视频提取在线解析、抖音去水印解析。免费提供抖音无水印视频下载，抖音解析视频在线服务，支持高清画质下载。',
+    'douyin_parser_keywords' => '抖音视频解析,抖音视频在线解析,抖音视频提取在线解析,抖音去水印,抖音无水印下载,抖音解析视频在线,抖音视频下载,抖音去水印解析',
+    'douyin_parser_hero_title' => '抖音视频解析',
+    'douyin_parser_hero_subtitle' => '专业的抖音视频在线解析工具，支持抖音视频提取在线解析、抖音去水印解析',
+    'douyin_parser_placeholder' => '粘贴抖音视频链接到这里...',
+    'douyin_parser_button' => '解析抖音',
+    'douyin_parser_loading' => '正在解析抖音视频...',
+    'douyin_parser_features_title' => '抖音解析特色功能',
+    'douyin_parser_features_subtitle' => '专业的抖音视频在线解析服务',
+    'douyin_watermark_removal' => '抖音去水印',
+    'douyin_watermark_removal_desc' => '自动去除抖音视频水印，获得干净清晰的视频文件，支持高清画质下载',
+    'douyin_fast_parsing' => '抖音在线解析',
+    'douyin_fast_parsing_desc' => '无需下载软件，在线即可完成抖音视频解析，支持抖音视频提取在线解析',
+    'douyin_hd_download' => '高清视频下载',
+    'douyin_hd_download_desc' => '保持原始画质，支持多种格式下载，满足不同设备播放需求',
+    
+    // YouTube专题页面
+    'youtube_parser_title' => 'YouTube视频下载 - YouTube视频解析 - 免费YouTube下载工具',
+    'youtube_parser_description' => '专业的YouTube视频下载工具，支持YouTube视频解析、高清视频下载、音频提取。免费在线YouTube下载器，支持4K、1080p等多种画质。',
+    'youtube_parser_keywords' => 'YouTube视频下载,YouTube下载器,YouTube视频解析,YouTube音频下载,YouTube高清下载,YouTube免费下载',
+    'youtube_parser_hero_title' => 'YouTube视频下载',
+    'youtube_parser_hero_subtitle' => '专业的YouTube视频下载工具，支持4K、1080p高清下载，音频提取，完全免费',
+    'youtube_parser_placeholder' => '粘贴YouTube视频链接到这里...',
+    'youtube_parser_button' => '解析YouTube',
+    'youtube_parser_loading' => '正在解析YouTube视频...',
+    
+    // TikTok专题页面
+    'tiktok_parser_title' => 'TikTok视频下载 - TikTok去水印 - 免费TikTok视频解析工具',
+    'tiktok_parser_description' => '专业的TikTok视频下载工具，支持TikTok去水印、TikTok视频解析、TikTok无水印下载。免费在线TikTok下载器，高清视频下载。',
+    'tiktok_parser_keywords' => 'TikTok视频下载,TikTok去水印,TikTok视频解析,TikTok下载器,TikTok无水印下载,TikTok视频保存',
+    'tiktok_parser_hero_title' => 'TikTok视频下载',
+    'tiktok_parser_hero_subtitle' => '专业的TikTok视频下载工具，支持TikTok去水印、TikTok视频解析、TikTok无水印下载，完全免费',
+    'tiktok_parser_placeholder' => '粘贴TikTok视频链接到这里...',
+    'tiktok_parser_button' => '解析TikTok',
+    'tiktok_parser_loading' => '正在解析TikTok视频...',
+
+    // Instagram专题页面
+    'instagram_parser_title' => 'Instagram视频下载 - Instagram图片下载 - 免费Instagram下载工具',
+    'instagram_parser_description' => '专业的Instagram视频下载工具，支持Instagram图片下载、Instagram视频解析、Instagram Stories下载。免费在线Instagram下载器。',
+    'instagram_parser_keywords' => 'Instagram视频下载,Instagram图片下载,Instagram下载器,Instagram视频解析,Instagram Stories下载,Instagram Reels下载',
+    'instagram_parser_hero_title' => 'Instagram下载',
+    'instagram_parser_hero_subtitle' => '专业的Instagram视频下载工具，支持Instagram图片下载、Instagram Stories下载、Instagram Reels下载',
+    'instagram_parser_placeholder' => '粘贴Instagram链接到这里...',
+    'instagram_parser_button' => '解析Instagram',
+    'instagram_parser_loading' => '正在解析Instagram内容...',
+
+    // Facebook专题页面
+    'facebook_parser_title' => 'Facebook视频下载 - Facebook视频解析 - 免费Facebook下载工具',
+    'facebook_parser_description' => '专业的Facebook视频下载工具，支持Facebook视频解析、Facebook视频保存、Facebook高清视频下载。免费在线Facebook下载器。',
+    'facebook_parser_keywords' => 'Facebook视频下载,Facebook视频解析,Facebook下载器,Facebook视频保存,Facebook高清下载,Facebook视频提取',
+    'facebook_parser_hero_title' => 'Facebook视频下载',
+    'facebook_parser_hero_subtitle' => '专业的Facebook视频下载工具，支持Facebook视频解析、Facebook高清视频下载、Facebook视频保存',
+    'facebook_parser_placeholder' => '粘贴Facebook视频链接到这里...',
+    'facebook_parser_button' => '解析Facebook',
+    'facebook_parser_loading' => '正在解析Facebook视频...',
+
+    // Twitter专题页面
+    'twitter_parser_title' => 'Twitter视频下载 - X视频下载 - 免费Twitter视频解析工具',
+    'twitter_parser_description' => '专业的Twitter视频下载工具，支持X视频下载、Twitter视频解析、Twitter视频保存。免费在线Twitter下载器。',
+    'twitter_parser_keywords' => 'Twitter视频下载,X视频下载,Twitter视频解析,Twitter下载器,Twitter视频保存,X视频解析',
+    'twitter_parser_hero_title' => 'Twitter视频下载',
+    'twitter_parser_hero_subtitle' => '专业的Twitter视频下载工具，支持X视频下载、Twitter视频解析、Twitter视频保存，完全免费',
+    'twitter_parser_placeholder' => '粘贴Twitter/X视频链接到这里...',
+    'twitter_parser_button' => '解析Twitter',
+    'twitter_parser_loading' => '正在解析Twitter视频...',
+
+];

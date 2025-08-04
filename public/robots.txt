@@ -18,6 +18,8 @@ Allow: /tiktok
 Allow: /instagram
 Allow: /facebook
 Allow: /twitter
+Allow: /snapchat
+Allow: /pinterest
 Allow: /batch-download
 Allow: /api
 Allow: /help

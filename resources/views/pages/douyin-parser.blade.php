@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '抖音视频解析 - 抖音去水印在线解析工具 - 免费抖音视频下载')
-@section('description', '专业的抖音视频解析工具，支持抖音视频在线解析、抖音视频提取在线解析、抖音去水印解析。免费提供抖音无水印视频下载，抖音解析视频在线服务，支持高清画质下载。')
-@section('keywords', '抖音视频解析,抖音视频在线解析,抖音视频提取在线解析,抖音去水印,抖音无水印下载,抖音解析视频在线,抖音视频下载,抖音去水印解析')
+@section('title', __('messages.douyin_parser_title'))
+@section('description', __('messages.douyin_parser_description'))
+@section('keywords', __('messages.douyin_parser_keywords'))
 
 @section('content')
 <!-- 抖音专用解析页面 -->

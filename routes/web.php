@@ -113,6 +113,14 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
         return view('pages.twitter-parser');
     })->name('twitter');
 
+    Route::get('/snapchat', function () {
+        return view('pages.snapchat-parser');
+    })->name('snapchat');
+
+    Route::get('/pinterest', function () {
+        return view('pages.pinterest-parser');
+    })->name('pinterest');
+
 });
 
 
@@ -199,6 +207,14 @@ Route::prefix('{locale}')
         Route::get('/twitter', function () {
             return view('pages.twitter-parser');
         })->name('twitter.locale');
+
+        Route::get('/snapchat', function () {
+            return view('pages.snapchat-parser');
+        })->name('snapchat.locale');
+
+        Route::get('/pinterest', function () {
+            return view('pages.pinterest-parser');
+        })->name('pinterest.locale');
 });
 
 // API路由

@@ -30,11 +30,10 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
         return view('pages.api');
     })->name('api');
 
-    // 帮助中心路由
-    Route::get('/help', [App\Http\Controllers\HelpController::class, 'index'])->name('help');
-    Route::get('/help/search', [App\Http\Controllers\HelpController::class, 'search'])->name('help.search');
-    Route::get('/help/{category}', [App\Http\Controllers\HelpController::class, 'category'])->name('help.category');
-    Route::get('/help/{category}/{article}', [App\Http\Controllers\HelpController::class, 'article'])->name('help.article');
+    // 使用帮助页面（单页面替代help模块）
+    Route::get('/help', function () {
+        return view('pages.help-guide');
+    })->name('help');
 
     Route::get('/contact', function () {
         return view('pages.contact');
@@ -47,6 +46,72 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
     Route::get('/terms', function () {
         return view('pages.terms');
     })->name('terms');
+
+    // 抖音专用解析页面
+    Route::get('/douyin-parser', function () {
+        return view('pages.douyin-parser');
+    })->name('douyin-parser');
+
+    Route::get('/douyin', function () {
+        return view('pages.douyin-parser');
+    })->name('douyin');
+
+    Route::get('/抖音解析', function () {
+        return view('pages.douyin-parser');
+    })->name('douyin-chinese');
+
+    // 其他平台专题页面
+    Route::get('/xiaohongshu', function () {
+        return view('pages.xiaohongshu-parser');
+    })->name('xiaohongshu');
+
+    Route::get('/小红书解析', function () {
+        return view('pages.xiaohongshu-parser');
+    })->name('xiaohongshu-chinese');
+
+    Route::get('/youtube', function () {
+        return view('pages.youtube-parser');
+    })->name('youtube');
+
+    Route::get('/bilibili', function () {
+        return view('pages.bilibili-parser');
+    })->name('bilibili');
+
+    Route::get('/B站解析', function () {
+        return view('pages.bilibili-parser');
+    })->name('bilibili-chinese');
+
+    Route::get('/kuaishou', function () {
+        return view('pages.kuaishou-parser');
+    })->name('kuaishou');
+
+    Route::get('/快手解析', function () {
+        return view('pages.kuaishou-parser');
+    })->name('kuaishou-chinese');
+
+    Route::get('/weibo', function () {
+        return view('pages.weibo-parser');
+    })->name('weibo');
+
+    Route::get('/微博解析', function () {
+        return view('pages.weibo-parser');
+    })->name('weibo-chinese');
+
+    Route::get('/tiktok', function () {
+        return view('pages.tiktok-parser');
+    })->name('tiktok');
+
+    Route::get('/instagram', function () {
+        return view('pages.instagram-parser');
+    })->name('instagram');
+
+    Route::get('/facebook', function () {
+        return view('pages.facebook-parser');
+    })->name('facebook');
+
+    Route::get('/twitter', function () {
+        return view('pages.twitter-parser');
+    })->name('twitter');
 
 });
 
@@ -68,11 +133,10 @@ Route::prefix('{locale}')
             return view('pages.api');
         })->name('api.locale');
 
-        // 多语言帮助中心路由
-        Route::get('/help', [App\Http\Controllers\HelpController::class, 'index'])->name('help.locale');
-        Route::get('/help/search', [App\Http\Controllers\HelpController::class, 'search'])->name('help.search.locale');
-        Route::get('/help/{category}', [App\Http\Controllers\HelpController::class, 'category'])->name('help.category.locale');
-        Route::get('/help/{category}/{article}', [App\Http\Controllers\HelpController::class, 'article'])->name('help.article.locale');
+        // 多语言使用帮助页面
+        Route::get('/help', function () {
+            return view('pages.help-guide');
+        })->name('help.locale');
 
         Route::get('/contact', function () {
             return view('pages.contact');
@@ -89,6 +153,52 @@ Route::prefix('{locale}')
         Route::get('/dashboard', function () {
             return view('pages.dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard.locale');
+
+        // 多语言抖音专用解析页面
+        Route::get('/douyin-parser', function () {
+            return view('pages.douyin-parser');
+        })->name('douyin-parser.locale');
+
+        Route::get('/douyin', function () {
+            return view('pages.douyin-parser');
+        })->name('douyin.locale');
+
+        // 多语言其他平台专题页面
+        Route::get('/xiaohongshu', function () {
+            return view('pages.xiaohongshu-parser');
+        })->name('xiaohongshu.locale');
+
+        Route::get('/youtube', function () {
+            return view('pages.youtube-parser');
+        })->name('youtube.locale');
+
+        Route::get('/bilibili', function () {
+            return view('pages.bilibili-parser');
+        })->name('bilibili.locale');
+
+        Route::get('/kuaishou', function () {
+            return view('pages.kuaishou-parser');
+        })->name('kuaishou.locale');
+
+        Route::get('/weibo', function () {
+            return view('pages.weibo-parser');
+        })->name('weibo.locale');
+
+        Route::get('/tiktok', function () {
+            return view('pages.tiktok-parser');
+        })->name('tiktok.locale');
+
+        Route::get('/instagram', function () {
+            return view('pages.instagram-parser');
+        })->name('instagram.locale');
+
+        Route::get('/facebook', function () {
+            return view('pages.facebook-parser');
+        })->name('facebook.locale');
+
+        Route::get('/twitter', function () {
+            return view('pages.twitter-parser');
+        })->name('twitter.locale');
 });
 
 // API路由
@@ -147,7 +257,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/new-users', [App\Http\Controllers\Admin\DashboardController::class, 'newUsers'])->name('new-users');
         Route::get('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'show'])->name('profile');
         Route::put('/profile', [App\Http\Controllers\Admin\ProfileController::class, 'updateProfile'])->name('profile.update');
-        Route::put('/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('password.update');
+        Route::put('/password', [App\Http\Controllers\Admin\ProfileController::class, 'updatePassword'])->name('profile.password.update');
         Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('logout');
 
         // 安全相关接口

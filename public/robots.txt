@@ -1,21 +1,48 @@
 User-agent: *
 Allow: /
 
-# 
-Allow: /en/
-Allow: /zh/
-Allow: /es/
-Allow: /fr/
-Allow: /ja/
+# 重要页面
+Allow: /douyin
+Allow: /douyin-parser
+Allow: /抖音解析
+Allow: /xiaohongshu
+Allow: /小红书解析
+Allow: /youtube
+Allow: /bilibili
+Allow: /B站解析
+Allow: /kuaishou
+Allow: /快手解析
+Allow: /weibo
+Allow: /微博解析
+Allow: /tiktok
+Allow: /instagram
+Allow: /facebook
+Allow: /twitter
+Allow: /batch-download
+Allow: /api
+Allow: /help
+Allow: /contact
 
-# 
-Disallow: /api/
-Disallow: /auth/
-Disallow: /parse
-Disallow: /set-language-preference
+# 多语言页面
+Allow: /en
+Allow: /zh
+Allow: /ja
+Allow: /es
+Allow: /fr
+Allow: /de
+Allow: /pt
+Allow: /ru
+Allow: /ar
+Allow: /hi
+Allow: /ko
+Allow: /th
+
+# 不允许爬取的页面
+Disallow: /admin
+Disallow: /dashboard
 Disallow: /login
 Disallow: /register
-Disallow: /logout
+Disallow: /auth
 
-# 
+# Sitemap位置
 Sitemap: https://videoparser.top/sitemap.xml

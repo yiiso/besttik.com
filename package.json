@@ -13,5 +13,9 @@
         "laravel-vite-plugin": "^1.2.0",
         "tailwindcss": "^4.0.0",
         "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "flv.js": "^1.6.2",
+        "hls.js": "^1.4.12"
     }
 }

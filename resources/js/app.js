@@ -209,6 +209,11 @@ function renderParseResults(videoData, platform) {
     const parseResults = document.getElementById('parseResults');
     if (!parseResults) return;
 
+    // 检测视频格式
+    const videoUrl = videoData.quality_options[0]?.download_url || '';
+    const isFlv = videoUrl.includes('.flv') || videoUrl.includes('flv=1') || videoUrl.includes('format=flv');
+    const isM3u8 = videoUrl.includes('.m3u8') || videoUrl.includes('m3u8') || videoUrl.includes('.ts');
+
     // 构建结果HTML
     let html = `
     <div class="bg-white border border-gray-100 rounded-2xl shadow-xl mb-8 overflow-hidden fade-in">
@@ -221,8 +226,9 @@ function renderParseResults(videoData, platform) {
                 controls
                 preload="metadata"
                 poster=""
+                ${isFlv || isM3u8 ? 'muted' : ''}
             >
-                <source src="${videoData.quality_options[0]?.download_url || ''}" type="video/mp4">
+                ${!isFlv && !isM3u8 ? `<source src="${videoUrl}" type="video/mp4">` : ''}
                 <p class="text-white text-center py-8">${window.translations?.video_not_supported || '您的浏览器不支持视频播放'}</p>
             </video>
 
@@ -316,7 +322,15 @@ function renderParseResults(videoData, platform) {
     addEventListeners();
 
     // 初始化视频播放器事件
-    initVideoPlayer();
+    setTimeout(() => {
+        initVideoPlayer();
+        
+        // 如果是FLV或M3U8格式，需要特殊处理
+        const videoPlayer = document.getElementById('videoPlayer');
+        if (videoPlayer && (isFlv || isM3u8)) {
+            initVideoPlayerByFormat(videoPlayer, videoUrl, document.getElementById('videoLoadingState'));
+        }
+    }, 100);
 }
 
 // 渲染下载选项 - 优化版本
@@ -408,6 +422,14 @@ function initVideoPlayer() {
     const loadingState = document.getElementById('videoLoadingState');
 
     if (videoPlayer && loadingState) {
+        // 获取视频URL和格式
+        const videoUrl = videoPlayer.querySelector('source')?.src || videoPlayer.src;
+        
+        // 检测视频格式并初始化相应播放器
+        if (videoUrl) {
+            initVideoPlayerByFormat(videoPlayer, videoUrl, loadingState);
+        }
+
         // 显示加载状态
         videoPlayer.addEventListener('loadstart', function() {
             loadingState.classList.remove('hidden');
@@ -423,6 +445,84 @@ function initVideoPlayer() {
             loadingState.classList.add('hidden');
             showToast(window.translations?.video_load_error || '视频加载失败', 'error');
         });
+    }
+}
+
+// 根据视频格式初始化播放器
+function initVideoPlayerByFormat(videoElement, videoUrl, loadingState) {
+    const isFlv = videoUrl.includes('.flv') || videoUrl.includes('flv=1') || videoUrl.includes('format=flv');
+    const isM3u8 = videoUrl.includes('.m3u8') || videoUrl.includes('m3u8') || videoUrl.includes('.ts');
+
+    if (isFlv && window.flvjs && window.flvjs.isSupported()) {
+        // FLV播放器
+        loadingState.classList.remove('hidden');
+        
+        const flvPlayer = window.flvjs.createPlayer({
+            type: 'flv',
+            url: videoUrl,
+            isLive: videoUrl.includes('live') || videoUrl.includes('stream'),
+            cors: true,
+            withCredentials: false
+        }, {
+            enableWorker: false,
+            enableStashBuffer: false,
+            stashInitialSize: 128,
+            autoCleanupSourceBuffer: true
+        });
+
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+
+        // FLV播放器事件
+        flvPlayer.on(window.flvjs.Events.LOADING_COMPLETE, () => {
+            loadingState.classList.add('hidden');
+        });
+
+        flvPlayer.on(window.flvjs.Events.ERROR, (errorType, errorDetail) => {
+            console.error('FLV播放错误:', errorType, errorDetail);
+            loadingState.classList.add('hidden');
+            showToast('FLV视频加载失败，请尝试直接下载', 'error');
+        });
+
+        // 存储播放器实例以便清理
+        videoElement.flvPlayer = flvPlayer;
+
+    } else if (isM3u8 && window.Hls && window.Hls.isSupported()) {
+        // HLS播放器
+        loadingState.classList.remove('hidden');
+        
+        const hls = new window.Hls({
+            enableWorker: true,
+            lowLatencyMode: true,
+            backBufferLength: 90
+        });
+
+        hls.loadSource(videoUrl);
+        hls.attachMedia(videoElement);
+
+        hls.on(window.Hls.Events.MANIFEST_PARSED, () => {
+            loadingState.classList.add('hidden');
+        });
+
+        hls.on(window.Hls.Events.ERROR, (event, data) => {
+            console.error('HLS播放错误:', data);
+            if (data.fatal) {
+                loadingState.classList.add('hidden');
+                showToast('M3U8视频加载失败，请尝试直接下载', 'error');
+            }
+        });
+
+        // 存储播放器实例以便清理
+        videoElement.hlsPlayer = hls;
+
+    } else if (!isFlv && !isM3u8) {
+        // 普通MP4等格式，使用原生播放器
+        videoElement.src = videoUrl;
+    } else {
+        // 不支持的格式或缺少库
+        loadingState.classList.add('hidden');
+        const formatName = isFlv ? 'FLV' : isM3u8 ? 'M3U8' : '该';
+        showToast(`${formatName}格式需要特殊播放器支持，请直接下载观看`, 'error');
     }
 }
 

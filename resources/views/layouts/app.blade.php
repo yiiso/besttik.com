@@ -45,9 +45,29 @@
     {
         "@@context": "https://schema.org",
         "@@type": "WebApplication",
-        "name": "VideoParser.top",
+        "name": "VideoParser.top - {{ __('messages.title') }}",
         "description": "{{ __('messages.description') }}",
         "url": "https://videoparser.top",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "{{ app()->getLocale() == 'zh' ? '抖音视频解析' : 'TikTok Video Parser' }}",
+            "{{ app()->getLocale() == 'zh' ? '抖音去水印' : 'TikTok Watermark Remover' }}",
+            "{{ app()->getLocale() == 'zh' ? 'YouTube视频下载' : 'YouTube Video Download' }}",
+            "{{ app()->getLocale() == 'zh' ? '批量视频下载' : 'Batch Video Download' }}",
+            "{{ app()->getLocale() == 'zh' ? '多平台支持' : 'Multi-platform Support' }}"
+        ],
+        "keywords": "{{ __('messages.keywords') }}",
+        "inLanguage": "{{ app()->getLocale() }}",
+        "author": {
+            "@@type": "Organization",
+            "name": "VideoParser.top"
+        }
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -94,6 +114,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- 视频播放库 -->
+    <script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -206,7 +230,7 @@
             crossorigin="anonymous"></script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="DExqyeeSYPkh3KNpyY+M7A" async></script>
 </head>
-<body class="bg-white text-gray-900 font-elegant antialiased">
+<body class="bg-white dark:bg-amber-300 text-gray-900 font-elegant antialiased">
     <!-- Header -->
     <header class="py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -258,39 +282,88 @@
                     </a>
                 </div>
 
-                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 header-right ml-auto">
-                    <!-- 语言选择器 - 移动端优化 -->
-                    <div class="relative" id="languageSelector">
-                        <!-- 移动端：显示当前语言 + 下拉 -->
-                        <button id="languageBtn" class="md:hidden flex items-center space-x-1 px-3 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg border border-gray-200 transition-colors">
-                            <span class="font-medium">{{ config('app.locales')[app()->getLocale()] ?? 'EN' }}</span>
+                <!-- 主导航菜单 -->
+                <nav class="hidden md:flex items-center space-x-6">
+                    <!-- 国内平台下拉菜单 -->
+                    <div class="relative group">
+                        <button class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors flex items-center space-x-1">
+                            <span>国内平台</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
-
-                        <!-- 移动端下拉菜单 -->
-                        <div id="languageDropdown" class="hidden md:hidden absolute right-0 mt-2 w-36 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
-                            <div class="py-1">
-                                @foreach(config('app.locales') as $localeCode => $localeName)
-                                    <a href="{{ locale_url($localeCode) }}"
-                                       class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors {{ app()->getLocale() === $localeCode ? 'bg-blue-50 text-blue-600 font-medium' : '' }}">
-                                        {{ $localeName }}
-                                    </a>
-                                @endforeach
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="{{ route('douyin') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                    <span class="font-medium">抖音视频解析</span>
+                                    <span class="block text-xs text-gray-500">抖音去水印下载</span>
+                                </a>
+                                <a href="{{ route('xiaohongshu') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors">
+                                    <span class="font-medium">小红书解析</span>
+                                    <span class="block text-xs text-gray-500">小红书视频图片下载</span>
+                                </a>
+                                <a href="{{ route('kuaishou') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors">
+                                    <span class="font-medium">快手视频解析</span>
+                                    <span class="block text-xs text-gray-500">快手去水印下载</span>
+                                </a>
+                                <a href="{{ route('weibo') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                                    <span class="font-medium">微博视频解析</span>
+                                    <span class="block text-xs text-gray-500">微博视频图片保存</span>
+                                </a>
+                                <a href="{{ route('bilibili') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                    <span class="font-medium">B站视频下载</span>
+                                    <span class="block text-xs text-gray-500">哔哩哔哩高清下载</span>
+                                </a>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 桌面端：水平显示所有语言 -->
-                        <div class="hidden md:flex items-center space-x-2 lg:space-x-3 desktop-languages">
-                            @foreach(config('app.locales') as $localeCode => $localeName)
-                                <a href="{{ locale_url($localeCode) }}"
-                                   class="text-xs lg:text-sm text-gray-600 hover:text-gray-900 transition-colors whitespace-nowrap {{ app()->getLocale() === $localeCode ? 'text-blue-600 font-medium' : '' }}">
-                                    {{ $localeName }}
+                    <!-- 国外平台下拉菜单 -->
+                    <div class="relative group">
+                        <button class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors flex items-center space-x-1">
+                            <span>国外平台</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="{{ route('youtube') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
+                                    <span class="font-medium">YouTube下载</span>
+                                    <span class="block text-xs text-gray-500">YouTube高清视频下载</span>
                                 </a>
-                            @endforeach
+                                <a href="{{ route('tiktok') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 transition-colors">
+                                    <span class="font-medium">TikTok下载</span>
+                                    <span class="block text-xs text-gray-500">TikTok去水印下载</span>
+                                </a>
+                                <a href="{{ route('instagram') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">
+                                    <span class="font-medium">Instagram下载</span>
+                                    <span class="block text-xs text-gray-500">Instagram视频图片下载</span>
+                                </a>
+                                <a href="{{ route('facebook') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
+                                    <span class="font-medium">Facebook下载</span>
+                                    <span class="block text-xs text-gray-500">Facebook视频下载</span>
+                                </a>
+                                <a href="{{ route('twitter') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
+                                    <span class="font-medium">Twitter下载</span>
+                                    <span class="block text-xs text-gray-500">X视频下载</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <a href="{{ route('batch-download') }}" class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">批量下载</a>
+                    <a href="{{ route('help') }}" class="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">使用帮助</a>
+                </nav>
+
+                <!-- 移动端菜单按钮 -->
+                <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 header-right ml-auto">
 
 
                     @auth
@@ -347,6 +420,22 @@
             </div>
         </div>
     </header>
+
+    <!-- 移动端菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="space-y-3">
+                <a href="{{ route('douyin') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-2">抖音解析</a>
+                <a href="{{ route('xiaohongshu') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-2">小红书</a>
+                <a href="{{ route('kuaishou') }}" class="block text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors py-2">快手</a>
+                <a href="{{ route('weibo') }}" class="block text-sm font-medium text-gray-700 hover:text-red-600 transition-colors py-2">微博</a>
+                <a href="{{ route('youtube') }}" class="block text-sm font-medium text-gray-700 hover:text-red-600 transition-colors py-2">YouTube</a>
+                <a href="{{ route('bilibili') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-2">B站</a>
+                <a href="{{ route('batch-download') }}" class="block text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors py-2">批量下载</a>
+                <a href="{{ route('help') }}" class="block text-sm font-medium text-gray-700 hover:text-green-600 transition-colors py-2">使用帮助</a>
+            </nav>
+        </div>
+    </div>
 
     <!-- Breadcrumb Navigation -->
     @include('components.breadcrumb')
@@ -439,6 +528,26 @@
                         <li><a href="{{ localized_url('/privacy') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.privacy_policy') }}</a></li>
                         <li><a href="{{ localized_url('/terms') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.terms_of_service') }}</a></li>
                     </ul>
+                </div>
+            </div>
+
+            <!-- 语言切换区域 -->
+            <div class="border-t border-gray-200 mt-8 pt-8">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex items-center space-x-1 text-sm text-gray-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                        </svg>
+                        <span>选择语言 / Choose Language:</span>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        @foreach(config('app.locales') as $localeCode => $localeName)
+                            <a href="{{ locale_url($localeCode) }}"
+                               class="px-3 py-1 text-sm rounded-md transition-colors {{ app()->getLocale() === $localeCode ? 'bg-blue-100 text-blue-700 font-medium' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' }}">
+                                {{ $localeName }}
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
 

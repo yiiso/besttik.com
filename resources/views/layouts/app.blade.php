@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="referrer" content="same-origin">
-    <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
-    <meta name="baidu-site-verification" content="codeva-hK3gXxoNSG" />
+    <meta name="baidu-site-verification" content="codeva-U6EjFdV96C" />
     <meta name="sogou_site_verification" content="radOnTCOjs" />
     <meta name="360-site-verification" content="d83d6601ee8353d74b3921daa1c0ac9d" />
     <!-- SEO Meta Tags -->

@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# 重要页面
+
 Allow: /douyin
 Allow: /douyin-parser
 Allow: /抖音解析
@@ -25,7 +25,7 @@ Allow: /api
 Allow: /help
 Allow: /contact
 
-# 多语言页面
+
 Allow: /en
 Allow: /zh
 Allow: /ja
@@ -39,12 +39,12 @@ Allow: /hi
 Allow: /ko
 Allow: /th
 
-# 不允许爬取的页面
+
 Disallow: /admin
 Disallow: /dashboard
 Disallow: /login
 Disallow: /register
 Disallow: /auth
 
-# Sitemap位置
+
 Sitemap: https://videoparser.top/sitemap.xml

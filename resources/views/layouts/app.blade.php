@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="referrer" content="same-origin">
     <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
+    <meta name="baidu-site-verification" content="codeva-hK3gXxoNSG" />
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">

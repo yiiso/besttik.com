@@ -8,7 +8,7 @@
     <meta name="baidu-site-verification" content="codeva-U6EjFdV96C" />
     <meta name="sogou_site_verification" content="T82vosS3NB" />
     <meta name="360-site-verification" content="315badf01fec3f58602c81eae9528acc" />
- 
+
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">
@@ -70,7 +70,7 @@
         "author": {
             "@@type": "Organization",
             "name": "VideoParser.top"
-        }
+        },
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web Browser",
         "offers": {

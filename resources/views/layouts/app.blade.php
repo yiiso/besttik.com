@@ -8,6 +8,7 @@
     <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
     <meta name="baidu-site-verification" content="codeva-hK3gXxoNSG" />
     <meta name="sogou_site_verification" content="radOnTCOjs" />
+    <meta name="360-site-verification" content="d83d6601ee8353d74b3921daa1c0ac9d" />
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">

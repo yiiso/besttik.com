@@ -7,6 +7,7 @@
     <meta name="referrer" content="same-origin">
     <meta name="baidu-site-verification" content="codeva-pCWdn1qnj4" />
     <meta name="baidu-site-verification" content="codeva-hK3gXxoNSG" />
+    <meta name="sogou_site_verification" content="dF7tDUZkGk" />
     <!-- SEO Meta Tags -->
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">

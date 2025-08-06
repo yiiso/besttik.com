@@ -71,13 +71,6 @@
             "@@type": "Organization",
             "name": "VideoParser.top"
         },
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Web Browser",
-        "offers": {
-            "@@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
         "creator": {
             "@@type": "Organization",
             "name": "VideoParser.top",

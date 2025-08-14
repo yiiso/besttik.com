@@ -94,13 +94,13 @@ class VideoParserController extends Controller
                     break;
                 case 'youtube':
                     $cookiePath = '/www/wwwroot/videoparser.top/storage/youtube-cookies.txt';
-                    $format = 'bestvideo,bestaudio';
+                    $format = 'bv*,ba*';
                     $videoInfo = (new YoutubeService())->getVideoUrl($videoUrl, $format, $cookiePath);
 
                     break;
                 case 'twitter':
                 case 'facebook':
-                    $format = 'best,bestaudio';
+                    $format = 'bv*,ba*';
                     $videoInfo = (new TwitterService())->getVideoUrl($videoUrl, $format);
                     break;
                 case 'douyin':
@@ -108,7 +108,7 @@ class VideoParserController extends Controller
                     break;
                 default :
                     try {
-                        $format = 'best,bestaudio';
+                        $format = 'bv*,ba*';
                         $videoInfo = (new TwitterService())->getVideoUrl($videoUrl, $format);
                     }catch (\Exception $exception){
                         $videoInfo = (new DouyinService())->parseVideoFromAPI($videoUrl);

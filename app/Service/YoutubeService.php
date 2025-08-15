@@ -20,7 +20,7 @@ class YoutubeService
             $command[] = $cookiesPath;
         }
 
-        $command[] = $youtubeUrl;
+        $command[] = $this->formatUrl($youtubeUrl);
 
         $process = new Process($command);
         $process->run();
@@ -33,6 +33,20 @@ class YoutubeService
         $res = array_filter(explode("\n", trim($process->getOutput())));
         return $this->formatResponse($res);
 
+    }
+
+    public function formatUrl($videoUrl)
+    {
+        $url = 'https://www.youtube.com/watch?v=ojupEKrr9TA&list=RDojupEKrr9TA&start_radio=1';
+
+        $parts = parse_url($videoUrl);
+        parse_str($parts['query'] ?? '', $query);
+        unset($query['list'], $query['start_radio']);
+        $newUrl = $parts['scheme'] . '://' . $parts['host'] . $parts['path'];
+        if (!empty($query)) {
+            $newUrl .= '?' . http_build_query($query);
+        }
+        return $newUrl;
     }
 
     public function formatResponse(array $data)

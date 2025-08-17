@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // 获取提交按钮
             const submitBtn = videoParseForm.querySelector('button[type="submit"]');
             const videoUrlInput = videoParseForm.querySelector('input[name="video_url"]');
-            
+
             // 检查是否已在处理中
             if (submitBtn.disabled) {
                 return;
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <span>${window.translations?.parsing || '解析中...'}</span>
                 </div>
             `;
-            
+
             if (videoUrlInput) {
                 videoUrlInput.disabled = true;
             }
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // 恢复按钮和输入框状态
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
-                    
+
                     if (videoUrlInput) {
                         videoUrlInput.disabled = false;
                     }
@@ -211,6 +211,7 @@ function renderParseResults(videoData, platform) {
 
     // 检测视频格式
     const videoUrl = videoData.quality_options[0]?.download_url || '';
+    const poster = videoData.thumbnail ?? '';
     const isFlv = videoUrl.includes('.flv') || videoUrl.includes('flv=1') || videoUrl.includes('format=flv');
     const isM3u8 = videoUrl.includes('.m3u8') || videoUrl.includes('m3u8') || videoUrl.includes('.ts');
 
@@ -219,13 +220,12 @@ function renderParseResults(videoData, platform) {
     <div class="bg-white border border-gray-100 rounded-2xl shadow-xl mb-8 overflow-hidden fade-in">
         <!-- 视频播放区域 -->
         <div class="relative bg-black rounded-t-2xl">
-            <video
+            <video controls
                 id="videoPlayer"
                 class="w-full aspect-video object-contain rounded-t-2xl"
                 referrerpolicy="no-referrer"
-                controls
                 preload="metadata"
-                poster=""
+                poster="${poster}"
                 ${isFlv || isM3u8 ? 'muted' : ''}
             >
                 ${!isFlv && !isM3u8 ? `<source src="${videoUrl}" type="video/mp4">` : ''}
@@ -324,7 +324,7 @@ function renderParseResults(videoData, platform) {
     // 初始化视频播放器事件
     setTimeout(() => {
         initVideoPlayer();
-        
+
         // 如果是FLV或M3U8格式，需要特殊处理
         const videoPlayer = document.getElementById('videoPlayer');
         if (videoPlayer && (isFlv || isM3u8)) {
@@ -424,7 +424,7 @@ function initVideoPlayer() {
     if (videoPlayer && loadingState) {
         // 获取视频URL和格式
         const videoUrl = videoPlayer.querySelector('source')?.src || videoPlayer.src;
-        
+
         // 检测视频格式并初始化相应播放器
         if (videoUrl) {
             initVideoPlayerByFormat(videoPlayer, videoUrl, loadingState);
@@ -456,7 +456,7 @@ function initVideoPlayerByFormat(videoElement, videoUrl, loadingState) {
     if (isFlv && window.flvjs && window.flvjs.isSupported()) {
         // FLV播放器
         loadingState.classList.remove('hidden');
-        
+
         const flvPlayer = window.flvjs.createPlayer({
             type: 'flv',
             url: videoUrl,
@@ -490,7 +490,7 @@ function initVideoPlayerByFormat(videoElement, videoUrl, loadingState) {
     } else if (isM3u8 && window.Hls && window.Hls.isSupported()) {
         // HLS播放器
         loadingState.classList.remove('hidden');
-        
+
         const hls = new window.Hls({
             enableWorker: true,
             lowLatencyMode: true,
@@ -742,10 +742,10 @@ function initLoginModal() {
                             // 需要邮箱验证
                             showToast(data.message, 'error');
                             closeModal();
-                            
+
                             // 存储邮箱地址
                             localStorage.setItem('pending_verification_email', data.user_email);
-                            
+
                             // 跳转到邮箱验证页面
                             setTimeout(() => {
                                 window.location.href = '/email/verify';
@@ -866,7 +866,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(data => {
                 if (data.status === 'success') {
                     showToast(data.message || (window.translations?.register_success || '注册成功'), 'success');
-                    
+
                     // 关闭弹窗
                     const loginModal = document.getElementById('loginModal');
                     const loginModalContent = document.getElementById('loginModalContent');
@@ -878,11 +878,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             emailRegisterForm.reset();
                         }, 300);
                     }
-                    
+
                     if (data.requires_verification) {
                         // 需要邮箱验证
                         localStorage.setItem('pending_verification_email', data.user.email);
-                        
+
                         // 跳转到邮箱验证页面
                         setTimeout(() => {
                             window.location.href = '/email/verify';

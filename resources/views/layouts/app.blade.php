@@ -151,6 +151,11 @@
             }
         }
     </style>
+    <style>
+        video::-webkit-media-controls-panel {
+            background-color: transparent !important;
+        }
+    </style>
 
     <!-- Pass translations to JavaScript -->
     <script>

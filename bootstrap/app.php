@@ -3,6 +3,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Request as RequestAlias;
+
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -18,6 +21,13 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin.auth' => \App\Http\Middleware\AdminAuth::class,
             'set.timezone' => \App\Http\Middleware\SetTimezone::class,
         ]);
+        //获取真实代理后的ip
+        $middleware->trustProxies(
+            at:'*',headers: RequestAlias::HEADER_X_FORWARDED_FOR |
+            RequestAlias::HEADER_X_FORWARDED_HOST |
+            RequestAlias::HEADER_X_FORWARDED_PORT |
+            RequestAlias::HEADER_X_FORWARDED_PROTO
+        );
 
         // 将推荐码中间件应用到web路由组
         $middleware->web(append: [

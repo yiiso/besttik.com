@@ -4,8 +4,8 @@ return [
     'title' => '抖音视频解析 - 抖音视频在线解析 - 抖音视频提取在线解析 - 免费抖音去水印下载',
     'description' => '专业的抖音视频解析工具，支持抖音视频在线解析、抖音视频提取在线解析、抖音解析视频在线、抖音去水印解析在线网址。免费提供抖音视频解析下载、抖音无水印解析、抖音去水印印解析等服务，还支持YouTube、TikTok、Instagram、Facebook、Twitter、B站等100+平台视频解析下载。',
     'keywords' => '抖音视频解析,抖音视频在线解析,抖音视频提取在线解析,抖音视频解析在线提取,抖音解析视频在线,抖音去水印解析在线网址,抖音视频解析下载,抖音无水印解析,抖音去水印,抖音解析视频在线,抖音在线解析,抖音解析,抖音视频下载',
-    'hero_title' => '视频解析下载工具 - 抖音视频解析 - YouTube视频下载 - TikTok去水印',
-    'hero_subtitle' => '专业的视频解析下载工具，支持抖音视频解析、抖音去水印、YouTube视频下载、TikTok视频下载、Instagram视频下载、Facebook视频下载、Twitter视频下载、小红书视频解析、快手视频解析、微博视频下载、B站视频下载等100+平台视频解析下载。免费在线视频解析工具，高清视频下载，批量视频下载，完全免费。',
+    'hero_title' => '视频解析下载工具',
+    'hero_subtitle' => '免费在线视频解析工具，高清视频下载，批量视频下载，完全免费。',
     'how_to_use_desc' => '简单4步下载任何视频',
     'step_1_title' => '复制视频链接',
     'step_1_desc' => '从YouTube、TikTok、Instagram等任何支持的平台复制视频链接。',
@@ -934,7 +934,7 @@ return [
     'api_rate_limits_tiers_content' => '• 免费用户：每分钟10次请求\n• 付费用户：每分钟100次请求\n• 企业用户：自定义限制',
     'api_rate_limits_management_title' => '限制管理',
     'api_rate_limits_management_content' => 'API响应包含当前限制状态的头信息，帮助您管理请求频率。',
-    
+
     // 抖音专题页面
     'douyin_parser_title' => '抖音视频解析 - 抖音去水印在线解析工具 - 免费抖音视频下载',
     'douyin_parser_description' => '专业的抖音视频解析工具，支持抖音视频在线解析、抖音视频提取在线解析、抖音去水印解析。免费提供抖音无水印视频下载，抖音解析视频在线服务，支持高清画质下载。',
@@ -952,7 +952,7 @@ return [
     'douyin_fast_parsing_desc' => '无需下载软件，在线即可完成抖音视频解析，支持抖音视频提取在线解析',
     'douyin_hd_download' => '高清视频下载',
     'douyin_hd_download_desc' => '保持原始画质，支持多种格式下载，满足不同设备播放需求',
-    
+
     // YouTube专题页面
     'youtube_parser_title' => 'YouTube视频下载 - YouTube视频解析 - 免费YouTube下载工具',
     'youtube_parser_description' => '专业的YouTube视频下载工具，支持YouTube视频解析、高清视频下载、音频提取。免费在线YouTube下载器，支持4K、1080p等多种画质。',
@@ -962,7 +962,7 @@ return [
     'youtube_parser_placeholder' => '粘贴YouTube视频链接到这里...',
     'youtube_parser_button' => '解析YouTube',
     'youtube_parser_loading' => '正在解析YouTube视频...',
-    
+
     // TikTok专题页面
     'tiktok_parser_title' => 'TikTok视频下载 - TikTok去水印 - 免费TikTok视频解析工具',
     'tiktok_parser_description' => '专业的TikTok视频下载工具，支持TikTok去水印、TikTok视频解析、TikTok无水印下载。免费在线TikTok下载器，高清视频下载。',

@@ -5,7 +5,7 @@ return [
     'description' => 'Der beste Video-Parsing-Download. TikTok Wasserzeichen entfernen, YouTube Video-Parsing, TikTok-Parsing, Instagram, Facebook, Twitter und andere Plattform-Video-Parsing',
     'keywords' => 'Video-Parsing,Video Wasserzeichen entfernen,TikTok Wasserzeichen entfernen,TikTok-Parsing, YouTube Download, TikTok Download,B站 Download',
     'hero_title' => 'Kostenloser Online-Video-Downloader',
-    'hero_subtitle' => 'Unterstützt Video-Downloads von YouTube, TikTok, Instagram, Facebook, Twitter und anderen Plattformen. Schnell, sicher und völlig kostenlos.',
+    'hero_subtitle' => 'Unterstützt Video-Downloadl, sicher und völlig kostenlos.',
     'how_to_use_desc' => 'Laden Sie jedes Video in 4 einfachen Schritten herunter',
     'step_1_title' => 'Video-Link kopieren',
     'step_1_desc' => 'Kopieren Sie den Video-Link von YouTube, TikTok, Instagram oder einer anderen unterstützten Plattform.',

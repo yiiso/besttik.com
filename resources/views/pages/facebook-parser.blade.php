@@ -45,12 +45,7 @@
                     </div>
                 </form>
 
-                <!-- Facebook示例链接 -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-500 font-elegant">试试这些Facebook链接:</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.facebook.com/watch/?v=1234567890'">Facebook视频</button>
-                    <button class="text-indigo-600 hover:text-indigo-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://fb.watch/abc123def/'">Facebook短链接</button>
-                </div>
+
             </div>
 
             <!-- Loading State -->

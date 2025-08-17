@@ -60,12 +60,7 @@
                     </div>
                 </form>
 
-                <!-- 抖音示例链接 -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-500 font-elegant">试试这些抖音链接:</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音短视频</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.douyin.com/video/7234567890123456789'">抖音长视频</button>
-                </div>
+
             </div>
 
             <!-- Loading State -->

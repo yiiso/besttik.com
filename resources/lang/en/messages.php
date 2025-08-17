@@ -5,7 +5,7 @@ return [
     'description' => 'Free online video parser and downloader. TikTok watermark remover, YouTube video parser, TikTok parser, Instagram, Facebook, Twitter and other platform video parsing.',
     'keywords' => 'video parser, video watermark remover, TikTok watermark remover, TikTok parser, YouTube free video download, TikTok download, Bilibili download',
     'hero_title' => 'Free Online Video Downloader',
-    'hero_subtitle' => 'Download videos from YouTube, TikTok, Instagram, Facebook, Twitter and more. Fast, secure, and completely free.',
+    'hero_subtitle' => 'Download videos . Fast, secure, and completely free.',
     'how_to_use_desc' => 'Simple 4-step process to download any video',
     'step_1_title' => 'Copy Video URL',
     'step_1_desc' => 'Copy the video link from any supported platform like YouTube, TikTok, Instagram, etc.',
@@ -754,7 +754,7 @@ return [
     'performance_optimization' => 'Performance Optimization',
     'api_error_codes' => 'API Error Codes',
     'faq_section' => 'FAQ Section',
-    
+
     // Detailed help content
     'how_to_download_video_detailed' => 'Detailed steps: First copy the video link from supported platforms (like YouTube, TikTok, etc.), then paste it into the input box on our homepage, click the parse button and wait for processing to complete, finally select your desired quality and format to download.',
     'supported_video_formats_detailed' => 'Supported formats include: MP4 (recommended, best compatibility), WebM (Google\'s open source format), AVI (traditional format), MOV (Apple format), etc. Different platforms may provide different formats.',
@@ -766,7 +766,7 @@ return [
     'copyright_notice_answer' => 'Please ensure that the content you download complies with relevant copyright laws and regulations, and is only used for personal learning and research purposes.',
     'service_limits_answer' => 'To ensure service quality, we have certain limits on parsing attempts. Guest users have fewer daily limits, while registered users can get more attempts.',
     'data_privacy_answer' => 'We do not store your video content or personal data. All parsing processes are performed in real-time to protect your privacy and security.',
-    
+
     // Help center UI elements
     'helpful_article' => 'Was this article helpful?',
     'yes_helpful' => 'Yes, helpful',
@@ -797,7 +797,7 @@ return [
     'related_categories' => 'Related Categories',
     'browse_all_help_topics' => 'Browse All Help Topics',
     'click_to_read_full_article' => 'Click to read full article',
-    
+
     // Search related
     'search_results' => 'Search Results',
     'no_results_found' => 'No results found',
@@ -812,11 +812,11 @@ return [
     'faq' => 'FAQ',
     'in_category' => 'in category',
     'account' => 'Account',
-    
+
     // Form fields
     'name' => 'Name',
     'enter_name' => 'Enter your name',
-    
+
     // Help center categories and topics
     'quick_start_guide' => 'Quick Start Guide',
     'basic_usage' => 'Basic Usage',
@@ -871,7 +871,7 @@ return [
     'douyin_fast_parsing_desc' => 'No need to download software, online Douyin video parsing, support Douyin video batch download',
     'douyin_hd_download' => 'Douyin HD Download',
     'douyin_hd_download_desc' => 'Maintain Douyin original quality, support multiple format Douyin video download, meet different device playback needs',
-    
+
     // YouTube Parser Page
     'youtube_parser_title' => 'YouTube Video Download - YouTube Video Parser - Free YouTube Download Tool',
     'youtube_parser_description' => 'Professional YouTube video download tool, supports YouTube video parsing, HD video download, audio extraction. Free online YouTube downloader, supports 4K, 1080p and other qualities.',
@@ -881,8 +881,8 @@ return [
     'youtube_parser_placeholder' => 'Paste YouTube video link here...',
     'youtube_parser_button' => 'Parse YouTube',
     'youtube_parser_loading' => 'Parsing YouTube video...',
-    
-    // TikTok Parser Page  
+
+    // TikTok Parser Page
     'tiktok_parser_title' => 'TikTok Video Download - TikTok Watermark Remover - Free TikTok Parser Tool',
     'tiktok_parser_description' => 'Professional TikTok video download tool, supports TikTok watermark removal, TikTok video parsing, TikTok HD download. Free online TikTok downloader.',
     'tiktok_parser_keywords' => 'TikTok video download,TikTok watermark remover,TikTok video parser,TikTok downloader,TikTok HD download,TikTok video save',

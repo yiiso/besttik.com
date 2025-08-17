@@ -5,7 +5,7 @@ return [
     'description' => 'Analizador y descargador de videos online gratuito. Removedor de marca de agua TikTok, analizador de videos YouTube, analizador TikTok, Instagram, Facebook, Twitter y otras plataformas de análisis de videos.',
     'keywords' => 'analizador de videos, removedor de marca de agua de videos, removedor de marca de agua TikTok, analizador TikTok, descarga gratuita de videos YouTube, descarga TikTok, descarga Bilibili',
     'hero_title' => 'Descargador de Videos Online Gratuito',
-    'hero_subtitle' => 'Descarga videos de YouTube, TikTok, Instagram, Facebook, Twitter y más. Rápido, seguro y completamente gratuito.',
+    'hero_subtitle' => 'Descarga videos . Rápido, seguro y completamente gratuito.',
     'how_to_use_desc' => 'Proceso simple de 4 pasos para descargar cualquier video',
     'step_1_title' => 'Copiar URL del Video',
     'step_1_desc' => 'Copia el enlace del video desde cualquier plataforma compatible como YouTube, TikTok, Instagram, etc.',

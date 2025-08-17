@@ -45,12 +45,7 @@
                     </div>
                 </form>
 
-                <!-- TikTok示例链接 -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-400 font-elegant">试试这些TikTok链接:</span>
-                    <button class="text-pink-400 hover:text-pink-300 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@username/video/1234567890'">TikTok短视频</button>
-                    <button class="text-purple-400 hover:text-purple-300 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://vm.tiktok.com/ZMd1234567/'">TikTok分享链接</button>
-                </div>
+
             </div>
 
             <!-- Loading State -->

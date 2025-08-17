@@ -125,6 +125,12 @@
     <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">{{ __('messages.hero_title') }}</span>
+            </h1>
+            <h2 class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+                {{ __('messages.hero_subtitle') }}
+            </h2>
             <!-- Search Box - 主要操作区域 -->
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
@@ -176,17 +182,6 @@
                 <!-- Parse Warning -->
                 <div id="parseWarning" class="hidden mt-4 max-w-md mx-auto">
                     <!-- 解析警告将通过JavaScript动态更新 -->
-                </div>
-
-                <!-- Quick Examples -->
-                <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-500 font-elegant">{{ __('messages.try_these') }}</span>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.tiktok.com/@lilyhoney224/video/7518392825021484310?is_from_webapp=1&sender_device=pc'">TikTok</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=EwPJJy_YkHk'">YouTube</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://x.com/SilenceGvq/status/1947531208210190512'">twitter</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://v.douyin.com/DfFwxy7M3LA/'">抖音视频解析</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.facebook.com/watch/?v=1230685661697677'">facebook</button>
-                    <button class="text-blue-600 hover:text-blue-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.xiaohongshu.com/'">小红书</button>...
                 </div>
             </div>
 

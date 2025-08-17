@@ -3,9 +3,9 @@
 return [
     'title' => 'VideoParser.top - أفضل محلل فيديو TikTok إزالة العلامة المائية TikTok تحليل الفيديو تحميل',
     'description' => 'أفضل تحميل تحليل الفيديو. إزالة العلامة المائية TikTok، تحليل فيديو YouTube، تحليل TikTok، Instagram، Facebook، Twitter ومنصات أخرى تحليل الفيديو',
-    'keywords' => 'تحليل الفيديو,إزالة العلامة المائية للفيديو,إزالة العلامة المائية TikTok,تحليل TikTok, تحميل youtube, تحميل TikTok,تحميل B站',
+    'keywords' => 'تحليل الفيديو,إزالة العلامة المائية للفيديو,إزالة العلامة المائية ',
     'hero_title' => 'محمل الفيديو المجاني عبر الإنترنت',
-    'hero_subtitle' => 'يدعم تحميل الفيديو من YouTube و TikTok و Instagram و Facebook و Twitter ومنصات أخرى. سريع وآمن ومجاني تماماً.',
+    'hero_subtitle' => ' ومنصات أخرى. سريع وآمن ومجاني تماماً.',
     'how_to_use_desc' => 'حمل أي فيديو في 4 خطوات بسيطة',
     'step_1_title' => 'نسخ رابط الفيديو',
     'step_1_desc' => 'انسخ رابط الفيديو من YouTube أو TikTok أو Instagram أو أي منصة مدعومة.',

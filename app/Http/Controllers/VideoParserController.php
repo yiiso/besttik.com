@@ -8,6 +8,7 @@ use App\Service\DouyinService;
 use App\Service\ParseService;
 use App\Service\TiktokService;
 use App\Service\TwitterService;
+use App\Service\WeiboService;
 use App\Service\YoutubeService;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -105,6 +106,9 @@ class VideoParserController extends Controller
                     break;
                 case 'douyin':
                     $videoInfo = (new DouyinService())->parseVideoFromAPI($videoUrl);
+                    break;
+                case 'weibo':
+                    $videoInfo = (new WeiboService())->parseVideoFromAPI($videoUrl);
                     break;
                 default :
                     try {
@@ -224,6 +228,7 @@ class VideoParserController extends Controller
             'bilibili' => ['bilibili.com'],
             'douyin' => ['douyin.com'],
             'redbook' => ['xiaohongshu.com'],
+            'weibo' => ['t.cn'],
 
         ];
 

@@ -387,6 +387,10 @@ return [
     // Additional UI translations
     'close' => 'Close',
     'audio_preview' => 'Audio Preview',
+    'images_preview' => 'Images Preview',
+    'download_images' => 'Download Images',
+    'no_images_found' => 'No images found',
+    'downloading_images' => 'Downloading images...',
     'video_not_supported' => 'Your browser does not support video playback',
     'audio_not_supported' => 'Your browser does not support audio playback',
     'quality_options' => 'Quality Options',

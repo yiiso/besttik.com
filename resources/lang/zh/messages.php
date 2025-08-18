@@ -555,6 +555,10 @@ return [
     // 其他UI翻译
     'close' => '关闭',
     'audio_preview' => '音频预览',
+    'images_preview' => '图片预览',
+    'download_images' => '下载图片',
+    'no_images_found' => '未找到图片',
+    'downloading_images' => '正在下载图片...',
     'video_not_supported' => '您的浏览器不支持视频播放',
     'audio_not_supported' => '您的浏览器不支持音频播放',
     'quality_options' => '画质选项',

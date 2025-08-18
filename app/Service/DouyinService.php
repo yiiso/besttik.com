@@ -10,7 +10,7 @@ class DouyinService
     public function parseVideoFromAPI(string $videoUrl): array
     {
         $videoUrl = $this->getModalIdFromUrl($videoUrl);
-         
+
 
         $realUrl = env('PARSER_DOUYIN_URL').'/video/share/url/parse?url='.urlencode($videoUrl);
         $ch = curl_init();
@@ -57,7 +57,8 @@ class DouyinService
             'duration' => $data['duration'] ?? __('messages.unknown_duration'),
             'author' => isset($data['author']) ? ($data['author']['name'] ?? $data['author']) : __('messages.unknown_author'),
             'quality_options' => [],
-            'audio_options' => []
+            'audio_options' => [],
+            'images' => $data['images'] ?? []
         ];
 
         // 处理视频下载链接 - 尝试多种可能的字段名
@@ -84,6 +85,7 @@ class DouyinService
                 'download_url' => $data['music_url']
             ];
         }
+
 
         return $formatted;
     }

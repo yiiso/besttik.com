@@ -243,6 +243,39 @@ function renderParseResults(videoData, platform) {
 
         <!-- 内容区域 -->
         <div class="p-6 space-y-6">
+            <!-- 图片展示区域 -->
+            ${videoData.images && videoData.images.length > 0 ? `
+            <div class="bg-gray-50 rounded-xl p-4">
+                <h3 class="text-sm font-medium text-gray-700 mb-3 flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                    </svg>
+                    ${window.translations?.images_preview || '图片预览'} (${videoData.images.length})
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                    ${videoData.images.map((image, index) => `
+                        <div class="relative group cursor-pointer">
+                            <a href="${image.url}" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="aspect-square bg-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+                                    <img
+                                        src="${image.url}"
+                                        alt="图片 ${index + 1}"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+
+                                        onerror="this.parentElement.innerHTML='<div class=\\'flex items-center justify-center h-full text-gray-400\\'>图片加载失败</div>'"
+                                    />
+                                </div>
+
+                            </a>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="mt-3 text-xs text-gray-500 text-center">
+                    点击图片在新窗口中查看原图
+                </div>
+            </div>
+            ` : ''}
+
             <!-- 音频播放器 -->
             ${videoData.audio_options && videoData.audio_options[0] ? `
             <div class="bg-gray-50 rounded-xl p-4">
@@ -302,11 +335,21 @@ function renderParseResults(videoData, platform) {
                         <span class="font-medium">${window.translations?.download_audio || '下载音频'}</span>
                     </a>
                     ` : ''}
+
+                    ${videoData.images && videoData.images.length > 0 ? `
+                    <button class="download-images-btn flex items-center justify-center space-x-2 px-4 py-3 bg-orange-100 hover:bg-orange-200 text-orange-700 rounded-xl transition-all duration-300 shadow-soft hover:shadow-medium transform hover:-translate-y-0.5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="font-medium">${window.translations?.download_images || '下载图片'} (${videoData.images.length})</span>
+                    </button>
+                    ` : ''}
                 </div>
 
                 <!-- 详细下载选项 -->
 
             </div>
+
 
             <!-- 平台信息 -->
 
@@ -333,88 +376,6 @@ function renderParseResults(videoData, platform) {
     }, 100);
 }
 
-// 渲染下载选项 - 优化版本
-function renderDownloadOptions(videoData) {
-    if (!videoData.quality_options || videoData.quality_options.length === 0) {
-        return '';
-    }
-
-    let html = `
-    <div class="mt-6 border-t border-gray-100 pt-6">
-        <h4 class="text-md font-medium text-gray-700 mb-4 flex items-center">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-            </svg>
-            ${window.translations?.quality_options || '画质选项'}
-        </h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-    `;
-
-    // 视频选项
-    videoData.quality_options.forEach((option, index) => {
-        const isRecommended = index === 0;
-        html += `
-        <div class="relative flex items-center justify-between p-4 bg-gray-50 hover:bg-gray-100 rounded-xl border transition-all duration-200 ${isRecommended ? 'border-blue-200 bg-blue-50' : 'border-gray-200'}">
-            ${isRecommended ? `
-            <div class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                ${window.translations?.recommended || '推荐'}
-            </div>
-            ` : ''}
-            <div class="flex-1">
-                <div class="flex items-center space-x-2">
-                    <span class="font-medium text-gray-800">${option.quality || window.translations?.original_quality || '原画质'}</span>
-                    ${isRecommended ? '<span class="text-blue-600 text-sm">★</span>' : ''}
-                </div>
-                <div class="text-sm text-gray-500 mt-1">
-                    <span>${option.format || 'mp4'}</span>
-                    ${option.size ? ` · ${option.size}` : ''}
-                </div>
-            </div>
-            <a href="${option.download_url}" download class="ml-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors font-medium">
-                ${window.translations?.download || '下载'}
-            </a>
-        </div>
-        `;
-    });
-
-    // 音频选项
-    if (videoData.audio_options && videoData.audio_options.length > 0) {
-        html += `
-        </div>
-        <h4 class="text-md font-medium text-gray-700 mb-4 mt-6 flex items-center">
-            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z" />
-            </svg>
-            ${window.translations?.audio_options || '音频选项'}
-        </h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        `;
-
-        videoData.audio_options.forEach((option, index) => {
-            html += `
-            <div class="flex items-center justify-between p-4 bg-green-50 hover:bg-green-100 rounded-xl border border-green-200 transition-all duration-200">
-                <div class="flex-1">
-                    <div class="font-medium text-gray-800">${option.quality || window.translations?.audio_quality || '音质'}</div>
-                    <div class="text-sm text-gray-500 mt-1">
-                        <span>${option.format || 'mp3'}</span>
-                        ${option.size ? ` · ${option.size}` : ''}
-                    </div>
-                </div>
-                <a href="${option.download_url}" download class="ml-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm rounded-lg transition-colors font-medium">
-                    ${window.translations?.download_audio || '下载音频'}
-                </a>
-            </div>
-            `;
-        });
-    }
-
-    html += `
-        </div>
-    </div>
-    `;
-
-    return html;
-}
 
 // 初始化视频播放器事件
 function initVideoPlayer() {
@@ -568,6 +529,52 @@ function addEventListeners() {
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
+        });
+    });
+
+    // 下载图片按钮
+    const downloadImagesButtons = document.querySelectorAll('.download-images-btn');
+    downloadImagesButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // 获取当前解析结果中的图片数据
+            const parseResults = document.getElementById('parseResults');
+            if (!parseResults) return;
+
+            // 从图片预览区域获取所有图片链接
+            const imageLinks = parseResults.querySelectorAll('[data-image-url]');
+            if (imageLinks.length === 0) {
+                // 如果没有找到图片链接，尝试从img标签获取
+                const images = parseResults.querySelectorAll('.aspect-square img');
+                if (images.length === 0) {
+                    showToast(window.translations?.no_images_found || '未找到图片', 'error');
+                    return;
+                }
+
+                console.log(images)
+                // 逐个下载图片
+                images.forEach((img, index) => {
+                    setTimeout(async () => {
+                        try {
+                            const response = await fetch(img.src, {mode: 'cors'});
+                            const blob = await response.blob();
+                            const url = URL.createObjectURL(blob);
+
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `image_${index + 1}.jpg`;
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+
+                            URL.revokeObjectURL(url); // 释放内存
+                        } catch (e) {
+                            console.error(`下载失败: ${img.src}`, e);
+                        }
+                    }, index * 1000); // 每隔1秒下载一张，避免被浏览器限制
+                });
+
+                showToast(window.translations?.downloading_images || `正在下载 ${images.length} 张图片...`, 'success');
+            }
         });
     });
 }

@@ -67,6 +67,9 @@ return [
     'audio_quality' => '音质',
     'copy_success' => '复制成功',
 
+    'donation_support_intro' => '如果本工具对你有帮助，欢迎打赏支持 😊',
+    'donation_wechat' => '微信打赏',
+    'donation_alipay' => '支付宝打赏',
 
     // User Authentication
 

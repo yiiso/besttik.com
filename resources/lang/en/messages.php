@@ -65,7 +65,9 @@ return [
     'low_quality' => 'Low Quality',
     'audio_quality' => 'Audio Quality',
     'copy_success' => 'Copy Success',
-
+    'donation_support_intro' => 'If this tool helps you, feel free to support us with a tip 😊',
+    'donation_wechat' => 'WeChat Tip',
+    'donation_alipay' => 'Alipay Tip',
     'confirm_password' => 'Confirm Password',
 
     // Error Pages

@@ -556,6 +556,17 @@
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
                 <p class="body-light">&copy; {{ date('Y') }} VideoParser.top. {{ __('messages.all_rights_reserved') }}</p>
             </div>
+            <!-- 版权与侵权免责声明 -->
+            <div class="mt-8   pt-6 text-center">
+                <p class="text-xs text-gray-500 leading-relaxed">
+                    本站所有内容仅供学习、研究与交流使用，不存储、不复制、不传播任何视频、图片、音频等文件。
+                    所有内容均由用户自行提供并托管于第三方平台，仅供用户自己查看，学习。
+                    本站尊重知识产权和版权，若您认为本站展示的内容侵犯了您的合法权益，请将相关证明材料发送至 
+                    <a href="mailto:service@videoparser.top" class="underline text-gray-600 hover:text-gray-800">service@videoparser.top</a>，
+                    我们将第一时间核实后及时处理或删除相关内容。
+                
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -773,3 +784,5 @@
     </script>
 </body>
 </html>
+
+

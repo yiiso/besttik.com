@@ -39,7 +39,7 @@
     "@@context": "https://schema.org",
     "@@type": "HowTo",
     "name": "How to Download Videos from Any Platform",
-    "description": "Step-by-step guide to download videos from YouTube, TikTok, Instagram and other platforms using VideoParser.top",
+    "description": "Step-by-step guide to download videos from TikTok, Instagram and other platforms using VideoParser.top",
     "image": "{{ asset('images/how-to-guide.jpg') }}",
     "totalTime": "PT2M",
     "estimatedCost": {
@@ -67,7 +67,7 @@
         {
             "@@type": "HowToStep",
             "name": "Copy Video URL",
-            "text": "Copy the video URL from YouTube, TikTok, Instagram or any supported platform",
+            "text": "Copy the video URL from TikTok, Instagram or any supported platform",
             "image": "{{ asset('images/step1.jpg') }}"
         },
         {

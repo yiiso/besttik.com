@@ -61,7 +61,6 @@
         "featureList": [
             "{{ app()->getLocale() == 'zh' ? '抖音视频解析' : 'TikTok Video Parser' }}",
             "{{ app()->getLocale() == 'zh' ? '抖音去水印' : 'TikTok Watermark Remover' }}",
-            "{{ app()->getLocale() == 'zh' ? 'YouTube视频下载' : 'YouTube Video Download' }}",
             "{{ app()->getLocale() == 'zh' ? '批量视频下载' : 'Batch Video Download' }}",
             "{{ app()->getLocale() == 'zh' ? '多平台支持' : 'Multi-platform Support' }}"
         ],
@@ -77,7 +76,6 @@
             "url": "https://videoparser.top"
         },
         "featureList": [
-            "YouTube video download",
             "TikTok video download",
             "Instagram video download",
             "Facebook video download",
@@ -287,7 +285,6 @@
                 <nav class="hidden md:flex items-center space-x-6 px-4">
                     <!-- 热门平台直接展示 -->
                     <a href="{{ route('douyin') }}" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">抖音解析</a>
-                    <a href="{{ route('youtube') }}" class="text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">YouTube</a>
                     <a href="{{ route('tiktok') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">TikTok</a>
                     <a href="{{ route('xiaohongshu') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">小红书</a>
 
@@ -415,7 +412,6 @@
                 <div class="border-b border-gray-200 pb-3 mb-3">
                     <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">热门平台</div>
                     <a href="{{ route('douyin') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">抖音解析</a>
-                    <a href="{{ route('youtube') }}" class="block text-sm font-medium text-gray-700 hover:text-red-600 transition-colors py-1">YouTube</a>
                     <a href="{{ route('tiktok') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">TikTok</a>
                     <a href="{{ route('xiaohongshu') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">小红书</a>
                 </div>

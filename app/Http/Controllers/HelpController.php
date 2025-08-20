@@ -102,7 +102,6 @@ class HelpController extends Controller
                 'icon' => 'globe-alt',
                 'color' => 'purple',
                 'articles' => [
-                    'youtube' => __('messages.youtube_help'),
                     'tiktok' => __('messages.tiktok_help'),
                     'instagram' => __('messages.instagram_help'),
                     'facebook' => __('messages.facebook_help'),
@@ -321,11 +320,6 @@ class HelpController extends Controller
                 ]
             ],
             'platforms' => [
-                'youtube' => [
-                    'title' => __('messages.youtube_help'),
-                    'content' => $this->getYouTubeHelpContent(),
-                    'last_updated' => '2024-01-15'
-                ],
                 'tiktok' => [
                     'title' => __('messages.tiktok_help'),
                     'content' => $this->getTikTokHelpContent(),
@@ -624,30 +618,6 @@ class HelpController extends Controller
     }
 
     // 平台相关内容
-    private function getYouTubeHelpContent()
-    {
-        return [
-            [
-                'type' => 'text',
-                'content' => __('messages.youtube_help_intro')
-            ],
-            [
-                'type' => 'steps',
-                'title' => __('messages.youtube_steps_title'),
-                'steps' => [
-                    __('messages.youtube_step_1'),
-                    __('messages.youtube_step_2'),
-                    __('messages.youtube_step_3'),
-                    __('messages.youtube_step_4'),
-                    __('messages.youtube_step_5')
-                ]
-            ],
-            [
-                'type' => 'tip',
-                'content' => __('messages.youtube_tip')
-            ]
-        ];
-    }
 
     private function getTikTokHelpContent()
     {

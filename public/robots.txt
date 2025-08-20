@@ -7,7 +7,6 @@ Allow: /douyin-parser
 Allow: /抖音解析
 Allow: /xiaohongshu
 Allow: /小红书解析
-Allow: /youtube
 Allow: /bilibili
 Allow: /B站解析
 Allow: /kuaishou

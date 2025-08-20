@@ -15,13 +15,18 @@ Route::prefix('v1')->group(function () {
     Route::get('/supported-platforms', function () {
         return response()->json([
             'platforms' => [
-                'youtube' => ['name' => 'YouTube', 'domains' => ['youtube.com', 'youtu.be']],
-                'tiktok' => ['name' => 'TikTok', 'domains' => ['tiktok.com']],
+                'douyin' => ['name' => '抖音', 'domains' => ['douyin.com', 'iesdouyin.com']],
+                'tiktok' => ['name' => 'TikTok', 'domains' => ['tiktok.com', 'vm.tiktok.com']],
                 'instagram' => ['name' => 'Instagram', 'domains' => ['instagram.com']],
-                'twitter' => ['name' => 'Twitter/X', 'domains' => ['twitter.com', 'x.com']],
+                'bilibili' => ['name' => 'B站', 'domains' => ['bilibili.com', 'b23.tv']],
+                'kuaishou' => ['name' => '快手', 'domains' => ['kuaishou.com', 'kwai.com']],
+                'xiaohongshu' => ['name' => '小红书', 'domains' => ['xiaohongshu.com', 'xhslink.com']],
+                'weibo' => ['name' => '微博', 'domains' => ['weibo.com', 'weibo.cn']],
+                'twitter' => ['name' => 'Twitter', 'domains' => ['twitter.com', 'x.com']],
                 'facebook' => ['name' => 'Facebook', 'domains' => ['facebook.com', 'fb.com']],
-                'bilibili' => ['name' => 'Bilibili', 'domains' => ['bilibili.com']],
-                'douyin' => ['name' => 'Douyin', 'domains' => ['douyin.com']]
+                'snapchat' => ['name' => 'Snapchat', 'domains' => ['snapchat.com']],
+                // 删除这行 YouTube 配置（第18行）
+                // 'youtube' => ['name' => 'YouTube', 'domains' => ['youtube.com', 'youtu.be']],
             ]
         ]);
     })->name('api.supported-platforms');

@@ -69,9 +69,10 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
         return view('pages.xiaohongshu-parser');
     })->name('xiaohongshu-chinese');
 
-    Route::get('/youtube', function () {
-        return view('pages.youtube-parser');
-    })->name('youtube');
+    // 删除这个路由定义（大约第72-74行）
+    // Route::get('/youtube', function () {
+    //     return view('pages.youtube-parser');
+    // })->name('youtube');
 
     Route::get('/bilibili', function () {
         return view('pages.bilibili-parser');
@@ -176,9 +177,10 @@ Route::prefix('{locale}')
             return view('pages.xiaohongshu-parser');
         })->name('xiaohongshu.locale');
 
-        Route::get('/youtube', function () {
-            return view('pages.youtube-parser');
-        })->name('youtube.locale');
+        // 在本地化路由中删除YouTube路由（大约第179-181行）
+        // Route::get('youtube', function () {
+        //     return view('pages.youtube-parser');
+        // })->name('youtube.locale');
 
         Route::get('/bilibili', function () {
             return view('pages.bilibili-parser');

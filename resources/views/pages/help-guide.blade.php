@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('title', '使用帮助 - 视频解析下载教程 - VideoParser.top')
-@section('description', '详细的视频解析下载使用教程，支持抖音、YouTube、TikTok、Instagram等平台视频解析下载指南。')
-@section('keywords', '视频解析教程,视频下载教程,抖音解析教程,YouTube下载教程,使用帮助')
+@section('description', '详细的视频解析下载使用教程，支持抖音、TikTok、Instagram等平台视频解析下载指南。')
+@section('keywords', '视频解析教程,视频下载教程,抖音解析教程,使用帮助')
 
 @section('content')
 <div class="min-h-screen bg-gray-50 py-12">
@@ -65,9 +65,7 @@
                 <div class="flex items-center p-3 bg-gray-50 rounded-lg">
                     <span class="font-medium text-gray-900">抖音</span>
                 </div>
-                <div class="flex items-center p-3 bg-gray-50 rounded-lg">
-                    <span class="font-medium text-gray-900">YouTube</span>
-                </div>
+                <!-- <div class="flex items-center p-3 bg-gray-50 rounded-lg"><span class="font-medium text-gray-900">YouTube</span></div> 已移除 -->
                 <div class="flex items-center p-3 bg-gray-50 rounded-lg">
                     <span class="font-medium text-gray-900">TikTok</span>
                 </div>

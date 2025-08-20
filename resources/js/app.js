@@ -1126,8 +1126,6 @@ function initPasteButton() {
                     // 如果不是完整URL，但可能是视频链接，仍然粘贴
                     if (trimmedText.includes('douyin.com') ||
                         trimmedText.includes('tiktok.com') ||
-                        trimmedText.includes('youtube.com') ||
-                        trimmedText.includes('youtu.be') ||
                         trimmedText.includes('bilibili.com') ||
                         trimmedText.includes('instagram.com') ||
                         trimmedText.includes('twitter.com') ||

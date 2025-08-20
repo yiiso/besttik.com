@@ -196,7 +196,7 @@
                             <img
                                 src="{{ asset('images/wechatPay.jpg') }}"
                                 alt="{{ __('messages.donation_wechat') }}"
-                                class="w-48 h-48 sm:w-56 sm:h-56 object-contain rounded-lg border border-gray-200 mx-auto"
+                                class="w-28 h-28 sm:w-36 sm:h-36 object-contain rounded-lg border border-gray-200 mx-auto"
                                 loading="lazy"
                             >
 
@@ -205,7 +205,7 @@
                             <img
                                 src="{{ asset('images/aliPay.jpg') }}"
                                 alt="{{ __('messages.donation_alipay') }}"
-                                class="w-48 h-48 sm:w-56 sm:h-56 object-contain rounded-lg border border-gray-200 mx-auto"
+                                class="w-28 h-28 sm:w-36 sm:h-36 object-contain rounded-lg border border-gray-200 mx-auto"
                                 loading="lazy"
                             >
 

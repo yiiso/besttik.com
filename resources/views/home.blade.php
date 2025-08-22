@@ -186,7 +186,7 @@
             </div>
 
             <!-- 打赏二维码 -->
-            <div class="max-w-4xl mx-auto mb-12">
+            <div class="hidden md:block max-w-4xl mx-auto mb-12">
                 <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg">
                     <p class="text-gray-700 text-sm sm:text-base">
                         {{ __('messages.donation_support_intro') }}

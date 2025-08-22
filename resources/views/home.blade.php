@@ -194,7 +194,7 @@
                     <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
                         <div class="text-center">
                             <img
-                                src="{{ asset('images/wechatPay.jpg') }}"
+                                src="{{ asset('images/wechatPay.png') }}"
                                 alt="{{ __('messages.donation_wechat') }}"
                                 class="w-28 h-28 sm:w-36 sm:h-36 object-contain rounded-lg border border-gray-200 mx-auto"
                                 loading="lazy"
@@ -203,7 +203,7 @@
                         </div>
                         <div class="text-center">
                             <img
-                                src="{{ asset('images/aliPay.jpg') }}"
+                                src="{{ asset('images/aliPay.png') }}"
                                 alt="{{ __('messages.donation_alipay') }}"
                                 class="w-28 h-28 sm:w-36 sm:h-36 object-contain rounded-lg border border-gray-200 mx-auto"
                                 loading="lazy"

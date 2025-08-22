@@ -185,6 +185,23 @@
                 </div>
             </div>
 
+
+            <!-- Loading State -->
+            <div id="loadingState" class="hidden max-w-3xl mx-auto mb-8">
+                <div class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-xl">
+                    <div class="flex items-center justify-center space-x-4 mb-4">
+                        <div class="animate-spin rounded-full h-10 w-10 border-3 border-blue-600 border-t-transparent"></div>
+                        <div class="animate-pulse h-3 bg-blue-200 rounded w-40"></div>
+                    </div>
+                    <p class="text-gray-600 font-medium text-lg body-regular">{{ __('messages.parsing_video') }}</p>
+                </div>
+            </div>
+
+            <!-- Parse Results -->
+            <div id="parseResults" class="hidden max-w-6xl mx-auto">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+
             <!-- 打赏二维码 -->
             <div class="hidden md:block max-w-4xl mx-auto mb-12">
                 <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-lg">
@@ -214,21 +231,6 @@
                 </div>
             </div>
 
-            <!-- Loading State -->
-            <div id="loadingState" class="hidden max-w-3xl mx-auto mb-8">
-                <div class="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-xl">
-                    <div class="flex items-center justify-center space-x-4 mb-4">
-                        <div class="animate-spin rounded-full h-10 w-10 border-3 border-blue-600 border-t-transparent"></div>
-                        <div class="animate-pulse h-3 bg-blue-200 rounded w-40"></div>
-                    </div>
-                    <p class="text-gray-600 font-medium text-lg body-regular">{{ __('messages.parsing_video') }}</p>
-                </div>
-            </div>
-
-            <!-- Parse Results -->
-            <div id="parseResults" class="hidden max-w-6xl mx-auto">
-                <!-- Results will be populated by JavaScript -->
-            </div>
         </div>
     </div>
 </section>

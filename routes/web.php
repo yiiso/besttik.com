@@ -14,7 +14,7 @@ use App\Http\Controllers\UserDashboardController;
 
 Route::middleware(['detect.language','set.locale'])->group(function (){
     Route::get('/', function () {
-        return view('home');
+        return view('pages.tiktok-parser');
     });
     // 用户中心页面
     Route::get('/dashboard', function () {

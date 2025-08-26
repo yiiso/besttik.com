@@ -59,15 +59,11 @@
             "priceCurrency": "USD"
         },
         "featureList": [
-            "{{ app()->getLocale() == 'zh' ? '抖音视频解析' : 'TikTok Video download' }}",
-            "{{ app()->getLocale() == 'zh' ? '抖音去水印' : 'TikTok Watermark Remover' }}",
-            "{{ app()->getLocale() == 'zh' ? '批量视频下载' : 'Instagram video download' }}",
-            "{{ app()->getLocale() == 'zh' ? '多平台支持' : 'Twitter video download' }}",
-             "TikTok video download",
-            "Instagram video download",
-            "Facebook video download",
-            "Twitter video download",
-            "Batch video processing",
+             "TikTok video downloader",
+            "Instagram video downloader",
+            "Facebook video downloader",
+            "Twitter video downloader",
+            "Batch video processinger",
             "Multiple format support",
             "High quality downloads"
         ],
@@ -214,18 +210,6 @@
             clipboard_not_supported: "{{ __('messages.clipboard_not_supported') }}"
         };
     </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LCL71L7BH"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-8LCL71L7BH');
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9659370170474441"
-            crossorigin="anonymous"></script>
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="DExqyeeSYPkh3KNpyY+M7A" async></script>
 </head>
 <body class="bg-white dark:bg-amber-300 text-gray-900 font-elegant antialiased">
     <!-- Header -->
@@ -282,59 +266,48 @@
                 <!-- 主导航菜单 -->
                 <nav class="hidden md:flex items-center space-x-6 px-4">
                     <!-- 热门平台直接展示 -->
-                    <a href="{{ route('douyin') }}" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">抖音解析</a>
                     <a href="{{ route('tiktok') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">TikTok</a>
-                    <a href="{{ route('xiaohongshu') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">小红书</a>
+                    <a href="{{ route('instagram') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">Instagram</a>
+                    <a href="{{ route('snapchat') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">Snapchat</a>
 
                     <!-- 更多平台下拉菜单 -->
                     <div class="relative group">
                         <button class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors flex items-center space-x-1">
-                            <span>更多平台</span>
+                            <span>more</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
                         <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                             <div class="py-2">
-                                <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100">视频平台</div>
-                                <a href="{{ route('bilibili') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                    <span class="font-medium">B站视频下载</span>
-                                    <span class="block text-xs text-gray-500">哔哩哔哩高清下载</span>
-                                </a>
-                                <a href="{{ route('kuaishou') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors">
-                                    <span class="font-medium">快手视频解析</span>
-                                    <span class="block text-xs text-gray-500">快手去水印下载</span>
-                                </a>
-                                <a href="{{ route('weibo') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
-                                    <span class="font-medium">微博视频解析</span>
-                                    <span class="block text-xs text-gray-500">微博视频图片保存</span>
-                                </a>
+                                <div class="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wide border-b border-gray-100">video platform</div>
+
                                 <a href="{{ route('instagram') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition-colors">
-                                    <span class="font-medium">Instagram下载</span>
-                                    <span class="block text-xs text-gray-500">Instagram视频图片下载</span>
+                                    <span class="font-medium">Instagram downloader</span>
+                                    <span class="block text-xs text-gray-500">Instagram video download</span>
                                 </a>
                                 <a href="{{ route('facebook') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors">
-                                    <span class="font-medium">Facebook下载</span>
-                                    <span class="block text-xs text-gray-500">Facebook视频下载</span>
+                                    <span class="font-medium">Facebook downloader</span>
+                                    <span class="block text-xs text-gray-500">Facebook video download</span>
                                 </a>
                                 <a href="{{ route('twitter') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors">
-                                    <span class="font-medium">Twitter下载</span>
-                                    <span class="block text-xs text-gray-500">X视频下载</span>
+                                    <span class="font-medium">Twitter downloader</span>
+                                    <span class="block text-xs text-gray-500">X video download</span>
                                 </a>
                                 <a href="{{ route('snapchat') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-600 transition-colors">
-                                    <span class="font-medium">Snapchat下载</span>
-                                    <span class="block text-xs text-gray-500">Snapchat视频下载</span>
+                                    <span class="font-medium">Snapchat downloader</span>
+                                    <span class="block text-xs text-gray-500">Snapchat video download</span>
                                 </a>
                                 <a href="{{ route('pinterest') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors">
-                                    <span class="font-medium">Pinterest下载</span>
-                                    <span class="block text-xs text-gray-500">Pinterest图片视频下载</span>
+                                    <span class="font-medium">Pinterest downloader</span>
+                                    <span class="block text-xs text-gray-500">Pinterest images download</span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="{{ route('batch-download') }}" class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">批量下载</a>
-                    <a href="{{ route('help') }}" class="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">使用帮助</a>
+                    <a href="{{ route('batch-download') }}" class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">batch download</a>
+                    <a href="{{ route('help') }}" class="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">help</a>
                 </nav>
 
                 <!-- 移动端菜单按钮 -->

@@ -840,4 +840,105 @@ return [
     'twitter_parser_button' => 'Parse Twitter',
     'twitter_parser_loading' => 'Parsing Twitter video...',
 
+    'video_load_error' => 'Video loading failed',
+    'loading_video' => 'Loading video...',
+    'video_link_unavailable' => 'Video link unavailable',
+    'copy_failed' => 'Copy failed, please copy the link manually',
+    'unknown_size' => 'Unknown size',
+    'unknown_author' => 'Unknown author',
+    'unknown_title' => 'Unknown title',
+    'unknown_duration' => 'Unknown duration',
+    'original_audio_quality' => 'Original audio quality',
+
+    // Paste button related
+    'paste' => 'Paste',
+    'paste_from_clipboard' => 'Paste from clipboard',
+    'paste_success' => 'Pasted successfully!',
+    'paste_failed' => 'Paste failed, please paste manually',
+    'clipboard_empty' => 'Clipboard is empty',
+    'clipboard_not_supported' => 'Your browser does not support clipboard access',
+    'request_timeout' => 'Request timeout, please try again',
+    'parsing_in_progress' => 'Parsing in progress...',
+    'home' => 'Home',
+    // Contact form
+    'contact_success' => 'Thank you for your message! We will get back to you soon.',
+
+    // Dashboard
+    'dashboard_title' => 'Dashboard',
+    'dashboard_description' => 'Manage your account and view your usage statistics',
+    'dashboard_subtitle' => 'Welcome to your personal dashboard',
+    'loading' => 'Loading...',
+    'load_error' => 'Failed to load data. Please refresh the page.',
+    'today_used' => 'Used Today',
+    'remaining_today' => 'Remaining Today',
+    'bonus_count' => 'Bonus Count',
+    'total_limit' => 'Total Limit',
+    'total_referrals' => 'Total Referrals',
+    'share_and_earn' => 'Share & Earn',
+    'share_description' => 'Share your referral link with friends. When they register and use our service, you\'ll earn 20 additional parsing attempts!',
+    'copy_link' => 'Copy Link',
+    'share' => 'Share',
+    'referral_code' => 'Referral Code',
+    'bonus_earned' => 'Bonus Earned',
+    'weekly_stats' => 'Weekly Statistics',
+    'link_copied' => 'Link copied to clipboard!',
+    'share_title' => 'Free Video Downloader',
+    'share_text' => 'Check out this amazing video downloader tool!',
+    //Email verification
+
+    'verify_email_title' => 'Verify Your Email',
+    'verify_email_description' => 'We sent a verification link to your email address. Please click the link to complete your registration.',
+    'resend_verification' => 'Resend Verification Email',
+
+    'check_email' => 'Check your email for the verification link.',
+    //Email verification email content
+    'verify_email_subject' => 'Verify Your Email Address - :app',
+    'verify_email_greeting' => 'Hello :name!',
+    'verify_email_line1' => 'Please click the button below to verify your email address.',
+    'verify_email_action' => 'Verify Email Address',
+    'verify_email_line2' => 'If you did not create an account, no further action is required.',
+    'verify_email_line3' => 'This verification link will expire in 60 minutes.',
+    'email_signature' => 'Regards, :app Team',
+    // Google OAuth translations
+    'google_login_cancelled' => 'Google login was cancelled or failed',
+    'google_login_no_code' => 'Google login failed: No authorization code received',
+    'google_login_init_failed' => 'Google login initialization failed: :error',
+    'google_oauth_not_configured' => 'Google login feature requires configuration. Please set GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET in your .env file and configure OAuth application in Google Cloud Console. See GOOGLE_OAUTH_SETUP.md for details.',
+    'google_login_failed' => 'Google login failed: :error',
+    'google_login_token_failed' => 'Google login failed: Unable to get access token',
+    'google_login_userinfo_failed' => 'Google login failed: Unable to get user information',
+    'login_missing_state' => 'Login failed: Missing state parameter',
+    'login_invalid_state' => 'Login failed: Invalid state parameter',
+    'login_csrf_failed' => 'Login failed: Security verification failed',
+
+    // Email verification translations
+    'verification_required' => 'Email verification required. Please check your email and click the verification link.',
+    'register_success_verify_email' => 'Registration successful! Please check your email and click the verification link to activate your account.',
+    'email_verification_invalid' => 'Invalid email verification link',
+    'email_already_verified' => 'Email has already been verified',
+    'email_verified_success' => 'Email verification successful! You are now logged in.',
+    'email_verification_failed' => 'Email verification failed',
+    'email_not_found' => 'Email address not found',
+    'verification_email_sent' => 'Verification email has been sent',
+
+    // New layout related translations
+    'welcome_to_help_center' => 'Welcome to Help Center',
+    'help_center_welcome_desc' => 'Please select the topic you need to learn about from the left side, or use the search function above to quickly find answers.',
+    'loading' => 'Loading...',
+    'article_not_found' => 'Article not found',
+    'loading_error' => 'Loading failed, please try again',
+    'search_help_hint' => 'Enter keywords to quickly find the answers you need',
+
+    // Help center article content
+    // Quick start guide
+    'quick_start_welcome' => 'Welcome to VideoParser.top! This is a powerful online video parsing and downloading tool that supports multiple mainstream video platforms.',
+    'quick_start_steps_title' => 'Quick Start Steps:',
+    'quick_start_step_1' => 'Visit VideoParser.top homepage',
+    'quick_start_step_2' => 'Copy the video link you want to download',
+    'quick_start_step_3' => 'Paste the link into the input box',
+    'quick_start_step_4' => 'Click the "Parse" button',
+    'quick_start_step_5' => 'Select appropriate quality and format',
+    'quick_start_step_6' => 'Click the "Download" button to start downloading',
+    'quick_start_tip' => 'Tip: Register an account to get more daily parsing attempts!',
+
 ];

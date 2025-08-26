@@ -36,6 +36,13 @@
 
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical', url()->current())">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K4KF9R9Q');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Hreflang Tags -->
     @foreach(config('app.locales') as $localeCode => $localeName)
@@ -206,6 +213,11 @@
     </script>
 </head>
 <body class="bg-white dark:bg-amber-300 text-gray-900 font-elegant antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K4KF9R9Q"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <header class="py-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

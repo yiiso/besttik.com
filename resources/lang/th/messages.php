@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - ตัวแยกวิเคราะห์วิดีโอที่ดีที่สุด TikTok ลบลายน้ำ TikTok แยกวิเคราะห์วิดีโอดาวน์โหลด',
+    'title' => 'besttik.com- ตัวแยกวิเคราะห์วิดีโอที่ดีที่สุด TikTok ลบลายน้ำ TikTok แยกวิเคราะห์วิดีโอดาวน์โหลด',
     'description' => 'การดาวน์โหลดแยกวิเคราะห์วิดีโอที่ดีที่สุด ลบลายน้ำ TikTok, แยกวิเคราะห์วิดีโอ YouTube, แยกวิเคราะห์ TikTok, Instagram, Facebook, Twitter และแพลตฟอร์มอื่นๆ แยกวิเคราะห์วิดีโอ',
     'keywords' => 'แยกวิเคราะห์วิดีโอ,ลบลายน้ำวิดีโอ,ลบลายน้ำ TikTok,แยกวิเคราะห์ TikTok, ดาวน์โหลด youtube, ดาวน์โหลด TikTok,ดาวน์โหลด B站',
     'hero_title' => 'ตัวดาวน์โหลดวิดีโอออนไลน์ฟรี',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'แพลตฟอร์มที่รองรับ',
     'supported_platforms_desc' => 'ครอบคลุมแพลตฟอร์มวิดีโอหลักทั่วโลก',
     'more_platforms' => 'แพลตฟอร์มเพิ่มเติม',
-    'start_using' => 'เริ่มใช้ VideoParser.top',
+    'start_using' => 'เริ่มใช้ besttik.com',
     'start_using_desc' => 'สัมผัสบริการแยกวิเคราะห์วิดีโอที่เป็นมืออาชีพที่สุดทันที ทำให้การดาวน์โหลดวิดีโอง่ายและมีประสิทธิภาพ',
     'start_now' => 'เริ่มตอนนี้',
     'parse_success' => 'แยกวิเคราะห์สำเร็จ!',
@@ -132,7 +132,7 @@ return [
     'remaining_parses' => 'การแยกวิเคราะห์ที่เหลือวันนี้: :count',
 
      // Terms of Service
-    'terms_of_service_description' => 'กรุณาอ่านข้อกำหนดการให้บริการของเราอย่างละเอียดก่อนใช้ VideoParser.top',
+    'terms_of_service_description' => 'กรุณาอ่านข้อกำหนดการให้บริการของเราอย่างละเอียดก่อนใช้ besttik.com',
     'last_updated' => 'อัปเดตล่าสุด',
     'acceptance_of_terms' => 'การยอมรับข้อกำหนด',
     'description_of_service' => 'คำอธิบายบริการ',
@@ -159,7 +159,7 @@ return [
     'your_rights' => 'สิทธิของคุณ',
 
     // Contact Us
-    'contact_us_description' => 'มีคำถามหรือต้องการความช่วยเหลือ? เราพร้อมช่วยให้คุณใช้ VideoParser.top ได้อย่างเต็มประสิทธิภาพ',
+    'contact_us_description' => 'มีคำถามหรือต้องการความช่วยเหลือ? เราพร้อมช่วยให้คุณใช้ besttik.comได้อย่างเต็มประสิทธิภาพ',
     'send_message' => 'ส่งข้อความ',
     'first_name' => 'ชื่อ',
     'last_name' => 'นามสกุล',
@@ -171,7 +171,7 @@ return [
     'get_in_touch' => 'ติดต่อเรา',
 
     // Help Center
-    'help_center_description' => 'ค้นหาคำตอบสำหรับคำถามที่พบบ่อยและเรียนรู้วิธีใช้ VideoParser.top ให้เกิดประโยชน์สูงสุด',
+    'help_center_description' => 'ค้นหาคำตอบสำหรับคำถามที่พบบ่อยและเรียนรู้วิธีใช้ besttik.comให้เกิดประโยชน์สูงสุด',
     'getting_started' => 'เริ่มต้นใช้งาน',
     'download_issues' => 'ปัญหาการดาวน์โหลด',
     'troubleshooting' => 'การแก้ไขปัญหา',
@@ -293,7 +293,7 @@ return [
     'browse_help' => 'เรียกดูศูนย์ช่วยเหลือ',
 
     // Help Center - Complete
-    'getting_started_description' => 'เรียนรู้พื้นฐานการใช้ VideoParser.top',
+    'getting_started_description' => 'เรียนรู้พื้นฐานการใช้ besttik.com',
     'download_issues_description' => 'แก้ไขปัญหาการดาวน์โหลดที่พบบ่อย',
     'supported_platforms_help_description' => 'ดูแพลตฟอร์มที่เราสนับสนุน',
     'account_settings' => 'บัญชีและการตั้งค่า',
@@ -451,9 +451,9 @@ return [
 
     // เนื้อหาบทความศูนย์ช่วยเหลือ
     // คู่มือเริ่มต้นอย่างรวดเร็ว
-    'quick_start_welcome' => 'ยินดีต้อนรับสู่ VideoParser.top! นี่คือเครื่องมือแยกวิเคราะห์และดาวน์โหลดวิดีโอออนไลน์ที่ทรงพลัง รองรับแพลตฟอร์มวิดีโอหลักหลายแห่ง',
+    'quick_start_welcome' => 'ยินดีต้อนรับสู่ besttik.com! นี่คือเครื่องมือแยกวิเคราะห์และดาวน์โหลดวิดีโอออนไลน์ที่ทรงพลัง รองรับแพลตฟอร์มวิดีโอหลักหลายแห่ง',
     'quick_start_steps_title' => 'ขั้นตอนเริ่มต้นอย่างรวดเร็ว:',
-    'quick_start_step_1' => 'เยี่ยมชมหน้าแรกของ VideoParser.top',
+    'quick_start_step_1' => 'เยี่ยมชมหน้าแรกของ besttik.com',
     'quick_start_step_2' => 'คัดลอกลิงก์วิดีโอที่คุณต้องการดาวน์โหลด',
     'quick_start_step_3' => 'วางลิงก์ลงในช่องป้อนข้อมูล',
     'quick_start_step_4' => 'คลิกปุ่ม "แยกวิเคราะห์"',
@@ -462,20 +462,20 @@ return [
     'quick_start_tip' => 'เคล็ดลับ: การลงทะเบียนบัญชีจะให้คุณได้รับจำนวนการแยกวิเคราะห์รายวันมากขึ้น!',
 
     // วิธีการใช้งานพื้นฐาน
-    'basic_usage_intro' => 'การใช้งานพื้นฐานของ VideoParser.top นั้นง่ายมาก เพียงไม่กี่ขั้นตอนก็สามารถดาวน์โหลดวิดีโอได้สำเร็จ',
+    'basic_usage_intro' => 'การใช้งานพื้นฐานของ besttik.comนั้นง่ายมาก เพียงไม่กี่ขั้นตอนก็สามารถดาวน์โหลดวิดีโอได้สำเร็จ',
     'basic_usage_platforms_title' => 'แพลตฟอร์มที่รองรับ',
     'basic_usage_platforms_content' => 'เรารองรับแพลตฟอร์มวิดีโอหลักต่อไปนี้: YouTube, TikTok, Instagram, Facebook, Twitter, B站, Douyin และแพลตฟอร์มวิดีโออื่นๆ อีกกว่า 100 แห่ง',
     'basic_usage_limits_title' => 'ข้อจำกัดการใช้งาน',
     'basic_usage_limits_content' => 'ผู้ใช้แขกมีข้อจำกัดจำนวนการแยกวิเคราะห์รายวัน ผู้ใช้ที่ลงทะเบียนจะได้รับจำนวนครั้งมากขึ้น กรุณาดูข้อจำกัดเฉพาะในหน้าการตั้งค่าบัญชี',
 
     // ภาพรวมแพลตฟอร์มที่รองรับ
-    'platforms_overview_intro' => 'VideoParser.top รองรับแพลตฟอร์มวิดีโอหลักหลายแห่ง ให้บริการแยกวิเคราะห์วิดีโอที่ครอบคลุม',
+    'platforms_overview_intro' => 'besttik.comรองรับแพลตฟอร์มวิดีโอหลักหลายแห่ง ให้บริการแยกวิเคราะห์วิดีโอที่ครอบคลุม',
     'platforms_main_title' => 'แพลตฟอร์มหลักที่รองรับ',
     'platforms_main_content' => '• YouTube - แพลตฟอร์มแบ่งปันวิดีโอที่ใหญ่ที่สุดในโลก\n• TikTok - แพลตฟอร์มวิดีโอสั้นโซเชียล\n• Instagram - แพลตฟอร์มแบ่งปันรูปภาพและวิดีโอ\n• Facebook - แพลตฟอร์มเครือข่ายสังคม\n• Twitter - แพลตฟอร์มไมโครบล็อกโซเชียล\n• B站 - เว็บไซต์วิดีโอคอมเมนต์ชั้นนำของจีน\n• Douyin - แพลตฟอร์มวิดีโอสั้นของจีน',
     'platforms_tip' => 'เราจะเพิ่มการรองรับแพลตฟอร์มใหม่อย่างต่อเนื่อง หากคุณต้องการการรองรับแพลตฟอร์มเฉพาะ กรุณาติดต่อเรา',
 
     // เคล็ดลับสำหรับผู้เริ่มต้น
-    'first_time_tips_intro' => 'ในฐานะผู้ใช้ใหม่ เคล็ดลับเหล่านี้จะช่วยให้คุณใช้ VideoParser.top ได้ดีขึ้น',
+    'first_time_tips_intro' => 'ในฐานะผู้ใช้ใหม่ เคล็ดลับเหล่านี้จะช่วยให้คุณใช้ besttik.comได้ดีขึ้น',
     'first_time_tips_title' => 'เคล็ดลับสำหรับผู้เริ่มต้น:',
     'first_time_tip_1' => 'ลงทะเบียนบัญชีเพื่อรับจำนวนการแยกวิเคราะห์มากขึ้น',
     'first_time_tip_2' => 'บุ๊กมาร์กลิงก์วิดีโอที่ใช้บ่อย',
@@ -631,9 +631,9 @@ return [
     'mobile_issues_solution_5' => 'รีสตาร์ทแอปพลิเคชันเบราว์เซอร์',
 
     // เกี่ยวกับเอกสาร API
-    'api_getting_started_intro' => 'ยินดีต้อนรับสู่ VideoParser.top API! คู่มือนี้จะช่วยให้คุณเริ่มต้นรวมบริการแยกวิเคราะห์วิดีโอของเราอย่างรวดเร็ว',
+    'api_getting_started_intro' => 'ยินดีต้อนรับสู่ besttik.comAPI! คู่มือนี้จะช่วยให้คุณเริ่มต้นรวมบริการแยกวิเคราะห์วิดีโอของเราอย่างรวดเร็ว',
     'api_getting_started_requirements_title' => 'การเตรียมการก่อนเริ่มต้น',
-    'api_getting_started_requirements_content' => '• ลงทะเบียนบัญชี VideoParser.top\n• รับคีย์ API\n• เข้าใจคำขอ HTTP พื้นฐาน\n• เตรียมสภาพแวดล้อมการพัฒนา',
+    'api_getting_started_requirements_content' => '• ลงทะเบียนบัญชี besttik.com\n• รับคีย์ API\n• เข้าใจคำขอ HTTP พื้นฐาน\n• เตรียมสภาพแวดล้อมการพัฒนา',
     'api_getting_started_first_request_title' => 'คำขอ API แรก',
     'api_getting_started_first_request_content' => 'ใช้คีย์ API ของคุณส่งคำขอแยกวิเคราะห์วิดีโอง่ายๆ เพื่อยืนยันว่าการรวมสำเร็จ',
 

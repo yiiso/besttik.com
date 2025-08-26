@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - أفضل محلل فيديو TikTok إزالة العلامة المائية TikTok تحليل الفيديو تحميل',
+    'title' => 'besttik.com- أفضل محلل فيديو TikTok إزالة العلامة المائية TikTok تحليل الفيديو تحميل',
     'description' => 'أفضل تحميل تحليل الفيديو. إزالة العلامة المائية TikTok، تحليل فيديو YouTube، تحليل TikTok، Instagram، Facebook، Twitter ومنصات أخرى تحليل الفيديو',
     'keywords' => 'تحليل الفيديو,إزالة العلامة المائية للفيديو,إزالة العلامة المائية ',
     'hero_title' => 'محمل الفيديو المجاني عبر الإنترنت',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'المنصات المدعومة',
     'supported_platforms_desc' => 'تغطية منصات الفيديو الرئيسية العالمية',
     'more_platforms' => 'المزيد من المنصات',
-    'start_using' => 'ابدأ استخدام VideoParser.top',
+    'start_using' => 'ابدأ استخدام besttik.com',
     'start_using_desc' => 'اختبر على الفور أكثر خدمة تحليل فيديو احترافية، اجعل تحميل الفيديو بسيطاً وفعالاً.',
     'start_now' => 'ابدأ الآن',
     'parse_success' => 'التحليل ناجح!',
@@ -136,7 +136,7 @@ return [
     'login_for_more' => 'سجل الدخول للمزيد من التحليلات',
     'upgrade_limit_info' => 'سجل الآن واحصل على :limit فرصة تحليل يومياً!',
     //Terms of Service
-    'terms_of_service_description' => 'يرجى قراءة شروط الخدمة بعناية قبل استخدام VideoParser.top.',
+    'terms_of_service_description' => 'يرجى قراءة شروط الخدمة بعناية قبل استخدام besttik.com.',
     'last_updated' => 'آخر تحديث',
     'acceptance_of_terms' => 'قبول الشروط',
     'description_of_service' => 'وصف الخدمة',
@@ -163,7 +163,7 @@ return [
     'your_rights' => 'حقوقك',
 
     // Contact Us
-    'contact_us_description' => 'هل لديك أسئلة أو تحتاج إلى دعم؟ نحن هنا لمساعدتك في الاستفادة القصوى من VideoParser.top.',
+    'contact_us_description' => 'هل لديك أسئلة أو تحتاج إلى دعم؟ نحن هنا لمساعدتك في الاستفادة القصوى من besttik.com.',
     'send_message' => 'إرسال رسالة',
     'first_name' => 'الاسم الأول',
     'last_name' => 'اسم العائلة',
@@ -175,7 +175,7 @@ return [
     'get_in_touch' => 'تواصل معنا',
 
     // Help Center
-    'help_center_description' => 'اعثر على إجابات للأسئلة الشائعة وتعلم كيفية الاستفادة القصوى من VideoParser.top.',
+    'help_center_description' => 'اعثر على إجابات للأسئلة الشائعة وتعلم كيفية الاستفادة القصوى من besttik.com.',
     'getting_started' => 'البدء',
     'download_issues' => 'مشاكل التحميل',
     'troubleshooting' => 'استكشاف الأخطاء وإصلاحها',
@@ -224,7 +224,7 @@ return [
 
     // Email verification
     'register_success_verify_email' => 'التسجيل ناجح! تحقق من بريدك الإلكتروني وانقر على رابط التحقق لإكمال التسجيل.',
-    'email_verified_success' => 'تحقق البريد الإلكتروني ناجح! مرحباً بك في VideoParser.top!',
+    'email_verified_success' => 'تحقق البريد الإلكتروني ناجح! مرحباً بك في besttik.com!',
     'verify_email_title' => 'تحقق من بريدك الإلكتروني',
     'verify_email_subject' => 'تحقق من عنوان بريدك الإلكتروني - :app',
     'verify_email_greeting' => 'مرحباً :name!',

@@ -1,6 +1,6 @@
 @extends('pages.layout')
 
-@section('title', __('messages.help_center') . ' - VideoParser.top')
+@section('title', __('messages.help_center') . ' - besttik.com')
 @section('description', __('messages.help_center_description'))
 
 @section('hero-icon')
@@ -23,10 +23,10 @@
     <div class="text-center">
         <div class="max-w-2xl mx-auto">
             <form action="{{ localized_url('/help/search') }}" method="GET" class="relative">
-                <input 
-                    type="text" 
+                <input
+                    type="text"
                     name="q"
-                    placeholder="{{ __('messages.search_help_placeholder') }}" 
+                    placeholder="{{ __('messages.search_help_placeholder') }}"
                     class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:outline-none transition-colors pr-16"
                     value="{{ request('q') }}"
                 >
@@ -94,7 +94,7 @@
         <div class="space-y-4 max-w-4xl mx-auto">
             @foreach($popularQuestions as $index => $qa)
             <div class="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-                <button 
+                <button
                     class="w-full px-6 py-4 text-left hover:bg-gray-50 focus:outline-none focus:bg-gray-50 transition-colors"
                     onclick="toggleFaq({{ $index }})"
                 >
@@ -133,7 +133,7 @@
                     <p class="text-sm text-gray-600">{{ __('messages.get_personal_help') ?? '获取个人帮助' }}</p>
                 </div>
             </a>
-            
+
             <a href="{{ localized_url('/api') }}" class="flex items-center p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
                 <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
                     <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@
                     <p class="text-sm text-gray-600">{{ __('messages.developer_resources') ?? '开发者资源' }}</p>
                 </div>
             </a>
-            
+
             <a href="{{ localized_url('/') }}" class="flex items-center p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
                 <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                     <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,7 +165,7 @@
 function toggleFaq(index) {
     const content = document.getElementById(`faq-content-${index}`);
     const icon = document.getElementById(`faq-icon-${index}`);
-    
+
     if (content.classList.contains('hidden')) {
         content.classList.remove('hidden');
         icon.style.transform = 'rotate(180deg)';

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('messages.page_not_found') . ' - VideoParser.top')
+@section('title', __('messages.page_not_found') . ' - besttik.com')
 @section('description', __('messages.page_not_found_description'))
 
 @section('content')
@@ -16,19 +16,19 @@
             <h2 class="mt-2 text-3xl font-bold text-gray-900">{{ __('messages.page_not_found') }}</h2>
             <p class="mt-2 text-sm text-gray-600">{{ __('messages.page_not_found_message') }}</p>
         </div>
-        
+
         <div class="space-y-4">
-            <a href="{{ localized_url('/') }}" 
+            <a href="{{ localized_url('/') }}"
                class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 {{ __('messages.back_to_home') }}
             </a>
-            
-            <a href="{{ localized_url('/help') }}" 
+
+            <a href="{{ localized_url('/help') }}"
                class="w-full flex justify-center py-3 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
                 {{ __('messages.get_help') }}
             </a>
         </div>
-        
+
         <div class="mt-8">
             <h3 class="text-lg font-medium text-gray-900 mb-4">{{ __('messages.popular_pages') }}</h3>
             <div class="space-y-2">

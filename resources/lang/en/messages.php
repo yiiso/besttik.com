@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - Online Video Parser TikTok Watermark Remover Video Download',
+    'title' => 'besttik.com- Online Video Parser TikTok Watermark Remover Video Download',
     'description' => 'Free online video parser and downloader. TikTok watermark remover, YouTube video parser, TikTok parser, Instagram, Facebook, Twitter and other platform video parsing.',
     'keywords' => 'video parser, video watermark remover, TikTok watermark remover, TikTok parser, YouTube free video download, TikTok download, Bilibili download',
     'hero_title' => 'Free Online Video Downloader',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'Supported Platforms',
     'supported_platforms_desc' => 'Covering global mainstream video platforms',
     'more_platforms' => 'More Platforms',
-    'start_using' => 'Start Using VideoParser.top',
+    'start_using' => 'Start Using besttik.com',
     'start_using_desc' => 'Experience the most professional video parsing service immediately, making video downloads simple and efficient.',
     'start_now' => 'Start Now',
     'parse_success' => 'Parse Success!',
@@ -179,7 +179,7 @@ return [
     'download_all' => 'Download All',
     'download_all_description' => 'Start the batch process and download all videos simultaneously.',
     'ready_to_start' => 'Ready to Start Batch Processing?',
-    'batch_download_cta' => 'Experience the power of batch video downloading with VideoParser.top.',
+    'batch_download_cta' => 'Experience the power of batch video downloading with besttik.com.',
     'try_batch_download' => 'Try Batch Download',
 
     // API page translations
@@ -216,13 +216,13 @@ return [
     'get_api_key' => 'Get API Key',
 
     // Help page translations
-    'help_center_description' => 'Find answers to common questions and learn how to make the most of all VideoParser.top features.',
+    'help_center_description' => 'Find answers to common questions and learn how to make the most of all besttik.comfeatures.',
     'search_help' => 'Search help content...',
     'search_help_placeholder' => 'Enter keywords to search help content',
     'help_categories' => 'Help Categories',
     'all_categories' => 'All Categories',
     'getting_started' => 'Getting Started',
-    'getting_started_description' => 'Learn the basics of using VideoParser.top for video parsing and downloading.',
+    'getting_started_description' => 'Learn the basics of using besttik.comfor video parsing and downloading.',
     'download_issues' => 'Download Issues',
     'download_issues_description' => 'Troubleshoot common problems with video downloads and parsing.',
     'supported_platforms_help_description' => 'Learn about all supported video platforms and their specific requirements.',
@@ -274,7 +274,7 @@ return [
     'browse_help' => 'Browse Help Center',
 
     // Privacy policy translations
-    'privacy_policy_description' => 'Learn how we collect, use, and protect your personal information when using VideoParser.top.',
+    'privacy_policy_description' => 'Learn how we collect, use, and protect your personal information when using besttik.com.',
     'last_updated' => 'Last Updated',
     'information_we_collect' => 'Information We Collect',
     'information_we_collect_description' => 'We collect information you provide directly to us and information we collect automatically when you use our service.',
@@ -328,11 +328,11 @@ return [
     'company_address' => 'Company Address',
 
     // Terms of service translations
-    'terms_of_service_description' => 'Please read these terms carefully before using VideoParser.top services.',
+    'terms_of_service_description' => 'Please read these terms carefully before using besttik.comservices.',
     'acceptance_of_terms' => 'Acceptance of Terms',
-    'acceptance_of_terms_description' => 'By accessing and using VideoParser.top, you accept and agree to be bound by the terms and provision of this agreement.',
+    'acceptance_of_terms_description' => 'By accessing and using besttik.com, you accept and agree to be bound by the terms and provision of this agreement.',
     'description_of_service' => 'Description of Service',
-    'description_of_service_content' => 'VideoParser.top provides video parsing and download services including:',
+    'description_of_service_content' => 'besttik.comprovides video parsing and download services including:',
     'video_link_parsing' => 'Video link parsing from supported platforms',
     'multiple_format_support' => 'Multiple video and audio format support',
     'batch_processing_service' => 'Batch processing capabilities',
@@ -353,15 +353,15 @@ return [
     'unauthorized_access_attempt' => 'Attempting unauthorized access to our systems',
     'spam_activities' => 'Engaging in spam or unsolicited communications',
     'intellectual_property' => 'Intellectual Property',
-    'intellectual_property_description' => 'The service and its original content, features, and functionality are owned by VideoParser.top and are protected by international copyright, trademark, and other intellectual property laws.',
+    'intellectual_property_description' => 'The service and its original content, features, and functionality are owned by besttik.comand are protected by international copyright, trademark, and other intellectual property laws.',
     'user_content' => 'User Content',
     'user_content_description' => 'You retain ownership of any content you submit to our service. By submitting content, you grant us a license to use, modify, and distribute it as necessary to provide our services.',
     'service_availability' => 'Service Availability',
     'service_availability_description' => 'We strive to maintain high service availability but cannot guarantee uninterrupted access. We reserve the right to modify or discontinue the service at any time.',
     'limitation_of_liability' => 'Limitation of Liability',
-    'limitation_of_liability_description' => 'VideoParser.top shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.',
+    'limitation_of_liability_description' => 'besttik.comshall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the service.',
     'indemnification' => 'Indemnification',
-    'indemnification_description' => 'You agree to indemnify and hold harmless VideoParser.top from any claims, damages, or expenses arising from your use of the service or violation of these terms.',
+    'indemnification_description' => 'You agree to indemnify and hold harmless besttik.comfrom any claims, damages, or expenses arising from your use of the service or violation of these terms.',
     'termination' => 'Termination',
     'termination_description' => 'We may terminate or suspend your account and access to the service immediately, without prior notice, for conduct that we believe violates these terms or is harmful to other users, us, or third parties, or for any other reason including:',
     'terms_violation' => 'Violation of these terms of service',
@@ -377,7 +377,7 @@ return [
     'severability' => 'Severability',
     'severability_description' => 'If any provision of these terms is held to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.',
     'entire_agreement' => 'Entire Agreement',
-    'entire_agreement_description' => 'These terms constitute the entire agreement between you and VideoParser.top regarding the use of the service.',
+    'entire_agreement_description' => 'These terms constitute the entire agreement between you and besttik.comregarding the use of the service.',
     'terms_contact_description' => 'If you have any questions about these terms, please contact us:',
 
     // Parse limit messages
@@ -405,7 +405,7 @@ return [
     'copyright_disclaimer' => 'All content on this site is for learning, research, and communication purposes only. We do not store, copy, or distribute any videos, images, audio, or other files. All content is provided and hosted by users on third-party platforms, for users’ own viewing and study only. We respect intellectual property and copyright. If you believe any content displayed on this site infringes your legitimate rights, please send relevant proof to service@besttik.com. We will promptly verify and handle or remove the relevant content.',
     'choose_language' => 'Choose Language:',
     'help_guide_heading' => 'Help Guide',
-    'help_guide_subheading' => 'Step-by-step guide to using VideoParser.top and solving common issues.',
+    'help_guide_subheading' => 'Step-by-step guide to using besttik.comand solving common issues.',
     'copy_video_link_desc' => 'Copy the video link from the source platform (e.g., Douyin, TikTok, Instagram, etc.).',
     'paste_into_input_desc' => 'Paste the copied link into the input box on the homepage.',
     'click_parse_desc' => 'Click the "Parse" button to start processing.',
@@ -432,20 +432,20 @@ return [
     'quick_start_tip' => 'Tip: Register an account to get more daily parsing attempts!',
 
     // Basic usage
-    'basic_usage_intro' => 'Basic usage of VideoParser.top is very simple, just a few steps to complete video downloading.',
+    'basic_usage_intro' => 'Basic usage of besttik.comis very simple, just a few steps to complete video downloading.',
     'basic_usage_platforms_title' => 'Supported Platforms',
     'basic_usage_platforms_content' => 'We support the following popular video platforms: Douyin, Xiaohongshu, Bilibili, Kuaishou, Weibo, Instagram, Facebook, Twitter, X, Snapchat, Pinterest. More platforms will be added soon.',
     'basic_usage_limits_title' => 'Usage Limits',
     'basic_usage_limits_content' => 'Guest users have a certain daily parsing limit, registered users can get more attempts. Please check the account settings page for specific limits.',
 
     // Platform overview
-    'platforms_overview_intro' => 'VideoParser.top supports multiple mainstream video platforms, providing you with comprehensive video parsing services.',
+    'platforms_overview_intro' => 'besttik.comsupports multiple mainstream video platforms, providing you with comprehensive video parsing services.',
     'platforms_main_title' => 'Main Supported Platforms',
     'platforms_main_content' => '• Douyin - Chinese short video platform\n• Xiaohongshu - Lifestyle and sharing community\n• Bilibili - China\'s leading video bullet screen website\n• Kuaishou - Short video and live streaming platform\n• Weibo - Chinese microblogging platform\n• Instagram - Photo and video sharing platform\n• Facebook - Social network platform\n• Twitter - Microblogging social platform\n• X - Social platform (formerly Twitter)\n• Snapchat - Multimedia messaging app\n• Pinterest - Image and idea sharing platform',
     'platforms_tip' => 'We will continue to add support for new platforms. If you need support for a specific platform, please contact us.',
 
     // First-time user tips
-    'first_time_tips_intro' => 'As a new user, these tips will help you better use VideoParser.top.',
+    'first_time_tips_intro' => 'As a new user, these tips will help you better use besttik.com.',
     'first_time_tips_title' => 'First-time User Tips:',
     'first_time_tip_1' => 'Register an account to get more parsing attempts',
     'first_time_tip_2' => 'Bookmark frequently used video links',
@@ -617,9 +617,9 @@ return [
     'mobile_issues_solution_5' => 'Restart browser application',
 
     // API documentation related
-    'api_getting_started_intro' => 'Welcome to VideoParser.top API! This guide will help you quickly start integrating our video parsing services.',
+    'api_getting_started_intro' => 'Welcome to besttik.comAPI! This guide will help you quickly start integrating our video parsing services.',
     'api_getting_started_requirements_title' => 'Prerequisites',
-    'api_getting_started_requirements_content' => '• Register VideoParser.top account\n• Get API key\n• Understand basic HTTP requests\n• Prepare development environment',
+    'api_getting_started_requirements_content' => '• Register besttik.comaccount\n• Get API key\n• Understand basic HTTP requests\n• Prepare development environment',
     'api_getting_started_first_request_title' => 'First API Request',
     'api_getting_started_first_request_content' => 'Use your API key to send a simple video parsing request to verify successful integration.',
     'api_authentication_intro' => 'API authentication ensures that only authorized users can access our services.',

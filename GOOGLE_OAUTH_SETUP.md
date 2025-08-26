@@ -13,7 +13,7 @@
 1. 在Google Cloud Console中，导航到 "APIs & Services" > "OAuth consent screen"
 2. 选择用户类型（内部或外部）
 3. 填写应用信息：
-   - 应用名称：VideoParser.top
+   - 应用名称：besttik.com
    - 用户支持电子邮件
    - 应用域名
    - 开发者联系信息

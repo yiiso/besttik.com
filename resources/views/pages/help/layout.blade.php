@@ -1,6 +1,6 @@
 @extends('pages.layout')
 
-@section('title', __('messages.help_center') . ' - VideoParser.top')
+@section('title', __('messages.help_center') . ' - besttik.com')
 @section('description', __('messages.help_center_description'))
 
 @section('hero-icon')

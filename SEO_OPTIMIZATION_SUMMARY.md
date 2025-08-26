@@ -1,4 +1,4 @@
-# VideoParser.top - Google SEO 优化总结
+# besttik.com- Google SEO 优化总结
 
 ## 已完成的SEO优化项目
 
@@ -185,4 +185,4 @@
 - 使用Google Analytics监控有机流量
 - 使用第三方工具（如Ahrefs、SEMrush）监控关键词排名
 
-这个SEO优化方案为VideoParser.top提供了全面的搜索引擎优化基础，应该能够显著提高网站在Google等搜索引擎中的可见性和排名。
+这个SEO优化方案为besttik.com提供了全面的搜索引擎优化基础，应该能够显著提高网站在Google等搜索引擎中的可见性和排名。

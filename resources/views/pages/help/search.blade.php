@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.search_results') . ': ' . $query . ' - ' . __('messages.help_center') . ' - VideoParser.top')
-@section('description', 'Search results for "' . $query . '" in VideoParser.top help center.')
+@section('title', __('messages.search_results') . ': ' . $query . ' - ' . __('messages.help_center') . ' - besttik.com')
+@section('description', 'Search results for "' . $query . '" in besttik.comhelp center.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">
@@ -40,10 +40,10 @@
     <!-- 搜索框 -->
     <div class="max-w-2xl mx-auto">
         <form action="{{ localized_url('/help/search') }}" method="GET" class="relative">
-            <input 
-                type="text" 
+            <input
+                type="text"
                 name="q"
-                placeholder="{{ __('messages.search_help_placeholder') }}" 
+                placeholder="{{ __('messages.search_help_placeholder') }}"
                 class="w-full px-6 py-4 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:outline-none transition-colors pr-16"
                 value="{{ $query }}"
                 autofocus
@@ -87,20 +87,20 @@
                                 <span class="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full">{{ __('messages.faq') ?? '常见问题' }}</span>
                             @endif
                         </div>
-                        
+
                         <h3 class="text-lg font-semibold text-gray-900 mb-2">
                             <a href="{{ $result['url'] }}" class="hover:text-blue-600 transition-colors">{{ $result['title'] }}</a>
                         </h3>
-                        
+
                         @if(isset($result['category']))
                             <p class="text-sm text-gray-600 mb-2">{{ __('messages.in_category') ?? '在分类' }}: {{ $result['category'] }}</p>
                         @endif
-                        
+
                         @if(isset($result['description']))
                             <p class="text-gray-600 body-light">{{ $result['description'] }}</p>
                         @endif
                     </div>
-                    
+
                     <a href="{{ $result['url'] }}" class="ml-4 p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -118,7 +118,7 @@
             </svg>
             <h3 class="text-lg font-medium text-gray-900 mb-2">{{ __('messages.no_results_found') ?? '未找到相关结果' }}</h3>
             <p class="text-gray-600 mb-6">{{ __('messages.try_different_keywords') ?? '请尝试使用不同的关键词或浏览下面的建议' }}</p>
-            
+
             <!-- 搜索建议 -->
             <div class="max-w-2xl mx-auto">
                 <h4 class="text-md font-medium text-gray-900 mb-4">{{ __('messages.search_suggestions') ?? '搜索建议' }}:</h4>
@@ -161,7 +161,7 @@
                     <p class="text-sm text-gray-600">{{ __('messages.explore_all_topics') ?? '探索所有主题' }}</p>
                 </div>
             </a>
-            
+
             <a href="{{ localized_url('/contact') }}" class="flex items-center p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
                 <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                     <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -173,7 +173,7 @@
                     <p class="text-sm text-gray-600">{{ __('messages.get_personal_help') ?? '获取个人帮助' }}</p>
                 </div>
             </a>
-            
+
             <a href="{{ localized_url('/') }}" class="flex items-center p-4 bg-white rounded-xl hover:shadow-md transition-shadow">
                 <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
                     <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,6 +1,6 @@
 @extends('pages.layout')
 
-@section('title', $categoryData['title'] . ' - ' . __('messages.help_center') . ' - VideoParser.top')
+@section('title', $categoryData['title'] . ' - ' . __('messages.help_center') . ' - besttik.com')
 @section('description', $categoryData['description'])
 
 @section('hero-icon')

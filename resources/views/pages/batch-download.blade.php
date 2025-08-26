@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.batch_download') . ' - VideoParser.top')
-@section('description', 'Batch download multiple videos at once with VideoParser.top. Save time and effort with our powerful batch processing feature.')
+@section('title', __('messages.batch_download') . ' - besttik.com')
+@section('description', 'Batch download multiple videos at once with besttik.com. Save time and effort with our powerful batch processing feature.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">

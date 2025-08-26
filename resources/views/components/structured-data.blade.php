@@ -39,7 +39,7 @@
     "@@context": "https://schema.org",
     "@@type": "HowTo",
     "name": "How to Download Videos from Any Platform",
-    "description": "Step-by-step guide to download videos from TikTok, Instagram and other platforms using VideoParser.top",
+    "description": "Step-by-step guide to download videos from TikTok, Instagram and other platforms using besttik.com",
     "image": "{{ asset('images/how-to-guide.jpg') }}",
     "totalTime": "PT2M",
     "estimatedCost": {
@@ -60,7 +60,7 @@
     "tool": [
         {
             "@@type": "HowToTool",
-            "name": "VideoParser.top"
+            "name": "besttik.com"
         }
     ],
     "step": [
@@ -73,7 +73,7 @@
         {
             "@@type": "HowToStep",
             "name": "Paste URL",
-            "text": "Paste the video URL into the VideoParser.top input field",
+            "text": "Paste the video URL into the besttik.cominput field",
             "image": "{{ asset('images/step2.jpg') }}"
         },
         {
@@ -97,7 +97,7 @@
 {
     "@@context": "https://schema.org",
     "@@type": "Organization",
-    "name": "VideoParser.top",
+    "name": "besttik.com",
     "url": "https://besttik.com",
     "logo": "{{ asset('images/logo.png') }}",
     "description": "{{ __('messages.description') }}",

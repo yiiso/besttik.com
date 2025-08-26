@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.contact_us') . ' - VideoParser.top')
-@section('description', 'Get in touch with VideoParser.top team. We are here to help you with any questions or support needs.')
+@section('title', __('messages.contact_us') . ' - besttik.com')
+@section('description', 'Get in touch with besttik.comteam. We are here to help you with any questions or support needs.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">

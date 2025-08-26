@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - 無料オンライン動画ダウンローダー',
+    'title' => 'besttik.com- 無料オンライン動画ダウンローダー',
     'description' => '無料のオンライン動画ダウンロードおよび解析ツール。YouTube、TikTok、Instagram、Facebook、Twitterなどのプラットフォームから動画をダウンロード。高速、安全、登録不要。',
     'keywords' => '動画ダウンローダー,オンライン動画解析,YouTubeダウンローダー,TikTokダウンローダー,Instagram動画ダウンロード,Facebook動画ダウンローダー,Twitter動画ダウンロード,無料動画ダウンローダー,動画コンバーター,一括動画ダウンロード',
     'hero_title' => '無料オンライン動画ダウンローダー',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'サポートプラットフォーム',
     'supported_platforms_desc' => '世界の主要動画プラットフォームをカバー',
     'more_platforms' => 'その他のプラットフォーム',
-    'start_using' => 'VideoParser.topを使い始める',
+    'start_using' => 'besttik.comを使い始める',
     'start_using_desc' => '最もプロフェッショナルな動画解析サービスをすぐに体験し、動画ダウンロードをシンプルで効率的にします。',
     'start_now' => '今すぐ開始',
     'parse_success' => '解析成功！',
@@ -60,12 +60,12 @@ return [
 
 
     // Terms of Service
-    'terms_of_service_description' => 'VideoParser.topをご利用になる前に、利用規約をよくお読みください。',
+    'terms_of_service_description' => 'besttik.comをご利用になる前に、利用規約をよくお読みください。',
     'last_updated' => '最終更新',
     'acceptance_of_terms' => '規約の承諾',
-    'acceptance_of_terms_description' => 'VideoParser.topにアクセスし使用することにより、本契約の条項と規定に拘束されることに同意し承諾します。',
+    'acceptance_of_terms_description' => 'besttik.comにアクセスし使用することにより、本契約の条項と規定に拘束されることに同意し承諾します。',
     'description_of_service' => 'サービスの説明',
-    'description_of_service_content' => 'VideoParser.topは、さまざまなオンラインプラットフォーム向けの動画解析およびダウンロードサービスを提供します。当社のサービスには以下が含まれます：',
+    'description_of_service_content' => 'besttik.comは、さまざまなオンラインプラットフォーム向けの動画解析およびダウンロードサービスを提供します。当社のサービスには以下が含まれます：',
     'video_link_parsing' => '動画リンクの解析と分析',
     'multiple_format_support' => '複数のフォーマットと品質オプション',
     'batch_processing_service' => 'バッチ処理機能',
@@ -86,15 +86,15 @@ return [
     'unauthorized_access_attempt' => '当社システムへの不正アクセスの試み',
     'spam_activities' => 'スパムや迷惑通信への当社サービスの使用',
     'intellectual_property' => '知的財産',
-    'intellectual_property_description' => 'VideoParser.topとその独自のコンテンツ、機能、および機能性は当社が所有し、国際的な著作権、商標、特許、企業秘密、その他の知的財産法によって保護されています。',
+    'intellectual_property_description' => 'besttik.comとその独自のコンテンツ、機能、および機能性は当社が所有し、国際的な著作権、商標、特許、企業秘密、その他の知的財産法によって保護されています。',
     'user_content' => 'ユーザーコンテンツ',
     'user_content_description' => '当社サービスを通じて処理するコンテンツの所有権を保持します。ただし、当社サービスの提供の一環として、このコンテンツを処理および配信するための限定的なライセンスを当社に付与します。',
     'service_availability' => 'サービス可用性',
     'service_availability_description' => '高いサービス可用性の維持に努めますが、中断のないアクセスを保証するものではありません。予告の有無にかかわらず、サービスを変更、一時停止、または中止する権利を留保します。',
     'limitation_of_liability' => '責任の制限',
-    'limitation_of_liability_description' => 'VideoParser.topは、当社サービスの使用に起因する間接的、偶発的、特別、結果的、または懲罰的損害について責任を負いません。',
+    'limitation_of_liability_description' => 'besttik.comは、当社サービスの使用に起因する間接的、偶発的、特別、結果的、または懲罰的損害について責任を負いません。',
     'indemnification' => '補償',
-    'indemnification_description' => '当社サービスの使用またはこれらの規約の違反から生じるクレーム、損害、または費用からVideoParser.topを補償し、無害に保つことに同意します。',
+    'indemnification_description' => '当社サービスの使用またはこれらの規約の違反から生じるクレーム、損害、または費用からbesttik.comを補償し、無害に保つことに同意します。',
     'termination' => '終了',
     'termination_description' => '事前通知なしに、これらの規約に違反する、または他のユーザー、当社、または第三者に有害であると当社が判断する行為、またはその他の理由により、当社サービスへのアクセスを即座に終了または一時停止する場合があります：',
     'terms_violation' => 'これらの利用規約の違反',
@@ -110,7 +110,7 @@ return [
     'severability' => '分離可能性',
     'severability_description' => 'これらの規約のいずれかの条項が執行不能と判断された場合、残りの条項は完全に有効であり続けます。',
     'entire_agreement' => '完全合意',
-    'entire_agreement_description' => 'これらの規約は、当社サービスの使用に関するあなたとVideoParser.topの間の完全な合意を構成します。',
+    'entire_agreement_description' => 'これらの規約は、当社サービスの使用に関するあなたとbesttik.comの間の完全な合意を構成します。',
     'contact_information' => '連絡先情報',
     'terms_contact_description' => 'これらの規約についてご質問がある場合は、お問い合わせください：',
     'address' => '住所',
@@ -167,7 +167,7 @@ return [
     'privacy_contact_description' => 'このプライバシーポリシーについてご質問がある場合は、お問い合わせください：',
 
     // Contact Us
-    'contact_us_description' => 'ご質問やサポートが必要ですか？VideoParser.topを最大限に活用できるよう、お手伝いします。',
+    'contact_us_description' => 'ご質問やサポートが必要ですか？besttik.comを最大限に活用できるよう、お手伝いします。',
     'send_message' => 'メッセージを送信',
     'first_name' => '名',
     'last_name' => '姓',
@@ -196,9 +196,9 @@ return [
     'browse_help' => 'ヘルプセンターを参照',
 
     // Help Center
-    'help_center_description' => 'よくある質問の回答を見つけ、VideoParser.topを最大限に活用する方法を学びます。',
+    'help_center_description' => 'よくある質問の回答を見つけ、besttik.comを最大限に活用する方法を学びます。',
     'getting_started' => '始める',
-    'getting_started_description' => 'VideoParser.topの使用の基本を学ぶ',
+    'getting_started_description' => 'besttik.comの使用の基本を学ぶ',
     'download_issues' => 'ダウンロード問題',
     'download_issues_description' => '一般的なダウンロード問題のトラブルシューティング',
     'supported_platforms_help_description' => 'サポートしているプラットフォームを確認',
@@ -459,9 +459,9 @@ return [
 
     // ヘルプセンター記事内容
     // クイックスタートガイド
-    'quick_start_welcome' => 'VideoParser.topへようこそ！これは複数の主流動画プラットフォームをサポートする強力なオンライン動画解析ダウンロードツールです。',
+    'quick_start_welcome' => 'besttik.comへようこそ！これは複数の主流動画プラットフォームをサポートする強力なオンライン動画解析ダウンロードツールです。',
     'quick_start_steps_title' => 'クイックスタート手順：',
-    'quick_start_step_1' => 'VideoParser.topホームページにアクセス',
+    'quick_start_step_1' => 'besttik.comホームページにアクセス',
     'quick_start_step_2' => 'ダウンロードしたい動画リンクをコピー',
     'quick_start_step_3' => 'リンクを入力ボックスに貼り付け',
     'quick_start_step_4' => '「解析」ボタンをクリック',
@@ -470,20 +470,20 @@ return [
     'quick_start_tip' => 'ヒント：アカウント登録でより多くの日次解析回数を取得できます！',
 
     // 基本的な使用方法
-    'basic_usage_intro' => 'VideoParser.topの基本的な使用は非常に簡単で、数ステップで動画ダウンロードを完了できます。',
+    'basic_usage_intro' => 'besttik.comの基本的な使用は非常に簡単で、数ステップで動画ダウンロードを完了できます。',
     'basic_usage_platforms_title' => 'サポートプラットフォーム',
     'basic_usage_platforms_content' => '以下の主流動画プラットフォームをサポートしています：YouTube、TikTok、Instagram、Facebook、Twitter、Bilibili、Douyinなど100以上の動画プラットフォーム。',
     'basic_usage_limits_title' => '使用制限',
     'basic_usage_limits_content' => 'ゲストユーザーは日次解析回数に一定の制限があり、登録ユーザーはより多くの回数を取得できます。具体的な制限についてはアカウント設定ページをご確認ください。',
 
     // プラットフォーム概要
-    'platforms_overview_intro' => 'VideoParser.topは複数の主流動画プラットフォームをサポートし、包括的な動画解析サービスを提供します。',
+    'platforms_overview_intro' => 'besttik.comは複数の主流動画プラットフォームをサポートし、包括的な動画解析サービスを提供します。',
     'platforms_main_title' => '主要サポートプラットフォーム',
     'platforms_main_content' => '• YouTube - 世界最大の動画共有プラットフォーム\n• TikTok - ショート動画ソーシャルプラットフォーム\n• Instagram - 写真・動画共有プラットフォーム\n• Facebook - ソーシャルネットワークプラットフォーム\n• Twitter - マイクロブログソーシャルプラットフォーム\n• Bilibili - 中国をリードする動画弾幕サイト\n• Douyin - 中国のショート動画プラットフォーム',
     'platforms_tip' => '新しいプラットフォームのサポートを継続的に追加しています。特定のプラットフォームのサポートが必要な場合は、お問い合わせください。',
 
     // 初回ユーザーのヒント
-    'first_time_tips_intro' => '新規ユーザーとして、これらのヒントがVideoParser.topをより良く使用するのに役立ちます。',
+    'first_time_tips_intro' => '新規ユーザーとして、これらのヒントがbesttik.comをより良く使用するのに役立ちます。',
     'first_time_tips_title' => '初回ユーザーのヒント：',
     'first_time_tip_1' => 'アカウント登録でより多くの解析回数を取得',
     'first_time_tip_2' => 'よく使用する動画リンクをブックマーク',
@@ -656,9 +656,9 @@ return [
     'mobile_issues_solution_5' => 'ブラウザアプリを再起動',
 
     // API文書関連
-    'api_getting_started_intro' => 'VideoParser.top APIへようこそ！このガイドは動画解析サービスの統合を素早く開始するのに役立ちます。',
+    'api_getting_started_intro' => 'besttik.comAPIへようこそ！このガイドは動画解析サービスの統合を素早く開始するのに役立ちます。',
     'api_getting_started_requirements_title' => '開始前の準備',
-    'api_getting_started_requirements_content' => '• VideoParser.topアカウントを登録\n• APIキーを取得\n• 基本的なHTTPリクエストを理解\n• 開発環境を準備',
+    'api_getting_started_requirements_content' => '• besttik.comアカウントを登録\n• APIキーを取得\n• 基本的なHTTPリクエストを理解\n• 開発環境を準備',
     'api_getting_started_first_request_title' => '最初のAPIリクエスト',
     'api_getting_started_first_request_content' => 'APIキーを使用してシンプルな動画解析リクエストを送信し、統合が成功したことを確認します。',
 

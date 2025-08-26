@@ -180,7 +180,7 @@ MAIL_USERNAME=your-email
 MAIL_PASSWORD=your-password
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=noreply@videoparser.top
-MAIL_FROM_NAME="VideoParser.top"
+MAIL_FROM_NAME="besttik.com"
 ```
 
 ## 总结

@@ -36,7 +36,7 @@ return [
     'supported_platforms' => '支持的平台',
     'supported_platforms_desc' => '覆盖全球主流视频平台',
     'more_platforms' => '更多平台',
-    'start_using' => '开始使用 VideoParser.top',
+    'start_using' => '开始使用 besttik.com',
     'start_using_desc' => '立即体验最专业的视频解析服务，让视频下载变得简单高效。',
     'start_now' => '立即开始',
     'parse_success' => '解析成功！',
@@ -75,12 +75,12 @@ return [
 
 
     // Terms of Service
-    'terms_of_service_description' => '在使用VideoParser.top之前，请仔细阅读我们的服务条款。',
+    'terms_of_service_description' => '在使用besttik.com之前，请仔细阅读我们的服务条款。',
     'last_updated' => '最后更新',
     'acceptance_of_terms' => '条款接受',
-    'acceptance_of_terms_description' => '通过访问和使用VideoParser.top，您接受并同意受本协议条款和规定的约束。',
+    'acceptance_of_terms_description' => '通过访问和使用besttik.com，您接受并同意受本协议条款和规定的约束。',
     'description_of_service' => '服务描述',
-    'description_of_service_content' => 'VideoParser.top为各种在线平台提供视频解析和下载服务。我们的服务包括：',
+    'description_of_service_content' => 'besttik.com为各种在线平台提供视频解析和下载服务。我们的服务包括：',
     'video_link_parsing' => '视频链接解析和分析',
     'multiple_format_support' => '多种格式和质量选项',
     'batch_processing_service' => '批量处理功能',
@@ -101,15 +101,15 @@ return [
     'unauthorized_access_attempt' => '试图获得对我们系统的未授权访问',
     'spam_activities' => '将我们的服务用于垃圾邮件或未经请求的通信',
     'intellectual_property' => '知识产权',
-    'intellectual_property_description' => 'VideoParser.top及其原创内容、功能和功能归我们所有，受国际版权、商标、专利、商业秘密和其他知识产权法保护。',
+    'intellectual_property_description' => 'besttik.com及其原创内容、功能和功能归我们所有，受国际版权、商标、专利、商业秘密和其他知识产权法保护。',
     'user_content' => '用户内容',
     'user_content_description' => '您保留通过我们服务处理的任何内容的所有权。但是，您授予我们有限的许可来处理和交付此内容，作为提供我们服务的一部分。',
     'service_availability' => '服务可用性',
     'service_availability_description' => '我们努力维持高服务可用性，但不保证不间断访问。我们保留在有或没有通知的情况下修改、暂停或停止服务的权利。',
     'limitation_of_liability' => '责任限制',
-    'limitation_of_liability_description' => 'VideoParser.top不对因您使用我们的服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害承担责任。',
+    'limitation_of_liability_description' => 'besttik.com不对因您使用我们的服务而导致的任何间接、偶然、特殊、后果性或惩罚性损害承担责任。',
     'indemnification' => '赔偿',
-    'indemnification_description' => '您同意赔偿并使VideoParser.top免受因您使用我们的服务或违反这些条款而产生的任何索赔、损害或费用的损害。',
+    'indemnification_description' => '您同意赔偿并使besttik.com免受因您使用我们的服务或违反这些条款而产生的任何索赔、损害或费用的损害。',
     'termination' => '终止',
     'termination_description' => '我们可能立即终止或暂停您对我们服务的访问，无需事先通知，对于我们认为违反这些条款或对其他用户、我们或第三方有害的行为，或出于任何其他原因，包括：',
     'terms_violation' => '违反这些服务条款',
@@ -125,7 +125,7 @@ return [
     'severability' => '可分割性',
     'severability_description' => '如果这些条款的任何条款被认为不可执行，其余条款将保持完全有效。',
     'entire_agreement' => '完整协议',
-    'entire_agreement_description' => '这些条款构成您与VideoParser.top之间关于使用我们服务的完整协议。',
+    'entire_agreement_description' => '这些条款构成您与besttik.com之间关于使用我们服务的完整协议。',
     'contact_information' => '联系信息',
     'terms_contact_description' => '如果您对这些条款有任何疑问，请联系我们：',
     'address' => '地址',
@@ -182,7 +182,7 @@ return [
     'privacy_contact_description' => '如果您对此隐私政策有任何疑问，请联系我们：',
 
     // Contact Us
-    'contact_us_description' => '有问题或需要支持？我们在这里帮助您充分利用VideoParser.top。',
+    'contact_us_description' => '有问题或需要支持？我们在这里帮助您充分利用besttik.com。',
     'send_message' => '发送消息',
     'first_name' => '名',
     'last_name' => '姓',
@@ -211,7 +211,7 @@ return [
     'browse_help' => '浏览帮助中心',
 
     // Help Center - 完善的帮助中心内容
-    'help_center_description' => '查找常见问题的答案，学习如何充分利用VideoParser.top的所有功能。',
+    'help_center_description' => '查找常见问题的答案，学习如何充分利用besttik.com的所有功能。',
     'search_help' => '搜索帮助内容...',
     'search_help_placeholder' => '输入关键词搜索帮助内容',
     'help_categories' => '帮助分类',
@@ -219,7 +219,7 @@ return [
 
     // 入门指南
     'getting_started' => '入门指南',
-    'getting_started_description' => '学习使用VideoParser.top的基础知识，快速上手视频解析下载',
+    'getting_started_description' => '学习使用besttik.com的基础知识，快速上手视频解析下载',
     'quick_start_guide' => '快速开始指南',
     'basic_usage' => '基本使用方法',
     'supported_platforms_overview' => '支持平台概览',
@@ -648,9 +648,9 @@ return [
 
     // 帮助中心文章内容
     // 快速开始指南
-    'quick_start_welcome' => '欢迎使用 VideoParser.top！这是一个功能强大的在线视频解析下载工具，支持多个主流视频平台。',
+    'quick_start_welcome' => '欢迎使用 besttik.com！这是一个功能强大的在线视频解析下载工具，支持多个主流视频平台。',
     'quick_start_steps_title' => '快速开始步骤：',
-    'quick_start_step_1' => '访问 VideoParser.top 首页',
+    'quick_start_step_1' => '访问 besttik.com首页',
     'quick_start_step_2' => '复制您想要下载的视频链接',
     'quick_start_step_3' => '将链接粘贴到输入框中',
     'quick_start_step_4' => '点击"解析"按钮',
@@ -659,20 +659,20 @@ return [
     'quick_start_tip' => '提示：注册账户可以获得更多的每日解析次数！',
 
     // 基本使用方法
-    'basic_usage_intro' => 'VideoParser.top 的基本使用非常简单，只需要几个步骤就能完成视频下载。',
+    'basic_usage_intro' => 'besttik.com的基本使用非常简单，只需要几个步骤就能完成视频下载。',
     'basic_usage_platforms_title' => '支持的平台',
     'basic_usage_platforms_content' => '我们支持以下热门视频平台：抖音、小红书、B站、快手、微博、Instagram、Facebook、Twitter、X、Snapchat、Pinterest。更多平台即将上线。',
     'basic_usage_limits_title' => '使用限制',
     'basic_usage_limits_content' => '游客用户每日有一定的解析次数限制，注册用户可获得更多次数。具体限制请查看账户设置页面。',
 
     // 支持平台概览
-    'platforms_overview_intro' => 'VideoParser.top 支持多个主流视频平台，为您提供全面的视频解析服务。',
+    'platforms_overview_intro' => 'besttik.com支持多个主流视频平台，为您提供全面的视频解析服务。',
     'platforms_main_title' => '主要支持平台',
     'platforms_main_content' => '• 抖音 - 中国短视频平台\n• 小红书 - 生活方式分享社区\n• B站 - 中国领先的弹幕视频网站\n• 快手 - 短视频与直播平台\n• 微博 - 中国微博平台\n• Instagram - 图片与视频分享平台\n• Facebook - 社交网络平台\n• Twitter - 微博社交平台\n• X - 社交平台（原Twitter）\n• Snapchat - 多媒体消息应用\n• Pinterest - 图片与创意分享平台',
     'platforms_tip' => '我们会持续添加新平台的支持，如果您需要特定平台的支持，请联系我们。',
 
     // 新手使用技巧
-    'first_time_tips_intro' => '作为新用户，这些技巧将帮助您更好地使用 VideoParser.top。',
+    'first_time_tips_intro' => '作为新用户，这些技巧将帮助您更好地使用 besttik.com。',
     'first_time_tips_title' => '新手使用技巧：',
     'first_time_tip_1' => '注册账户获得更多解析次数',
     'first_time_tip_2' => '收藏常用的视频链接',
@@ -846,9 +846,9 @@ return [
     'mobile_issues_solution_5' => '重启浏览器应用',
 
     // API文档相关
-    'api_getting_started_intro' => '欢迎使用 VideoParser.top API！本指南将帮助您快速开始集成我们的视频解析服务。',
+    'api_getting_started_intro' => '欢迎使用 besttik.comAPI！本指南将帮助您快速开始集成我们的视频解析服务。',
     'api_getting_started_requirements_title' => '开始前准备',
-    'api_getting_started_requirements_content' => '• 注册 VideoParser.top 账户\n• 获取 API 密钥\n• 了解基本的 HTTP 请求\n• 准备开发环境',
+    'api_getting_started_requirements_content' => '• 注册 besttik.com账户\n• 获取 API 密钥\n• 了解基本的 HTTP 请求\n• 准备开发环境',
     'api_getting_started_first_request_title' => '第一个API请求',
     'api_getting_started_first_request_content' => '使用您的API密钥发送一个简单的视频解析请求，验证集成是否成功。',
 
@@ -905,7 +905,7 @@ return [
     'mobile_issues_tip' => '建议在WiFi环境下使用，以获得更好的体验和避免流量消耗。',
 
     // API快速开始
-    'api_getting_started_intro' => 'VideoParser.top API 为开发者提供强大的视频解析功能。',
+    'api_getting_started_intro' => 'besttik.comAPI 为开发者提供强大的视频解析功能。',
     'api_getting_started_steps_title' => 'API 快速开始：',
     'api_getting_started_step_1' => '注册开发者账户',
     'api_getting_started_step_2' => '获取API密钥',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - Der beste Video-Parser TikTok Wasserzeichen entfernen TikTok Video-Parsing Download',
+    'title' => 'besttik.com- Der beste Video-Parser TikTok Wasserzeichen entfernen TikTok Video-Parsing Download',
     'description' => 'Der beste Video-Parsing-Download. TikTok Wasserzeichen entfernen, YouTube Video-Parsing, TikTok-Parsing, Instagram, Facebook, Twitter und andere Plattform-Video-Parsing',
     'keywords' => 'Video-Parsing,Video Wasserzeichen entfernen,TikTok Wasserzeichen entfernen,TikTok-Parsing, YouTube Download, TikTok Download,B站 Download',
     'hero_title' => 'Kostenloser Online-Video-Downloader',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'Unterstützte Plattformen',
     'supported_platforms_desc' => 'Abdeckung globaler Mainstream-Video-Plattformen',
     'more_platforms' => 'Weitere Plattformen',
-    'start_using' => 'Beginnen Sie mit VideoParser.top',
+    'start_using' => 'Beginnen Sie mit besttik.com',
     'start_using_desc' => 'Erleben Sie sofort den professionellsten Video-Parsing-Service und machen Sie Video-Downloads einfach und effizient.',
     'start_now' => 'Jetzt starten',
     'parse_success' => 'Parsing erfolgreich!',
@@ -113,12 +113,12 @@ return [
     'terms_of_service' => 'Nutzungsbedingungen',
 
     // Terms of Service
-    'terms_of_service_description' => 'Bitte lesen Sie unsere Nutzungsbedingungen sorgfältig durch, bevor Sie VideoParser.top verwenden.',
+    'terms_of_service_description' => 'Bitte lesen Sie unsere Nutzungsbedingungen sorgfältig durch, bevor Sie besttik.comverwenden.',
     'last_updated' => 'Zuletzt aktualisiert',
     'acceptance_of_terms' => 'Annahme der Bedingungen',
-    'acceptance_of_terms_description' => 'Durch den Zugriff auf und die Nutzung von VideoParser.top akzeptieren Sie diese Vereinbarung und stimmen zu, an diese Bedingungen gebunden zu sein.',
+    'acceptance_of_terms_description' => 'Durch den Zugriff auf und die Nutzung von besttik.comakzeptieren Sie diese Vereinbarung und stimmen zu, an diese Bedingungen gebunden zu sein.',
     'description_of_service' => 'Servicebeschreibung',
-    'description_of_service_content' => 'VideoParser.top bietet Video-Parsing- und Download-Services für verschiedene Online-Plattformen. Unsere Services umfassen:',
+    'description_of_service_content' => 'besttik.combietet Video-Parsing- und Download-Services für verschiedene Online-Plattformen. Unsere Services umfassen:',
     'video_link_parsing' => 'Video-Link-Parsing und -Analyse',
     'multiple_format_support' => 'Mehrere Format- und Qualitätsoptionen',
     'batch_processing_service' => 'Batch-Verarbeitungsfunktionen',
@@ -139,15 +139,15 @@ return [
     'unauthorized_access_attempt' => 'Versuche, unbefugten Zugang zu unseren Systemen zu erlangen',
     'spam_activities' => 'Nutzung unserer Services für Spam oder unerwünschte Kommunikation',
     'intellectual_property' => 'Geistiges Eigentum',
-    'intellectual_property_description' => 'VideoParser.top und seine ursprünglichen Inhalte, Funktionen und Features gehören uns und sind durch internationale Urheberrechts-, Marken-, Patent-, Geschäftsgeheimnis- und andere Gesetze zum geistigen Eigentum geschützt.',
+    'intellectual_property_description' => 'besttik.comund seine ursprünglichen Inhalte, Funktionen und Features gehören uns und sind durch internationale Urheberrechts-, Marken-, Patent-, Geschäftsgeheimnis- und andere Gesetze zum geistigen Eigentum geschützt.',
     'user_content' => 'Benutzerinhalte',
     'user_content_description' => 'Sie behalten das Eigentum an allen Inhalten, die über unsere Services verarbeitet werden. Sie gewähren uns jedoch eine begrenzte Lizenz zur Verarbeitung und Bereitstellung dieser Inhalte als Teil der Erbringung unserer Services.',
     'service_availability' => 'Service-Verfügbarkeit',
     'service_availability_description' => 'Wir bemühen uns, eine hohe Service-Verfügbarkeit aufrechtzuerhalten, garantieren jedoch keinen ununterbrochenen Zugang. Wir behalten uns das Recht vor, Services mit oder ohne Vorankündigung zu ändern, auszusetzen oder einzustellen.',
     'limitation_of_liability' => 'Haftungsbeschränkung',
-    'limitation_of_liability_description' => 'VideoParser.top haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, die aus Ihrer Nutzung unserer Services entstehen.',
+    'limitation_of_liability_description' => 'besttik.comhaftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, die aus Ihrer Nutzung unserer Services entstehen.',
     'indemnification' => 'Schadloshaltung',
-    'indemnification_description' => 'Sie stimmen zu, VideoParser.top von allen Ansprüchen, Schäden oder Kosten freizustellen, die aus Ihrer Nutzung unserer Services oder Verletzung dieser Bedingungen entstehen.',
+    'indemnification_description' => 'Sie stimmen zu, besttik.comvon allen Ansprüchen, Schäden oder Kosten freizustellen, die aus Ihrer Nutzung unserer Services oder Verletzung dieser Bedingungen entstehen.',
     'termination' => 'Kündigung',
     'termination_description' => 'Wir können Ihren Zugang zu unseren Services sofort ohne Vorankündigung kündigen oder aussetzen, für Verhalten, das wir als Verletzung dieser Bedingungen oder als schädlich für andere Benutzer, uns oder Dritte betrachten, oder aus anderen Gründen, einschließlich:',
     'terms_violation' => 'Verletzung dieser Nutzungsbedingungen',
@@ -163,7 +163,7 @@ return [
     'severability' => 'Salvatorische Klausel',
     'severability_description' => 'Sollte eine Bestimmung dieser Bedingungen als nicht durchsetzbar erachtet werden, bleiben die übrigen Bestimmungen in vollem Umfang wirksam.',
     'entire_agreement' => 'Gesamte Vereinbarung',
-    'entire_agreement_description' => 'Diese Bedingungen stellen die gesamte Vereinbarung zwischen Ihnen und VideoParser.top bezüglich der Nutzung unserer Services dar.',
+    'entire_agreement_description' => 'Diese Bedingungen stellen die gesamte Vereinbarung zwischen Ihnen und besttik.combezüglich der Nutzung unserer Services dar.',
     'contact_information' => 'Kontaktinformationen',
     'terms_contact_description' => 'Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte:',
     'address' => 'Adresse',
@@ -220,7 +220,7 @@ return [
     'privacy_contact_description' => 'Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte:',
 
     // Contact Us
-    'contact_us_description' => 'Haben Sie Fragen oder benötigen Support? Wir sind hier, um Ihnen zu helfen, das Beste aus VideoParser.top herauszuholen.',
+    'contact_us_description' => 'Haben Sie Fragen oder benötigen Support? Wir sind hier, um Ihnen zu helfen, das Beste aus besttik.comherauszuholen.',
     'send_message' => 'Nachricht senden',
     'first_name' => 'Vorname',
     'last_name' => 'Nachname',
@@ -249,9 +249,9 @@ return [
     'browse_help' => 'Hilfe-Center durchsuchen',
 
     // Help Center
-    'help_center_description' => 'Finden Sie Antworten auf häufige Fragen und lernen Sie, wie Sie VideoParser.top optimal nutzen.',
+    'help_center_description' => 'Finden Sie Antworten auf häufige Fragen und lernen Sie, wie Sie besttik.comoptimal nutzen.',
     'getting_started' => 'Erste Schritte',
-    'getting_started_description' => 'Lernen Sie die Grundlagen der Nutzung von VideoParser.top',
+    'getting_started_description' => 'Lernen Sie die Grundlagen der Nutzung von besttik.com',
     'download_issues' => 'Download-Probleme',
     'download_issues_description' => 'Lösen Sie häufige Download-Probleme',
     'supported_platforms_help_description' => 'Sehen Sie sich unsere unterstützten Plattformen an',
@@ -479,9 +479,9 @@ return [
 
     // Hilfezentrum-Artikelinhalt
     // Schnellstart-Anleitung
-    'quick_start_welcome' => 'Willkommen bei VideoParser.top! Dies ist ein leistungsstarkes Online-Video-Analyse- und Download-Tool, das mehrere Mainstream-Video-Plattformen unterstützt.',
+    'quick_start_welcome' => 'Willkommen bei besttik.com! Dies ist ein leistungsstarkes Online-Video-Analyse- und Download-Tool, das mehrere Mainstream-Video-Plattformen unterstützt.',
     'quick_start_steps_title' => 'Schnellstart-Schritte:',
-    'quick_start_step_1' => 'Besuchen Sie die VideoParser.top-Startseite',
+    'quick_start_step_1' => 'Besuchen Sie die besttik.com-Startseite',
     'quick_start_step_2' => 'Kopieren Sie den Video-Link, den Sie herunterladen möchten',
     'quick_start_step_3' => 'Fügen Sie den Link in das Eingabefeld ein',
     'quick_start_step_4' => 'Klicken Sie auf die Schaltfläche "Analysieren"',
@@ -490,20 +490,20 @@ return [
     'quick_start_tip' => 'Tipp: Registrieren Sie ein Konto, um mehr tägliche Analyseversuche zu erhalten!',
 
     // Grundlegende Verwendung
-    'basic_usage_intro' => 'Die grundlegende Verwendung von VideoParser.top ist sehr einfach, nur wenige Schritte sind erforderlich, um den Video-Download abzuschließen.',
+    'basic_usage_intro' => 'Die grundlegende Verwendung von besttik.comist sehr einfach, nur wenige Schritte sind erforderlich, um den Video-Download abzuschließen.',
     'basic_usage_platforms_title' => 'Unterstützte Plattformen',
     'basic_usage_platforms_content' => 'Wir unterstützen die folgenden Mainstream-Video-Plattformen: YouTube, TikTok, Instagram, Facebook, Twitter, Bilibili, Douyin und über 100 Video-Plattformen.',
     'basic_usage_limits_title' => 'Nutzungsbeschränkungen',
     'basic_usage_limits_content' => 'Gastbenutzer haben bestimmte tägliche Analysebeschränkungen, registrierte Benutzer können mehr Versuche erhalten. Bitte überprüfen Sie die Kontoeinstellungsseite für spezifische Beschränkungen.',
 
     // Plattform-Übersicht
-    'platforms_overview_intro' => 'VideoParser.top unterstützt mehrere Mainstream-Video-Plattformen und bietet Ihnen umfassende Video-Analysedienste.',
+    'platforms_overview_intro' => 'besttik.comunterstützt mehrere Mainstream-Video-Plattformen und bietet Ihnen umfassende Video-Analysedienste.',
     'platforms_main_title' => 'Hauptsächlich unterstützte Plattformen',
     'platforms_main_content' => '• YouTube - Die weltweit größte Video-Sharing-Plattform\n• TikTok - Kurzvideo-Social-Plattform\n• Instagram - Foto- und Video-Sharing-Plattform\n• Facebook - Social-Network-Plattform\n• Twitter - Microblogging-Social-Plattform\n• Bilibili - Chinas führende Video-Kommentar-Website\n• Douyin - Chinesische Kurzvideo-Plattform',
     'platforms_tip' => 'Wir fügen kontinuierlich Unterstützung für neue Plattformen hinzu. Wenn Sie Unterstützung für eine bestimmte Plattform benötigen, kontaktieren Sie uns bitte.',
 
     // Tipps für Erstbenutzer
-    'first_time_tips_intro' => 'Als neuer Benutzer helfen Ihnen diese Tipps, VideoParser.top besser zu nutzen.',
+    'first_time_tips_intro' => 'Als neuer Benutzer helfen Ihnen diese Tipps, besttik.combesser zu nutzen.',
     'first_time_tips_title' => 'Tipps für Erstbenutzer:',
     'first_time_tip_1' => 'Registrieren Sie ein Konto, um mehr Analyseversuche zu erhalten',
     'first_time_tip_2' => 'Lesezeichen für häufig verwendete Video-Links setzen',
@@ -676,9 +676,9 @@ return [
     'mobile_issues_solution_5' => 'Browser-App neu starten',
 
     // API-Dokumentation bezogen
-    'api_getting_started_intro' => 'Willkommen bei der VideoParser.top API! Diese Anleitung hilft Ihnen, schnell mit der Integration unserer Videoanalysedienste zu beginnen.',
+    'api_getting_started_intro' => 'Willkommen bei der besttik.comAPI! Diese Anleitung hilft Ihnen, schnell mit der Integration unserer Videoanalysedienste zu beginnen.',
     'api_getting_started_requirements_title' => 'Vorbereitung vor dem Start',
-    'api_getting_started_requirements_content' => '• VideoParser.top-Konto registrieren\n• API-Schlüssel erhalten\n• Grundlegende HTTP-Anfragen verstehen\n• Entwicklungsumgebung vorbereiten',
+    'api_getting_started_requirements_content' => '• besttik.com-Konto registrieren\n• API-Schlüssel erhalten\n• Grundlegende HTTP-Anfragen verstehen\n• Entwicklungsumgebung vorbereiten',
     'api_getting_started_first_request_title' => 'Erste API-Anfrage',
     'api_getting_started_first_request_content' => 'Verwenden Sie Ihren API-Schlüssel, um eine einfache Videoanalyse-Anfrage zu senden und zu überprüfen, ob die Integration erfolgreich ist.',
 

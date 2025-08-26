@@ -1,6 +1,6 @@
 @extends('pages.layout')
 
-@section('title', $articleData['title'] . ' - ' . __('messages.help_center') . ' - VideoParser.top')
+@section('title', $articleData['title'] . ' - ' . __('messages.help_center') . ' - besttik.com')
 @section('description', 'Learn about ' . $articleData['title'] . ' in our comprehensive help guide.')
 
 @section('hero-icon')
@@ -191,7 +191,7 @@ function shareArticle() {
 function rateArticle(rating) {
     // 这里可以发送评价到后端
     console.log('Article rated:', rating);
-    
+
     if (rating === 'helpful') {
         alert('{{ __("messages.thanks_for_feedback") ?? "感谢您的反馈！" }}');
     } else {

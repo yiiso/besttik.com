@@ -13,7 +13,7 @@
     <title>@yield('title', __('messages.title'))</title>
     <meta name="description" content="@yield('description', __('messages.description'))">
     <meta name="keywords" content="@yield('keywords', __('messages.keywords'))">
-    <meta name="author" content="VideoParser.top">
+    <meta name="author" content="besttik.com">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
     <!-- Open Graph Meta Tags -->
@@ -21,7 +21,7 @@
     <meta property="og:title" content="@yield('og_title', __('messages.title'))">
     <meta property="og:description" content="@yield('og_description', __('messages.description'))">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:site_name" content="VideoParser.top">
+    <meta property="og:site_name" content="besttik.com">
     <meta property="og:image" content="@yield('og_image', asset('images/og-image.jpg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -48,7 +48,7 @@
     {
         "@@context": "https://schema.org",
         "@@type": "WebApplication",
-        "name": "VideoParser.top - {{ __('messages.title') }}",
+        "name": "besttik.com- {{ __('messages.title') }}",
         "description": "{{ __('messages.description') }}",
         "url": "https://besttik.com",
         "applicationCategory": "MultimediaApplication",
@@ -71,11 +71,11 @@
         "inLanguage": "{{ app()->getLocale() }}",
         "author": {
             "@@type": "Organization",
-            "name": "VideoParser.top"
+            "name": "besttik.com"
         },
         "creator": {
             "@@type": "Organization",
-            "name": "VideoParser.top",
+            "name": "besttik.com",
             "url": "https://besttik.com"
         },
         "screenshot": "{{ asset('images/app-screenshot.jpg') }}",
@@ -101,9 +101,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Video playback libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
@@ -255,7 +253,7 @@
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
-                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>
+                        <span class="text-xl font-semibold text-gray-900 heading-modern">BestTik</span>
                     </a>
                 </div>
 
@@ -461,7 +459,7 @@
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
-                        <span class="text-xl font-semibold text-gray-900 heading-modern">VideoParser.top</span>
+                        <span class="text-xl font-semibold text-gray-900 heading-modern">besttik.com</span>
                     </div>
                     <p class="text-gray-600 max-w-md body-light">
                         {{ __('messages.footer_description') }}
@@ -518,7 +516,7 @@
             </div>
 
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-                <p class="body-light">&copy; {{ date('Y') }} VideoParser.top. {{ __('messages.all_rights_reserved') }}</p>
+                <p class="body-light">&copy; {{ date('Y') }} besttik.com. {{ __('messages.all_rights_reserved') }}</p>
             </div>
 
             <!-- Copyright and Infringement Disclaimer (Multilingual) -->

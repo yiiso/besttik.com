@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'VideoParser.top - सर्वश्रेष्ठ वीडियो पार्सर TikTok वॉटरमार्क हटाएं TikTok वीडियो पार्सिंग डाउनलोड',
+    'title' => 'besttik.com- सर्वश्रेष्ठ वीडियो पार्सर TikTok वॉटरमार्क हटाएं TikTok वीडियो पार्सिंग डाउनलोड',
     'description' => 'सर्वश्रेष्ठ वीडियो पार्सिंग डाउनलोड। TikTok वॉटरमार्क हटाएं, YouTube वीडियो पार्सिंग, TikTok पार्सिंग, Instagram, Facebook, Twitter और अन्य प्लेटफॉर्म वीडियो पार्सिंग',
     'keywords' => 'वीडियो पार्सिंग,वीडियो वॉटरमार्क हटाएं,TikTok वॉटरमार्क हटाएं,TikTok पार्सिंग, youtube डाउनलोड, TikTok डाउनलोड,B站 डाउनलोड',
     'hero_title' => 'मुफ्त ऑनलाइन वीडियो डाउनलोडर',
@@ -36,7 +36,7 @@ return [
     'supported_platforms' => 'समर्थित प्लेटफॉर्म',
     'supported_platforms_desc' => 'वैश्विक मुख्यधारा वीडियो प्लेटफॉर्म का कवरेज',
     'more_platforms' => 'अधिक प्लेटफॉर्म',
-    'start_using' => 'VideoParser.top का उपयोग शुरू करें',
+    'start_using' => 'besttik.comका उपयोग शुरू करें',
     'start_using_desc' => 'तुरंत सबसे पेशेवर वीडियो पार्सिंग सेवा का अनुभव करें, वीडियो डाउनलोड को सरल और कुशल बनाएं।',
     'start_now' => 'अभी शुरू करें',
     'parse_success' => 'पार्सिंग सफल!',
@@ -137,7 +137,7 @@ return [
     'upgrade_limit_info' => 'अभी पंजीकरण करें और दैनिक :limit पार्सिंग अवसर प्राप्त करें!',
 
 // Terms of Service
-    'terms_of_service_description' => 'VideoParser.top का उपयोग करने से पहले कृपया हमारी सेवा की शर्तों को ध्यान से पढ़ें।',
+    'terms_of_service_description' => 'besttik.comका उपयोग करने से पहले कृपया हमारी सेवा की शर्तों को ध्यान से पढ़ें।',
     'last_updated' => 'अंतिम अपडेट',
     'acceptance_of_terms' => 'शर्तों की स्वीकृति',
     'description_of_service' => 'सेवा का विवरण',
@@ -164,7 +164,7 @@ return [
     'your_rights' => 'आपके अधिकार',
 
     // Contact Us
-    'contact_us_description' => 'प्रश्न हैं या सहायता चाहिए? हम VideoParser.top का अधिकतम लाभ उठाने में आपकी सहायता के लिए यहाँ हैं।',
+    'contact_us_description' => 'प्रश्न हैं या सहायता चाहिए? हम besttik.comका अधिकतम लाभ उठाने में आपकी सहायता के लिए यहाँ हैं।',
     'send_message' => 'संदेश भेजें',
     'first_name' => 'पहला नाम',
     'last_name' => 'अंतिम नाम',
@@ -176,7 +176,7 @@ return [
     'get_in_touch' => 'संपर्क में रहें',
 
     // Help Center
-    'help_center_description' => 'सामान्य प्रश्नों के उत्तर खोजें और VideoParser.top का अधिकतम लाभ उठाना सीखें।',
+    'help_center_description' => 'सामान्य प्रश्नों के उत्तर खोजें और besttik.comका अधिकतम लाभ उठाना सीखें।',
     'getting_started' => 'शुरुआत करना',
     'download_issues' => 'डाउनलोड समस्याएं',
     'troubleshooting' => 'समस्या निवारण',

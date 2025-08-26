@@ -1,7 +1,7 @@
 @extends('pages.layout')
 
-@section('title', __('messages.api_service') . ' - VideoParser.top')
-@section('description', 'Integrate VideoParser.top API into your applications. Powerful video parsing API with comprehensive documentation and examples.')
+@section('title', __('messages.api_service') . ' - besttik.com')
+@section('description', 'Integrate besttik.comAPI into your applications. Powerful video parsing API with comprehensive documentation and examples.')
 
 @section('hero-icon')
 <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto shadow-xl">

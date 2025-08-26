@@ -62,7 +62,7 @@
     <div>
         <h2 class="text-2xl font-bold text-gray-900 mb-6 heading-modern">{{ __('messages.api_example') }}</h2>
         <div class="bg-gray-900 rounded-2xl p-6 overflow-x-auto">
-            <pre class="text-green-400 font-mono text-sm"><code>curl -X POST "https://api.videoparser.top/v1/parse" \
+            <pre class="text-green-400 font-mono text-sm"><code>curl -X POST "https://api.besttik.com/v1/parse" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{

@@ -50,7 +50,7 @@
         "@@type": "WebApplication",
         "name": "VideoParser.top - {{ __('messages.title') }}",
         "description": "{{ __('messages.description') }}",
-        "url": "https://videoparser.top",
+        "url": "https://besttik.com",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "Web Browser",
         "offers": {
@@ -76,7 +76,7 @@
         "creator": {
             "@@type": "Organization",
             "name": "VideoParser.top",
-            "url": "https://videoparser.top"
+            "url": "https://besttik.com"
         },
         "screenshot": "{{ asset('images/app-screenshot.jpg') }}",
         "aggregateRating": {
@@ -87,12 +87,10 @@
     }
     </script>
 
-    <!-- 包含结构化数据 -->
-    @include('components.structured-data')
+    <!-- Include structured data -->
 
-    <!-- 包含分析代码 -->
+    <!-- Include analytics code -->
     @include('components.analytics')
-
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
@@ -103,14 +101,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- 视频播放库 -->
+    <!-- Video playback libraries -->
     <script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@1.4.12/dist/hls.min.js"></script>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        /* 确保移动端语言选择器正确显示 */
         @media (max-width: 768px) {
             #languageSelector {
                 position: relative;
@@ -124,7 +120,7 @@
                 margin-top: 0.5rem;
             }
 
-            /* 防止语言选项重叠 */
+
             .header-right {
                 display: flex;
                 align-items: center;
@@ -133,7 +129,7 @@
             }
         }
 
-        /* 桌面端确保语言选项不会换行 */
+
         @media (min-width: 769px) {
             .desktop-languages {
                 display: flex;
@@ -237,25 +233,25 @@
                                     </clipPath>
                                 </defs>
 
-                                <!-- 主背景 - 六边形 -->
+
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#headerGradient)" />
 
-                                <!-- 装饰图案 - 网格线 -->
+
                                 <g clip-path="url(#headerHexClip)" opacity="0.15">
                                     <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
                                     <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
                                 </g>
 
-                                <!-- 中心图形 - 现代播放图标 -->
+
                                 <g filter="url(#headerNeonGlow)">
-                                    <!-- 播放三角形 - 不规则形状 -->
+
                                     <path d="M12 10L22 16L12 22V10Z" fill="white" />
 
-                                    <!-- 装饰元素 - 垂直线 -->
+
                                     <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
                                 </g>
 
-                                <!-- 边缘高光 -->
+
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
@@ -263,14 +259,14 @@
                     </a>
                 </div>
 
-                <!-- 主导航菜单 -->
+
                 <nav class="hidden md:flex items-center space-x-6 px-4">
-                    <!-- 热门平台直接展示 -->
+
                     <a href="{{ route('tiktok') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">TikTok</a>
                     <a href="{{ route('instagram') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">Instagram</a>
                     <a href="{{ route('snapchat') }}" class="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors">Snapchat</a>
 
-                    <!-- 更多平台下拉菜单 -->
+
                     <div class="relative group">
                         <button class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors flex items-center space-x-1">
                             <span>more</span>
@@ -310,7 +306,7 @@
                     <a href="{{ route('help') }}" class="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">help</a>
                 </nav>
 
-                <!-- 移动端菜单按钮 -->
+
                 <button id="mobileMenuBtn" class="md:hidden p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -321,7 +317,7 @@
 
 
                     @auth
-                        <!-- 用户已登录状态 -->
+
                         <div class="relative" id="userMenu">
                             <button id="userMenuBtn" class="flex items-center space-x-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors ui-text">
                                 @if(auth()->user()->avatar)
@@ -337,7 +333,7 @@
                                 </svg>
                             </button>
 
-                            <!-- 下拉菜单 -->
+
                             <div id="userDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 z-50">
                                 <div class="py-2">
                                     <div class="px-4 py-2 border-b border-gray-100">
@@ -362,7 +358,7 @@
                             </div>
                         </div>
                     @else
-                        <!-- 用户未登录状态 -->
+
                         <button id="loginBtn" class="flex items-center space-x-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all duration-200 ui-text group">
                             <svg class="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -375,40 +371,37 @@
         </div>
     </header>
 
-    <!-- 移动端菜单 -->
+
     <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-gray-200 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="space-y-3">
-                <!-- 热门平台 -->
-                <div class="border-b border-gray-200 pb-3 mb-3">
-                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">热门平台</div>
-                    <a href="{{ route('douyin') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">抖音解析</a>
-                    <a href="{{ route('tiktok') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">TikTok</a>
-                    <a href="{{ route('xiaohongshu') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">小红书</a>
-                </div>
 
-                <!-- 更多平台 -->
                 <div class="border-b border-gray-200 pb-3 mb-3">
-                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">更多平台</div>
-                    <a href="{{ route('bilibili') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">B站</a>
-                    <a href="{{ route('kuaishou') }}" class="block text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors py-1">快手</a>
-                    <a href="{{ route('weibo') }}" class="block text-sm font-medium text-gray-700 hover:text-red-600 transition-colors py-1">微博</a>
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Popular Platforms</div>
+                    <a href="{{ route('tiktok') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">tiktok</a>
+                    <a href="{{ route('snapchat') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">snapchat</a>
+                    <a href="{{ route('instagram') }}" class="block text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors py-1">instagram</a>
+                 </div>
+
+
+                <div class="border-b border-gray-200 pb-3 mb-3">
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">More</div>
+
                     <a href="{{ route('instagram') }}" class="block text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors py-1">Instagram</a>
                     <a href="{{ route('facebook') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">Facebook</a>
-                    <a href="{{ route('twitter') }}" class="block text-sm font-medium text-gray-700 hover:text-cyan-600 transition-colors py-1">Twitter</a>
                     <a href="{{ route('snapchat') }}" class="block text-sm font-medium text-gray-700 hover:text-yellow-600 transition-colors py-1">Snapchat</a>
                     <a href="{{ route('pinterest') }}" class="block text-sm font-medium text-gray-700 hover:text-red-600 transition-colors py-1">Pinterest</a>
                 </div>
 
-                <!-- 功能菜单 -->
+
                 <div>
-                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">功能</div>
-                    <a href="{{ route('batch-download') }}" class="block text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors py-1">批量下载</a>
-                    <a href="{{ route('help') }}" class="block text-sm font-medium text-gray-700 hover:text-green-600 transition-colors py-1">使用帮助</a>
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Features</div>
+                    <a href="{{ route('batch-download') }}" class="block text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors py-1">batch</a>
+                    <a href="{{ route('help') }}" class="block text-sm font-medium text-gray-700 hover:text-green-600 transition-colors py-1">help</a>
                 </div>
             </nav>
         </div>
-    </div>
+       </div>
 
     <!-- Breadcrumb Navigation -->
     @include('components.breadcrumb')
@@ -446,25 +439,25 @@
                                     </clipPath>
                                 </defs>
 
-                                <!-- 主背景 - 六边形 -->
+
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="url(#footerGradient)" />
 
-                                <!-- 装饰图案 - 网格线 -->
+
                                 <g clip-path="url(#footerHexClip)" opacity="0.15">
                                     <path d="M0 8H32M0 16H32M0 24H32" stroke="white" stroke-width="0.5" />
                                     <path d="M8 0V32M16 0V32M24 0V32" stroke="white" stroke-width="0.5" />
                                 </g>
 
-                                <!-- 中心图形 - 现代播放图标 -->
+
                                 <g filter="url(#footerNeonGlow)">
-                                    <!-- 播放三角形 - 不规则形状 -->
+
                                     <path d="M12 10L22 16L12 22V10Z" fill="white" />
 
-                                    <!-- 装饰元素 - 垂直线 -->
+
                                     <path d="M10 10V22" stroke="white" stroke-width="2" stroke-linecap="round" />
                                 </g>
 
-                                <!-- 边缘高光 -->
+
                                 <path d="M16 2L30 10V22L16 30L2 22V10L16 2Z" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.8" />
                             </svg>
                         </div>
@@ -511,7 +504,7 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
                         </svg>
-                        <span>选择语言 / Choose Language:</span>
+                        <span>Choose Language:</span>
                     </div>
                     <div class="flex flex-wrap justify-center gap-2">
                         @foreach(config('app.locales') as $localeCode => $localeName)
@@ -527,24 +520,19 @@
             <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
                 <p class="body-light">&copy; {{ date('Y') }} VideoParser.top. {{ __('messages.all_rights_reserved') }}</p>
             </div>
-            <!-- 版权与侵权免责声明 -->
+
+            <!-- Copyright and Infringement Disclaimer (Multilingual) -->
             <div class="mt-8   pt-6 text-center">
                 <p class="text-xs text-gray-500 leading-relaxed">
-                    本站所有内容仅供学习、研究与交流使用，不存储、不复制、不传播任何视频、图片、音频等文件。
-                    所有内容均由用户自行提供并托管于第三方平台，仅供用户自己查看，学习。
-                    本站尊重知识产权和版权，若您认为本站展示的内容侵犯了您的合法权益，请将相关证明材料发送至
-                    <a href="mailto:service@videoparser.top" class="underline text-gray-600 hover:text-gray-800">service@videoparser.top</a>，
-                    我们将第一时间核实后及时处理或删除相关内容。
-
+                    {{ __('messages.copyright_disclaimer') }}
                 </p>
             </div>
-        </div>
+            </div>
     </footer>
 
-    <!-- 登录弹窗 -->
-    <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 transform transition-all duration-300 scale-95 opacity-0" id="loginModalContent">
-            <!-- 关闭按钮 -->
+
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-semibold text-gray-900 heading-modern">{{ __('messages.login') }}</h2>
                 <button id="closeLoginModal" class="text-gray-400 hover:text-gray-600 transition-colors">
@@ -554,9 +542,7 @@
                 </button>
             </div>
 
-            <!-- 登录选项 -->
             <div class="space-y-4">
-                <!-- Google 登录 -->
                 <button id="googleLoginBtn" class="w-full flex items-center justify-center space-x-3 px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
                     <svg class="w-5 h-5" viewBox="0 0 24 24">
                         <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -567,7 +553,7 @@
                     <span class="ui-text">{{ __('messages.login_with_google') }}</span>
                 </button>
 
-                <!-- 分割线 -->
+
                 <div class="relative">
                     <div class="absolute inset-0 flex items-center">
                         <div class="w-full border-t border-gray-300"></div>
@@ -577,7 +563,7 @@
                     </div>
                 </div>
 
-                <!-- 邮箱登录表单 -->
+
                 <form id="emailLoginForm" class="space-y-4">
                     @csrf
                     <div>
@@ -607,14 +593,14 @@
                     </button>
                 </form>
 
-                <!-- 注册链接 -->
+
                 <div class="text-center">
                     <span class="text-sm text-gray-600">{{ __('messages.no_account') }}</span>
                     <a href="#" id="showRegisterForm" class="text-sm text-blue-600 hover:text-blue-500 ml-1">{{ __('messages.register_now') }}</a>
                 </div>
             </div>
 
-            <!-- 注册表单 (默认隐藏) -->
+
             <div id="registerFormContainer" class="hidden space-y-4">
                 <form id="emailRegisterForm" class="space-y-4">
                     @csrf
@@ -646,7 +632,7 @@
                     </button>
                 </form>
 
-                <!-- 返回登录链接 -->
+
                 <div class="text-center">
                     <span class="text-sm text-gray-600">{{ __('messages.already_have_account') }}</span>
                     <a href="#" id="showLoginForm" class="text-sm text-blue-600 hover:text-blue-500 ml-1">{{ __('messages.back_to_login') }}</a>
@@ -657,7 +643,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 语言选择器功能
+
             const languageBtn = document.getElementById('languageBtn');
             const languageDropdown = document.getElementById('languageDropdown');
 
@@ -667,7 +653,7 @@
                     languageDropdown.classList.toggle('hidden');
                 });
 
-                // 点击外部关闭下拉菜单
+
                 document.addEventListener('click', function(e) {
                     if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
                         languageDropdown.classList.add('hidden');
@@ -675,7 +661,7 @@
                 });
             }
 
-            // 用户菜单功能
+
             const userMenuBtn = document.getElementById('userMenuBtn');
             const userDropdown = document.getElementById('userDropdown');
 
@@ -685,7 +671,7 @@
                     userDropdown.classList.toggle('hidden');
                 });
 
-                // 点击外部关闭下拉菜单
+
                 document.addEventListener('click', function(e) {
                     if (!userMenuBtn.contains(e.target) && !userDropdown.contains(e.target)) {
                         userDropdown.classList.add('hidden');
@@ -693,7 +679,7 @@
                 });
             }
 
-            // 登录弹窗功能
+
             const loginModal = document.getElementById('loginModal');
             const loginModalContent = document.getElementById('loginModalContent');
             const closeLoginModal = document.getElementById('closeLoginModal');
@@ -702,7 +688,7 @@
             const registerFormContainer = document.getElementById('registerFormContainer');
             const emailLoginForm = document.getElementById('emailLoginForm');
 
-            // 显示登录弹窗的函数
+
             window.showLoginModal = function() {
                 loginModal.classList.remove('hidden');
                 setTimeout(() => {
@@ -711,7 +697,7 @@
                 }, 10);
             };
 
-            // 隐藏登录弹窗的函数
+
             function hideLoginModal() {
                 loginModalContent.classList.remove('scale-100', 'opacity-100');
                 loginModalContent.classList.add('scale-95', 'opacity-0');
@@ -720,12 +706,12 @@
                 }, 300);
             }
 
-            // 关闭按钮事件
+
             if (closeLoginModal) {
                 closeLoginModal.addEventListener('click', hideLoginModal);
             }
 
-            // 点击背景关闭弹窗
+
             if (loginModal) {
                 loginModal.addEventListener('click', function(e) {
                     if (e.target === loginModal) {
@@ -734,7 +720,7 @@
                 });
             }
 
-            // 切换到注册表单
+
             if (showRegisterForm) {
                 showRegisterForm.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -743,7 +729,7 @@
                 });
             }
 
-            // 切换回登录表单
+
             if (showLoginForm) {
                 showLoginForm.addEventListener('click', function(e) {
                     e.preventDefault();

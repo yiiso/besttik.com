@@ -46,4 +46,4 @@ Disallow: /register
 Disallow: /auth
 
 
-Sitemap: https://videoparser.top/sitemap.xml
+Sitemap: /sitemap.xml

@@ -98,19 +98,19 @@
     "@@context": "https://schema.org",
     "@@type": "Organization",
     "name": "VideoParser.top",
-    "url": "https://videoparser.top",
+    "url": "https://besttik.com",
     "logo": "{{ asset('images/logo.png') }}",
     "description": "{{ __('messages.description') }}",
     "foundingDate": "2024",
     "contactPoint": {
         "@@type": "ContactPoint",
         "contactType": "customer service",
-        "email": "support@videoparser.top",
+        "email": "support@besttik.com",
         "availableLanguage": ["English", "Chinese", "Spanish", "French", "Japanese"]
     },
     "sameAs": [
-        "https://twitter.com/videoparser_top",
-        "https://facebook.com/videoparser.top"
+        "https://twitter.com/besttik.com",
+        "https://facebook.com/besttik.com"
     ]
 }
 </script>
@@ -125,14 +125,14 @@
             "@@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://videoparser.top"
+            "item": "https://besttik.com"
         }
         @if(request()->segment(1) && in_array(request()->segment(1), ['en', 'zh', 'es', 'fr', 'ja']))
         ,{
             "@@type": "ListItem",
             "position": 2,
             "name": "{{ strtoupper(request()->segment(1)) }}",
-            "item": "https://videoparser.top/{{ request()->segment(1) }}"
+            "item": "https://besttik.com/{{ request()->segment(1) }}"
         }
         @endif
         @if(request()->segment(2))

@@ -661,15 +661,15 @@ return [
     // 基本使用方法
     'basic_usage_intro' => 'VideoParser.top 的基本使用非常简单，只需要几个步骤就能完成视频下载。',
     'basic_usage_platforms_title' => '支持的平台',
-    'basic_usage_platforms_content' => '我们支持以下主流视频平台：YouTube、TikTok、Instagram、Facebook、Twitter、B站、抖音等100多个视频平台。',
+    'basic_usage_platforms_content' => '我们支持以下热门视频平台：抖音、小红书、B站、快手、微博、Instagram、Facebook、Twitter、X、Snapchat、Pinterest。更多平台即将上线。',
     'basic_usage_limits_title' => '使用限制',
     'basic_usage_limits_content' => '游客用户每日有一定的解析次数限制，注册用户可获得更多次数。具体限制请查看账户设置页面。',
 
     // 支持平台概览
     'platforms_overview_intro' => 'VideoParser.top 支持多个主流视频平台，为您提供全面的视频解析服务。',
     'platforms_main_title' => '主要支持平台',
-    'platforms_main_content' => '• YouTube - 全球最大的视频分享平台\n• TikTok - 短视频社交平台\n• Instagram - 图片和视频分享平台\n• Facebook - 社交网络平台\n• Twitter - 微博社交平台\n• B站 - 中国领先的视频弹幕网站\n• 抖音 - 中国短视频平台',
-    'platforms_tip' => '我们会持续添加对新平台的支持，如果您需要特定平台的支持，请联系我们。',
+    'platforms_main_content' => '• 抖音 - 中国短视频平台\n• 小红书 - 生活方式分享社区\n• B站 - 中国领先的弹幕视频网站\n• 快手 - 短视频与直播平台\n• 微博 - 中国微博平台\n• Instagram - 图片与视频分享平台\n• Facebook - 社交网络平台\n• Twitter - 微博社交平台\n• X - 社交平台（原Twitter）\n• Snapchat - 多媒体消息应用\n• Pinterest - 图片与创意分享平台',
+    'platforms_tip' => '我们会持续添加新平台的支持，如果您需要特定平台的支持，请联系我们。',
 
     // 新手使用技巧
     'first_time_tips_intro' => '作为新用户，这些技巧将帮助您更好地使用 VideoParser.top。',
@@ -745,10 +745,10 @@ return [
     // Facebook
     'facebook_help_intro' => 'Facebook 视频下载支持公开视频和个人分享视频。',
     'facebook_notes_title' => '注意事项',
-    'facebook_notes_content' => '• 仅支持公开视频\n• 需要有效的视频链接\n• 某些视频可能有地区限制\n• 尊重原作者版权',
+    'facebook_notes_content' => '• 仅支持公开视频\n• 需要有效的视频链接\n• 某些视频可能有地区限制\n• respect original author rights\n• 尊重原作者版权',
 
     // B站
-    'bilibili_help_intro' => 'B站（Bilibili）是中国领先的视频弹幕网站，我们提供完整的下载支持。',
+    'bilibili_help_intro' => 'B站（Bilibili）是中国leading的视频弹幕网站，我们提供完整的下载支持。',
     'bilibili_features_title' => '支持功能',
     'bilibili_features_content' => '• 多P视频下载\n• 弹幕文件下载\n• 多种清晰度选择\n• 音频单独提取',
     'bilibili_tip' => 'B站视频下载请遵守相关法律法规，仅用于个人学习和研究目的。',

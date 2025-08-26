@@ -17,9 +17,8 @@ class SetTimezone
     public function handle(Request $request, Closure $next): Response
     {
         // 设置默认时区为北京时间
-        Carbon::setLocale('zh');
         date_default_timezone_set('Asia/Shanghai');
-        
+
         return $next($request);
     }
 }

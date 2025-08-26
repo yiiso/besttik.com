@@ -10,7 +10,7 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Best TikTok Video Downloader 2025 - Free Online Video Downloader</span>
+                <span class="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Best TikTok Video Downloader 2025  </span>
             </h1>
             <h2 class="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Fast Video Downloader - Download TikTok Videos Without Watermark - MP4 Video Downloader Online Free

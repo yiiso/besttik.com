@@ -59,10 +59,17 @@
             "priceCurrency": "USD"
         },
         "featureList": [
-            "{{ app()->getLocale() == 'zh' ? '抖音视频解析' : 'TikTok Video Parser' }}",
+            "{{ app()->getLocale() == 'zh' ? '抖音视频解析' : 'TikTok Video download' }}",
             "{{ app()->getLocale() == 'zh' ? '抖音去水印' : 'TikTok Watermark Remover' }}",
-            "{{ app()->getLocale() == 'zh' ? '批量视频下载' : 'Batch Video Download' }}",
-            "{{ app()->getLocale() == 'zh' ? '多平台支持' : 'Multi-platform Support' }}"
+            "{{ app()->getLocale() == 'zh' ? '批量视频下载' : 'Instagram video download' }}",
+            "{{ app()->getLocale() == 'zh' ? '多平台支持' : 'Twitter video download' }}",
+             "TikTok video download",
+            "Instagram video download",
+            "Facebook video download",
+            "Twitter video download",
+            "Batch video processing",
+            "Multiple format support",
+            "High quality downloads"
         ],
         "keywords": "{{ __('messages.keywords') }}",
         "inLanguage": "{{ app()->getLocale() }}",
@@ -75,15 +82,6 @@
             "name": "VideoParser.top",
             "url": "https://videoparser.top"
         },
-        "featureList": [
-            "TikTok video download",
-            "Instagram video download",
-            "Facebook video download",
-            "Twitter video download",
-            "Batch video processing",
-            "Multiple format support",
-            "High quality downloads"
-        ],
         "screenshot": "{{ asset('images/app-screenshot.jpg') }}",
         "aggregateRating": {
             "@@type": "AggregateRating",
@@ -561,10 +559,10 @@
                 <p class="text-xs text-gray-500 leading-relaxed">
                     本站所有内容仅供学习、研究与交流使用，不存储、不复制、不传播任何视频、图片、音频等文件。
                     所有内容均由用户自行提供并托管于第三方平台，仅供用户自己查看，学习。
-                    本站尊重知识产权和版权，若您认为本站展示的内容侵犯了您的合法权益，请将相关证明材料发送至 
+                    本站尊重知识产权和版权，若您认为本站展示的内容侵犯了您的合法权益，请将相关证明材料发送至
                     <a href="mailto:service@videoparser.top" class="underline text-gray-600 hover:text-gray-800">service@videoparser.top</a>，
                     我们将第一时间核实后及时处理或删除相关内容。
-                
+
                 </p>
             </div>
         </div>

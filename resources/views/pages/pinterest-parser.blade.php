@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Pinterest视频下载 - Pinterest图片下载 - 免费Pinterest下载工具')
-@section('description', '专业的Pinterest视频下载工具，支持Pinterest图片下载、Pinterest视频解析、Pinterest内容保存。免费在线Pinterest下载器。')
-@section('keywords', 'Pinterest视频下载,Pinterest图片下载,Pinterest下载器,Pinterest视频解析,Pinterest内容保存')
+@section('title', 'Best Pinterest Video Downloader 2025 - Free Pinterest Photo Downloader Online')
+@section('description', 'Professional Pinterest video downloader tool supporting Pinterest photo downloads, Pinterest video parsing, and Pinterest content saving. Free online Pinterest downloader with fast video downloader capabilities.')
+@section('keywords', 'Pinterest video downloader,Pinterest photo downloader,Pinterest downloader,Pinterest video parser,Pinterest content saver,video downloader online,free video downloader,fast video downloader,mp4 video downloader,best video downloader 2025,online video converter')
 
 @section('content')
 <section class="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-pink-50 min-h-screen flex items-start justify-center pt-40">
@@ -10,13 +10,13 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span class="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Pinterest下载</span>
+                <span class="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Pinterest Downloader</span>
             </h1>
             <h2 class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                专业的Pinterest视频下载工具，支持Pinterest图片下载、Pinterest视频解析，完全免费
+                Professional Pinterest video downloader tool supporting Pinterest photo downloads and Pinterest video parsing - completely free
             </h2>
 
-            <!-- 解析框 -->
+            <!-- Parse Form -->
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
                     @csrf
@@ -25,12 +25,12 @@
                             type="text"
                             id="videoUrl"
                             name="video_url"
-                            placeholder="粘贴Pinterest链接到这里..."
+                            placeholder="Paste Pinterest link here..."
                             class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 focus:border-red-400 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl font-sleek rounded-xl"
                             required
                         >
                         <div class="absolute right-2 top-2 bottom-2 flex items-center gap-2">
-                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-red-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="从剪贴板粘贴">
+                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-red-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="Paste from clipboard">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                                 </svg>
@@ -39,7 +39,7 @@
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                 </svg>
-                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">解析Pinterest</span>
+                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">Parse Pinterest</span>
                             </button>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="animate-spin rounded-full h-10 w-10 border-3 border-red-600 border-t-transparent"></div>
                         <div class="animate-pulse h-3 bg-red-200 rounded w-40"></div>
                     </div>
-                    <p class="text-gray-600 font-medium text-lg body-regular">正在解析Pinterest内容...</p>
+                    <p class="text-gray-600 font-medium text-lg body-regular">Parsing Pinterest content...</p>
                 </div>
             </div>
 
@@ -63,12 +63,12 @@
     </div>
 </section>
 
-<!-- Pinterest解析特色功能 -->
+<!-- Pinterest Download Features -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Pinterest下载特色功能</h2>
-            <p class="text-lg text-gray-600">专业的Pinterest内容下载服务</p>
+            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Pinterest Downloader Features</h2>
+            <p class="text-lg text-gray-600">Professional Pinterest content download service</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -78,8 +78,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">Pinterest图片下载</h3>
-                <p class="text-gray-600 leading-relaxed">支持Pinterest高清图片下载，保持Pinterest原始画质</p>
+                <h3 class="text-xl text-gray-900 mb-4">Pinterest Photo Download</h3>
+                <p class="text-gray-600 leading-relaxed">Support Pinterest HD photo downloads, maintaining Pinterest original image quality</p>
             </div>
 
             <div class="text-center group">
@@ -88,8 +88,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">Pinterest视频下载</h3>
-                <p class="text-gray-600 leading-relaxed">支持Pinterest视频下载，保存Pinterest视频内容</p>
+                <h3 class="text-xl text-gray-900 mb-4">Pinterest Video Download</h3>
+                <p class="text-gray-600 leading-relaxed">Support Pinterest video downloads, save Pinterest video content with fast video downloader</p>
             </div>
 
             <div class="text-center group">
@@ -98,8 +98,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">Pinterest快速解析</h3>
-                <p class="text-gray-600 leading-relaxed">无需下载软件，在线即可完成Pinterest内容解析</p>
+                <h3 class="text-xl text-gray-900 mb-4">Fast Pinterest Parser</h3>
+                <p class="text-gray-600 leading-relaxed">No software download required, complete Pinterest content parsing online with our best video downloader 2025</p>
             </div>
         </div>
     </div>

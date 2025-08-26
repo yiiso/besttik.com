@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Twitter视频下载 - X视频下载 - 免费Twitter视频解析工具')
-@section('description', '专业的Twitter视频下载工具，支持X视频下载、Twitter视频解析、Twitter视频保存。免费在线Twitter下载器，高清视频下载。')
-@section('keywords', 'Twitter视频下载,X视频下载,Twitter视频解析,Twitter下载器,Twitter视频保存,X视频解析')
+@section('title', 'Best Twitter Video Downloader 2025 - Free X Video Downloader Online')
+@section('description', 'Professional Twitter video downloader online. Download X videos free, fast video downloader, mp4 video downloader. Best video downloader 2025 for Twitter and X platform content.')
+@section('keywords', 'twitter video downloader,x video downloader,video downloader online,free video downloader,twitter downloader,fast video downloader,mp4 video downloader,best video downloader 2025,online video converter')
 
 @section('content')
 <section class="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50 min-h-screen flex items-start justify-center pt-40">
@@ -10,13 +10,13 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Twitter视频下载</span>
+                <span class="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Best Twitter Video Downloader 2025</span>
             </h1>
             <h2 class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                专业的Twitter视频下载工具，支持X视频下载、Twitter视频解析、Twitter视频保存，完全免费
+                Professional free video downloader online for Twitter and X. Fast video downloader with mp4 support - completely free
             </h2>
 
-            <!-- 解析框 -->
+            <!-- Parse Form -->
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
                     @csrf
@@ -25,12 +25,12 @@
                             type="text"
                             id="videoUrl"
                             name="video_url"
-                            placeholder="粘贴Twitter/X视频链接到这里..."
+                            placeholder="Paste your Twitter/X video link here..."
                             class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 focus:border-blue-400 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl font-sleek rounded-xl"
                             required
                         >
                         <div class="absolute right-2 top-2 bottom-2 flex items-center gap-2">
-                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="从剪贴板粘贴">
+                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-blue-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="Paste from clipboard">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                                 </svg>
@@ -39,7 +39,7 @@
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                 </svg>
-                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">解析Twitter</span>
+                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">Download Twitter</span>
                             </button>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="animate-spin rounded-full h-10 w-10 border-3 border-blue-600 border-t-transparent"></div>
                         <div class="animate-pulse h-3 bg-blue-200 rounded w-40"></div>
                     </div>
-                    <p class="text-gray-600 font-medium text-lg body-regular">正在解析Twitter视频...</p>
+                    <p class="text-gray-600 font-medium text-lg body-regular">Processing Twitter video download...</p>
                 </div>
             </div>
 
@@ -63,12 +63,12 @@
     </div>
 </section>
 
-<!-- Twitter解析特色功能 -->
+<!-- Twitter Downloader Features -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Twitter下载特色功能</h2>
-            <p class="text-lg text-gray-600">专业的Twitter视频下载服务</p>
+            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Free Twitter Video Downloader Features</h2>
+            <p class="text-lg text-gray-600">Professional video downloader online service for Twitter and X platform</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
@@ -78,8 +78,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">Twitter高清下载</h3>
-                <p class="text-gray-600 leading-relaxed">支持Twitter视频高清下载，保持Twitter原始画质，提供最佳Twitter视频下载体验</p>
+                <h3 class="text-xl text-gray-900 mb-4">HD Twitter Video Download</h3>
+                <p class="text-gray-600 leading-relaxed">Download Twitter videos in high definition quality. Best video downloader 2025 maintains original video quality for optimal viewing experience</p>
             </div>
 
             <div class="text-center group">
@@ -88,8 +88,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">Twitter快速解析</h3>
-                <p class="text-gray-600 leading-relaxed">无需下载软件，在线即可完成Twitter视频解析，支持X视频批量下载处理</p>
+                <h3 class="text-xl text-gray-900 mb-4">Fast Video Downloader</h3>
+                <p class="text-gray-600 leading-relaxed">No software installation required. Online video converter processes Twitter videos instantly with batch download support</p>
             </div>
 
             <div class="text-center group">
@@ -98,8 +98,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">X视频保存</h3>
-                <p class="text-gray-600 leading-relaxed">支持新版X平台视频下载，保存Twitter和X平台的所有视频内容</p>
+                <h3 class="text-xl text-gray-900 mb-4">X Video Downloader</h3>
+                <p class="text-gray-600 leading-relaxed">Support for new X platform video downloads. Free video downloader saves all Twitter and X platform video content in MP4 format</p>
             </div>
         </div>
     </div>

@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'YouTube视频下载 - YouTube视频解析 - 免费YouTube下载工具')
-@section('description', '专业的YouTube视频下载工具，支持YouTube视频解析、高清视频下载、音频提取。免费在线YouTube下载器，支持4K、1080p等多种画质。')
-@section('keywords', 'YouTube视频下载,YouTube下载器,YouTube视频解析,YouTube音频下载,YouTube高清下载,YouTube免费下载')
+@section('title', 'Best YouTube Video Downloader 2025 - Free YouTube Downloader Online')
+@section('description', 'Professional YouTube video downloader online. Download YouTube videos free in 4K, 1080p HD quality. Fast video downloader, mp4 video downloader, best video downloader 2025 with audio extraction.')
+@section('keywords', 'youtube video downloader,video downloader online,free video downloader,youtube downloader,youtube mp3 converter,fast video downloader,mp4 video downloader,best video downloader 2025,online video converter,4k video downloader')
 
 @section('content')
 <section class="relative overflow-hidden bg-gradient-to-br from-red-50 via-white to-orange-50 min-h-screen flex items-start justify-center pt-40">
@@ -10,13 +10,13 @@
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                <span class="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">YouTube视频下载</span>
+                <span class="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">Best YouTube Video Downloader 2025</span>
             </h1>
             <h2 class="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-                专业的YouTube视频下载工具，支持4K、1080p高清下载，音频提取，完全免费
+                Professional free video downloader online for YouTube. Download 4K, 1080p HD videos and extract audio - completely free
             </h2>
 
-            <!-- 解析框 -->
+            <!-- Parse Form -->
             <div class="max-w-4xl mx-auto mb-12">
                 <form id="videoParseForm" class="relative">
                     @csrf
@@ -25,12 +25,12 @@
                             type="text"
                             id="videoUrl"
                             name="video_url"
-                            placeholder="粘贴YouTube视频链接到这里..."
+                            placeholder="Paste your YouTube video link here..."
                             class="w-full px-6 py-4 text-lg bg-white border-2 border-gray-200 focus:border-gray-300 focus:outline-none focus:ring-0 transition-all duration-300 shadow-lg hover:shadow-xl font-sleek"
                             required
                         >
                         <div class="absolute right-2 top-2 bottom-2 flex items-center gap-2">
-                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-red-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="从剪贴板粘贴">
+                            <button type="button" id="pasteBtn" class="p-2 text-gray-500 hover:text-red-600 transition-all duration-200 cursor-pointer hover:scale-110 flex-shrink-0" title="Paste from clipboard">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
                                 </svg>
@@ -39,17 +39,17 @@
                                 <svg class="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                 </svg>
-                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">解析YouTube</span>
+                                <span class="hidden sm:inline text-xs lg:text-sm font-medium ml-1 whitespace-nowrap">Download YouTube</span>
                             </button>
                         </div>
                     </div>
                 </form>
 
-                <!-- YouTube示例链接 -->
+                <!-- YouTube Example Links -->
                 <div class="mt-8 flex flex-wrap justify-center gap-4 text-base">
-                    <span class="text-gray-500 font-elegant">试试这些YouTube链接:</span>
-                    <button class="text-red-600 hover:text-red-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=EwPJJy_YkHk'">音乐视频</button>
-                    <button class="text-red-600 hover:text-red-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://youtu.be/dQw4w9WgXcQ'">短链接</button>
+                    <span class="text-gray-500 font-elegant">Try these YouTube links:</span>
+                    <button class="text-red-600 hover:text-red-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://www.youtube.com/watch?v=EwPJJy_YkHk'">Music Video</button>
+                    <button class="text-red-600 hover:text-red-700 underline transition-colors ui-text" onclick="document.getElementById('videoUrl').value='https://youtu.be/dQw4w9WgXcQ'">Short Link</button>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                         <div class="animate-spin rounded-full h-10 w-10 border-3 border-red-600 border-t-transparent"></div>
                         <div class="animate-pulse h-3 bg-red-200 rounded w-40"></div>
                     </div>
-                    <p class="text-gray-600 font-medium text-lg body-regular">正在解析YouTube视频...</p>
+                    <p class="text-gray-600 font-medium text-lg body-regular">Processing YouTube video download...</p>
                 </div>
             </div>
 
@@ -70,23 +70,23 @@
     </div>
 </section>
 
-<!-- YouTube解析特色功能 -->
+<!-- YouTube Downloader Features -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">YouTube下载特色功能</h2>
-            <p class="text-lg text-gray-600">专业的YouTube视频下载服务</p>
+            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Free YouTube Video Downloader Features</h2>
+            <p class="text-lg text-gray-600">Professional video downloader online service for YouTube content</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             <div class="text-center group">
                 <div class="w-20 h-20 bg-red-100 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:bg-red-200 transition-colors duration-200">
                     <svg class="w-10 h-10 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v18a1 1 0 01-1 1H4a1 1 0 01-1-1V1a1 1 0 011-1h2a1 1 0 011 1v3"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v18a1 1 0 01-1-1H4a1 1 0 01-1-1V1a1 1 0 011-1h2a1 1 0 011 1v3"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">4K超高清下载</h3>
-                <p class="text-gray-600 leading-relaxed">支持4K、2K、1080p、720p等多种画质选择，保持原始视频质量</p>
+                <h3 class="text-xl text-gray-900 mb-4">4K Ultra HD Download</h3>
+                <p class="text-gray-600 leading-relaxed">Download YouTube videos in 4K, 2K, 1080p, 720p quality. Best video downloader 2025 maintains original video quality</p>
             </div>
 
             <div class="text-center group">
@@ -95,8 +95,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">音频单独提取</h3>
-                <p class="text-gray-600 leading-relaxed">支持从YouTube视频中提取高质量音频，支持MP3、AAC等格式</p>
+                <h3 class="text-xl text-gray-900 mb-4">YouTube MP3 Converter</h3>
+                <p class="text-gray-600 leading-relaxed">Extract high-quality audio from YouTube videos. Online video converter supports MP3, AAC, and other audio formats</p>
             </div>
 
             <div class="text-center group">
@@ -105,29 +105,29 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl text-gray-900 mb-4">极速下载</h3>
-                <p class="text-gray-600 leading-relaxed">采用先进的下载技术，提供最快的YouTube视频下载速度</p>
+                <h3 class="text-xl text-gray-900 mb-4">Fast Video Downloader</h3>
+                <p class="text-gray-600 leading-relaxed">Advanced download technology provides the fastest YouTube video download speeds. Free video downloader with instant processing</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 支持格式 -->
+<!-- Supported Formats -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">支持的YouTube格式</h2>
-            <p class="text-lg text-gray-600">多种格式和画质选择</p>
+            <h2 class="text-3xl lg:text-4xl text-gray-900 mb-4">Supported YouTube Download Formats</h2>
+            <p class="text-lg text-gray-600">Multiple format and quality options for video downloader online</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- 视频格式 -->
+            <!-- Video Formats -->
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
                     <svg class="w-6 h-6 mr-3 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                     </svg>
-                    视频格式
+                    Video Formats
                 </h3>
                 <div class="space-y-3">
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -144,18 +144,18 @@
                     </div>
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <span class="font-medium">WebM</span>
-                        <span class="text-sm text-gray-600">多种画质</span>
+                        <span class="text-sm text-gray-600">Multiple qualities</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 音频格式 -->
+            <!-- Audio Formats -->
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
                     <svg class="w-6 h-6 mr-3 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 14.142M9 9a3 3 0 000 6h6a3 3 0 000-6H9z"/>
                     </svg>
-                    音频格式
+                    Audio Formats
                 </h3>
                 <div class="space-y-3">
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -168,11 +168,11 @@
                     </div>
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <span class="font-medium">OGG</span>
-                        <span class="text-sm text-gray-600">高质量</span>
+                        <span class="text-sm text-gray-600">High quality</span>
                     </div>
                     <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <span class="font-medium">FLAC</span>
-                        <span class="text-sm text-gray-600">无损音质</span>
+                        <span class="text-sm text-gray-600">Lossless audio</span>
                     </div>
                 </div>
             </div>

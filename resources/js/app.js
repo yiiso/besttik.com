@@ -1,4 +1,5 @@
 import './bootstrap';
+import './play';
 
 // Toast notification function
 function showToast(message, type = 'info') {
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerHTML = `
                 <div class="flex items-center justify-center space-x-2">
                     <div class="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent"></div>
-                    <span>${window.translations?.parsing || '解析中...'}</span>
+                    <span>${window.translations?.parsing || 'paring...'}</span>
                 </div>
             `;
 
@@ -174,20 +175,10 @@ function renderParseResults(videoData, platform) {
 
     // 构建结果HTML
     let html = `
-    <div class="bg-white border border-gray-100 rounded-2xl shadow-xl mb-8 overflow-hidden fade-in">
+    <div class="bg-white border border-gray-100  shadow-xl mb-8 overflow-hidden fade-in">
         <!-- 视频播放区域 -->
-        <div class="relative bg-black rounded-t-2xl">
-            <video controls
-                id="videoPlayer"
-                class="w-full aspect-video object-contain rounded-t-2xl"
-                referrerpolicy="no-referrer"
-                preload="metadata"
-                poster="${poster}"
-                ${isFlv || isM3u8 ? 'muted' : ''}
-            >
-                ${!isFlv && !isM3u8 ? `<source src="${videoUrl}" type="video/mp4">` : ''}
-                <p class="text-white text-center py-8">${window.translations?.video_not_supported || '您的浏览器不支持视频播放'}</p>
-            </video>
+        <div class="relative bg-black ">
+            <div id="videoPlayer" class="w-full aspect-video "></div>
 
             <!-- 视频加载状态 -->
             <div id="videoLoadingState" class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
@@ -318,129 +309,80 @@ function renderParseResults(videoData, platform) {
     parseResults.innerHTML = html;
     parseResults.classList.remove('hidden');
 
+    // 存储视频数据供播放器使用
+    parseResults.videoData = videoData;
+    parseResults.videoUrl = videoUrl;
+    parseResults.poster = poster;
+
     // 添加事件监听器
     addEventListeners();
 
     // 初始化视频播放器事件
     setTimeout(() => {
-        initVideoPlayer();
+        const videoPlayerContainer =  'videoPlayer' ;
+        const loadingState = document.getElementById('videoLoadingState');
 
-        // 如果是FLV或M3U8格式，需要特殊处理
-        const videoPlayer = document.getElementById('videoPlayer');
-        if (videoPlayer && (isFlv || isM3u8)) {
-            initVideoPlayerByFormat(videoPlayer, videoUrl, document.getElementById('videoLoadingState'));
+        if (videoPlayerContainer && loadingState && videoUrl) {
+            initXGPlayer(videoPlayerContainer, videoUrl, poster, loadingState);
         }
     }, 100);
 }
 
 
+// 全局播放器助手实例
+let xgPlayerHelper = null;
+
 // 初始化视频播放器事件
 function initVideoPlayer() {
-    const videoPlayer = document.getElementById('videoPlayer');
+    const videoPlayerContainer = document.getElementById('videoPlayer');
     const loadingState = document.getElementById('videoLoadingState');
 
-    if (videoPlayer && loadingState) {
-        // 获取视频URL和格式
-        const videoUrl = videoPlayer.querySelector('source')?.src || videoPlayer.src;
+    if (videoPlayerContainer && loadingState) {
+        // 从渲染结果中获取视频数据
+        const parseResults = document.getElementById('parseResults');
+        if (parseResults) {
+            const videoData = parseResults.videoData;
+            const videoUrl = parseResults.videoUrl;
+            const poster = parseResults.poster;
 
-        // 检测视频格式并初始化相应播放器
-        if (videoUrl) {
-            initVideoPlayerByFormat(videoPlayer, videoUrl, loadingState);
+            if (videoUrl) {
+                initXGPlayer(videoPlayerContainer, videoUrl, poster, loadingState);
+            }
         }
-
-        // 显示加载状态
-        videoPlayer.addEventListener('loadstart', function() {
-            loadingState.classList.remove('hidden');
-        });
-
-        // 隐藏加载状态
-        videoPlayer.addEventListener('loadeddata', function() {
-            loadingState.classList.add('hidden');
-        });
-
-        // 错误处理
-        videoPlayer.addEventListener('error', function() {
-            loadingState.classList.add('hidden');
-            showToast(window.translations?.video_load_error || '视频加载失败', 'error');
-        });
     }
 }
 
-// 根据视频格式初始化播放器
-function initVideoPlayerByFormat(videoElement, videoUrl, loadingState) {
-    const isFlv = videoUrl.includes('.flv') || videoUrl.includes('flv=1') || videoUrl.includes('format=flv');
-    const isM3u8 = videoUrl.includes('.m3u8') || videoUrl.includes('m3u8') || videoUrl.includes('.ts');
 
-    if (isFlv && window.flvjs && window.flvjs.isSupported()) {
-        // FLV播放器
-        loadingState.classList.remove('hidden');
+function initXGPlayer(container, videoUrl, poster, loadingState) {
 
-        const flvPlayer = window.flvjs.createPlayer({
-            type: 'flv',
-            url: videoUrl,
-            isLive: videoUrl.includes('live') || videoUrl.includes('stream'),
-            cors: true,
-            withCredentials: false
-        }, {
-            enableWorker: false,
-            enableStashBuffer: false,
-            stashInitialSize: 128,
-            autoCleanupSourceBuffer: true
-        });
+    if (!xgPlayerHelper) {
+        xgPlayerHelper = new window.XGPlayerHelper();
+    }
 
-        flvPlayer.attachMediaElement(videoElement);
-        flvPlayer.load();
 
-        // FLV播放器事件
-        flvPlayer.on(window.flvjs.Events.LOADING_COMPLETE, () => {
-            loadingState.classList.add('hidden');
-        });
+    loadingState.classList.remove('hidden');
 
-        flvPlayer.on(window.flvjs.Events.ERROR, (errorType, errorDetail) => {
-            console.error('FLV播放错误:', errorType, errorDetail);
-            loadingState.classList.add('hidden');
-            showToast('FLV视频加载失败，请尝试直接下载', 'error');
-        });
+    try {
 
-        // 存储播放器实例以便清理
-        videoElement.flvPlayer = flvPlayer;
-
-    } else if (isM3u8 && window.Hls && window.Hls.isSupported()) {
-        // HLS播放器
-        loadingState.classList.remove('hidden');
-
-        const hls = new window.Hls({
-            enableWorker: true,
-            lowLatencyMode: true,
-            backBufferLength: 90
-        });
-
-        hls.loadSource(videoUrl);
-        hls.attachMedia(videoElement);
-
-        hls.on(window.Hls.Events.MANIFEST_PARSED, () => {
-            loadingState.classList.add('hidden');
-        });
-
-        hls.on(window.Hls.Events.ERROR, (event, data) => {
-            console.error('HLS播放错误:', data);
-            if (data.fatal) {
+        const player = xgPlayerHelper.createPlayer(container, videoUrl, poster);
+        xgPlayerHelper.bindEvents(player, {
+            onReady: () => {
                 loadingState.classList.add('hidden');
-                showToast('M3U8视频加载失败，请尝试直接下载', 'error');
+                console.log('XGPlayer already');
+            },
+            onCanplay: () => {
+                loadingState.classList.add('hidden');
+
+            },
+            onError: (error) => {
+                loadingState.classList.add('hidden');
             }
         });
 
-        // 存储播放器实例以便清理
-        videoElement.hlsPlayer = hls;
-
-    } else if (!isFlv && !isM3u8) {
-        // 普通MP4等格式，使用原生播放器
-        videoElement.src = videoUrl;
-    } else {
-        // 不支持的格式或缺少库
+    } catch (error) {
+        console.error('XGPlayer init failed:', error);
         loadingState.classList.add('hidden');
-        const formatName = isFlv ? 'FLV' : isM3u8 ? 'M3U8' : '该';
-        showToast(`${formatName}格式需要特殊播放器支持，请直接下载观看`, 'error');
+        showToast('player init failed: ' + error.message, 'error');
     }
 }
 

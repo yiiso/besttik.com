@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite('resources/css/play.css')
+@endpush
+
 @section('title', 'Best TikTok Video Downloader 2025 - Free Online TikTok Downloader No Watermark')
 @section('description', 'Download TikTok videos online free without watermark. Best TikTok video downloader 2025 with HD quality, fast TikTok downloader, and MP4 video converter. Save TikTok videos instantly.')
 @section('keywords', 'TikTok downloader online,free TikTok downloader,TikTok video downloader,best TikTok downloader 2025,fast video downloader,mp4 video downloader,online TikTok converter,TikTok no watermark,download TikTok videos,TikTok downloader free')

@@ -16,6 +16,9 @@
     },
     "dependencies": {
         "flv.js": "^1.6.2",
-        "hls.js": "^1.4.12"
+        "hls.js": "^1.4.12",
+        "xgplayer": "^3.0.23",
+        "xgplayer-flv": "^3.0.23",
+        "xgplayer-hls": "^3.0.23"
     }
 }

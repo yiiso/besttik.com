@@ -110,6 +110,7 @@
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @stack('styles')
 
     <style>
         @media (max-width: 768px) {

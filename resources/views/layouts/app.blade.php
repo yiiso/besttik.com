@@ -535,12 +535,7 @@
                 <p class="body-light">&copy; {{ date('Y') }} besttik.com. {{ __('messages.all_rights_reserved') }}</p>
             </div>
 
-            <!-- Copyright and Infringement Disclaimer (Multilingual) -->
-            <div class="mt-8   pt-6 text-center">
-                <p class="text-xs text-gray-500 leading-relaxed">
-                    {{ __('messages.copyright_disclaimer') }}
-                </p>
-            </div>
+
             </div>
     </footer>
 

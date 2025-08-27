@@ -122,6 +122,11 @@ Route::middleware(['detect.language','set.locale'])->group(function (){
         return view('pages.pinterest-parser');
     })->name('pinterest');
 
+    // 博客路由
+    Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
+    Route::get('/blog/category/{category}', [App\Http\Controllers\BlogController::class, 'category'])->name('blog.category');
+    Route::get('/blog/{post}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
+
 });
 
 
@@ -217,6 +222,11 @@ Route::prefix('{locale}')
         Route::get('/pinterest', function () {
             return view('pages.pinterest-parser');
         })->name('pinterest.locale');
+
+        // 多语言博客路由
+        Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog.index.locale');
+        Route::get('/blog/category/{category}', [App\Http\Controllers\BlogController::class, 'category'])->name('blog.category.locale');
+        Route::get('/blog/{post}', [App\Http\Controllers\BlogController::class, 'show'])->name('blog.show.locale');
 });
 
 // API路由
@@ -283,6 +293,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/login-stats', [App\Http\Controllers\Admin\SecurityController::class, 'getLoginStats'])->name('login-stats');
         Route::get('/abnormal-ips', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalIps'])->name('abnormal-ips');
         Route::get('/abnormal-emails', [App\Http\Controllers\Admin\SecurityController::class, 'getAbnormalEmails'])->name('abnormal-emails');
+
+        // Blog管理
+        Route::resource('blog', App\Http\Controllers\Admin\BlogAdminController::class);
 
         // API接口
         Route::get('/api/today', [App\Http\Controllers\Admin\DashboardController::class, 'getTodayData'])->name('api.today');

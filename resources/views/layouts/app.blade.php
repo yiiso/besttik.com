@@ -314,6 +314,7 @@
                     </div>
 
                     <a href="{{ route('batch-download') }}" class="text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors">batch download</a>
+                    <a href="{{ route('blog.index') }}" class="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">blog</a>
                     <a href="{{ route('help') }}" class="text-sm font-medium text-gray-700 hover:text-green-600 transition-colors">help</a>
                 </nav>
 
@@ -408,6 +409,7 @@
                 <div>
                     <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Features</div>
                     <a href="{{ route('batch-download') }}" class="block text-sm font-medium text-gray-700 hover:text-purple-600 transition-colors py-1">batch</a>
+                    <a href="{{ route('blog.index') }}" class="block text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors py-1">blog</a>
                     <a href="{{ route('help') }}" class="block text-sm font-medium text-gray-700 hover:text-green-600 transition-colors py-1">help</a>
                 </div>
             </nav>
@@ -500,6 +502,7 @@
                 <div>
                     <h3 class="font-semibold text-gray-900 mb-4 heading-modern">{{ __('messages.support') }}</h3>
                     <ul class="space-y-2 text-gray-600 body-light">
+                        <li><a href="{{ localized_url('/blog') }}" class="hover:text-gray-900 transition-colors">Blog</a></li>
                         <li><a href="{{ localized_url('/help') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.help_center') }}</a></li>
                         <li><a href="{{ localized_url('/contact') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.contact_us') }}</a></li>
                         <li><a href="{{ localized_url('/privacy') }}" class="hover:text-gray-900 transition-colors">{{ __('messages.privacy_policy') }}</a></li>

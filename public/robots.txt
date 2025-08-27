@@ -1,49 +1,30 @@
 User-agent: *
 Allow: /
 
+# Sitemap
+Sitemap: https://besttik.com/sitemap.xml
 
-Allow: /douyin
-Allow: /douyin-parser
-Allow: /抖音解析
-Allow: /xiaohongshu
-Allow: /小红书解析
-Allow: /bilibili
-Allow: /B站解析
-Allow: /kuaishou
-Allow: /快手解析
-Allow: /weibo
-Allow: /微博解析
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+
+# Allow blog content
+Allow: /blog/
+Allow: /blog/*
+
+# Allow platform pages
 Allow: /tiktok
 Allow: /instagram
 Allow: /facebook
 Allow: /twitter
 Allow: /snapchat
 Allow: /pinterest
-Allow: /batch-download
-Allow: /api
-Allow: /help
-Allow: /contact
+Allow: /douyin
+Allow: /xiaohongshu
+Allow: /bilibili
+Allow: /kuaishou
+Allow: /weibo
 
-
-Allow: /en
-Allow: /zh
-Allow: /ja
-Allow: /es
-Allow: /fr
-Allow: /de
-Allow: /pt
-Allow: /ru
-Allow: /ar
-Allow: /hi
-Allow: /ko
-Allow: /th
-
-
-Disallow: /admin
-Disallow: /dashboard
-Disallow: /login
-Disallow: /register
-Disallow: /auth
-
-
-Sitemap: /sitemap.xml
+# Crawl-delay for respectful crawling
+Crawl-delay: 1

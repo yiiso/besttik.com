@@ -1,0 +1,47 @@
+/* 前台样式文件 */
+
+/* XGPlayer 样式 - 先导入，让Tailwind覆盖它 */
+@import 'xgplayer/dist/index.min.css';
+
+/* 博客内容样式 */
+@import './blog.css';
+
+/* Tailwind CSS */
+@import 'tailwindcss';
+@config "../../tailwind.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 前台特定样式 */
+.video-player-container {
+    @apply relative w-full max-w-4xl mx-auto;
+}
+
+.drag-overlay {
+    @apply fixed inset-0 bg-blue-500/20 backdrop-blur-sm z-50 flex items-center justify-center;
+}
+
+.example-video-card {
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-4 hover:shadow-md transition-shadow cursor-pointer;
+}
+
+.theme-transition {
+    @apply transition-colors duration-300;
+}
+
+/* 播放器自定义样式 */
+.xgplayer {
+    @apply rounded-lg overflow-hidden shadow-lg;
+}
+
+/* 响应式视频容器 */
+.responsive-video {
+    @apply relative w-full;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-video > * {
+    @apply absolute top-0 left-0 w-full h-full;
+}

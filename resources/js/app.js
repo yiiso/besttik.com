@@ -43,49 +43,6 @@ function showToast(message, type = 'info') {
 
 // Language switcher functionality
 document.addEventListener('DOMContentLoaded', function () {
-    const languageSelect = document.getElementById('languageSelect');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', function (e) {
-            const selectedLang = e.target.value;
-
-            // 通过 AJAX 请求设置 cookie，确保与 Laravel 后端兼容
-            fetch('/set-language-preference', {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    language: selectedLang,
-                    user_selected: true
-                })
-            }).then(() => {
-                // Cookie 设置完成后再跳转
-                navigateToLanguage(selectedLang);
-            }).catch(error => {
-                console.error('设置语言偏好失败:', error);
-                // 即使设置失败也继续跳转
-                navigateToLanguage(selectedLang);
-            });
-        });
-    }
-
-    // 语言跳转逻辑提取为独立函数
-    function navigateToLanguage(selectedLang) {
-        // 获取当前路径
-        const currentPath = window.location.pathname;
-        let newPath = '';
-
-        const searchParams = new URLSearchParams(window.location.search);
-
-        searchParams.set('language', selectedLang);
-
-        newPath = `${currentPath}?${searchParams.toString()}`;
-
-        // 跳转到新路径
-        window.location.href = newPath;
-    }
 
     // 初始化用户菜单
     initUserMenu();

@@ -121,6 +121,9 @@ class VideoParserController extends Controller
 
             }
             $isSuccess = true;
+            if ($videoInfo && isset($videoInfo['quality_options'][0]['download_url'])){
+                $videoInfo['quality_options']['video_info'] = $this->getVideoInfo($videoInfo['quality_options'][0]['download_url']);
+            }
 
             // 如果是登录用户，优先使用奖励次数
             if ($userId) {
@@ -189,6 +192,49 @@ class VideoParserController extends Controller
             ], 500);
         }
     }
+
+
+    private function getVideoInfo($url)
+    {
+        $extension = pathinfo(parse_url($url, PHP_URL_PATH), PATHINFO_EXTENSION);
+
+        // 特殊处理m3u8格式
+        if (strpos($url, '.m3u8') !== false || strpos($url, 'm3u8') !== false) {
+            $extension = 'm3u8';
+        }
+
+        // 特殊处理flv格式
+        if (strpos($url, '.flv') !== false || strpos($url, 'flv') !== false) {
+            $extension = 'flv';
+        }
+        $extension = $extension ?: 'mp4';
+        // xgplayer支持的格式
+        $supportedFormats = ['mp4', 'webm', 'ogg', 'avi', 'mov', 'wmv', 'flv', 'm3u8', 'hls'];
+
+        return [
+            'extension' => $extension,
+            'is_supported' => in_array(strtolower($extension), $supportedFormats),
+            'type' => $this->getVideoType($extension),
+            'url' => $url,
+            'is_hls' => strtolower($extension) === 'm3u8',
+            'is_flv' => strtolower($extension) === 'flv'
+
+        ];
+    }
+    private function getVideoType($extension)
+    {
+        $types = [
+            'mp4' => 'video/mp4',
+            'webm' => 'video/webm',
+            'ogg' => 'video/ogg',
+            'm3u8' => 'application/x-mpegURL',
+            'hls' => 'application/x-mpegURL',
+            'flv' => 'video/x-flv'
+        ];
+
+        return $types[strtolower($extension)] ?? 'video/' . strtolower($extension);
+    }
+
 
     /**
      * 获取用户解析状态信息

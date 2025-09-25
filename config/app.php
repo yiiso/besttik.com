@@ -92,7 +92,6 @@ return [
         'pt' => 'Português',
         'ru' => 'Русский',
         'th' => 'ไทย',
-        'zh' => '中文',
     ],
     'default_locale' => 'en', // 自定义默认语言配置
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
